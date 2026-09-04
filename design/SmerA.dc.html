@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Sans:wght@400;500;600&display=swap">
+  <style>
+    body { margin: 0; background: #14120f; font-family: 'Instrument Sans', 'Segoe UI', Arial, sans-serif; color: #f3ede3; }
+    a { color: #c8a45d; text-decoration: none; } a:hover { color: #e0bf78; }
+    .serif { font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; }
+  </style>
+</helmet>
+<div style="width: 1200px; background: #14120f; color: #f3ede3; display: flex; flex-direction: column;">
+
+  <!-- Nav -->
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 28px 64px; border-bottom: 1px solid #2a2620;">
+    <div class="serif" style="font-size: 22px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #f3ede3;">Rental Partners</div>
+    <div style="display: flex; gap: 32px; align-items: center; font-size: 14px; color: #a89f91;">
+      <span>Služby</span>
+      <span>Cenník</span>
+      <span>Výsledky</span>
+      <span>O nás</span>
+      <span>Kontakt</span>
+    </div>
+    <div style="display: flex; gap: 20px; align-items: center;">
+      <div style="font-size: 12px; letter-spacing: 0.1em; color: #a89f91;"><span style="color: #f3ede3;">SK</span> · EN</div>
+      <div style="padding: 12px 22px; border: 1px solid #c8a45d; color: #c8a45d; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase;">Nezáväzná konzultácia</div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px; padding: 88px 64px 72px; align-items: center;">
+    <div style="display: flex; flex-direction: column; gap: 28px;">
+      <div style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #c8a45d;">Správa bytov · Bratislava</div>
+      <h1 class="serif" style="margin: 0; font-size: 68px; line-height: 1.05; font-weight: 500; color: #f3ede3; text-wrap: pretty;">Váš byt zarába.<br>Vy sa nestaráte<br><em style="font-style: italic; color: #c8a45d;">o nič.</em></h1>
+      <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #a89f91; max-width: 460px;">Kompletná správa bytov na Airbnb a Booking. Vy dostávate výnos, my riešime hostí, upratovanie aj starostlivosť o byt — za 10 % z obratu.</p>
+      <div style="display: flex; gap: 16px; align-items: center; margin-top: 8px;">
+        <div style="padding: 18px 30px; background: #c8a45d; color: #14120f; font-size: 14px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;">Chcem odhad výnosu</div>
+        <div style="padding: 18px 8px; color: #f3ede3; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1px solid #4a443a;">Ako to funguje</div>
+      </div>
+    </div>
+    <div style="position: relative; height: 520px;">
+      <div style="position: absolute; inset: 24px -24px -24px 24px; border: 1px solid #c8a45d;"></div>
+      <div style="position: absolute; inset: 0; background: #2a2620; display: flex; align-items: center; justify-content: center; color: #6b6355; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;">[ Fotka bytu — Staré Mesto ]</div>
+    </div>
+  </div>
+
+  <!-- Proof strip -->
+  <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin: 0 64px; border-top: 1px solid #2a2620; border-bottom: 1px solid #2a2620;">
+    <div style="display: flex; flex-direction: column; gap: 6px; padding: 32px 28px; border-right: 1px solid #2a2620;">
+      <div class="serif" style="font-size: 44px; font-weight: 500; line-height: 1; color: #f3ede3;">16</div>
+      <div style="font-size: 13px; color: #a89f91;">bytov v správe</div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px; padding: 32px 28px; border-right: 1px solid #2a2620;">
+      <div class="serif" style="font-size: 44px; font-weight: 500; line-height: 1; color: #f3ede3;">4,89</div>
+      <div style="font-size: 13px; color: #a89f91;">priemerné hodnotenie</div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px; padding: 32px 28px; border-right: 1px solid #2a2620;">
+      <div class="serif" style="font-size: 44px; font-weight: 500; line-height: 1; color: #f3ede3;">108</div>
+      <div style="font-size: 13px; color: #a89f91;">recenzií na Airbnb</div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px; padding: 32px 28px;">
+      <div class="serif" style="font-size: 44px; font-weight: 500; line-height: 1; color: #c8a45d;">Superhost</div>
+      <div style="font-size: 13px; color: #a89f91;">status na Airbnb</div>
+    </div>
+  </div>
+
+  <!-- Steps -->
+  <div style="display: flex; flex-direction: column; gap: 40px; padding: 80px 64px 88px;">
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <div style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #c8a45d;">Ako to funguje</div>
+      <h2 class="serif" style="margin: 0; font-size: 40px; font-weight: 500; line-height: 1.15; color: #f3ede3;">Tri kroky od prvého stretnutia k pravidelnému výnosu</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px;">
+      <div style="display: flex; flex-direction: column; gap: 14px; padding-top: 20px; border-top: 1px solid #c8a45d;">
+        <div class="serif" style="font-size: 20px; color: #c8a45d;">01</div>
+        <div style="font-size: 18px; font-weight: 600; color: #f3ede3;">Stretneme sa a pozrieme byt</div>
+        <div style="font-size: 15px; line-height: 1.6; color: #a89f91;">Prejdeme si lokalitu, stav bytu a vaše očakávania. Povieme vám otvorene, čo z neho vieme dostať.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px; padding-top: 20px; border-top: 1px solid #2a2620;">
+        <div class="serif" style="font-size: 20px; color: #c8a45d;">02</div>
+        <div style="font-size: 18px; font-weight: 600; color: #f3ede3;">Pripravíme byt a inzeráty</div>
+        <div style="font-size: 15px; line-height: 1.6; color: #a89f91;">Fotky, texty, ceny, profily na Airbnb a Booking. Od tejto chvíle komunikujeme s hosťami my.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px; padding-top: 20px; border-top: 1px solid #2a2620;">
+        <div class="serif" style="font-size: 20px; color: #c8a45d;">03</div>
+        <div style="font-size: 18px; font-weight: 600; color: #f3ede3;">Vy dostávate výnos</div>
+        <div style="font-size: 15px; line-height: 1.6; color: #a89f91;">Každý mesiac prehľadné vyúčtovanie. Upratovanie, údržba a starostlivosť o byt sú naša práca.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

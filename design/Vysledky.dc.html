@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Nunito+Sans:wght@400;600;700&display=swap">
+  <style>
+    body { margin: 0; background: #f6efe4; font-family: 'Nunito Sans', 'Segoe UI', Arial, sans-serif; color: #2b2118; }
+    a { color: #c9694a; text-decoration: none; } a:hover { color: #a8533a; }
+    .display { font-family: 'Outfit', 'Trebuchet MS', 'Segoe UI', sans-serif; }
+  </style>
+</helmet>
+<div style="width: 1200px; background: #f6efe4; color: #2b2118; display: flex; flex-direction: column;">
+
+  <!-- Nav -->
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 26px 64px;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <div style="width: 36px; height: 36px; background: #c9694a; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 11a4 4 0 1 0-8 0"></path><path d="M12 3v2"></path><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"></path></svg>
+      </div>
+      <div class="display" style="font-size: 19px; font-weight: 700; color: #2b2118;">Rental Partners</div>
+    </div>
+    <div style="display: flex; gap: 28px; align-items: center; font-size: 15px; font-weight: 600; color: #6b5b4e;">
+      <span>Služby</span>
+      <span>Cenník</span>
+      <span style="color: #2b2118; border-bottom: 2px solid #c9694a; padding-bottom: 4px;">Výsledky</span>
+      <span>O nás</span>
+      <span>Kontakt</span>
+    </div>
+    <div style="display: flex; gap: 16px; align-items: center;">
+      <div style="font-size: 13px; font-weight: 700; color: #6b5b4e;"><span style="color: #2b2118;">SK</span> / EN</div>
+      <div style="padding: 12px 22px; background: #2b2118; color: #f6efe4; border-radius: 999px; font-size: 14px; font-weight: 700;">Porozprávajme sa</div>
+    </div>
+  </div>
+
+  <!-- Page header -->
+  <div style="display: flex; flex-direction: column; gap: 20px; padding: 56px 64px 40px; max-width: 820px;">
+    <div style="display: inline-flex; align-self: flex-start; padding: 8px 16px; background: #e9dcc6; border-radius: 999px; font-size: 13px; font-weight: 700; color: #6b5b4e;">Výsledky</div>
+    <h1 class="display" style="margin: 0; font-size: 52px; line-height: 1.08; font-weight: 700; letter-spacing: -0.02em; color: #2b2118; text-wrap: pretty;">4,89 z 5 na Airbnb. [X,X] z 10 na Bookingu.</h1>
+    <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #6b5b4e; max-width: 640px;">Hodnotenia z platforiem, kde naše byty nájdete — Airbnb, Booking a ďalšie. Verejné, overiteľné, nie z prezentácie.</p>
+  </div>
+
+  <!-- Platforms band (white) -->
+  <div style="display: flex; flex-direction: column; gap: 28px; padding: 56px 64px; background: #ffffff;">
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #c9694a;">Kde nás nájdete</div>
+      <h2 class="display" style="margin: 0; font-size: 36px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; color: #2b2118;">Jeden tím, rovnaké byty, verejné hodnotenia</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px;">
+      <div style="display: flex; flex-direction: column; gap: 16px; padding: 28px; background: #f6efe4; border-radius: 20px;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <div class="display" style="font-size: 22px; font-weight: 700; color: #2b2118;">Airbnb</div>
+          <span style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background: #e3eadf; color: #6e8b6a; border-radius: 999px; font-size: 13px; font-weight: 700;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6e8b6a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg>
+            Superhost
+          </span>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 8px;">
+          <div class="display" style="font-size: 44px; font-weight: 700; line-height: 1; color: #2b2118;">4,89</div>
+          <div style="font-size: 14px; color: #6b5b4e;">z 5 · 108 recenzií</div>
+        </div>
+        <div style="font-size: 14px; line-height: 1.5; color: #6b5b4e;">Profil hostiteľa Tomáš, hostí už 2 roky.</div>
+        <div style="display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 700; color: #c9694a;">Otvoriť profil<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c9694a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M8 7h9v9"></path></svg></div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px; padding: 28px; background: #f6efe4; border-radius: 20px;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <div class="display" style="font-size: 22px; font-weight: 700; color: #2b2118;">Booking</div>
+          <span style="padding: 4px 10px; background: #e9dcc6; color: #6b5b4e; border-radius: 999px; font-size: 13px; font-weight: 700;">[DOPLNIŤ: status]</span>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 8px;">
+          <div class="display" style="font-size: 44px; font-weight: 700; line-height: 1; color: #2b2118;">[X,X]</div>
+          <div style="font-size: 14px; color: #6b5b4e;">z 10 · [DOPLNIŤ] recenzií</div>
+        </div>
+        <div style="font-size: 14px; line-height: 1.5; color: #6b5b4e;">[DOPLNIŤ: názov profilu / od kedy]</div>
+        <div style="display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 700; color: #c9694a;">Otvoriť profil<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c9694a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M8 7h9v9"></path></svg></div>
+      </div>
+      <div style="display: flex; flex-direction: column; justify-content: center; gap: 12px; padding: 28px; background: #2b2118; border-radius: 20px; color: #f6efe4;">
+        <div class="display" style="font-size: 44px; font-weight: 700; line-height: 1; color: #f6efe4;">2 roky</div>
+        <div style="font-size: 15px; line-height: 1.5; color: #d9ccbb;">ubytúvame hostí v centre Bratislavy — v jedno- až štvorizbových bytoch.</div>
+        <div style="font-size: 13px; color: #8fb08a; font-weight: 700;">[DOPLNIŤ: ktoré ďalšie platformy okrem Airbnb a Booking]</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- What guests praise (sand band) -->
+  <div style="display: flex; flex-direction: column; gap: 28px; padding: 64px; background: #e9dcc6;">
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #c9694a;">Z recenzií</div>
+      <h2 class="display" style="margin: 0; font-size: 36px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; color: #2b2118;">Čo hostia najčastejšie chvália</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px;">
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 24px; background: #ffffff; border-radius: 20px;">
+        <div style="width: 44px; height: 44px; border-radius: 999px; background: #e3eadf; display: flex; align-items: center; justify-content: center;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6e8b6a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.4 7-11a7 7 0 1 0-14 0c0 4.6 7 11 7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+        </div>
+        <div class="display" style="font-size: 19px; font-weight: 600; color: #2b2118;">Poloha</div>
+        <div style="font-size: 15px; line-height: 1.55; color: #6b5b4e;">Centrum, Staré Mesto, Hradný vrch — hostia chodia všade pešo.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 24px; background: #ffffff; border-radius: 20px;">
+        <div style="width: 44px; height: 44px; border-radius: 999px; background: #e3eadf; display: flex; align-items: center; justify-content: center;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6e8b6a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10v9h18v-9"></path><path d="M3 10a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2"></path><path d="M5 8V5h14v3"></path></svg>
+        </div>
+        <div class="display" style="font-size: 19px; font-weight: 600; color: #2b2118;">Vybavenie</div>
+        <div style="font-size: 15px; line-height: 1.55; color: #6b5b4e;">Moderné, zrekonštruované byty. Vo viacerých je klimatizácia a parkovanie.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 24px; background: #ffffff; border-radius: 20px;">
+        <div style="width: 44px; height: 44px; border-radius: 999px; background: #e3eadf; display: flex; align-items: center; justify-content: center;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6e8b6a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg>
+        </div>
+        <div class="display" style="font-size: 19px; font-weight: 600; color: #2b2118;">Rýchla komunikácia</div>
+        <div style="font-size: 15px; line-height: 1.55; color: #6b5b4e;">Presne to, čo ako majiteľ nemusíte robiť vy.</div>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px;">
+      <div style="display: flex; flex-direction: column; gap: 14px; padding: 28px; background: #ffffff; border-radius: 20px;">
+        <div class="display" style="font-size: 20px; line-height: 1.4; font-weight: 500; color: #2b2118; font-style: italic;">„[Citát z recenzie — vyberieme spolu 2 najsilnejšie.]“</div>
+        <div style="font-size: 14px; color: #6b5b4e;">— [meno hosťa] · Airbnb · [mesiac rok]</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px; padding: 28px; background: #ffffff; border-radius: 20px;">
+        <div class="display" style="font-size: 20px; line-height: 1.4; font-weight: 500; color: #2b2118; font-style: italic;">„[Citát z recenzie]“</div>
+        <div style="font-size: 14px; color: #6b5b4e;">— [meno hosťa] · Booking · [mesiac rok]</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio (white) -->
+  <div style="display: flex; flex-direction: column; gap: 28px; padding: 64px; background: #ffffff;">
+    <div style="display: flex; flex-direction: column; gap: 10px; max-width: 700px;">
+      <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #c9694a;">Portfólio</div>
+      <h2 class="display" style="margin: 0; font-size: 36px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; color: #2b2118;">Výber z bytov, o ktoré sa staráme</h2>
+      <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #6b5b4e;">Jedno- až štvorizbové byty v centre Bratislavy. Každý vedie na svoj inzerát — s reálnymi fotkami, cenami a recenziami.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px;">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="height: 220px; background: #dccbb0; border-radius: 20px; display: flex; align-items: center; justify-content: center; color: #8a7a68; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">[ Fotka bytu 1 ]</div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div style="display: flex; flex-direction: column; gap: 2px;"><div class="display" style="font-size: 17px; font-weight: 600; color: #2b2118;">[Názov bytu]</div><div style="font-size: 13px; color: #6b5b4e;">[lokalita] · [počet izieb]</div></div>
+          <div style="display: flex; align-items: center; gap: 5px; padding: 4px 10px; background: #e3eadf; color: #6e8b6a; border-radius: 999px; font-size: 13px; font-weight: 700;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#6e8b6a" stroke="none"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg>[hodnotenie]</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; font-size: 14px; font-weight: 700; color: #c9694a;"><span>Airbnb ↗</span><span>Booking ↗</span></div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="height: 220px; background: #dccbb0; border-radius: 20px; display: flex; align-items: center; justify-content: center; color: #8a7a68; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">[ Fotka bytu 2 ]</div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div style="display: flex; flex-direction: column; gap: 2px;"><div class="display" style="font-size: 17px; font-weight: 600; color: #2b2118;">[Názov bytu]</div><div style="font-size: 13px; color: #6b5b4e;">[lokalita] · [počet izieb]</div></div>
+          <div style="display: flex; align-items: center; gap: 5px; padding: 4px 10px; background: #e3eadf; color: #6e8b6a; border-radius: 999px; font-size: 13px; font-weight: 700;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#6e8b6a" stroke="none"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg>[hodnotenie]</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; font-size: 14px; font-weight: 700; color: #c9694a;"><span>Airbnb ↗</span><span>Booking ↗</span></div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="height: 220px; background: #dccbb0; border-radius: 20px; display: flex; align-items: center; justify-content: center; color: #8a7a68; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">[ Fotka bytu 3 ]</div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div style="display: flex; flex-direction: column; gap: 2px;"><div class="display" style="font-size: 17px; font-weight: 600; color: #2b2118;">[Názov bytu]</div><div style="font-size: 13px; color: #6b5b4e;">[lokalita] · [počet izieb]</div></div>
+          <div style="display: flex; align-items: center; gap: 5px; padding: 4px 10px; background: #e3eadf; color: #6e8b6a; border-radius: 999px; font-size: 13px; font-weight: 700;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#6e8b6a" stroke="none"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg>[hodnotenie]</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; font-size: 14px; font-weight: 700; color: #c9694a;"><span>Airbnb ↗</span><span>Booking ↗</span></div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="height: 220px; background: #dccbb0; border-radius: 20px; display: flex; align-items: center; justify-content: center; color: #8a7a68; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">[ Fotka bytu 4 ]</div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div style="display: flex; flex-direction: column; gap: 2px;"><div class="display" style="font-size: 17px; font-weight: 600; color: #2b2118;">[Názov bytu]</div><div style="font-size: 13px; color: #6b5b4e;">[lokalita] · [počet izieb]</div></div>
+          <div style="display: flex; align-items: center; gap: 5px; padding: 4px 10px; background: #e3eadf; color: #6e8b6a; border-radius: 999px; font-size: 13px; font-weight: 700;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#6e8b6a" stroke="none"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg>[hodnotenie]</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; font-size: 14px; font-weight: 700; color: #c9694a;"><span>Airbnb ↗</span><span>Booking ↗</span></div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="height: 220px; background: #dccbb0; border-radius: 20px; display: flex; align-items: center; justify-content: center; color: #8a7a68; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">[ Fotka bytu 5 ]</div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div style="display: flex; flex-direction: column; gap: 2px;"><div class="display" style="font-size: 17px; font-weight: 600; color: #2b2118;">[Názov bytu]</div><div style="font-size: 13px; color: #6b5b4e;">[lokalita] · [počet izieb]</div></div>
+          <div style="display: flex; align-items: center; gap: 5px; padding: 4px 10px; background: #e3eadf; color: #6e8b6a; border-radius: 999px; font-size: 13px; font-weight: 700;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#6e8b6a" stroke="none"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg>[hodnotenie]</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; font-size: 14px; font-weight: 700; color: #c9694a;"><span>Airbnb ↗</span><span>Booking ↗</span></div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="height: 220px; background: #dccbb0; border-radius: 20px; display: flex; align-items: center; justify-content: center; color: #8a7a68; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">[ Fotka bytu 6 ]</div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div style="display: flex; flex-direction: column; gap: 2px;"><div class="display" style="font-size: 17px; font-weight: 600; color: #2b2118;">[Názov bytu]</div><div style="font-size: 13px; color: #6b5b4e;">[lokalita] · [počet izieb]</div></div>
+          <div style="display: flex; align-items: center; gap: 5px; padding: 4px 10px; background: #e3eadf; color: #6e8b6a; border-radius: 999px; font-size: 13px; font-weight: 700;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#6e8b6a" stroke="none"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg>[hodnotenie]</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; font-size: 14px; font-weight: 700; color: #c9694a;"><span>Airbnb ↗</span><span>Booking ↗</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA (dark block) -->
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 40px; margin: 72px 64px; padding: 48px 56px; background: #2b2118; border-radius: 28px;">
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #8fb08a;">Nezáväzne a zadarmo</div>
+      <div class="display" style="font-size: 30px; font-weight: 600; line-height: 1.25; color: #f6efe4; max-width: 620px; text-wrap: pretty;">Takto by mohol vyzerať aj profil vášho bytu.</div>
+    </div>
+    <div style="padding: 17px 30px; background: #c9694a; color: #ffffff; border-radius: 999px; font-size: 15px; font-weight: 700; white-space: nowrap;">Chcem odhad výnosu</div>
+  </div>
+
+  <!-- Footer -->
+  <div style="display: flex; flex-direction: column; gap: 40px; padding: 56px 64px 32px; background: #2b2118; color: #f6efe4;">
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px;">
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <div class="display" style="font-size: 19px; font-weight: 700; color: #f6efe4;">Rental Partners</div>
+        <div style="font-size: 14px; line-height: 1.6; color: #b8a99a;">Správa bytov a garantovaný nájom v Bratislave.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; color: #b8a99a;">
+        <div style="font-size: 13px; font-weight: 700; color: #f6efe4;">Stránky</div>
+        <span>Služby</span><span>Cenník</span><span>Výsledky</span><span>O nás</span><span>Kontakt</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; color: #b8a99a;">
+        <div style="font-size: 13px; font-weight: 700; color: #f6efe4;">Kontakt</div>
+        <span>[TELEFÓN]</span><span>[E-MAIL]</span><span>[ADRESA]</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; color: #b8a99a;">
+        <div style="font-size: 13px; font-weight: 700; color: #f6efe4;">Hodnotenia hostí</div>
+        <span>Airbnb · 4,89 z 5 · Superhost</span>
+        <span>Booking · [DOPLNIŤ]</span>
+        <span style="color: #e0a58c;">Naše profily →</span>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 1px solid rgba(246, 239, 228, 0.15); font-size: 13px; color: #8a7a68;">
+      <span>© 2026 Rental Partners · [OBCHODNÉ MENO] · IČO [DOPLNIŤ]</span>
+      <span>SK / EN</span>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Nunito+Sans:wght@400;600;700&display=swap">
+  <style>
+    body { margin: 0; background: #f6efe4; font-family: 'Nunito Sans', 'Segoe UI', Arial, sans-serif; color: #2b2118; }
+    a { color: #c9694a; text-decoration: none; } a:hover { color: #a8533a; }
+    .display { font-family: 'Outfit', 'Trebuchet MS', 'Segoe UI', sans-serif; }
+
+    /* Reveal on load — one orchestrated entrance, staggered */
+    @keyframes rp-fade-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    .rp-reveal { animation: rp-fade-up 0.7s ease-out both; }
+    .rp-d1 { animation-delay: 0.1s; } .rp-d2 { animation-delay: 0.25s; } .rp-d3 { animation-delay: 0.4s; } .rp-d4 { animation-delay: 0.55s; }
+
+    /* Rotating word in the headline */
+    @keyframes rp-words { 0%, 17% { transform: translateY(0); } 22%, 39% { transform: translateY(-20%); } 44%, 61% { transform: translateY(-40%); } 66%, 83% { transform: translateY(-60%); } 88%, 100% { transform: translateY(-80%); } }
+    .rp-rotor { display: inline-block; height: 1.06em; overflow: hidden; vertical-align: bottom; }
+    .rp-rotor-col { display: flex; flex-direction: column; animation: rp-words 12s cubic-bezier(0.7, 0, 0.3, 1) infinite; }
+    .rp-rotor-col > span { display: block; height: 1.06em; line-height: 1.06; }
+
+    /* Photo deck — the back card is pulled out and lands on top; three cards, one cycle = 12 s */
+    @keyframes rp-deck {
+      0%, 27%      { transform: translate(32px, -30px) rotate(5deg) scale(0.92); z-index: 1; }
+      27.01%       { transform: translate(32px, -30px) rotate(5deg) scale(0.92); z-index: 4; }
+      30%          { transform: translate(-80px, 44px) rotate(-10deg) scale(0.96); z-index: 4; }
+      34%          { transform: translate(0, 0) rotate(-1deg) scale(1); z-index: 4; }
+      34.01%, 61%  { transform: translate(0, 0) rotate(-1deg) scale(1); z-index: 3; }
+      61.01%       { transform: translate(0, 0) rotate(-1deg) scale(1); z-index: 2; }
+      67%, 94%     { transform: translate(16px, -15px) rotate(2deg) scale(0.96); z-index: 2; }
+      94.01%       { transform: translate(16px, -15px) rotate(2deg) scale(0.96); z-index: 1; }
+      100%         { transform: translate(32px, -30px) rotate(5deg) scale(0.92); z-index: 1; }
+    }
+    .rp-card { position: absolute; top: 40px; right: 0; width: 86%; height: 390px; border-radius: 28px; box-shadow: 0 18px 40px rgba(43, 33, 24, 0.16); transform-origin: 50% 60%; animation: rp-deck 12s cubic-bezier(0.65, 0, 0.35, 1) infinite; display: flex; align-items: flex-end; overflow: hidden; }
+    .rp-c1 { animation-delay: -1.3s; } .rp-c2 { animation-delay: -5.3s; } .rp-c3 { animation-delay: -9.3s; }
+
+    /* Reviews — a slow horizontal stream of guest reviews; pauses on hover */
+    @keyframes rp-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .rp-reviews { display: flex; width: max-content; animation: rp-marquee 48s linear infinite; }
+    .rp-reviews:hover { animation-play-state: paused; }
+    .rp-reviews > div { width: 360px; margin-right: 20px; }
+  </style>
+</helmet>
+<div style="width: 1200px; background: #f6efe4; color: #2b2118; display: flex; flex-direction: column;">
+
+  <!-- Nav -->
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 26px 64px;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <div style="width: 36px; height: 36px; background: #c9694a; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 11a4 4 0 1 0-8 0"></path><path d="M12 3v2"></path><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"></path></svg>
+      </div>
+      <div class="display" style="font-size: 19px; font-weight: 700; color: #2b2118;">Rental Partners</div>
+    </div>
+    <div style="display: flex; gap: 28px; align-items: center; font-size: 15px; font-weight: 600; color: #6b5b4e;">
+      <span>Služby</span>
+      <span>Cenník</span>
+      <span>Výsledky</span>
+      <span>O nás</span>
+      <span>Kontakt</span>
+    </div>
+    <div style="display: flex; gap: 16px; align-items: center;">
+      <div style="font-size: 13px; font-weight: 700; color: #6b5b4e;"><span style="color: #2b2118;">SK</span> / EN</div>
+      <div style="padding: 12px 22px; background: #2b2118; color: #f6efe4; border-radius: 999px; font-size: 14px; font-weight: 700;">Porozprávajme sa</div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div style="display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 48px; padding: 56px 64px 64px; align-items: center;">
+    <div style="display: flex; flex-direction: column; gap: 24px;">
+      <div class="rp-reveal" style="display: inline-flex; align-self: flex-start; padding: 8px 16px; background: #e9dcc6; border-radius: 999px; font-size: 13px; font-weight: 700; color: #6b5b4e;">Správa bytov v Bratislave</div>
+      <h1 class="display rp-reveal rp-d1" style="margin: 0; font-size: 62px; line-height: 1.06; font-weight: 700; letter-spacing: -0.02em; color: #2b2118;">Váš byt, náš tím.<br>Za vás riešime<br><span class="rp-rotor" style="color: #c9694a;"><span class="rp-rotor-col"><span>hostí.</span><span>fotenie.</span><span>upratovanie.</span><span>ceny.</span><span>hostí.</span></span></span></h1>
+      <p class="rp-reveal rp-d2" style="margin: 0; font-size: 18px; line-height: 1.65; color: #6b5b4e; max-width: 500px;">Sme partneri, nie sprostredkovatelia. Byt vám buď spravujeme za 10 % z obratu, alebo si ho od vás prenajmeme a platíme vám pevný nájom. V oboch prípadoch sa o všetko staráme my.</p>
+      <div class="rp-reveal rp-d3" style="display: flex; gap: 14px; align-items: center; margin-top: 6px;">
+        <div style="padding: 17px 30px; background: #c9694a; color: #ffffff; border-radius: 999px; font-size: 15px; font-weight: 700;">Chcem odhad výnosu</div>
+        <div style="display: flex; align-items: center; gap: 8px; padding: 17px 8px; color: #2b2118; font-size: 15px; font-weight: 700;">
+          Dva spôsoby spolupráce
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2b2118" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"></path><path d="M6 13l6 6 6-6"></path></svg>
+        </div>
+      </div>
+    </div>
+    <div class="rp-reveal rp-d2" style="position: relative; height: 500px;">
+      <div class="rp-card rp-c3" style="background: #e3d5bd;">
+        <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #8a7a68; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">[ Fotka bytu 3 ]</div>
+        <div style="position: relative; display: flex; align-items: center; gap: 8px; margin: 0 0 18px 18px; padding: 8px 14px; background: rgba(255, 255, 255, 0.92); border-radius: 999px; font-size: 13px; font-weight: 700; color: #2b2118;">[Názov bytu] · Hradný vrch</div>
+      </div>
+      <div class="rp-card rp-c2" style="background: #cdb999;">
+        <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #6b5b4e; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">[ Fotka bytu 2 ]</div>
+        <div style="position: relative; display: flex; align-items: center; gap: 8px; margin: 0 0 18px 18px; padding: 8px 14px; background: rgba(255, 255, 255, 0.92); border-radius: 999px; font-size: 13px; font-weight: 700; color: #2b2118;">[Názov bytu] · Staré Mesto</div>
+      </div>
+      <div class="rp-card rp-c1" style="background: #dccbb0;">
+        <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #8a7a68; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">[ Fotka bytu 1 ]</div>
+        <div style="position: relative; display: flex; align-items: center; gap: 8px; margin: 0 0 18px 18px; padding: 8px 14px; background: rgba(255, 255, 255, 0.92); border-radius: 999px; font-size: 13px; font-weight: 700; color: #2b2118;">[Názov bytu] · Centrum</div>
+      </div>
+      <div style="position: absolute; left: 0; bottom: 0; z-index: 5; display: flex; align-items: center; gap: 14px; padding: 18px 22px; background: #ffffff; border-radius: 20px; box-shadow: 0 12px 32px rgba(43, 33, 24, 0.12);">
+        <div style="width: 44px; height: 44px; border-radius: 999px; background: #6e8b6a; display: flex; align-items: center; justify-content: center;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 2px;">
+          <div class="display" style="font-size: 18px; font-weight: 700; color: #2b2118;">4,89 z 5 · Superhost</div>
+          <div style="font-size: 13px; color: #6b5b4e;">Airbnb · 108 recenzií · Booking [DOPLNIŤ]</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reviews stream -->
+  <div style="display: flex; flex-direction: column; gap: 20px; padding: 24px 0 40px; overflow: hidden;">
+    <div style="display: flex; align-items: center; justify-content: space-between; padding: 0 64px;">
+      <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #8a7a68;">Z recenzií hostí · Airbnb a Booking</div>
+      <div style="font-size: 13px; font-weight: 700; color: #c9694a;">Všetky recenzie →</div>
+    </div>
+    <div style="padding-left: 64px;">
+    <div class="rp-reviews">
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; background: #ffffff; border-radius: 20px;">
+        <div style="display: flex; gap: 3px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg></div>
+        <div style="font-size: 15px; line-height: 1.5; color: #2b2118;">„[Citát z recenzie — o lokalite]“</div>
+        <div style="font-size: 13px; color: #8a7a68;">[Meno hosťa] · [Airbnb / Booking] · [mesiac rok]</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; background: #ffffff; border-radius: 20px;">
+        <div style="display: flex; gap: 3px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg></div>
+        <div style="font-size: 15px; line-height: 1.5; color: #2b2118;">„[Citát z recenzie — o vybavení bytu]“</div>
+        <div style="font-size: 13px; color: #8a7a68;">[Meno hosťa] · [Airbnb / Booking] · [mesiac rok]</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; background: #ffffff; border-radius: 20px;">
+        <div style="display: flex; gap: 3px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg></div>
+        <div style="font-size: 15px; line-height: 1.5; color: #2b2118;">„[Citát z recenzie — o rýchlej komunikácii]“</div>
+        <div style="font-size: 13px; color: #8a7a68;">[Meno hosťa] · [Airbnb / Booking] · [mesiac rok]</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; background: #ffffff; border-radius: 20px;">
+        <div style="display: flex; gap: 3px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg></div>
+        <div style="font-size: 15px; line-height: 1.5; color: #2b2118;">„[Citát z recenzie — o čistote]“</div>
+        <div style="font-size: 13px; color: #8a7a68;">[Meno hosťa] · [Airbnb / Booking] · [mesiac rok]</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; background: #ffffff; border-radius: 20px;">
+        <div style="display: flex; gap: 3px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg></div>
+        <div style="font-size: 15px; line-height: 1.5; color: #2b2118;">„[Citát z recenzie — o celkovom dojme]“</div>
+        <div style="font-size: 13px; color: #8a7a68;">[Meno hosťa] · [Airbnb / Booking] · [mesiac rok]</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; background: #ffffff; border-radius: 20px;">
+        <div style="display: flex; gap: 3px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg></div>
+        <div style="font-size: 15px; line-height: 1.5; color: #2b2118;">„[Citát z recenzie — o lokalite]“</div>
+        <div style="font-size: 13px; color: #8a7a68;">[Meno hosťa] · [Airbnb / Booking] · [mesiac rok]</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; background: #ffffff; border-radius: 20px;">
+        <div style="display: flex; gap: 3px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg></div>
+        <div style="font-size: 15px; line-height: 1.5; color: #2b2118;">„[Citát z recenzie — o vybavení bytu]“</div>
+        <div style="font-size: 13px; color: #8a7a68;">[Meno hosťa] · [Airbnb / Booking] · [mesiac rok]</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; background: #ffffff; border-radius: 20px;">
+        <div style="display: flex; gap: 3px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg></div>
+        <div style="font-size: 15px; line-height: 1.5; color: #2b2118;">„[Citát z recenzie — o rýchlej komunikácii]“</div>
+        <div style="font-size: 13px; color: #8a7a68;">[Meno hosťa] · [Airbnb / Booking] · [mesiac rok]</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; background: #ffffff; border-radius: 20px;">
+        <div style="display: flex; gap: 3px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg></div>
+        <div style="font-size: 15px; line-height: 1.5; color: #2b2118;">„[Citát z recenzie — o čistote]“</div>
+        <div style="font-size: 13px; color: #8a7a68;">[Meno hosťa] · [Airbnb / Booking] · [mesiac rok]</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; background: #ffffff; border-radius: 20px;">
+        <div style="display: flex; gap: 3px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#6e8b6a"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg></div>
+        <div style="font-size: 15px; line-height: 1.5; color: #2b2118;">„[Citát z recenzie — o celkovom dojme]“</div>
+        <div style="font-size: 13px; color: #8a7a68;">[Meno hosťa] · [Airbnb / Booking] · [mesiac rok]</div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <!-- Two models -->
+  <div style="display: flex; flex-direction: column; gap: 32px; padding: 72px 64px;">
+    <div style="display: flex; flex-direction: column; gap: 10px; max-width: 700px;">
+      <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #c9694a;">Modely spolupráce</div>
+      <h2 class="display" style="margin: 0; font-size: 38px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; color: #2b2118;">Dva spôsoby, ako s nami spolupracovať</h2>
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #6b5b4e;">Vyberiete si podľa toho, či chcete vyšší výnos, alebo istý príjem. O byt sa v oboch prípadoch staráme rovnako.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px;">
+      <div style="display: flex; flex-direction: column; gap: 18px; padding: 36px; background: #ffffff; border-radius: 28px;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <div class="display" style="font-size: 24px; font-weight: 700; color: #2b2118;">Správa bytu</div>
+          <div style="padding: 6px 12px; background: #e9dcc6; border-radius: 999px; font-size: 13px; font-weight: 700; color: #6b5b4e;">10 % z obratu</div>
+        </div>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #6b5b4e;">Byt zostáva váš a my ho prevádzkujeme na Airbnb a Booking. Vy dostávate výnos podľa obsadenosti — v silnej sezóne viac — a my z neho desatinu.</p>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 15px; color: #2b2118;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6e8b6a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>Najvyšší možný výnos z bytu</div>
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 15px; color: #2b2118;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6e8b6a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>Mesačné vyúčtovanie, prehľad o každom pobyte</div>
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 15px; color: #2b2118;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6e8b6a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>Príjem sa mesiac od mesiaca líši</div>
+        </div>
+        <div style="font-size: 14px; color: #8a7a68; padding-top: 6px; border-top: 1px solid #e9dcc6;">Pre majiteľov, ktorí chcú z bytu vyťažiť maximum.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 18px; padding: 36px; background: #2b2118; border-radius: 28px; color: #f6efe4;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <div class="display" style="font-size: 24px; font-weight: 700; color: #f6efe4;">Garantovaný nájom</div>
+          <div style="padding: 6px 12px; background: #6e8b6a; border-radius: 999px; font-size: 13px; font-weight: 700; color: #ffffff;">pevná suma mesačne</div>
+        </div>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #d9ccbb;">Byt nám prenajmete a my vám platíme dohodnutý nájom každý mesiac — bez ohľadu na to, či bol byt plný alebo prázdny. Krátkodobý prenájom, hostí aj starostlivosť riešime na vlastné riziko.</p>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 15px; color: #f6efe4;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8fb08a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>Istý príjem, rovnaký každý mesiac</div>
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 15px; color: #f6efe4;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8fb08a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>Prázdne obdobia sú náš problém, nie váš</div>
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 15px; color: #f6efe4;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8fb08a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>O byt sa staráme ako pri správe</div>
+        </div>
+        <div style="font-size: 14px; color: #b8a99a; padding-top: 6px; border-top: 1px solid rgba(246, 239, 228, 0.15);">Pre majiteľov, ktorí chcú istotu a nulové starosti.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- What we take over (white band) -->
+  <div style="display: flex; flex-direction: column; gap: 32px; padding: 64px; background: #ffffff;">
+    <div style="display: flex; flex-direction: column; gap: 10px; max-width: 620px;">
+      <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #c9694a;">Služby</div>
+      <h2 class="display" style="margin: 0; font-size: 38px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; color: #2b2118;">Čo preberáme za vás</h2>
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #6b5b4e;">Všetko, čo by ste inak riešili vy — každý deň, aj cez víkend. Pri oboch modeloch.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px;">
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; background: #f6efe4; border-radius: 20px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9694a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg>
+        <div class="display" style="font-size: 17px; font-weight: 600; color: #2b2118;">Fotenie</div>
+        <div style="font-size: 14px; line-height: 1.55; color: #6b5b4e;">Profesionálne fotky bytu pre inzeráty.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; background: #f6efe4; border-radius: 20px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9694a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"></rect><circle cx="8.5" cy="9.5" r="1.5"></circle><path d="M21 16l-5-5-8 8"></path></svg>
+        <div class="display" style="font-size: 17px; font-weight: 600; color: #2b2118;">Inzeráty a ceny</div>
+        <div style="font-size: 14px; line-height: 1.55; color: #6b5b4e;">Airbnb, Booking a ďalšie — texty, ceny, sezóny.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; background: #f6efe4; border-radius: 20px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9694a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg>
+        <div class="display" style="font-size: 17px; font-weight: 600; color: #2b2118;">Hostia</div>
+        <div style="font-size: 14px; line-height: 1.55; color: #6b5b4e;">Dopyty, rezervácie, check-in aj nočné otázky.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; background: #f6efe4; border-radius: 20px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9694a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"></path><path d="M19 15l.8 2.2 2.2.8-2.2.8L19 21l-.8-2.2-2.2-.8 2.2-.8z"></path></svg>
+        <div class="display" style="font-size: 17px; font-weight: 600; color: #2b2118;">Upratovanie</div>
+        <div style="font-size: 14px; line-height: 1.55; color: #6b5b4e;">Po každom hosťovi, čistá bielizeň, doplnené zásoby.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px; background: #f6efe4; border-radius: 20px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9694a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0 5 5L13 18l-3-3 6.7-8.7z"></path><path d="M3 21l5-5"></path></svg>
+        <div class="display" style="font-size: 17px; font-weight: 600; color: #2b2118;">Údržba</div>
+        <div style="font-size: 14px; line-height: 1.55; color: #6b5b4e;">Drobné opravy aj dlhodobá starostlivosť o byt.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA (dark block) -->
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 40px; margin: 72px 64px; padding: 48px 56px; background: #2b2118; border-radius: 28px;">
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #8fb08a;">Nezáväzne a zadarmo</div>
+      <div class="display" style="font-size: 30px; font-weight: 600; line-height: 1.25; color: #f6efe4; max-width: 620px; text-wrap: pretty;">Staráme sa o byty v centre Bratislavy. Ten váš môže byť ďalší.</div>
+    </div>
+    <div style="padding: 17px 30px; background: #c9694a; color: #ffffff; border-radius: 999px; font-size: 15px; font-weight: 700; white-space: nowrap;">Chcem odhad výnosu</div>
+  </div>
+
+  <!-- Footer -->
+  <div style="display: flex; flex-direction: column; gap: 40px; padding: 56px 64px 32px; background: #2b2118; color: #f6efe4;">
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px;">
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <div class="display" style="font-size: 19px; font-weight: 700; color: #f6efe4;">Rental Partners</div>
+        <div style="font-size: 14px; line-height: 1.6; color: #b8a99a;">Správa bytov a garantovaný nájom v Bratislave.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; color: #b8a99a;">
+        <div style="font-size: 13px; font-weight: 700; color: #f6efe4;">Stránky</div>
+        <span>Služby</span><span>Cenník</span><span>Výsledky</span><span>O nás</span><span>Kontakt</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; color: #b8a99a;">
+        <div style="font-size: 13px; font-weight: 700; color: #f6efe4;">Kontakt</div>
+        <span>[TELEFÓN]</span><span>[E-MAIL]</span><span>[ADRESA]</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; color: #b8a99a;">
+        <div style="font-size: 13px; font-weight: 700; color: #f6efe4;">Hodnotenia hostí</div>
+        <span>Airbnb · 4,89 z 5 · Superhost</span>
+        <span>Booking · [DOPLNIŤ]</span>
+        <span style="color: #e0a58c;">Naše profily →</span>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 1px solid rgba(246, 239, 228, 0.15); font-size: 13px; color: #8a7a68;">
+      <span>© 2026 Rental Partners · [OBCHODNÉ MENO] · IČO [DOPLNIŤ]</span>
+      <span>SK / EN</span>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>
