@@ -243,3 +243,18 @@ Airbnb zobrazilo 10 zo 16 inzerátov. Návrh 6 na web (najviac recenzií + rozma
 Ďalšie videné: Apartmán Castle Hill Terrace · Castle Hill Residence: parkovanie zdarma · Moderný apartmán na hradnom vrchu s bezplatným parkovaním · Apartmán Castle Hill s 2 spálňami a bezplatným parkovaním (hodnotenia sa nezobrazili).
 
 Potrebujem: **priame linky na týchto 6 inzerátov** (Airbnb aj Booking), ich lokalitu (mestská časť) a počet izieb — alebo mi pošli link na Booking profil a skúsim to načítať.
+
+### A2 — plné znenie (2. načítanie, 5. 9. 2026) a kam som ich dal
+
+**Jens** (Aßlar, Nemecko), júl 2026 — „Strávili sme v Bratislave tri skvelé dni a od začiatku sme sa v tomto ubytovaní cítili veľmi príjemne. Komunikácia s Amandou bola vždy priateľská a rýchla. Pokyny k ubytovaniu a k používaniu podzemného parkoviska boli dokonalé a ľahko pochopiteľné. Apartmán je moderne zariadený, veľmi čistý a nachádza sa v tichej štvrti. Za zmienku stojí najmä dokonalá poloha – do starého mesta sa ľahko dostanete pešo za niekoľko minút. Toto miesto môžeme plne odporučiť a pri ďalšej návšteve Bratislavy by sme sa tu opäť kedykoľvek ubytovali."
+→ komunikácia + check-in + čistota + poloha. **Kto je Amanda?** (spoluhostiteľka?) — v citáte na webe som meno vynechal, kým nepovieš.
+
+**Karl** (Brunoy, Francúzsko), júl 2026 — „Bolo to perfektné! Skvelá poloha, niečo vyše 5 minút chôdze od centra, ale napriek tomu naozaj pokojné. Nikdy som nemal lepšie pokyny na nájdenie ubytovania. Vstup bol veľmi jednoduchý, garáž bola pekná a Tomas bol veľmi nápomocný a vždy odpovedal okamžite. Určite jedno z najlepších miest na ubytovanie v Bratislave."
+→ komunikácia + check-in + poloha
+
+**Carolin** (Kernen, Nemecko), august 2026 — „Pekný malý podkrovný apartmán. Nachádza sa v centre a do centra mesta a k pamiatkam sa rýchlo dostanete pešo. Výhodou je parkovacie miesto v podzemnej garáži v budove. V samotnom dome bolo ticho, ale ubytovanie sa nachádza na ulici, ktorú je počuť."
+→ použitá len prvá časť (poloha)
+
+**Zapracované do návrhu (5. 9.):**
+- Domov, pás recenzií: Carolin (poloha) · Jens (vybavenie, čistota) · Karl (komunikácia, check-in) · Susanne (celkový dojem) · Jens (odporúčanie)
+- Výsledky, 2 citáty: Karl (plný) · Jens (komunikácia + čistota, bez mena Amanda) — oba Airbnb; citát z Bookingu doplníme, keď bude URL profilu
