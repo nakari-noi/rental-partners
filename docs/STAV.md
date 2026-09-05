@@ -1,6 +1,6 @@
 # Rental Partners — stav projektu a ďalšie kroky
 
-*Aktualizované: 5. 9. 2026*
+*Aktualizované: 5. 9. 2026 (2. session)*
 
 ## Kde čo je
 
@@ -42,8 +42,8 @@
 
 ## Ďalšie kroky (v poradí)
 
-1. [ ] Claude: vytiahnuť všetky texty z návrhov do `docs/texty.md` po stránkach → klient prejde a opraví
-2. [ ] Klient: poslať linky na Airbnb a Booking profil → Claude načíta názvy bytov, lokality, hodnotenia, citáty recenzií
+1. [x] Claude: texty vytiahnuté do `docs/texty.md` (5. 9.) → **klient prejde a opraví**
+2. [~] Airbnb načítané (prílohy A, B v texty.md — 109 recenzií, 10 inzerátov, 5 citátov) · **Booking link chýba** · treba priame linky na 6 vybraných inzerátov
 3. [ ] Klient: logo, fotky bytov (aspoň 6 + 3 na domov), fotka Tomáša/tímu → do `podklady/`
 4. [ ] Klient: fakty — kontakty, IČO, obchodné meno, Booking čísla, príbeh firmy, tím, podmienky (výplata, upratovanie, energie, blokovanie termínov, dĺžka zmluvy a výpoveď pri oboch modeloch, ako sa určuje garantovaný nájom)
 5. [ ] Voliteľné: mobilný náhľad domova na plátne
