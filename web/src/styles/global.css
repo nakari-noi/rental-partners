@@ -78,6 +78,9 @@
   .model-card[aria-pressed="true"].model-b { box-shadow: 0 0 0 3px var(--color-sage), 0 18px 40px rgba(43, 33, 24, 0.14); }
   .model-card:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 4px; }
   .col-dim { opacity: .7; transition: opacity .3s ease; }
+  .seg { color: var(--color-ink-soft); transition: background .2s ease, color .2s ease; }
+  .seg[aria-pressed="true"] { background: var(--color-ink); color: var(--color-bg); }
+  .seg:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
 
   /* Form fields */
   .field { width: 100%; height: 48px; padding: 0 16px; border: 1px solid var(--color-sand-deep); border-radius: 12px; background: var(--color-bg); font-family: var(--font-body); font-size: 16px; font-weight: 400; line-height: 1.4; color: var(--color-ink); }
@@ -97,6 +100,13 @@
     .reviews { animation: none; flex-wrap: wrap; width: auto; }
     .model-card, .model-card:hover { transition: none; transform: none; }
   }
+}
+
+/* Unlayered on purpose (must beat the `flex` utility): below lg the segmented control drives the choice — only the chosen model card is shown */
+@media (max-width: 1023px) {
+  .model-card[aria-pressed="false"] { display: none; }
+  .model-card[aria-pressed="true"], .model-card[aria-pressed="true"].model-a, .model-card[aria-pressed="true"].model-b { box-shadow: none; transform: none; cursor: default; opacity: 1; }
+  .model-card:hover { transform: none; }
 }
 
 @keyframes rp-fade-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }

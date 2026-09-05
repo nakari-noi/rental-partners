@@ -9,7 +9,7 @@ const links = [
 ];
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
 ---
-<header class="wrap flex items-center justify-between gap-4 py-5 md:py-6">
+<header class="wrap relative flex items-center justify-between gap-4 py-5 md:py-6">
   <a href="/" aria-label="Rental Partners — domov" class="shrink-0"><Logo class="h-10 md:h-[46px] w-auto block" /></a>
   <nav class="hidden lg:flex items-center gap-7 text-[15px] font-semibold text-ink-soft" aria-label="Hlavná navigácia">
     {links.map((l) => (
@@ -23,15 +23,15 @@ const path = Astro.url.pathname.replace(/\/$/, '') || '/';
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path data-icon-open d="M4 7h16M4 12h16M4 17h16"></path><path data-icon-close class="hidden" d="M6 6l12 12M18 6L6 18"></path></svg>
     </button>
   </div>
+  <div id="mobilne-menu" class="lg:hidden hidden absolute right-5 md:right-10 top-[calc(100%-8px)] z-30 w-[248px]" data-menu>
+    <nav class="flex flex-col gap-0.5 bg-surface rounded-[var(--radius-card)] p-2 border border-sand shadow-[var(--shadow-float)]" aria-label="Mobilná navigácia">
+      {links.map((l) => (
+        <a href={l.href} class:list={['px-3.5 py-2.5 rounded-xl text-[15px] font-semibold min-h-11 flex items-center', path === l.href ? 'bg-sand text-ink' : 'text-ink-soft']}>{l.label}</a>
+      ))}
+      <a href="/kontakt" class="btn-primary !py-3 !px-5 !text-sm mt-1.5">Chcem odhad výnosu</a>
+    </nav>
+  </div>
 </header>
-<div id="mobilne-menu" class="lg:hidden hidden wrap pb-6" data-menu>
-  <nav class="flex flex-col gap-1 bg-surface rounded-[var(--radius-card)] p-3" aria-label="Mobilná navigácia">
-    {links.map((l) => (
-      <a href={l.href} class:list={['px-4 py-3 rounded-xl font-semibold min-h-11 flex items-center', path === l.href ? 'bg-sand text-ink' : 'text-ink-soft']}>{l.label}</a>
-    ))}
-    <a href="/kontakt" class="btn-primary mt-2">Chcem odhad výnosu</a>
-  </nav>
-</div>
 <script>
   const btn = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
   const menu = document.querySelector<HTMLElement>('[data-menu]');

@@ -10,11 +10,19 @@ import Check from '../components/Check.astro';
     <p class="mt-5 text-lg leading-relaxed text-ink-soft max-w-[640px]">Maximálny výnos, alebo istý príjem každý mesiac. Kliknite na model — o byt sa v oboch prípadoch staráme my.</p>
   </section>
 
+  <!-- Mobile / tablet: compact switch, only the chosen model card is shown -->
+  <section class="wrap lg:hidden pt-4">
+    <div class="flex p-1 bg-surface rounded-full border border-sand" role="tablist" aria-label="Model spolupráce">
+      <button type="button" class="seg flex-1 min-h-11 px-3 rounded-full text-sm font-bold" role="tab" aria-pressed="true" aria-selected="true" data-model="a">Správa · 10 %</button>
+      <button type="button" class="seg flex-1 min-h-11 px-3 rounded-full text-sm font-bold" role="tab" aria-pressed="false" aria-selected="false" data-model="b">Garantovaný nájom</button>
+    </div>
+  </section>
+
   <section class="wrap grid lg:grid-cols-2 gap-6 pt-4" role="tablist" aria-label="Model spolupráce">
     <button type="button" class="model-card model-a text-left flex flex-col gap-4 p-7 md:p-9 bg-surface rounded-[var(--radius-block)]" role="tab" aria-pressed="true" aria-selected="true" aria-controls="detail-a" data-model="a">
       <div class="flex flex-wrap items-center justify-between gap-2">
         <span class="display text-2xl font-bold">Správa bytu</span>
-        <span class="chip !bg-accent !text-white whitespace-nowrap" data-tag="a">Vybrané</span>
+        <span class="chip !bg-accent !text-white whitespace-nowrap hidden lg:inline-flex" data-tag="a">Vybrané</span>
       </div>
       <div class="flex items-baseline gap-3"><span class="display text-[84px] lg:text-[112px] leading-[0.92] font-bold tracking-[-0.04em] text-accent whitespace-nowrap">10 %</span><span class="display text-[22px] font-semibold">z obratu</span></div>
       <p class="text-ink-soft leading-relaxed">Byt zostáva váš a my ho prevádzkujeme na Airbnb a Booking. Z príjmov z pobytov si berieme desatinu — keď byt nezarába, nezarábame ani my.</p>
@@ -23,7 +31,7 @@ import Check from '../components/Check.astro';
     <button type="button" class="model-card model-b text-left flex flex-col gap-4 p-7 md:p-9 bg-ink text-bg rounded-[var(--radius-block)]" role="tab" aria-pressed="false" aria-selected="false" aria-controls="detail-b" data-model="b">
       <div class="flex flex-wrap items-center justify-between gap-2">
         <span class="display text-2xl font-bold text-bg">Garantovaný nájom</span>
-        <span class="chip !bg-bg/15 !text-[#d9ccbb] whitespace-nowrap" data-tag="b">Zobraziť detaily</span>
+        <span class="chip !bg-bg/15 !text-[#d9ccbb] whitespace-nowrap hidden lg:inline-flex" data-tag="b">Zobraziť detaily</span>
       </div>
       <div class="display text-[40px] lg:text-[54px] leading-[1.02] font-bold tracking-[-0.03em] text-bg py-2.5">Pevná suma<br />každý mesiac</div>
       <p class="text-[#d9ccbb] leading-relaxed">Byt nám prenajmete a my vám platíme dohodnutý nájom — bez ohľadu na to, či bol byt plný alebo prázdny. Krátkodobý prenájom robíme na vlastné riziko.</p>
@@ -147,8 +155,14 @@ import Check from '../components/Check.astro';
 
   <script>
     const cards = document.querySelectorAll<HTMLButtonElement>('.model-card');
+    const segs = document.querySelectorAll<HTMLButtonElement>('.seg');
     const panels: Record<string, HTMLElement | null> = { a: document.getElementById('detail-a'), b: document.getElementById('detail-b') };
     function pick(model: string) {
+      segs.forEach((s) => {
+        const on = s.dataset.model === model;
+        s.setAttribute('aria-pressed', String(on));
+        s.setAttribute('aria-selected', String(on));
+      });
       cards.forEach((c) => {
         const on = c.dataset.model === model;
         c.setAttribute('aria-pressed', String(on));
@@ -179,5 +193,6 @@ import Check from '../components/Check.astro';
       });
     }
     cards.forEach((c) => c.addEventListener('click', () => pick(c.dataset.model || 'a')));
+    segs.forEach((s) => s.addEventListener('click', () => pick(s.dataset.model || 'a')));
   </script>
 </Base>
