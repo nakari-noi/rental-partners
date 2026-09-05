@@ -3,37 +3,37 @@ import Logo from './Logo.astro';
 const year = new Date().getFullYear();
 ---
 <footer class="bg-ink text-bg mt-6">
-  <div class="container py-14 pb-8 flex flex-col gap-10">
+  <div class="wrap py-14 pb-8 flex flex-col gap-10">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
       <div class="flex flex-col gap-4">
         <Logo dark class="h-10 w-auto block self-start" />
         <p class="text-sm leading-relaxed text-cream-muted">Správa bytov a garantovaný nájom v Bratislave.</p>
       </div>
-      <div class="flex flex-col gap-2.5 text-sm text-cream-muted">
-        <div class="text-[13px] font-bold text-bg">Stránky</div>
-        <a href="/sluzby" class="hover:text-bg">Služby</a>
-        <a href="/cennik" class="hover:text-bg">Cenník</a>
-        <a href="/vysledky" class="hover:text-bg">Výsledky</a>
-        <a href="/o-nas" class="hover:text-bg">O nás</a>
-        <a href="/kontakt" class="hover:text-bg">Kontakt</a>
+      <div class="flex flex-col gap-1 text-sm text-cream-muted">
+        <div class="text-[13px] font-bold text-bg mb-1.5">Stránky</div>
+        <a href="/sluzby" class="py-1.5 hover:text-bg">Služby</a>
+        <a href="/cennik" class="py-1.5 hover:text-bg">Cenník</a>
+        <a href="/vysledky" class="py-1.5 hover:text-bg">Výsledky</a>
+        <a href="/o-nas" class="py-1.5 hover:text-bg">O nás</a>
+        <a href="/kontakt" class="py-1.5 hover:text-bg">Kontakt</a>
       </div>
-      <div class="flex flex-col gap-2.5 text-sm text-cream-muted">
-        <div class="text-[13px] font-bold text-bg">Kontakt</div>
-        <a href="tel:+421903989040" class="hover:text-bg">Tomáš · +421 903 989 040</a>
-        <a href="tel:+421904809476" class="hover:text-bg">Amanda · +421 904 809 476</a>
-        <a href="mailto:rentalpartners2026@gmail.com" class="hover:text-bg">rentalpartners2026@gmail.com</a>
-        <span>Námestie 1. mája 11, 811 06 Bratislava</span>
+      <div class="flex flex-col gap-1 text-sm text-cream-muted">
+        <div class="text-[13px] font-bold text-bg mb-1.5">Kontakt</div>
+        <a href="tel:+421903989040" class="py-1.5 hover:text-bg">Tomáš · +421 903 989 040</a>
+        <a href="tel:+421904809476" class="py-1.5 hover:text-bg">Amanda · +421 904 809 476</a>
+        <a href="mailto:rentalpartners2026@gmail.com" class="py-1.5 hover:text-bg break-all">rentalpartners2026@gmail.com</a>
+        <span class="py-1.5">Námestie 1. mája 11, 811 06 Bratislava</span>
       </div>
-      <div class="flex flex-col gap-2.5 text-sm text-cream-muted">
-        <div class="text-[13px] font-bold text-bg">Hodnotenia hostí</div>
-        <span>Airbnb · 4,89 z 5 · Superhost</span>
-        <span>Booking · 9,6 z 10 · 695 hodnotení</span>
-        <a href="https://sk.airbnb.com/users/show/515063940" target="_blank" rel="noopener" class="text-accent-soft hover:text-bg">Profil na Airbnb →</a>
+      <div class="flex flex-col gap-1 text-sm text-cream-muted">
+        <div class="text-[13px] font-bold text-bg mb-1.5">Hodnotenia hostí</div>
+        <span class="py-1.5">Airbnb · 4,89 z 5 · Superhost</span>
+        <span class="py-1.5">Booking · 9,6 z 10 · 695 hodnotení</span>
+        <a href="https://sk.airbnb.com/users/show/515063940" target="_blank" rel="noopener" class="py-1.5 text-accent-soft hover:text-bg">Profil na Airbnb →</a>
       </div>
     </div>
     <div class="flex flex-col sm:flex-row justify-between gap-2 pt-5 border-t border-bg/15 text-[13px] text-ink-muted">
-      <span>© {year} Rental Partners s. r. o. · IČO 57632499 · DIČ 2122860663</span>
-      <a href="/ochrana-osobnych-udajov" class="hover:text-bg">Ochrana osobných údajov</a>
+      <span class="py-1">© {year} Rental Partners s. r. o. · IČO 57632499 · DIČ 2122860663</span>
+      <a href="/ochrana-osobnych-udajov" class="py-1 hover:text-bg">Ochrana osobných údajov</a>
     </div>
   </div>
 </footer>

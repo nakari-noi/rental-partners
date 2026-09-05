@@ -4,13 +4,13 @@ import Base from '../layouts/Base.astro';
 const FORM_KEY = 'DOPLNIT_WEB3FORMS_KEY';
 ---
 <Base title="Kontakt" description="Napíšte nám pár informácií o byte. Ozveme sa, stretneme sa priamo v byte a odhad výnosu je zadarmo a nezáväzný.">
-  <section class="container pt-10 pb-6 lg:pt-14">
+  <section class="wrap pt-10 pb-6 lg:pt-14">
     <span class="chip">Kontakt</span>
     <h1 class="mt-5 text-[38px] md:text-[52px] leading-[1.08] font-bold tracking-[-0.02em] max-w-[820px] text-pretty">Poďme sa porozprávať o vašom byte</h1>
     <p class="mt-5 text-lg leading-relaxed text-ink-soft max-w-[640px]">Napíšte nám pár informácií o byte. Ozveme sa čo najskôr a dohodneme stretnutie priamo v byte — odhad výnosu je zadarmo a nezáväzný.</p>
   </section>
 
-  <section class="container grid lg:grid-cols-[1.25fr_0.75fr] gap-8 lg:gap-10 pt-4 pb-16 items-start">
+  <section class="wrap grid lg:grid-cols-[1.25fr_0.75fr] gap-8 lg:gap-10 pt-4 pb-16 items-start">
     <form action="https://api.web3forms.com/submit" method="POST" class="flex flex-col gap-5 p-6 md:p-9 bg-surface rounded-[var(--radius-block)]" id="dopyt">
       <input type="hidden" name="access_key" value={FORM_KEY} />
       <input type="hidden" name="subject" value="Nový dopyt z rentalpartners.sk" />
@@ -44,7 +44,7 @@ const FORM_KEY = 'DOPLNIT_WEB3FORMS_KEY';
         </div>
       </fieldset>
       <label class="flex flex-col gap-1.5 text-[13px] font-bold text-ink-soft">Čo by ste chceli vedieť (nepovinné)<textarea class="field" name="sprava"></textarea></label>
-      <label class="flex items-start gap-2.5 text-[13px] leading-relaxed text-ink-soft"><input type="checkbox" name="suhlas" required class="mt-0.5 w-[18px] h-[18px] accent-[#c9694a]" />Súhlasím so spracovaním údajov na účel odpovede na môj dopyt. <a href="/ochrana-osobnych-udajov" class="underline">Ochrana osobných údajov</a></label>
+      <label class="flex items-start gap-2.5 text-[13px] leading-relaxed text-ink-soft"><input type="checkbox" name="suhlas" required class="mt-0.5 w-[18px] h-[18px] shrink-0 accent-[#c9694a]" /><span>Súhlasím so spracovaním údajov na účel odpovede na môj dopyt. <a href="/ochrana-osobnych-udajov" class="underline">Ochrana osobných údajov</a></span></label>
       <button type="submit" class="btn-primary text-base py-[18px]">Chcem odhad výnosu</button>
       <p class="text-[13px] text-ink-muted" data-form-note hidden>Ďakujeme, dopyt sme dostali. Ozveme sa čo najskôr.</p>
     </form>
@@ -65,10 +65,10 @@ const FORM_KEY = 'DOPLNIT_WEB3FORMS_KEY';
           <li class="flex gap-3"><b class="display text-accent w-6 shrink-0">03</b>Dostanete odhad výnosu a návrh zmluvy. Rozhodnutie je na vás.</li>
         </ol>
       </div>
-      <div class="rounded-[var(--radius-block)] overflow-hidden h-[260px]">
-        <iframe title="Mapa — Rental Partners, Námestie 1. mája, Bratislava" src="https://www.openstreetmap.org/export/embed.html?bbox=17.1000,48.1430,17.1240,48.1560&layer=mapnik&marker=48.1493,17.1116" class="w-full h-full border-0" loading="lazy"></iframe>
-      </div>
-      <p class="text-[12px] text-ink-muted -mt-2">Mapa © prispievatelia OpenStreetMap · <a href="https://www.openstreetmap.org/?mlat=48.1493&mlon=17.1116#map=17/48.1493/17.1116" target="_blank" rel="noopener" class="underline">Otvoriť väčšiu mapu</a></p>
+      <a href="https://www.openstreetmap.org/?mlat=48.1493&mlon=17.1116#map=17/48.1493/17.1116" target="_blank" rel="noopener" class="block rounded-[var(--radius-block)] overflow-hidden h-[240px]" aria-label="Otvoriť mapu — Námestie 1. mája, Bratislava">
+        <img src="/img/mapa-stare-mesto.webp" alt="Mapa Starého Mesta s vyznačeným Námestím 1. mája" class="w-full h-full object-cover" width="760" height="471" loading="lazy" />
+      </a>
+      <p class="text-[12px] text-ink-muted -mt-2 py-2">Mapa © prispievatelia OpenStreetMap · <a href="https://www.openstreetmap.org/?mlat=48.1493&mlon=17.1116#map=17/48.1493/17.1116" target="_blank" rel="noopener" class="underline">Otvoriť väčšiu mapu</a></p>
     </div>
   </section>
 

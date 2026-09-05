@@ -17,29 +17,29 @@ const praise = [
 ];
 ---
 <Base title="Výsledky" description="4,89 z 5 na Airbnb, 9,6 z 10 na Bookingu, 804 hodnotení hostí spolu. Verejné, overiteľné výsledky bytov, o ktoré sa staráme.">
-  <section class="container pt-10 pb-8 lg:pt-14">
+  <section class="wrap pt-10 pb-8 lg:pt-14">
     <span class="chip">Výsledky</span>
     <h1 class="mt-5 text-[38px] md:text-[52px] leading-[1.08] font-bold tracking-[-0.02em] max-w-[820px] text-pretty">4,89 z 5 na Airbnb. 9,6 z 10 na Bookingu.</h1>
     <p class="mt-5 text-lg leading-relaxed text-ink-soft max-w-[640px]">Hodnotenia z platforiem, kde naše byty nájdete — Airbnb, Booking a ďalšie. Verejné, overiteľné, nie z prezentácie.</p>
   </section>
 
   <section class="bg-surface py-14">
-    <div class="container">
+    <div class="wrap">
       <p class="eyebrow">Kde nás nájdete</p>
       <h2 class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">Jeden tím, rovnaké byty, verejné hodnotenia</h2>
-      <div class="grid md:grid-cols-3 gap-5 mt-7">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-7">
         <div class="flex flex-col gap-4 p-7 bg-bg rounded-[var(--radius-card)]">
-          <div class="flex items-center justify-between"><span class="display text-[22px] font-bold">Airbnb</span><span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-sage-soft text-sage rounded-full text-[13px] font-bold"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg>Superhost</span></div>
+          <div class="flex flex-wrap items-center justify-between gap-2"><span class="display text-[22px] font-bold">Airbnb</span><span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-sage-soft text-sage rounded-full text-[13px] font-bold"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg>Superhost</span></div>
           <div class="flex items-baseline gap-2"><span class="display text-[44px] font-bold leading-none">4,89</span><span class="text-sm text-ink-soft">z 5 · 109 recenzií</span></div>
           <div class="flex items-center gap-2.5"><img src="/img/tomas.webp" alt="Tomáš" class="w-10 h-10 rounded-full object-cover object-[50%_20%]" width="40" height="40" loading="lazy" /><span class="text-sm leading-snug text-ink-soft">Profil hostiteľa Tomáš,<br />hostí už 2 roky.</span></div>
-          <a href="https://sk.airbnb.com/users/show/515063940" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-bold text-accent">Otvoriť profil <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></a>
+          <a href="https://sk.airbnb.com/users/show/515063940" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 py-2 text-sm font-bold text-accent">Otvoriť profil <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></a>
         </div>
         <div class="flex flex-col gap-4 p-7 bg-bg rounded-[var(--radius-card)]">
-          <div class="flex items-center justify-between"><span class="display text-[22px] font-bold">Booking</span><span class="chip !py-1 !px-2.5">Spravuje Tomáš</span></div>
+          <div class="flex flex-wrap items-center justify-between gap-2"><span class="display text-[22px] font-bold">Booking</span><span class="chip !py-1 !px-2.5">Spravuje Tomáš</span></div>
           <div class="flex items-baseline gap-2"><span class="display text-[44px] font-bold leading-none">9,6</span><span class="text-sm text-ink-soft">z 10 · 695 hodnotení</span></div>
           <p class="text-sm leading-relaxed text-ink-soft">Dohovoríte sa slovensky, česky aj anglicky. Hodnotenia sú verejné pri každom byte na Booking.com.</p>
         </div>
-        <div class="flex flex-col justify-center gap-3 p-7 bg-ink text-bg rounded-[var(--radius-card)]">
+        <div class="flex flex-col justify-center gap-3 p-7 bg-ink text-bg rounded-[var(--radius-card)] sm:col-span-2 lg:col-span-1">
           <span class="display text-[44px] font-bold leading-none">804</span>
           <p class="text-[15px] leading-relaxed text-[#d9ccbb]">hodnotení hostí spolu — z Airbnb a Bookingu, za 2 roky hostenia v jedno- až štvorizbových bytoch v centre Bratislavy.</p>
         </div>
@@ -48,12 +48,12 @@ const praise = [
   </section>
 
   <section class="bg-sand py-14 lg:py-16">
-    <div class="container">
+    <div class="wrap">
       <p class="eyebrow">Z recenzií</p>
       <h2 class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">Čo hostia najčastejšie chvália</h2>
-      <div class="grid md:grid-cols-3 gap-5 mt-7">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-7">
         {praise.map((p) => (
-          <div class="flex flex-col gap-3 p-6 bg-surface rounded-[var(--radius-card)]">
+          <div class="flex flex-col gap-3 p-6 bg-surface rounded-[var(--radius-card)] last:sm:col-span-2 last:lg:col-span-1">
             <span class="w-11 h-11 rounded-full bg-sage-soft text-sage flex items-center justify-center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d={p.icon}></path></svg></span>
             <h3 class="text-[19px] font-semibold">{p.title}</h3>
             <p class="text-[15px] leading-relaxed text-ink-soft">{p.text}</p>
@@ -61,26 +61,26 @@ const praise = [
         ))}
       </div>
       <div class="grid md:grid-cols-2 gap-5 mt-5">
-        <blockquote class="flex flex-col gap-3.5 p-7 bg-surface rounded-[var(--radius-card)]"><p class="display text-xl leading-[1.4] italic">„Bolo to perfektné! Skvelá poloha, niečo vyše 5 minút chôdze od centra, ale napriek tomu naozaj pokojné. Tomas bol veľmi nápomocný a vždy odpovedal okamžite. Určite jedno z najlepších miest na ubytovanie v Bratislave."</p><footer class="text-sm text-ink-soft">— Karl, Brunoy (Francúzsko) · Airbnb · júl 2026</footer></blockquote>
-        <blockquote class="flex flex-col gap-3.5 p-7 bg-surface rounded-[var(--radius-card)]"><p class="display text-xl leading-[1.4] italic">„Komunikácia s Amandou bola vždy priateľská a rýchla. Pokyny k ubytovaniu a k používaniu podzemného parkoviska boli dokonalé a ľahko pochopiteľné. Apartmán je moderne zariadený, veľmi čistý a nachádza sa v tichej štvrti."</p><footer class="text-sm text-ink-soft">— Jens, Aßlar (Nemecko) · Airbnb · júl 2026</footer></blockquote>
+        <blockquote class="flex flex-col gap-3.5 p-7 bg-surface rounded-[var(--radius-card)]"><p class="display text-xl leading-[1.4] italic">„Bolo to perfektné! Skvelá poloha, niečo vyše 5 minút chôdze od centra, ale napriek tomu naozaj pokojné. Tomas bol veľmi nápomocný a vždy odpovedal okamžite. Určite jedno z najlepších miest na ubytovanie v Bratislave.“</p><footer class="text-sm text-ink-soft">— Karl, Brunoy (Francúzsko) · Airbnb · júl 2026</footer></blockquote>
+        <blockquote class="flex flex-col gap-3.5 p-7 bg-surface rounded-[var(--radius-card)]"><p class="display text-xl leading-[1.4] italic">„Komunikácia s Amandou bola vždy priateľská a rýchla. Pokyny k ubytovaniu a k používaniu podzemného parkoviska boli dokonalé a ľahko pochopiteľné. Apartmán je moderne zariadený, veľmi čistý a nachádza sa v tichej štvrti.“</p><footer class="text-sm text-ink-soft">— Jens, Aßlar (Nemecko) · Airbnb · júl 2026</footer></blockquote>
       </div>
     </div>
   </section>
 
   <section class="bg-surface py-14 lg:py-16">
-    <div class="container">
+    <div class="wrap">
       <p class="eyebrow">Portfólio</p>
       <h2 class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">Výber z bytov, o ktoré sa staráme</h2>
       <p class="mt-2 text-ink-soft max-w-[700px]">Od garsónky po štvorizbový byt, väčšina v centre a pod hradom. Každý vedie na svoj inzerát na Airbnb — s reálnymi fotkami, cenami a recenziami.</p>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-7">
         {flats.map((f) => (
-          <a href={f.url} target="_blank" rel="noopener" class="group flex flex-col gap-3">
+          <a href={f.url} target="_blank" rel="noopener" class="group flex flex-col gap-3 h-full">
             <div class="h-[220px] rounded-[var(--radius-card)] overflow-hidden"><img src={f.img} alt={f.title} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" width="600" height="400" /></div>
-            <div class="flex justify-between items-start gap-3">
+            <div class="flex flex-col gap-2">
               <div><h3 class="text-[17px] font-semibold leading-[1.25]">{f.title}</h3><p class="mt-0.5 text-[13px] text-ink-soft">{f.meta}</p></div>
-              {f.rating ? <span class="inline-flex items-center gap-1 px-2.5 py-1 bg-sage-soft text-sage rounded-full text-[13px] font-bold whitespace-nowrap"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg>{f.rating}</span> : <span class="chip !py-1 !px-2.5 whitespace-nowrap">nový inzerát</span>}
+              {f.rating ? <span class="self-start inline-flex items-center gap-1 px-2.5 py-1 bg-sage-soft text-sage rounded-full text-[13px] font-bold whitespace-nowrap"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg>{f.rating}</span> : <span class="chip self-start !py-1 !px-2.5 whitespace-nowrap">nový inzerát</span>}
             </div>
-            <span class="inline-flex items-center gap-1.5 text-sm font-bold text-accent">Pozrieť na Airbnb <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></span>
+            <span class="mt-auto inline-flex items-center gap-1.5 py-1 text-sm font-bold text-accent">Pozrieť na Airbnb <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></span>
           </a>
         ))}
       </div>

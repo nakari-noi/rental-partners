@@ -19,7 +19,7 @@ const services = [
 ];
 ---
 <Base title="Služby" description="Fotenie, inzeráty a ceny, komunikácia s hosťami, upratovanie, údržba a mesačné vyúčtovanie — všetko, čo pri krátkodobom prenájme preberáme za vás.">
-  <section class="container pt-10 pb-8 lg:pt-14">
+  <section class="wrap pt-10 pb-8 lg:pt-14">
     <span class="chip">Služby</span>
     <h1 class="mt-5 text-[38px] md:text-[52px] leading-[1.08] font-bold tracking-[-0.02em] max-w-[820px] text-pretty">Od prvej fotky po posledné upratovanie</h1>
     <p class="mt-5 text-lg leading-relaxed text-ink-soft max-w-[640px]">Päť vecí, ktoré by ste pri krátkodobom prenájme riešili každý týždeň — od fotenia po vyúčtovanie. Preberáme ich všetky, pri správe bytu aj pri garantovanom nájme.</p>
@@ -27,21 +27,21 @@ const services = [
 
   {services.map((s, i) => (
     <section class:list={['py-10 lg:py-14', i % 2 === 1 && 'bg-surface']}>
-      <div class="container grid md:grid-cols-2 gap-8 lg:gap-14 items-center">
+      <div class="wrap grid md:grid-cols-2 gap-8 lg:gap-14 items-center">
         <div class:list={['flex flex-col gap-4', i % 2 === 1 && 'md:order-2']}>
           <div class="display w-10 h-10 rounded-full bg-ink text-bg text-[15px] font-semibold flex items-center justify-center">{s.n}</div>
           <h2 class="text-[28px] md:text-[32px] font-bold tracking-[-0.02em] leading-[1.15]">{s.title}</h2>
           <p class="text-ink-soft leading-relaxed">{s.text}</p>
           <ul class="flex flex-col gap-2.5 mt-1">{s.points.map((p) => <Check>{p}</Check>)}</ul>
         </div>
-        <div class:list={['h-[240px] md:h-[300px] rounded-[var(--radius-block)] overflow-hidden', i % 2 === 1 && 'md:order-1']}>
+        <div class:list={['aspect-[3/2] rounded-[var(--radius-block)] overflow-hidden', i % 2 === 1 && 'md:order-1']}>
           <img src={s.img} alt={s.alt} class="w-full h-full object-cover" width="600" height="400" loading="lazy" />
         </div>
       </div>
     </section>
   ))}
 
-  <section class="container grid md:grid-cols-2 gap-8 lg:gap-14 items-center py-10 lg:py-14">
+  <section class="wrap grid md:grid-cols-2 gap-8 lg:gap-14 items-center py-10 lg:py-14">
     <div class="flex flex-col gap-4">
       <div class="display w-10 h-10 rounded-full bg-ink text-bg text-[15px] font-semibold flex items-center justify-center">05</div>
       <h2 class="text-[28px] md:text-[32px] font-bold tracking-[-0.02em] leading-[1.15]">Mesačné vyúčtovanie</h2>
@@ -57,15 +57,15 @@ const services = [
         <span class="text-[13px] font-bold text-ink-muted">Ukážka vyúčtovania · správa bytu</span>
         <span class="chip !py-1 !px-2.5 text-[12px] whitespace-nowrap">ilustračný príklad</span>
       </div>
-      <div class="flex justify-between py-2.5 border-b border-sand text-[15px]"><span>Príjmy z pobytov</span><b>2 000 €</b></div>
-      <div class="flex justify-between py-2.5 border-b border-sand text-[15px]"><span>Odmena Rental Partners (10 %)</span><b>− 200 €</b></div>
-      <div class="flex justify-between py-3 text-[17px]"><b>Zostáva vám</b><b class="display text-sage">1 800 €</b></div>
+      <div class="flex justify-between gap-4 py-2.5 border-b border-sand text-[15px]"><span>Príjmy z pobytov</span><b class="whitespace-nowrap">2 000 €</b></div>
+      <div class="flex justify-between gap-4 py-2.5 border-b border-sand text-[15px]"><span>Odmena Rental Partners (10 %)</span><b class="whitespace-nowrap">− 200 €</b></div>
+      <div class="flex justify-between gap-4 py-3 text-[17px]"><b>Zostáva vám</b><b class="display text-sage whitespace-nowrap">1 800 €</b></div>
       <p class="text-[12px] leading-relaxed text-ink-muted">Pri garantovanom nájme vyúčtovanie odpadá — dostávate dohodnutú sumu.</p>
     </div>
   </section>
 
   <section class="bg-surface py-14 lg:py-16">
-    <div class="container">
+    <div class="wrap">
       <p class="eyebrow">Začíname</p>
       <h2 class="mt-2 text-[30px] md:text-[34px] font-bold tracking-[-0.02em] leading-[1.15]">Čo potrebujeme od vás</h2>
       <div class="grid md:grid-cols-3 gap-5 mt-7">

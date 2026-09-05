@@ -2,7 +2,7 @@
 interface Props { text: string; eyebrow?: string }
 const { text, eyebrow = 'Nezáväzne a zadarmo' } = Astro.props;
 ---
-<section class="container my-16 lg:my-[72px]">
+<section class="wrap my-16 lg:my-[72px]">
   <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-10 px-7 py-9 md:px-14 md:py-12 bg-ink rounded-[var(--radius-block)]">
     <div class="flex flex-col gap-2.5">
       <span class="text-[13px] font-bold tracking-[0.06em] uppercase text-sage-light">{eyebrow}</span>
