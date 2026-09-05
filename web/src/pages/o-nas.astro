@@ -1,0 +1,54 @@
+---
+import Base from '../layouts/Base.astro';
+import Cta from '../components/Cta.astro';
+---
+<Base title="O nás" description="Partneri majiteľov, nie realitná kancelária. Tomáš začal s jedným bytom, dnes sa Rental Partners starajú o desiatky bytov v centre Bratislavy.">
+  <section class="container pt-10 pb-8 lg:pt-14">
+    <span class="chip">O nás</span>
+    <h1 class="mt-5 text-[38px] md:text-[52px] leading-[1.08] font-bold tracking-[-0.02em] max-w-[820px] text-pretty">Partneri majiteľov, nie realitná kancelária</h1>
+    <p class="mt-5 text-lg leading-relaxed text-ink-soft max-w-[640px]">Hostí ubytúvame už dva roky — cez Airbnb, Booking a ďalšie platformy. Dnes sa staráme o byty v centre Bratislavy — či už ich majiteľom spravujeme, alebo si ich prenajímame a platíme im garantovaný nájom.</p>
+  </section>
+
+  <section class="container grid md:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-14 items-center py-8 lg:py-14">
+    <div class="relative h-[360px] md:h-[440px]">
+      <div class="absolute inset-y-0 left-0 w-[92%] rounded-[var(--radius-block)] overflow-hidden -rotate-2 shadow-[var(--shadow-float)]">
+        <img src="/img/tomas.webp" alt="Tomáš, zakladateľ Rental Partners" class="w-full h-full object-cover object-[50%_25%]" width="640" height="800" />
+      </div>
+    </div>
+    <div class="flex flex-col gap-4">
+      <p class="eyebrow">Náš príbeh</p>
+      <h2 class="text-[30px] md:text-[34px] font-bold tracking-[-0.02em] leading-[1.15]">Ako sme začali</h2>
+      <p class="leading-relaxed text-ink-soft">Začalo to jedným bytom. Tomáš ho prenajímal hosťom sám — fotil, odpisoval na správy, odovzdával kľúče, upratoval. Keď pribudli ďalšie vlastné byty, prišli prví majitelia s otázkou, či by sa nepostaral aj o ten ich. Tak vznikli Rental Partners.</p>
+      <p class="leading-relaxed text-ink-soft">Dnes sa staráme o desiatky bytov v centre Bratislavy a stále platí to, s čím sme začínali: každý byt vedieme, ako keby bol náš. Vieme, čo hostia potrebujú, lebo sme im roky odpisovali sami — a vieme, čo trápi majiteľov, lebo sme nimi tiež.</p>
+    </div>
+  </section>
+
+  <section class="bg-surface py-14 lg:py-16">
+    <div class="container">
+      <p class="eyebrow">Princípy</p>
+      <h2 class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">Tri veci, na ktorých trváme</h2>
+      <div class="grid md:grid-cols-3 gap-5 mt-7">
+        <div class="flex flex-col gap-3 p-7 bg-bg rounded-[var(--radius-card)]"><span class="display text-[15px] font-semibold text-accent">01</span><h3 class="text-xl font-semibold leading-snug">Povieme vám pravdu o výnose</h3><p class="text-[15px] leading-relaxed text-ink-soft">Odhad robíme podľa lokality, stavu bytu a sezóny. Ak sa byt na krátkodobý prenájom nehodí, povieme to na prvom stretnutí.</p></div>
+        <div class="flex flex-col gap-3 p-7 bg-bg rounded-[var(--radius-card)]"><span class="display text-[15px] font-semibold text-accent">02</span><h3 class="text-xl font-semibold leading-snug">O byt sa staráme ako o vlastný</h3><p class="text-[15px] leading-relaxed text-ink-soft">Po každom pobyte ho vidíme my. Drobnú závadu opravíme skôr, než ju zbadá ďalší hosť — alebo vy.</p></div>
+        <div class="flex flex-col gap-3 p-7 bg-bg rounded-[var(--radius-card)]"><span class="display text-[15px] font-semibold text-accent">03</span><h3 class="text-xl font-semibold leading-snug">Sme na telefóne</h3><p class="text-[15px] leading-relaxed text-ink-soft">Hostia aj majitelia dostanú odpoveď rýchlo — cez deň zvyčajne do hodiny.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container py-14 lg:py-16">
+    <p class="eyebrow">Tím</p>
+    <h2 class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">Kto sa o váš byt stará</h2>
+    <div class="grid sm:grid-cols-2 gap-6 mt-7 max-w-[760px]">
+      <div class="flex flex-col gap-3.5">
+        <div class="h-[300px] rounded-[var(--radius-card)] overflow-hidden"><img src="/img/tomas.webp" alt="Tomáš" class="w-full h-full object-cover object-[50%_20%]" width="640" height="800" loading="lazy" /></div>
+        <div><h3 class="text-[19px] font-semibold">Tomáš</h3><p class="text-sm text-ink-soft">Zakladateľ · Superhost na Airbnb</p></div>
+      </div>
+      <div class="flex flex-col gap-3.5">
+        <div class="h-[300px] rounded-[var(--radius-card)] bg-sand-deep flex items-center justify-center text-ink-muted text-xs font-bold tracking-[0.08em] uppercase">Fotka</div>
+        <div><h3 class="text-[19px] font-semibold">Amanda</h3><p class="text-sm text-ink-soft">Komunikácia s hosťami</p></div>
+      </div>
+    </div>
+  </section>
+
+  <Cta text="Stretnime sa priamo vo vašom byte." />
+</Base>

@@ -44,3 +44,55 @@ h1, h2, h3, .display { font-family: var(--font-display); }
 .reveal { animation: rp-fade-up .7s ease-out both; }
 .reveal-1 { animation-delay: .1s; } .reveal-2 { animation-delay: .25s; } .reveal-3 { animation-delay: .4s; }
 @media (prefers-reduced-motion: reduce) { .reveal, .reveal-1, .reveal-2, .reveal-3 { animation: none; } }
+
+/* Rotating word in the home headline */
+@keyframes rp-words { 0%, 17% { transform: translateY(0); } 22%, 39% { transform: translateY(-20%); } 44%, 61% { transform: translateY(-40%); } 66%, 83% { transform: translateY(-60%); } 88%, 100% { transform: translateY(-80%); } }
+.rotor { display: inline-block; height: 1.06em; overflow: hidden; vertical-align: bottom; }
+.rotor-col { display: flex; flex-direction: column; animation: rp-words 12s cubic-bezier(0.7, 0, 0.3, 1) infinite; }
+.rotor-col > span { display: block; height: 1.06em; line-height: 1.06; }
+
+/* Photo deck — the back card is pulled out and lands on top (three cards, 12 s cycle) */
+@keyframes rp-deck {
+  0%, 26%      { transform: translate(34px, -32px) rotate(6deg) scale(0.9); z-index: 1; filter: brightness(0.9); box-shadow: 0 8px 20px rgba(43, 33, 24, 0.10); }
+  26.01%       { transform: translate(34px, -32px) rotate(6deg) scale(0.9); z-index: 4; filter: brightness(0.9); box-shadow: 0 8px 20px rgba(43, 33, 24, 0.10); }
+  30%          { transform: translate(-120px, 76px) rotate(-13deg) scale(0.98); z-index: 4; filter: brightness(1); box-shadow: 0 44px 80px rgba(43, 33, 24, 0.30); }
+  34.5%        { transform: translate(6px, -5px) rotate(0.6deg) scale(1.012); z-index: 4; filter: brightness(1); box-shadow: 0 22px 46px rgba(43, 33, 24, 0.18); }
+  36%          { transform: translate(0, 0) rotate(-1deg) scale(1); z-index: 4; filter: brightness(1); box-shadow: 0 18px 40px rgba(43, 33, 24, 0.16); }
+  36.01%, 61%  { transform: translate(0, 0) rotate(-1deg) scale(1); z-index: 3; filter: brightness(1); box-shadow: 0 18px 40px rgba(43, 33, 24, 0.16); }
+  61.01%       { transform: translate(0, 0) rotate(-1deg) scale(1); z-index: 2; filter: brightness(1); box-shadow: 0 18px 40px rgba(43, 33, 24, 0.16); }
+  67%, 94%     { transform: translate(17px, -16px) rotate(2.5deg) scale(0.95); z-index: 2; filter: brightness(0.95); box-shadow: 0 12px 28px rgba(43, 33, 24, 0.12); }
+  94.01%       { transform: translate(17px, -16px) rotate(2.5deg) scale(0.95); z-index: 1; filter: brightness(0.95); box-shadow: 0 12px 28px rgba(43, 33, 24, 0.12); }
+  100%         { transform: translate(34px, -32px) rotate(6deg) scale(0.9); z-index: 1; filter: brightness(0.9); box-shadow: 0 8px 20px rgba(43, 33, 24, 0.10); }
+}
+.deck-card { position: absolute; top: 40px; right: 0; width: 86%; height: 390px; border-radius: var(--radius-block); overflow: hidden; transform-origin: 50% 60%; will-change: transform; animation: rp-deck 12s cubic-bezier(0.22, 1, 0.36, 1) infinite; display: flex; align-items: flex-end; }
+.deck-card-1 { animation-delay: -1.3s; } .deck-card-2 { animation-delay: -5.3s; } .deck-card-3 { animation-delay: -9.3s; }
+@media (max-width: 640px) { .deck-card { height: 300px; width: 90%; } }
+@media (prefers-reduced-motion: reduce) {
+  .rotor-col { animation: none; }
+  .deck-card { animation: none; }
+  .deck-card-2, .deck-card-3 { display: none; }
+}
+
+/* Reviews stream — pauses on hover */
+@keyframes rp-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.reviews { display: flex; width: max-content; animation: rp-marquee 48s linear infinite; }
+.reviews:hover, .reviews:focus-within { animation-play-state: paused; }
+.reviews > article { width: 320px; margin-right: 20px; }
+@media (min-width: 768px) { .reviews > article { width: 360px; } }
+@media (prefers-reduced-motion: reduce) { .reviews { animation: none; flex-wrap: wrap; width: auto; } }
+
+/* Cenník — model switch */
+.model-card { transition: opacity .3s ease, box-shadow .3s ease, transform .3s ease; cursor: pointer; }
+.model-card:hover { transform: translateY(-3px); }
+.model-card[aria-pressed="false"] { opacity: .55; }
+.model-card[aria-pressed="true"].model-a { box-shadow: 0 0 0 3px var(--color-accent), 0 18px 40px rgba(43, 33, 24, 0.14); }
+.model-card[aria-pressed="true"].model-b { box-shadow: 0 0 0 3px var(--color-sage), 0 18px 40px rgba(43, 33, 24, 0.14); }
+.col-dim { opacity: .55; transition: opacity .3s ease; }
+
+/* Form fields */
+.field { width: 100%; height: 48px; padding: 0 16px; border: 1px solid var(--color-sand-deep); border-radius: 12px; background: var(--color-bg); font: inherit; color: var(--color-ink); }
+.field:focus { outline: 2px solid var(--color-accent); outline-offset: 1px; border-color: transparent; }
+textarea.field { height: 110px; padding: 12px 16px; resize: vertical; }
+.pill { padding: 11px 18px; border: 1.5px solid var(--color-sand-deep); border-radius: 999px; font-size: 14px; font-weight: 700; color: var(--color-ink); cursor: pointer; }
+.pill:has(input:checked) { background: var(--color-ink); border-color: var(--color-ink); color: var(--color-bg); }
+.pill input { position: absolute; opacity: 0; pointer-events: none; }

@@ -1,0 +1,164 @@
+---
+import Base from '../layouts/Base.astro';
+import Cta from '../components/Cta.astro';
+import Check from '../components/Check.astro';
+---
+<Base title="Cenník" description="Správa bytu za 10 % z obratu, alebo garantovaný nájom s pevnou sumou každý mesiac. Vyberte si, ako chcete z bytu zarábať.">
+  <section class="container pt-10 pb-6 lg:pt-14">
+    <span class="chip">Cenník</span>
+    <h1 class="mt-5 text-[38px] md:text-[52px] leading-[1.08] font-bold tracking-[-0.02em] max-w-[820px] text-pretty">Vyberte si, ako chcete z bytu zarábať</h1>
+    <p class="mt-5 text-lg leading-relaxed text-ink-soft max-w-[640px]">Maximálny výnos, alebo istý príjem každý mesiac. Kliknite na model — o byt sa v oboch prípadoch staráme my.</p>
+  </section>
+
+  <section class="container grid md:grid-cols-2 gap-6 pt-4" role="tablist" aria-label="Model spolupráce">
+    <button type="button" class="model-card model-a text-left flex flex-col gap-4 p-7 md:p-9 bg-surface rounded-[var(--radius-block)]" role="tab" aria-pressed="true" aria-selected="true" aria-controls="detail-a" data-model="a">
+      <div class="flex items-center justify-between gap-3">
+        <span class="display text-2xl font-bold">Správa bytu</span>
+        <span class="chip !bg-accent !text-white" data-tag="a">Vybrané</span>
+      </div>
+      <div class="flex items-baseline gap-3"><span class="display text-[84px] md:text-[112px] leading-[0.92] font-bold tracking-[-0.04em] text-accent">10 %</span><span class="display text-[22px] font-semibold">z obratu</span></div>
+      <p class="text-ink-soft leading-relaxed">Byt zostáva váš a my ho prevádzkujeme na Airbnb a Booking. Z príjmov z pobytov si berieme desatinu — keď byt nezarába, nezarábame ani my.</p>
+      <p class="text-sm text-ink-muted pt-3 border-t border-sand">Pre majiteľov, ktorí chcú z bytu vyťažiť maximum.</p>
+    </button>
+    <button type="button" class="model-card model-b text-left flex flex-col gap-4 p-7 md:p-9 bg-ink text-bg rounded-[var(--radius-block)]" role="tab" aria-pressed="false" aria-selected="false" aria-controls="detail-b" data-model="b">
+      <div class="flex items-center justify-between gap-3">
+        <span class="display text-2xl font-bold text-bg">Garantovaný nájom</span>
+        <span class="chip !bg-bg/15 !text-[#d9ccbb]" data-tag="b">Kliknutím zobrazíte detaily</span>
+      </div>
+      <div class="display text-[40px] md:text-[54px] leading-[1.02] font-bold tracking-[-0.03em] text-bg py-2.5">Pevná suma<br />každý mesiac</div>
+      <p class="text-[#d9ccbb] leading-relaxed">Byt nám prenajmete a my vám platíme dohodnutý nájom — bez ohľadu na to, či bol byt plný alebo prázdny. Krátkodobý prenájom robíme na vlastné riziko.</p>
+      <p class="text-sm text-cream-muted pt-3 border-t border-bg/15">Pre majiteľov, ktorí chcú istotu a nulové starosti.</p>
+    </button>
+  </section>
+
+  <section id="detail-a" class="container grid md:grid-cols-[1.1fr_0.9fr] gap-6 lg:gap-8 pt-6 pb-16" role="tabpanel">
+    <div class="flex flex-col gap-4 p-7 md:p-9 bg-surface border border-sand rounded-[var(--radius-block)]">
+      <h2 class="text-xl font-semibold">Ako funguje správa bytu</h2>
+      <ul class="flex flex-col gap-3">
+        <Check>Výnos podľa obsadenosti — v silnej sezóne viac, mimo sezóny menej</Check>
+        <Check>Mesačné vyúčtovanie s prehľadom o každom pobyte</Check>
+        <Check>Byt si môžete blokovať aj pre seba — pravidlá dohodneme v zmluve</Check>
+        <Check>Výplata a dĺžka zmluvy podľa dohody — prejdeme ich na stretnutí</Check>
+      </ul>
+    </div>
+    <div class="flex flex-col p-7 md:p-8 bg-sand rounded-[var(--radius-block)]">
+      <div class="flex justify-between items-center gap-3">
+        <h2 class="text-xl font-semibold">Ako to vyzerá v číslach</h2>
+        <span class="chip !bg-surface !py-1 !px-2.5 text-[12px] whitespace-nowrap">ilustračný príklad</span>
+      </div>
+      <p class="mt-2 mb-4 text-sm leading-relaxed text-ink-soft">Čísla sú ilustračné. Reálny odhad pre váš byt urobíme na stretnutí podľa lokality, veľkosti a sezóny.</p>
+      <div class="flex justify-between py-3.5 border-b border-sand-deep"><span>Príjmy z pobytov za mesiac</span><b>2 000 €</b></div>
+      <div class="flex justify-between py-3.5 border-b border-sand-deep"><span>Odmena Rental Partners · 10 %</span><b class="text-accent">− 200 €</b></div>
+      <div class="flex justify-between items-center pt-4"><b class="display text-xl">Zostáva vám</b><b class="display text-[30px] text-sage">1 800 €</b></div>
+    </div>
+  </section>
+
+  <section id="detail-b" class="container hidden md:grid-cols-[1.1fr_0.9fr] gap-6 lg:gap-8 pt-6 pb-16" role="tabpanel">
+    <div class="flex flex-col gap-4 p-7 md:p-9 bg-surface border border-sand rounded-[var(--radius-block)]">
+      <h2 class="text-xl font-semibold">Ako funguje garantovaný nájom</h2>
+      <ul class="flex flex-col gap-3">
+        <Check>Istý príjem, aj keď je byt prázdny — riziko obsadenosti je naše</Check>
+        <Check>Žiadne vyúčtovania — jedna suma, jeden termín</Check>
+        <Check>O byt, hostí aj upratovanie sa staráme rovnako ako pri správe</Check>
+        <Check>Dĺžku zmluvy a výpovednú lehotu dohodneme na stretnutí</Check>
+      </ul>
+    </div>
+    <div class="flex flex-col gap-4 p-7 md:p-8 bg-sage-soft rounded-[var(--radius-block)]">
+      <h2 class="text-xl font-semibold">Ako určíme výšku nájmu</h2>
+      <p class="text-sm leading-relaxed text-ink-soft">Suma je individuálna — závisí od lokality, veľkosti a stavu bytu.</p>
+      <ol class="flex flex-col gap-3 text-[15px]">
+        <li class="flex gap-3"><b class="display text-sage w-6 shrink-0">01</b>Obhliadka bytu a lokality.</li>
+        <li class="flex gap-3"><b class="display text-sage w-6 shrink-0">02</b>Odhad, koľko byt na krátkodobom prenájme zarobí za rok.</li>
+        <li class="flex gap-3"><b class="display text-sage w-6 shrink-0">03</b>Návrh pevného mesačného nájmu a zmluvy. Rozhodnutie je na vás.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="bg-surface py-14 lg:py-16">
+    <div class="container grid md:grid-cols-2 gap-10 lg:gap-14">
+      <div>
+        <p class="text-[13px] font-bold tracking-[0.04em] uppercase text-sage">Vždy v cene</p>
+        <ul class="flex flex-col gap-3 mt-4">
+          <Check>Fotenie bytu, inzeráty a texty SK / EN</Check>
+          <Check>Komunikácia s hosťami, check-in a check-out</Check>
+          <Check>Správa cien a obsadenosti</Check>
+          <Check>Upratovanie a bielizeň po každom pobyte</Check>
+          <Check>Drobná údržba a kontrola bytu</Check>
+        </ul>
+      </div>
+      <div>
+        <p class="text-[13px] font-bold tracking-[0.04em] uppercase text-ink-muted">Hradí sa zvlášť</p>
+        <p class="mt-4 text-[15px] leading-relaxed text-ink-soft">Energie, internet, spotrebný materiál, poplatky platforiem a väčšie opravy — kto čo hradí, závisí od zvoleného modelu. Presné rozdelenie si prejdeme na stretnutí a je súčasťou zmluvy.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container py-14 lg:py-16">
+    <p class="eyebrow">Porovnanie</p>
+    <h2 class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">Čo riešite vy — a čo my</h2>
+    <p class="mt-2 text-ink-soft">Bežný dlhodobý prenájom vedľa vybraného modelu.</p>
+    <div class="mt-7 overflow-x-auto">
+      <table class="w-full min-w-[720px] bg-surface rounded-[var(--radius-card)] overflow-hidden text-[15px]" id="compare">
+        <thead class="bg-ink text-sm">
+          <tr><th class="p-4"></th><th class="p-4 text-left font-bold text-cream-muted">Dlhodobý prenájom</th><th class="p-4 text-left font-bold text-accent-soft" data-col="a">Správa 10 %</th><th class="p-4 text-left font-bold text-cream-muted col-dim" data-col="b">Garantovaný nájom</th></tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-sand"><th class="p-4 text-left font-bold">Váš príjem</th><td class="p-4 text-ink-soft">Pevný nájom od nájomcu</td><td class="p-4" data-col="a">90 % obratu, podľa obsadenosti</td><td class="p-4 col-dim" data-col="b">Pevný nájom od nás</td></tr>
+          <tr class="border-b border-sand"><th class="p-4 text-left font-bold">Prázdne obdobia</th><td class="p-4 text-ink-soft">Hľadáte nájomcu, byt stojí</td><td class="p-4" data-col="a">Ceny a obsadenosť ladíme my</td><td class="p-4 col-dim" data-col="b">Naše riziko, váš nájom sa nemení</td></tr>
+          <tr class="border-b border-sand"><th class="p-4 text-left font-bold">Kto rieši ľudí v byte</th><td class="p-4 text-ink-soft">Vy</td><td class="p-4" data-col="a">My</td><td class="p-4 col-dim" data-col="b">My</td></tr>
+          <tr class="border-b border-sand"><th class="p-4 text-left font-bold">Stav bytu</th><td class="p-4 text-ink-soft">Vidíte ho raz za rok</td><td class="p-4" data-col="a">Kontrola po každom pobyte</td><td class="p-4 col-dim" data-col="b">Kontrola po každom pobyte</td></tr>
+          <tr><th class="p-4 text-left font-bold">Byt pre vás</th><td class="p-4 text-ink-soft">Nedostupný počas zmluvy</td><td class="p-4" data-col="a">Termíny si viete blokovať podľa dohody</td><td class="p-4 col-dim" data-col="b">Podľa dohody v nájomnej zmluve</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container pb-4">
+    <p class="eyebrow">Otázky</p>
+    <h2 class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">Na čo sa majitelia pýtajú</h2>
+    <div class="grid md:grid-cols-2 gap-5 mt-7">
+      <div class="p-6 bg-surface rounded-[var(--radius-card)]"><h3 class="text-lg font-semibold">Ktorý model je pre mňa?</h3><p class="mt-2 text-[15px] leading-relaxed text-ink-soft">Ak chcete maximum a zvládnete kolísavý príjem, správa. Ak chcete každý mesiac rovnakú sumu bez starostí, garantovaný nájom. Na stretnutí vám ukážeme obe čísla pre váš byt.</p></div>
+      <div class="p-6 bg-surface rounded-[var(--radius-card)]"><h3 class="text-lg font-semibold">Kedy dostanem peniaze?</h3><p class="mt-2 text-[15px] leading-relaxed text-ink-soft">Termín a spôsob výplaty sú súčasťou zmluvy — pri správe po mesačnom vyúčtovaní, pri garantovanom nájme v dohodnutý deň v mesiaci.</p></div>
+      <div class="p-6 bg-surface rounded-[var(--radius-card)]"><h3 class="text-lg font-semibold">Kto platí upratovanie?</h3><p class="mt-2 text-[15px] leading-relaxed text-ink-soft">Upratovanie zabezpečujeme my. Ako sa účtuje, závisí od modelu spolupráce — vysvetlíme na stretnutí.</p></div>
+      <div class="p-6 bg-surface rounded-[var(--radius-card)]"><h3 class="text-lg font-semibold">Čo ak chcem skončiť?</h3><p class="mt-2 text-[15px] leading-relaxed text-ink-soft">Výpovednú lehotu a podmienky ukončenia máte v zmluve. Nič nie je na neurčito bez možnosti výpovede.</p></div>
+    </div>
+  </section>
+
+  <Cta text="Ukážeme vám obe čísla pre váš byt." />
+
+  <script>
+    const cards = document.querySelectorAll<HTMLButtonElement>('.model-card');
+    const panels: Record<string, HTMLElement | null> = { a: document.getElementById('detail-a'), b: document.getElementById('detail-b') };
+    function pick(model: string) {
+      cards.forEach((c) => {
+        const on = c.dataset.model === model;
+        c.setAttribute('aria-pressed', String(on));
+        c.setAttribute('aria-selected', String(on));
+        const tag = c.querySelector('[data-tag]');
+        if (!tag) return;
+        tag.textContent = on ? 'Vybrané' : 'Kliknutím zobrazíte detaily';
+        if (c.dataset.model === 'a') {
+          tag.classList.toggle('!bg-accent', on); tag.classList.toggle('!text-white', on); tag.classList.toggle('!bg-sand', !on);
+        } else {
+          tag.classList.toggle('!bg-sage', on); tag.classList.toggle('!text-white', on); tag.classList.toggle('!bg-bg/15', !on); tag.classList.toggle('!text-[#d9ccbb]', !on);
+        }
+      });
+      for (const k of ['a', 'b']) {
+        const p = panels[k];
+        if (!p) continue;
+        p.classList.toggle('hidden', k !== model);
+        p.classList.toggle('grid', k === model);
+      }
+      document.querySelectorAll<HTMLElement>('#compare [data-col]').forEach((el) => {
+        const on = el.dataset.col === model;
+        el.classList.toggle('col-dim', !on);
+        if (el.tagName === 'TH') {
+          el.classList.toggle('text-accent-soft', on && el.dataset.col === 'a');
+          el.classList.toggle('text-sage-light', on && el.dataset.col === 'b');
+          el.classList.toggle('text-cream-muted', !on);
+        }
+      });
+    }
+    cards.forEach((c) => c.addEventListener('click', () => pick(c.dataset.model || 'a')));
+  </script>
+</Base>

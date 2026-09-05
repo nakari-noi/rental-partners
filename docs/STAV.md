@@ -47,9 +47,9 @@
 3. [x] Fotky bytov, logo aj fotka Tomáša (`tomasko.jpg`) doplnené do návrhu (5. 9.)
 4. [~] Fakty: firma, kontakty, príbeh (napísaný podľa zadania) hotové · **podmienky spolupráce doplní klient po nakódovaní** (musí sa poradiť) · tretí člen tímu neskôr
 5. [x] Fotky bytov vložené do návrhu (domov, Služby, Výsledky) — 5. 9. · [ ] Voliteľné: mobilný náhľad domova na plátne
-6. [~] Web založený v `web/` (Astro 7 + Tailwind 4, tokeny, layout, navigácia, pätička, hero) — 5. 9. · ďalej: Domov (zvyšné sekcie) → Cenník → Služby → Výsledky + O nás → Kontakt (formulár) · spustenie: `cd web && npm run dev` → http://localhost:4321
-7. [ ] Angličtina + prepínač jazyka
-8. [ ] Pred spustením: doména, hosting (Cloudflare Pages/Vercel), GDPR + súhlas vo formulári, SEO meta, analytika, test formulára
+6. [x] Web nakódovaný podľa návrhu (5. 9.): Domov (rotujúce slovo, balíček fotiek, pás recenzií, modely, služby, CTA), Služby, Cenník (karty ako prepínač + tabuľka), Výsledky, O nás, Kontakt (formulár Web3Forms + OSM mapa), Ochrana osobných údajov, 404 · responzívne · `cd web && npm run dev` → http://127.0.0.1:4321
+7. [ ] Angličtina + prepínač jazyka (SK / EN v navigácii je zatiaľ len text)
+8. [ ] Pred spustením: **Web3Forms kľúč** (klient si založí účet na web3forms.com s e-mailom rentalpartners2026@gmail.com → kľúč do `web/src/pages/kontakt.astro`), doména rentalpartners.sk, hosting (Cloudflare Pages / Vercel), právna kontrola stránky Ochrana osobných údajov, SEO náhľady (og:image), analytika, test formulára, fotka Amandy, tretí člen tímu, podmienky spolupráce (klient sa poradí)
 
 ## Ako pokračovať zajtra
 

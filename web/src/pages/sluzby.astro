@@ -1,0 +1,80 @@
+---
+import Base from '../layouts/Base.astro';
+import Cta from '../components/Cta.astro';
+import Check from '../components/Check.astro';
+
+const services = [
+  { n: '01', title: 'Fotenie, inzeráty a ceny', img: '/img/ilu-fotenie.svg', alt: 'Ilustrácia: fotoaparát na statíve pred izbou',
+    text: 'Byt profesionálne nafotíme, napíšeme texty v slovenčine aj angličtine a založíme profily na Airbnb a Booking. Ceny sledujeme priebežne — podľa sezóny, dopytu a obsadenosti.',
+    points: ['Profesionálne fotenie bytu a texty SK / EN', 'Profily na Airbnb, Booking a ďalších platformách', 'Priebežná úprava cien podľa sezóny'] },
+  { n: '02', title: 'Hostia a komunikácia', img: '/img/ilu-hostia.svg', alt: 'Ilustrácia: telefón so správami a kľúč',
+    text: 'Od prvej správy po odhlásenie. Hostia píšu nám, nie vám — aj v sobotu o desiatej večer.',
+    points: ['Odpovede na dopyty a rezervácie', 'Check-in, check-out, inštrukcie k bytu', 'Riešenie problémov počas pobytu a recenzie'] },
+  { n: '03', title: 'Upratovanie a bielizeň', img: '/img/ilu-upratovanie.svg', alt: 'Ilustrácia: ustlaná posteľ a uteráky',
+    text: 'Po každom odchode hostí byt upraceme, vymeníme posteľnú bielizeň a uteráky a doplníme, čo chýba. Zároveň skontrolujeme, či je všetko v poriadku.',
+    points: ['Upratovanie po každom pobyte', 'Čistá bielizeň a uteráky', 'Kontrola stavu bytu po hosťoch'] },
+  { n: '04', title: 'Údržba a starostlivosť o byt', img: '/img/ilu-udrzba.svg', alt: 'Ilustrácia: kohútik, kľúč a checklist',
+    text: 'Kvapkajúci kohútik, zaseknutý zámok, vypálená žiarovka — riešime hneď, keď to zbadáme, nie až po vašom telefonáte.',
+    points: ['Drobné opravy', 'Koordinácia remeselníkov pri väčších poruchách', 'Pravidelná kontrola bytu'] },
+];
+---
+<Base title="Služby" description="Fotenie, inzeráty a ceny, komunikácia s hosťami, upratovanie, údržba a mesačné vyúčtovanie — všetko, čo pri krátkodobom prenájme preberáme za vás.">
+  <section class="container pt-10 pb-8 lg:pt-14">
+    <span class="chip">Služby</span>
+    <h1 class="mt-5 text-[38px] md:text-[52px] leading-[1.08] font-bold tracking-[-0.02em] max-w-[820px] text-pretty">Od prvej fotky po posledné upratovanie</h1>
+    <p class="mt-5 text-lg leading-relaxed text-ink-soft max-w-[640px]">Päť vecí, ktoré by ste pri krátkodobom prenájme riešili každý týždeň — od fotenia po vyúčtovanie. Preberáme ich všetky, pri správe bytu aj pri garantovanom nájme.</p>
+  </section>
+
+  {services.map((s, i) => (
+    <section class:list={['py-10 lg:py-14', i % 2 === 1 && 'bg-surface']}>
+      <div class="container grid md:grid-cols-2 gap-8 lg:gap-14 items-center">
+        <div class:list={['flex flex-col gap-4', i % 2 === 1 && 'md:order-2']}>
+          <div class="display w-10 h-10 rounded-full bg-ink text-bg text-[15px] font-semibold flex items-center justify-center">{s.n}</div>
+          <h2 class="text-[28px] md:text-[32px] font-bold tracking-[-0.02em] leading-[1.15]">{s.title}</h2>
+          <p class="text-ink-soft leading-relaxed">{s.text}</p>
+          <ul class="flex flex-col gap-2.5 mt-1">{s.points.map((p) => <Check>{p}</Check>)}</ul>
+        </div>
+        <div class:list={['h-[240px] md:h-[300px] rounded-[var(--radius-block)] overflow-hidden', i % 2 === 1 && 'md:order-1']}>
+          <img src={s.img} alt={s.alt} class="w-full h-full object-cover" width="600" height="400" loading="lazy" />
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section class="container grid md:grid-cols-2 gap-8 lg:gap-14 items-center py-10 lg:py-14">
+    <div class="flex flex-col gap-4">
+      <div class="display w-10 h-10 rounded-full bg-ink text-bg text-[15px] font-semibold flex items-center justify-center">05</div>
+      <h2 class="text-[28px] md:text-[32px] font-bold tracking-[-0.02em] leading-[1.15]">Mesačné vyúčtovanie</h2>
+      <p class="text-ink-soft leading-relaxed">Každý mesiac dostanete prehľad: príjmy z pobytov, naša odmena 10 % a suma, ktorá ide vám.</p>
+      <ul class="flex flex-col gap-2.5 mt-1">
+        <Check>Prehľad príjmov a rezervácií za mesiac</Check>
+        <Check>Výplata podľa dohody v zmluve</Check>
+        <Check>Prehľad obsadenosti bytu</Check>
+      </ul>
+    </div>
+    <div class="flex flex-col gap-3 p-7 bg-surface rounded-[var(--radius-block)]">
+      <div class="flex justify-between items-center gap-3">
+        <span class="text-[13px] font-bold text-ink-muted">Ukážka vyúčtovania · správa bytu</span>
+        <span class="chip !py-1 !px-2.5 text-[12px] whitespace-nowrap">ilustračný príklad</span>
+      </div>
+      <div class="flex justify-between py-2.5 border-b border-sand text-[15px]"><span>Príjmy z pobytov</span><b>2 000 €</b></div>
+      <div class="flex justify-between py-2.5 border-b border-sand text-[15px]"><span>Odmena Rental Partners (10 %)</span><b>− 200 €</b></div>
+      <div class="flex justify-between py-3 text-[17px]"><b>Zostáva vám</b><b class="display text-sage">1 800 €</b></div>
+      <p class="text-[12px] leading-relaxed text-ink-muted">Pri garantovanom nájme vyúčtovanie odpadá — dostávate dohodnutú sumu.</p>
+    </div>
+  </section>
+
+  <section class="bg-surface py-14 lg:py-16">
+    <div class="container">
+      <p class="eyebrow">Začíname</p>
+      <h2 class="mt-2 text-[30px] md:text-[34px] font-bold tracking-[-0.02em] leading-[1.15]">Čo potrebujeme od vás</h2>
+      <div class="grid md:grid-cols-3 gap-5 mt-7">
+        <div class="p-6 bg-bg rounded-[var(--radius-card)]"><h3 class="text-lg font-semibold">Byt</h3><p class="mt-2 text-sm leading-relaxed text-ink-soft">Zariadený a pripravený na hostí. Ak nie je, na prvom stretnutí povieme, čo doplniť.</p></div>
+        <div class="p-6 bg-bg rounded-[var(--radius-card)]"><h3 class="text-lg font-semibold">Kľúče a prístup</h3><p class="mt-2 text-sm leading-relaxed text-ink-soft">Kľúče od bytu a vchodu. O spôsobe odovzdávania hosťom sa dohodneme podľa bytu.</p></div>
+        <div class="p-6 bg-bg rounded-[var(--radius-card)]"><h3 class="text-lg font-semibold">Zmluva</h3><p class="mt-2 text-sm leading-relaxed text-ink-soft">Zmluva o správe bytu alebo nájomná zmluva pri garantovanom nájme. Podmienky prejdeme spolu na stretnutí.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <Cta text="Chcete vedieť, koľko by váš byt zarobil?" />
+</Base>

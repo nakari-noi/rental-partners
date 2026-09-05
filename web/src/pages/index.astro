@@ -1,23 +1,49 @@
 ---
 import Base from '../layouts/Base.astro';
+import Cta from '../components/Cta.astro';
+import Check from '../components/Check.astro';
+
+const reviews = [
+  { q: 'Pekný malý podkrovný apartmán. Nachádza sa v centre a do centra mesta a k pamiatkam sa rýchlo dostanete pešo.', by: 'Carolin · Airbnb · august 2026' },
+  { q: 'Apartmán je moderne zariadený, veľmi čistý a nachádza sa v tichej štvrti. Za zmienku stojí najmä dokonalá poloha.', by: 'Jens · Airbnb · júl 2026' },
+  { q: 'Nikdy som nemal lepšie pokyny na nájdenie ubytovania. Vstup bol veľmi jednoduchý a Tomas bol veľmi nápomocný a vždy odpovedal okamžite.', by: 'Karl · Airbnb · júl 2026' },
+  { q: 'Dúfam, že budem mať možnosť rezervovať si tento apartmán znova; bolo tam veľmi pekne.', by: 'Susanne · Airbnb · august 2026' },
+  { q: 'Toto miesto môžeme plne odporučiť a pri ďalšej návšteve Bratislavy by sme sa tu opäť kedykoľvek ubytovali.', by: 'Jens · Airbnb · júl 2026' },
+];
+const deck = [
+  { img: '/img/byt-2br-dizajn.avif', label: '2-izbový byt s oceneným dizajnom', cls: 'deck-card-1' },
+  { img: '/img/byt-najlepsia-poloha.avif', label: 'Najlepšia poloha v meste · 2 spálne', cls: 'deck-card-2' },
+  { img: '/img/byt-garsonka.avif', label: 'Garsónka v centre · až 4 hostia', cls: 'deck-card-3' },
+];
+const services = [
+  { t: 'Fotenie', d: 'Profesionálne fotky bytu pre inzeráty.', i: 'M4 8h3l2-3h6l2 3h3v11H4z M12 16.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z' },
+  { t: 'Inzeráty a ceny', d: 'Airbnb, Booking a ďalšie — texty, ceny, sezóny.', i: 'M3 4h18v16H3z M8.5 11a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z M21 16l-5-5-8 8' },
+  { t: 'Hostia', d: 'Dopyty, rezervácie, check-in aj nočné otázky.', i: 'M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z' },
+  { t: 'Upratovanie', d: 'Po každom hosťovi, čistá bielizeň, doplnené zásoby.', i: 'M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z M19 15l.8 2.2 2.2.8-2.2.8L19 21l-.8-2.2-2.2-.8 2.2-.8z' },
+  { t: 'Údržba', d: 'Drobné opravy aj dlhodobá starostlivosť o byt.', i: 'M14.7 6.3a4 4 0 0 0 5 5L13 18l-3-3 6.7-8.7z M3 21l5-5' },
+];
 ---
 <Base title="Správa bytov a garantovaný nájom v Bratislave" description="Rental Partners: byt vám spravujeme za 10 % z obratu, alebo si ho prenajmeme a platíme pevný nájom. Fotenie, hostia, upratovanie, údržba — v Bratislave.">
-  <section class="container grid lg:grid-cols-[1.1fr_0.9fr] gap-12 py-14 lg:py-16 items-center">
+  <!-- Hero -->
+  <section class="container grid lg:grid-cols-[1.1fr_0.9fr] gap-12 py-10 lg:py-16 items-center overflow-hidden lg:overflow-visible">
     <div class="flex flex-col gap-6">
       <span class="chip self-start reveal">Správa bytov v Bratislave</span>
-      <h1 class="reveal reveal-1 text-[44px] md:text-[56px] lg:text-[62px] leading-[1.06] font-bold tracking-[-0.02em]">Váš byt, náš tím.<br />Za vás riešime<br /><span class="text-accent">hostí.</span></h1>
+      <h1 class="reveal reveal-1 text-[42px] sm:text-[52px] lg:text-[62px] leading-[1.06] font-bold tracking-[-0.02em]">Váš byt, náš tím.<br />Za vás riešime<br /><span class="rotor text-accent" aria-live="off"><span class="rotor-col"><span>hostí.</span><span>fotenie.</span><span>upratovanie.</span><span>ceny.</span><span>hostí.</span></span></span></h1>
       <p class="reveal reveal-2 text-lg leading-relaxed text-ink-soft max-w-[500px]">Sme partneri, nie sprostredkovatelia. Byt vám buď spravujeme za 10 % z obratu, alebo si ho od vás prenajmeme a platíme vám pevný nájom. V oboch prípadoch sa o všetko staráme my.</p>
       <div class="reveal reveal-3 flex flex-wrap gap-4 items-center">
         <a href="/kontakt" class="btn-primary">Chcem odhad výnosu</a>
-        <a href="#modely" class="inline-flex items-center gap-2 px-2 py-4 font-bold text-[15px]">Dva spôsoby spolupráce ↓</a>
+        <a href="#modely" class="inline-flex items-center gap-2 px-2 py-4 font-bold text-[15px]">Dva spôsoby spolupráce <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"></path></svg></a>
       </div>
     </div>
-    <div class="reveal reveal-2 relative h-[420px] lg:h-[500px]">
-      <div class="absolute top-6 right-0 w-[88%] h-[380px] rounded-[var(--radius-block)] overflow-hidden rotate-2 shadow-[var(--shadow-float)]">
-        <img src="/img/byt-2br-dizajn.avif" alt="Interiér bytu s oceneným dizajnom" class="w-full h-full object-cover" width="1200" height="795" />
-      </div>
+    <div class="reveal reveal-2 relative h-[420px] lg:h-[500px] mt-4 lg:mt-0">
+      {deck.map((c) => (
+        <div class:list={['deck-card', c.cls]}>
+          <img src={c.img} alt={c.label} class="absolute inset-0 w-full h-full object-cover" width="1200" height="800" />
+          <span class="relative m-0 mb-[18px] ml-[18px] px-3.5 py-2 bg-white/90 rounded-full text-[13px] font-bold">{c.label}</span>
+        </div>
+      ))}
       <div class="absolute left-0 bottom-0 z-10 flex items-center gap-3.5 px-5 py-4 bg-surface rounded-[var(--radius-card)] shadow-[var(--shadow-float)]">
-        <div class="w-11 h-11 rounded-full bg-sage flex items-center justify-center text-white">
+        <div class="w-11 h-11 rounded-full bg-sage flex items-center justify-center text-white shrink-0">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg>
         </div>
         <div>
@@ -28,9 +54,65 @@ import Base from '../layouts/Base.astro';
     </div>
   </section>
 
-  <section id="modely" class="container py-16">
-    <p class="eyebrow">Modely spolupráce</p>
-    <h2 class="mt-2 text-3xl md:text-[38px] font-bold tracking-[-0.02em] leading-[1.15]">Dva spôsoby, ako s nami spolupracovať</h2>
-    <p class="mt-3 text-ink-soft max-w-[700px]">Kostra webu — ďalšie sekcie sa doplnia podľa návrhu.</p>
+  <!-- Reviews stream -->
+  <section class="py-6 lg:py-10 overflow-hidden" aria-label="Recenzie hostí">
+    <div class="container flex items-center justify-between gap-4 mb-5">
+      <p class="text-[13px] font-bold tracking-[0.06em] uppercase text-ink-muted">Z recenzií hostí · Airbnb a Booking</p>
+      <a href="/vysledky" class="text-[13px] font-bold text-accent">Všetky recenzie →</a>
+    </div>
+    <div class="pl-5 md:pl-10 xl:pl-[max(64px,calc((100%-1200px)/2+64px))]">
+      <div class="reviews">
+        {[...reviews, ...reviews].map((r) => (
+          <article class="flex flex-col gap-3 p-6 bg-surface rounded-[var(--radius-card)]">
+            <div class="flex gap-[3px] text-sage" aria-label="5 z 5 hviezdičiek">{[1, 2, 3, 4, 5].map(() => <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg>)}</div>
+            <p class="text-[15px] leading-[1.5]">„{r.q}"</p>
+            <p class="text-[13px] text-ink-muted">{r.by}</p>
+          </article>
+        ))}
+      </div>
+    </div>
   </section>
+
+  <!-- Two models -->
+  <section id="modely" class="container py-14 lg:py-[72px]">
+    <p class="eyebrow">Modely spolupráce</p>
+    <h2 class="mt-2 text-[30px] md:text-[38px] font-bold tracking-[-0.02em] leading-[1.15]">Dva spôsoby, ako s nami spolupracovať</h2>
+    <p class="mt-3 text-[17px] leading-relaxed text-ink-soft max-w-[700px]">Vyberiete si podľa toho, či chcete vyšší výnos, alebo istý príjem. O byt sa v oboch prípadoch staráme rovnako.</p>
+    <div class="grid md:grid-cols-2 gap-6 mt-8">
+      <div class="flex flex-col gap-4 p-7 md:p-9 bg-surface rounded-[var(--radius-block)]">
+        <div class="flex items-center justify-between gap-3"><h3 class="display text-2xl font-bold">Správa bytu</h3><span class="chip whitespace-nowrap">10 % z obratu</span></div>
+        <p class="leading-relaxed text-ink-soft">Byt zostáva váš a my ho prevádzkujeme na Airbnb a Booking. Vy dostávate výnos podľa obsadenosti — v silnej sezóne viac — a my z neho desatinu.</p>
+        <ul class="flex flex-col gap-2.5"><Check>Najvyšší možný výnos z bytu</Check><Check>Mesačné vyúčtovanie, prehľad o každom pobyte</Check><Check>Príjem sa mesiac od mesiaca líši</Check></ul>
+        <p class="text-sm text-ink-muted pt-3 border-t border-sand">Pre majiteľov, ktorí chcú z bytu vyťažiť maximum.</p>
+      </div>
+      <div class="flex flex-col gap-4 p-7 md:p-9 bg-ink text-bg rounded-[var(--radius-block)]">
+        <div class="flex items-center justify-between gap-3"><h3 class="display text-2xl font-bold text-bg">Garantovaný nájom</h3><span class="chip !bg-sage !text-white whitespace-nowrap">pevná suma mesačne</span></div>
+        <p class="leading-relaxed text-[#d9ccbb]">Byt nám prenajmete a my vám platíme dohodnutý nájom každý mesiac — bez ohľadu na to, či bol byt plný alebo prázdny. Krátkodobý prenájom, hostí aj starostlivosť riešime na vlastné riziko.</p>
+        <ul class="flex flex-col gap-2.5"><Check light>Istý príjem, rovnaký každý mesiac</Check><Check light>Prázdne obdobia sú náš problém, nie váš</Check><Check light>O byt sa staráme ako pri správe</Check></ul>
+        <p class="text-sm text-cream-muted pt-3 border-t border-bg/15">Pre majiteľov, ktorí chcú istotu a nulové starosti.</p>
+      </div>
+    </div>
+    <a href="/cennik" class="inline-flex items-center gap-2 mt-6 font-bold text-accent">Porovnať oba modely v cenníku →</a>
+  </section>
+
+  <!-- Services -->
+  <section class="bg-surface py-14 lg:py-16">
+    <div class="container">
+      <p class="eyebrow">Služby</p>
+      <h2 class="mt-2 text-[30px] md:text-[38px] font-bold tracking-[-0.02em] leading-[1.15]">Čo preberáme za vás</h2>
+      <p class="mt-3 text-[17px] leading-relaxed text-ink-soft max-w-[620px]">Všetko, čo by ste inak riešili vy — každý deň, aj cez víkend. Pri oboch modeloch.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mt-8">
+        {services.map((s) => (
+          <div class="flex flex-col gap-3 p-5 bg-bg rounded-[var(--radius-card)]">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9694a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d={s.i}></path></svg>
+            <h3 class="text-[17px] font-semibold">{s.t}</h3>
+            <p class="text-sm leading-relaxed text-ink-soft">{s.d}</p>
+          </div>
+        ))}
+      </div>
+      <a href="/sluzby" class="inline-flex items-center gap-2 mt-6 font-bold text-accent">Všetky služby podrobne →</a>
+    </div>
+  </section>
+
+  <Cta text="Staráme sa o byty v centre Bratislavy. Ten váš môže byť ďalší." />
 </Base>
