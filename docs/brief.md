@@ -21,6 +21,7 @@
 - Host „Tomáš", **Superhost**, **16 bytov** v Bratislave (centrum, Staré Mesto, Hradný vrch)
 - Hodnotenie **4,89 ★** zo **108 recenzií**, hostí ~2 roky
 - Recenzie chvália: lokalitu, moderné vybavenie, rýchlu komunikáciu
+- Booking profil „Spravuje Tomáš": **9,6 z 10** z **695 hodnotení** (19 ubytovaní — počet na web nedávame), jazyky SK/CZ/EN
 
 ## Cieľová skupina
 

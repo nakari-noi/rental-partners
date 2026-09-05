@@ -43,7 +43,7 @@
 ## Ďalšie kroky (v poradí)
 
 1. [x] Claude: texty vytiahnuté do `docs/texty.md` (5. 9.) → **klient prejde a opraví**
-2. [~] Airbnb načítané (prílohy A, B v texty.md — 109 recenzií, 10 inzerátov, 5 citátov) · **Booking link chýba** · treba priame linky na 6 vybraných inzerátov
+2. [~] Airbnb načítané (prílohy A, B v texty.md — 109 recenzií, 10 inzerátov, 5 citátov) · Booking čísla zo screenshotu zapracované (9,6 z 10 · 695 hodnotení · Spravuje Tomáš · SK/CZ/EN) · **chýba URL Booking profilu** a priame linky na 6 inzerátov
 3. [ ] Klient: logo, fotky bytov (aspoň 6 + 3 na domov), fotka Tomáša/tímu → do `podklady/`
 4. [ ] Klient: fakty — kontakty, IČO, obchodné meno, Booking čísla, príbeh firmy, tím, podmienky (výplata, upratovanie, energie, blokovanie termínov, dĺžka zmluvy a výpoveď pri oboch modeloch, ako sa určuje garantovaný nájom)
 5. [ ] Voliteľné: mobilný náhľad domova na plátne

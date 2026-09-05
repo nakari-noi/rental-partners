@@ -18,7 +18,7 @@ Zásady, ktoré držím: nespomínať počet bytov · čísla len ako ilustračn
 - Rental Partners — Správa bytov a garantovaný nájom v Bratislave.
 - Stránky: Služby, Cenník, Výsledky, O nás, Kontakt
 - Kontakt: [TELEFÓN] · [E-MAIL] · [ADRESA]
-- Hodnotenia hostí: Airbnb · 4,89 z 5 · Superhost — Booking · [DOPLNIŤ] — Naše profily →
+- Hodnotenia hostí: Airbnb · 4,89 z 5 · Superhost — Booking · 9,6 z 10 · 695 hodnotení — Naše profily →
 - © 2026 Rental Partners · [OBCHODNÉ MENO] · IČO [DOPLNIŤ]
 
 **Záverečná výzva (tmavý blok, na každej stránke):** nadpisok *Nezáväzne a zadarmo* + veta (líši sa podľa stránky, viď nižšie) + tlačidlo *Chcem odhad výnosu*
@@ -35,7 +35,7 @@ Zásady, ktoré držím: nespomínať počet bytov · čísla len ako ilustračn
 
 **Tlačidlá:** Chcem odhad výnosu · Dva spôsoby spolupráce ↓
 
-**Karta hodnotenia pri fotke:** 4,89 z 5 · Superhost — Airbnb · 108 recenzií · Booking [DOPLNIŤ]
+**Karta hodnotenia pri fotke:** 4,89 z 5 · Superhost — Airbnb 109 recenzií · Booking 9,6 z 10 · 695 hodnotení
 **Štítky na fotkách bytov:** [Názov bytu] · Centrum / Staré Mesto / Hradný vrch
 
 **Pás recenzií:** nadpisok *Z recenzií hostí · Airbnb a Booking* · odkaz *Všetky recenzie →* · 5 kariet: hviezdičky, citát, [Meno hosťa] · [Airbnb / Booking] · [mesiac rok] — návrhy citátov v prílohe A
@@ -152,12 +152,12 @@ Pre majiteľov, ktorí chcú istotu a nulové starosti.
 
 ## 4. Výsledky
 
-**Nadpis:** 4,89 z 5 na Airbnb. [X,X] z 10 na Bookingu.
+**Nadpis:** 4,89 z 5 na Airbnb. 9,6 z 10 na Bookingu.
 **Podnadpis:** Hodnotenia z platforiem, kde naše byty nájdete — Airbnb, Booking a ďalšie. Verejné, overiteľné, nie z prezentácie.
 
 **Kde nás nájdete — Jeden tím, rovnaké byty, verejné hodnotenia**
-- Airbnb (Superhost): 4,89 z 5 · 108 recenzií · Profil hostiteľa Tomáš, hostí už 2 roky. · Otvoriť profil ↗
-- Booking ([DOPLNIŤ: status]): [X,X] z 10 · [DOPLNIŤ] recenzií · [DOPLNIŤ: názov profilu / od kedy] · Otvoriť profil ↗
+- Airbnb (Superhost): 4,89 z 5 · 109 recenzií · Profil hostiteľa Tomáš, hostí už 2 roky. · Otvoriť profil ↗
+- Booking (Spravuje Tomáš): 9,6 z 10 · 695 hodnotení · Dohovoríte sa slovensky, česky aj anglicky. · Otvoriť profil ↗
 - Tmavá karta: 2 roky — ubytúvame hostí v centre Bratislavy — v jedno- až štvorizbových bytoch. [DOPLNIŤ: ktoré ďalšie platformy okrem Airbnb a Booking]
 
 **Z recenzií — Čo hostia najčastejšie chvália**
@@ -213,7 +213,7 @@ Jedno- až štvorizbové byty v centre Bratislavy. Každý vedie na svoj inzerá
 
 ## Príloha A — recenzie z Airbnb (načítané 5. 9. 2026)
 
-Profil: https://sk.airbnb.com/users/show/515063940 — Superhost, 2 roky, **109 recenzií** (na webe máme 108 — aktualizujem na 109), 4,89 z 5, overená identita.
+Profil: https://sk.airbnb.com/users/show/515063940 — Superhost, 2 roky, **109 recenzií** (na webe už 109), 4,89 z 5, overená identita.
 
 Bio na Airbnb (doslovne): „Moja práca: Služobne; Pre hostí vždy: Všetko pre príjemný pobyt; Vďaka čomu je moje bývanie jedinečné: Záleží mi aby sa hostia cítili dobre; Neskutočne ma baví: Cestovanie, cvičenie a moja práca"
 
