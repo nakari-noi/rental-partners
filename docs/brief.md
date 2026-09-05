@@ -58,3 +58,12 @@ Tri typy návštevníkov webu:
 - Kontaktné údaje (telefón, e-mail, adresa, IČO)
 - Kalkulačka odhadu výnosu na webe? (áno/nie)
 - Tech stack (návrh: Astro + Tailwind, statický hosting, formulár cez externú službu)
+
+## Údaje o firme (FinStat, 5. 9. 2026)
+
+- **Rental Partners s. r. o.**, IČO 57632499, DIČ 2122860663 (IČ DPH neuvedené)
+- Sídlo: Námestie 1. mája 8062/11, 811 06 Bratislava – mestská časť Staré Mesto
+- Vznik 21. 5. 2026, dvaja spoločníci, základné imanie 5 000 €
+- Zápis: Obchodný register Mestského súdu Bratislava III, oddiel Sro, vložka 199715/B
+- Predmety podnikania o. i.: ubytovacie služby, prenájom nehnuteľností s doplnkovými službami, čistiace a upratovacie služby, fotografické a marketingové služby, sprostredkovanie
+- Pozn.: firma vznikla 5/2026, ale Tomáš hostí 2 roky — na webe hovoríme o skúsenosti tímu, nie firmy

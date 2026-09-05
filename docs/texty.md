@@ -17,9 +17,9 @@ Zásady, ktoré držím: nespomínať počet bytov · čísla len ako ilustračn
 **Pätička**
 - Rental Partners — Správa bytov a garantovaný nájom v Bratislave.
 - Stránky: Služby, Cenník, Výsledky, O nás, Kontakt
-- Kontakt: [TELEFÓN] · [E-MAIL] · [ADRESA]
+- Kontakt: [TELEFÓN] · [E-MAIL] · Námestie 1. mája 11, 811 06 Bratislava
 - Hodnotenia hostí: Airbnb · 4,89 z 5 · Superhost — Booking · 9,6 z 10 · 695 hodnotení — Naše profily →
-- © 2026 Rental Partners · [OBCHODNÉ MENO] · IČO [DOPLNIŤ]
+- © 2026 Rental Partners s. r. o. · IČO 57632499 · DIČ 2122860663
 
 **Záverečná výzva (tmavý blok, na každej stránke):** nadpisok *Nezáväzne a zadarmo* + veta (líši sa podľa stránky, viď nižšie) + tlačidlo *Chcem odhad výnosu*
 
@@ -158,7 +158,7 @@ Pre majiteľov, ktorí chcú istotu a nulové starosti.
 **Kde nás nájdete — Jeden tím, rovnaké byty, verejné hodnotenia**
 - Airbnb (Superhost): 4,89 z 5 · 109 recenzií · Profil hostiteľa Tomáš, hostí už 2 roky. · Otvoriť profil ↗
 - Booking (Spravuje Tomáš): 9,6 z 10 · 695 hodnotení · Dohovoríte sa slovensky, česky aj anglicky. · Otvoriť profil ↗
-- Tmavá karta: 2 roky — ubytúvame hostí v centre Bratislavy — v jedno- až štvorizbových bytoch. [DOPLNIŤ: ktoré ďalšie platformy okrem Airbnb a Booking]
+- Tmavá karta: 804 — hodnotení hostí spolu, z Airbnb a Bookingu, za 2 roky hostenia v jedno- až štvorizbových bytoch v centre Bratislavy. [DOPLNIŤ: ktoré ďalšie platformy okrem Airbnb a Booking]
 
 **Z recenzií — Čo hostia najčastejšie chvália**
 - Poloha — Centrum, Staré Mesto, Hradný vrch — hostia chodia všade pešo.
@@ -205,7 +205,7 @@ Jedno- až štvorizbové byty v centre Bratislavy. Každý vedie na svoj inzerá
 
 **Formulár:** Meno a priezvisko · Telefón · E-mail · Kde je byt (mestská časť) *napr. Staré Mesto* · Veľkosť bytu (výber) · Byt je momentálne: Prázdny / Prenajatý dlhodobo / Už na Airbnb / Booking · Zaujíma ma: Správa bytu · 10 % / Garantovaný nájom / Neviem, poraďte mi · Čo by ste chceli vedieť (nepovinné) · ☐ Súhlasím so spracovaním údajov na účel odpovede na môj dopyt. [DOPLNIŤ: odkaz na zásady ochrany osobných údajov] · tlačidlo **Chcem odhad výnosu**
 
-**Radšej priamo?** [TELEFÓN] · [E-MAIL] · [ADRESA], Bratislava
+**Radšej priamo?** [TELEFÓN] · [E-MAIL] · Námestie 1. mája 11, 811 06 Bratislava – Staré Mesto
 
 **Čo bude nasledovať:** 01 Ozveme sa a dohodneme termín. · 02 Stretneme sa v byte, pozrieme lokalitu a stav. · 03 Dostanete odhad výnosu a návrh zmluvy. Rozhodnutie je na vás.
 
