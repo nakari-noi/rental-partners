@@ -10,10 +10,13 @@
     { "file": "Vysledky.dc.html", "title": "Výsledky", "x": 0, "y": 3700, "w": 1200, "h": 3000, "page": "page-web" },
     { "file": "ONas.dc.html", "title": "O nás", "x": 1320, "y": 3700, "w": 1200, "h": 2700, "page": "page-web" },
     { "file": "Kontakt.dc.html", "title": "Kontakt", "x": 2640, "y": 3700, "w": 1200, "h": 2200, "page": "page-web" },
+    { "file": "MobilPorovnanieA.dc.html", "title": "Mobil · porovnanie A (3 stĺpce s textom)", "x": 3960, "y": 0, "w": 390, "h": 760, "page": "page-web" },
+    { "file": "MobilPorovnanieB.dc.html", "title": "Mobil · porovnanie B (ikony)", "x": 4440, "y": 0, "w": 390, "h": 640, "page": "page-web" },
     { "file": "SmerA.dc.html", "title": "Smer A · Prémiový", "x": 0, "y": 0, "w": 1200, "h": 1440, "page": "page-zaloha" }
   ],
   "annotations": [
     { "id": "system", "x": 0, "y": -300, "w": 560, "page": "page-web", "text": "SMER C · Partnerský — všetkých 6 stránok\nFarby: krémová #f6efe4 · biela · piesok #e9dcc6 · terakota #c9694a (akcia) · šalviová #6e8b6a (dôkaz) · text #2b2118\nPísmo: Outfit (nadpisy) + Nunito Sans (text)\nTokeny a pravidlá: docs/DESIGN.md v projekte\n\nVšetko v [hranatých zátvorkách] sú chýbajúce fakty — kontakt, IČO, fotky, citáty z recenzií, podmienky (výplata, upratovanie, výpoveď). Nič z toho som nevymýšľal." },
+    { "id": "mobil-porovnanie", "x": 3960, "y": -220, "w": 870, "page": "page-web", "text": "MOBIL · porovnanie so všetkými tromi stĺpcami — dva varianty na výber\nA: tri stĺpce s krátkym textom pod ikonou (viac informácií, vyšší blok)\nB: kompaktná mriežka s ikonami ✕ / ✓ / 90 % + krátky podtitul riadku (rýchlo čitateľné, kratšie)\nOba majú tmavú hlavičku s farbou stĺpca: sivá = dlhodobý prenájom, terakota = správa, šalviová = garantovaný nájom." },
     { "id": "smer-a", "x": 1280, "y": 0, "w": 420, "page": "page-zaloha", "text": "ZÁLOŽNÝ SMER: A · Prémiový\nOdložené pre prípad, že by sa neskôr hodil prémiovejší tón (napr. pre investorov alebo EN verziu).\nTmavé teplé tóny, mosadzný akcent #c8a45d, serif Cormorant Garamond." }
   ],
   "launch": { "view": "canvas", "page": "page-web" }
