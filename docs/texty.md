@@ -180,8 +180,8 @@ Jedno- až štvorizbové byty v centre Bratislavy. Každý vedie na svoj inzerá
 **Podnadpis:** Hostí ubytúvame už dva roky — cez Airbnb, Booking a ďalšie platformy. Dnes sa staráme o byty v centre Bratislavy — či už ich majiteľom spravujeme, alebo si ich prenajímame a platíme im garantovaný nájom.
 
 **Náš príbeh — Ako sme začali**
-[DOPLNIŤ: príbeh firmy v 3–4 vetách — kto ste, ako ste sa dostali k správe bytov, čo vás na tom baví. Napr. prvý vlastný byt na Airbnb, prví majitelia, ktorí vás oslovili.]
-[DOPLNIŤ: čo robíte inak — napr. osobný kontakt s každým majiteľom, vlastný tím na upratovanie, byt kontrolujete po každom pobyte.]
+Začalo to jedným bytom. Tomáš ho prenajímal hosťom sám — fotil, odpisoval na správy, odovzdával kľúče, upratoval. Keď pribudli ďalšie vlastné byty, prišli prví majitelia s otázkou, či by sa nepostaral aj o ten ich. Tak vznikli Rental Partners.
+Dnes sa staráme o desiatky bytov v centre Bratislavy a stále platí to, s čím sme začínali: každý byt vedieme, ako keby bol náš. Vieme, čo hostia potrebujú, lebo sme im roky odpisovali sami — a vieme, čo trápi majiteľov, lebo sme nimi tiež.
 
 **Princípy — Tri veci, na ktorých trváme**
 - 01 Povieme vám pravdu o výnose — Odhad robíme podľa lokality, stavu bytu a sezóny. Ak sa byt na krátkodobý prenájom nehodí, povieme to na prvom stretnutí.
@@ -258,3 +258,16 @@ Potrebujem: **priame linky na týchto 6 inzerátov** (Airbnb aj Booking), ich lo
 **Zapracované do návrhu (5. 9.):**
 - Domov, pás recenzií: Carolin (poloha) · Jens (vybavenie, čistota) · Karl (komunikácia, check-in) · Susanne (celkový dojem) · Jens (odporúčanie)
 - Výsledky, 2 citáty: Karl (plný) · Jens (komunikácia + čistota, s menom Amanda) — oba Airbnb; citát z Bookingu doplníme, keď bude URL profilu
+
+## Príloha C — 6 bytov v portfóliu (linky od klienta, načítané 5. 9. 2026)
+
+| Byt | Lokalita · izby · hostia | Hodnotenie | Airbnb link | Fotka |
+|---|---|---|---|---|
+| 2Br byt ocenený za najlepšiu renováciu a dizajn | Ružinov · 2 spálne · 5 | 4,91 · 43 | https://sk.airbnb.com/rooms/36337965 | byt-2br-dizajn |
+| Najlepšia poloha v meste s 2 spálňami | 2 spálne · 8 · garáž | 4,85 · 26 | https://sk.airbnb.com/rooms/1324615524135454109 | byt-najlepsia-poloha |
+| Garsónka v najlepšej centrálnej lokalite | 1 · 4 · samoobslužný check-in | 4,86 · 28 | https://sk.airbnb.com/rooms/1359465590835327627 | byt-garsonka |
+| Nové a útulné v srdci Bratislavy | 1 spálňa · 5 · parkovanie, klimatizácia | 5,0 · 8 | https://sk.airbnb.com/rooms/1321068920425376567 | byt-nove-utulne |
+| Apartmán Metropolis Prime | 1 spálňa · 3 · podzemné parkovanie | 5,0 · 5 | https://sk.airbnb.com/rooms/1527466211344326285 | byt-metropolis |
+| Štúdio pod hradom pri Dunaji | 1 · 2 · výťah, EV nabíjanie | nový inzerát (0) | https://sk.airbnb.com/rooms/1403085716062221620 | **castelhilll residence — odhad, overiť** |
+
+Booking nemá verejnú stránku hostiteľa — na webe pri Bookingu odkaz nebude, len hodnotenie 9,6 a poznámka, že hodnotenia sú pri každom byte.

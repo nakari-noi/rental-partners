@@ -73,3 +73,8 @@ Tri typy návštevníkov webu:
 - E-mail: rentalpartners2026@gmail.com
 - Tomáš: +421 903 989 040
 - Amanda: +421 904 809 476 (tím — komunikácia s hosťami; hostia ju spomínajú v recenziách)
+
+## Doména a platformy
+
+- Doména: **rentalpartners.sk** (klient kúpi pri spúšťaní)
+- Booking nemá verejný profil hostiteľa → na webe bez odkazu; Airbnb profil: https://sk.airbnb.com/users/show/515063940
