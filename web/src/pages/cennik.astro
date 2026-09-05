@@ -106,35 +106,35 @@ import Check from '../components/Check.astro';
     <h2 class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">Čo riešite vy — a čo my</h2>
     <p class="mt-2 text-ink-soft">Bežný dlhodobý prenájom vedľa vybraného modelu.</p>
     <div id="compare" class="mt-7">
-    <!-- Mobile: two-column comparison, long-term rental vs. the chosen model (✕ / ✓) -->
+    <!-- Mobile: icon grid, all three columns (✓ / ✕ / VY / MY) -->
     <div class="md:hidden bg-surface rounded-[var(--radius-card)] overflow-hidden">
-      <div class="grid grid-cols-2 bg-ink text-[12px] font-bold uppercase tracking-[0.04em]">
-        <div class="px-4 py-3 text-cream-muted">Dlhodobý prenájom</div>
-        <div class="px-4 py-3 text-accent-soft" data-mhead>Správa 10 %</div>
+      <div class="grid grid-cols-[1.45fr_1fr_1fr_1fr] bg-ink text-[10px] font-bold uppercase tracking-[0.04em] leading-[1.25] text-center">
+        <div class="py-3 pl-3.5 pr-2"></div>
+        <div class="py-3 px-1 text-cream-muted">Dlhodobý prenájom</div>
+        <div class="py-3 px-1 text-accent-soft">Správa 10 %</div>
+        <div class="py-3 px-1 text-sage-light">Garant. nájom</div>
       </div>
       {[
-        ['Váš príjem', 'Pevný nájom od nájomcu', null, '90 % obratu, podľa obsadenosti', 'Pevný nájom od nás'],
-        ['Prázdne obdobia', 'Byt stojí, hľadáte nájomcu', false, 'Ceny a obsadenosť ladíme my', 'Naše riziko, nájom sa nemení'],
-        ['Kto rieši ľudí v byte', 'Vy', false, 'My', 'My'],
-        ['Stav bytu', 'Vidíte ho raz za rok', false, 'Kontrola po každom pobyte', 'Kontrola po každom pobyte'],
-        ['Byt pre vás', 'Nedostupný počas zmluvy', false, 'Termíny podľa dohody', 'Podľa nájomnej zmluvy'],
-      ].map(([label, longTerm, neutral, a, b]) => (
-        <div class="border-t border-sand">
-          <div class="px-4 pt-3 text-[14px] font-bold">{label}</div>
-          <div class="grid grid-cols-2 gap-3 px-4 pb-3.5 pt-1.5 text-[14px] leading-snug">
-            <div class="flex items-start gap-2 text-ink-soft">
-              {neutral === null
-                ? <span class="shrink-0 mt-0.5 w-[18px] h-[18px] rounded-full bg-sand text-ink-muted flex items-center justify-center"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14"></path></svg></span>
-                : <span class="shrink-0 mt-0.5 w-[18px] h-[18px] rounded-full bg-sand text-ink-muted flex items-center justify-center"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span>}
-              <span>{longTerm}</span>
+        ['Istý príjem každý mesiac', 'rovnaká suma bez ohľadu na obsadenosť', 'yes', 'no', 'yes'],
+        ['Vyšší výnos v sezóne', 'zarábate podľa obsadenosti', 'no', 'yes', 'no'],
+        ['Prázdne obdobia', 'kto nesie riziko', 'VY', 'VY', 'MY'],
+        ['Hostia a nájomcovia', 'kto ich rieši', 'VY', 'MY', 'MY'],
+        ['Kontrola bytu', 'raz za rok / po každom pobyte', 'no', 'yes', 'yes'],
+        ['Byt pre vás', 'môžete si ho blokovať', 'no', 'yes', 'no'],
+      ].map(([label, sub, ...cells]) => (
+        <div class="grid grid-cols-[1.45fr_1fr_1fr_1fr] items-center border-t border-sand py-3 pl-3.5 pr-2 text-[13px]">
+          <div class="font-bold leading-[1.25]">{label}<div class="text-[11px] font-normal text-ink-muted mt-0.5">{sub}</div></div>
+          {cells.map((c) => (
+            <div class="flex justify-center">
+              {c === 'yes' && <span class="h-6 min-w-6 px-1.5 rounded-full bg-sage-soft text-sage inline-flex items-center justify-center" aria-label="áno"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>}
+              {c === 'no' && <span class="h-6 min-w-6 px-1.5 rounded-full bg-sand text-ink-muted inline-flex items-center justify-center" aria-label="nie"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span>}
+              {c === 'VY' && <span class="h-6 min-w-6 px-2 rounded-full bg-sand text-ink-muted inline-flex items-center justify-center text-[10px] font-extrabold tracking-[0.02em]">VY</span>}
+              {c === 'MY' && <span class="h-6 min-w-6 px-2 rounded-full bg-sage-soft text-sage inline-flex items-center justify-center text-[10px] font-extrabold tracking-[0.02em]">MY</span>}
             </div>
-            <div class="flex items-start gap-2 text-ink">
-              <span class="shrink-0 mt-0.5 w-[18px] h-[18px] rounded-full bg-sage-soft text-sage flex items-center justify-center"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
-              <span data-mcol="a">{a}</span><span data-mcol="b" class="hidden">{b}</span>
-            </div>
-          </div>
+          ))}
         </div>
       ))}
+      <div class="border-t border-sand px-3.5 pt-2.5 pb-3 text-[11px] leading-relaxed text-ink-muted">✓ áno · ✕ nie · VY / MY = kto to rieši alebo nesie riziko. Podrobnosti sú v kartách modelov vyššie.</div>
     </div>
     <div class="hidden md:block overflow-x-auto rounded-[var(--radius-card)]">
       <table class="w-full min-w-[640px] bg-surface text-[15px]">
@@ -143,10 +143,10 @@ import Check from '../components/Check.astro';
         </thead>
         <tbody>
           <tr class="border-b border-sand"><th class="p-4 text-left font-bold">Váš príjem</th><td class="p-4 text-ink-soft">Pevný nájom od nájomcu</td><td class="p-4" data-col="a">90 % obratu, podľa obsadenosti</td><td class="p-4 col-dim" data-col="b">Pevný nájom od nás</td></tr>
-          <tr class="border-b border-sand"><th class="p-4 text-left font-bold">Prázdne obdobia</th><td class="p-4 text-ink-soft">Hľadáte nájomcu, byt stojí</td><td class="p-4" data-col="a">Ceny a obsadenosť ladíme my</td><td class="p-4 col-dim" data-col="b">Naše riziko, váš nájom sa nemení</td></tr>
+          <tr class="border-b border-sand"><th class="p-4 text-left font-bold">Prázdne obdobia</th><td class="p-4 text-ink-soft">Hľadáte nájomcu, byt stojí</td><td class="p-4" data-col="a">Riziko je vaše — ceny a obsadenosť ladíme my</td><td class="p-4 col-dim" data-col="b">Naše riziko, váš nájom sa nemení</td></tr>
           <tr class="border-b border-sand"><th class="p-4 text-left font-bold">Kto rieši ľudí v byte</th><td class="p-4 text-ink-soft">Vy</td><td class="p-4" data-col="a">My</td><td class="p-4 col-dim" data-col="b">My</td></tr>
           <tr class="border-b border-sand"><th class="p-4 text-left font-bold">Stav bytu</th><td class="p-4 text-ink-soft">Vidíte ho raz za rok</td><td class="p-4" data-col="a">Kontrola po každom pobyte</td><td class="p-4 col-dim" data-col="b">Kontrola po každom pobyte</td></tr>
-          <tr><th class="p-4 text-left font-bold">Byt pre vás</th><td class="p-4 text-ink-soft">Nedostupný počas zmluvy</td><td class="p-4" data-col="a">Termíny si viete blokovať podľa dohody</td><td class="p-4 col-dim" data-col="b">Podľa dohody v nájomnej zmluve</td></tr>
+          <tr><th class="p-4 text-left font-bold">Byt pre vás</th><td class="p-4 text-ink-soft">Nedostupný počas zmluvy</td><td class="p-4" data-col="a">Termíny si viete blokovať podľa dohody</td><td class="p-4 col-dim" data-col="b">Nie — byt je prenajatý nám</td></tr>
         </tbody>
       </table>
     </div>
@@ -195,9 +195,6 @@ import Check from '../components/Check.astro';
         p.classList.toggle('hidden', k !== model);
         p.classList.toggle('grid', k === model);
       }
-      document.querySelectorAll<HTMLElement>('[data-mcol]').forEach((el) => el.classList.toggle('hidden', el.dataset.mcol !== model));
-      const mh = document.querySelector<HTMLElement>('[data-mhead]');
-      if (mh) { mh.textContent = model === 'a' ? 'Správa 10 %' : 'Garantovaný nájom'; mh.classList.toggle('text-accent-soft', model === 'a'); mh.classList.toggle('text-sage-light', model === 'b'); }
       document.querySelectorAll<HTMLElement>('#compare [data-col]').forEach((el) => {
         const on = el.dataset.col === model;
         el.classList.toggle('col-dim', !on);
