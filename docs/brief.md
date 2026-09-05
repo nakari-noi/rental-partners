@@ -67,3 +67,9 @@ Tri typy návštevníkov webu:
 - Zápis: Obchodný register Mestského súdu Bratislava III, oddiel Sro, vložka 199715/B
 - Predmety podnikania o. i.: ubytovacie služby, prenájom nehnuteľností s doplnkovými službami, čistiace a upratovacie služby, fotografické a marketingové služby, sprostredkovanie
 - Pozn.: firma vznikla 5/2026, ale Tomáš hostí 2 roky — na webe hovoríme o skúsenosti tímu, nie firmy
+
+## Kontakty (5. 9. 2026)
+
+- E-mail: rentalpartners2026@gmail.com
+- Tomáš: +421 903 989 040
+- Amanda: +421 904 809 476 (tím — komunikácia s hosťami; hostia ju spomínajú v recenziách)

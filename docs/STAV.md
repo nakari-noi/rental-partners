@@ -45,7 +45,7 @@
 1. [x] Claude: texty vytiahnuté do `docs/texty.md` (5. 9.) → **klient prejde a opraví**
 2. [~] Airbnb načítané (prílohy A, B v texty.md — 109 recenzií, 10 inzerátov, 5 citátov) · Booking čísla zo screenshotu zapracované (9,6 z 10 · 695 hodnotení · Spravuje Tomáš · SK/CZ/EN) · **chýba URL Booking profilu** a priame linky na 6 inzerátov
 3. [~] Fotky: 10 fotiek bytov v `podklady/fotky/` (5. 9., 1024–1440 px, po jednej na byt — z inzerátov) · **chýba logo a fotka Tomáša/tímu**
-4. [~] Fakty: IČO/DIČ/sídlo/obchodné meno z FinStatu zapracované (5. 9.) · Booking čísla hotové · **chýba telefón, e-mail, príbeh firmy, tím, podmienky** (výplata, upratovanie, energie, blokovanie termínov, dĺžka zmluvy a výpoveď pri oboch modeloch, ako sa určuje garantovaný nájom)
+4. [~] Fakty: IČO/DIČ/sídlo/obchodné meno z FinStatu zapracované (5. 9.) · Booking čísla hotové · telefóny + e-mail doplnené (5. 9.) · **chýba príbeh firmy, pozície v tíme, tretí člen tímu?, podmienky** (výplata, upratovanie, energie, blokovanie termínov, dĺžka zmluvy a výpoveď pri oboch modeloch, ako sa určuje garantovaný nájom)
 5. [x] Fotky bytov vložené do návrhu (domov, Služby, Výsledky) — 5. 9. · [ ] Voliteľné: mobilný náhľad domova na plátne
 6. [ ] Claude: založiť web (Astro + Tailwind), tokeny z DESIGN.md, Domov → Cenník → Služby → Výsledky + O nás → Kontakt (formulár cez Web3Forms/Formspree), responzívne pre mobil
 7. [ ] Angličtina + prepínač jazyka

@@ -17,7 +17,7 @@ Zásady, ktoré držím: nespomínať počet bytov · čísla len ako ilustračn
 **Pätička**
 - Rental Partners — Správa bytov a garantovaný nájom v Bratislave.
 - Stránky: Služby, Cenník, Výsledky, O nás, Kontakt
-- Kontakt: [TELEFÓN] · [E-MAIL] · Námestie 1. mája 11, 811 06 Bratislava
+- Kontakt: Tomáš +421 903 989 040 · Amanda +421 904 809 476 · rentalpartners2026@gmail.com · Námestie 1. mája 11, 811 06 Bratislava
 - Hodnotenia hostí: Airbnb · 4,89 z 5 · Superhost — Booking · 9,6 z 10 · 695 hodnotení — Naše profily →
 - © 2026 Rental Partners s. r. o. · IČO 57632499 · DIČ 2122860663
 
@@ -191,7 +191,7 @@ Jedno- až štvorizbové byty v centre Bratislavy. Každý vedie na svoj inzerá
 **Tím — Kto sa o váš byt stará**
 [DOPLNIŤ: veľkosť tímu — koľko ľudí, kto robí čo.]
 - Tomáš — [pozícia] · Superhost na Airbnb
-- [Meno] — [pozícia]
+- Amanda — [pozícia] · komunikácia s hosťami
 - [Meno] — [pozícia]
 
 **Záverečná výzva:** Stretnime sa priamo vo vašom byte.
@@ -205,7 +205,7 @@ Jedno- až štvorizbové byty v centre Bratislavy. Každý vedie na svoj inzerá
 
 **Formulár:** Meno a priezvisko · Telefón · E-mail · Kde je byt (mestská časť) *napr. Staré Mesto* · Veľkosť bytu (výber) · Byt je momentálne: Prázdny / Prenajatý dlhodobo / Už na Airbnb / Booking · Zaujíma ma: Správa bytu · 10 % / Garantovaný nájom / Neviem, poraďte mi · Čo by ste chceli vedieť (nepovinné) · ☐ Súhlasím so spracovaním údajov na účel odpovede na môj dopyt. [DOPLNIŤ: odkaz na zásady ochrany osobných údajov] · tlačidlo **Chcem odhad výnosu**
 
-**Radšej priamo?** [TELEFÓN] · [E-MAIL] · Námestie 1. mája 11, 811 06 Bratislava – Staré Mesto
+**Radšej priamo?** Tomáš +421 903 989 040 · Amanda +421 904 809 476 · rentalpartners2026@gmail.com · Námestie 1. mája 11, 811 06 Bratislava – Staré Mesto
 
 **Čo bude nasledovať:** 01 Ozveme sa a dohodneme termín. · 02 Stretneme sa v byte, pozrieme lokalitu a stav. · 03 Dostanete odhad výnosu a návrh zmluvy. Rozhodnutie je na vás.
 
@@ -247,7 +247,7 @@ Potrebujem: **priame linky na týchto 6 inzerátov** (Airbnb aj Booking), ich lo
 ### A2 — plné znenie (2. načítanie, 5. 9. 2026) a kam som ich dal
 
 **Jens** (Aßlar, Nemecko), júl 2026 — „Strávili sme v Bratislave tri skvelé dni a od začiatku sme sa v tomto ubytovaní cítili veľmi príjemne. Komunikácia s Amandou bola vždy priateľská a rýchla. Pokyny k ubytovaniu a k používaniu podzemného parkoviska boli dokonalé a ľahko pochopiteľné. Apartmán je moderne zariadený, veľmi čistý a nachádza sa v tichej štvrti. Za zmienku stojí najmä dokonalá poloha – do starého mesta sa ľahko dostanete pešo za niekoľko minút. Toto miesto môžeme plne odporučiť a pri ďalšej návšteve Bratislavy by sme sa tu opäť kedykoľvek ubytovali."
-→ komunikácia + check-in + čistota + poloha. **Kto je Amanda?** (spoluhostiteľka?) — v citáte na webe som meno vynechal, kým nepovieš.
+→ komunikácia + check-in + čistota + poloha. Amanda = členka tímu (komunikácia s hosťami) — meno v citáte na webe ponechané.
 
 **Karl** (Brunoy, Francúzsko), júl 2026 — „Bolo to perfektné! Skvelá poloha, niečo vyše 5 minút chôdze od centra, ale napriek tomu naozaj pokojné. Nikdy som nemal lepšie pokyny na nájdenie ubytovania. Vstup bol veľmi jednoduchý, garáž bola pekná a Tomas bol veľmi nápomocný a vždy odpovedal okamžite. Určite jedno z najlepších miest na ubytovanie v Bratislave."
 → komunikácia + check-in + poloha
@@ -257,4 +257,4 @@ Potrebujem: **priame linky na týchto 6 inzerátov** (Airbnb aj Booking), ich lo
 
 **Zapracované do návrhu (5. 9.):**
 - Domov, pás recenzií: Carolin (poloha) · Jens (vybavenie, čistota) · Karl (komunikácia, check-in) · Susanne (celkový dojem) · Jens (odporúčanie)
-- Výsledky, 2 citáty: Karl (plný) · Jens (komunikácia + čistota, bez mena Amanda) — oba Airbnb; citát z Bookingu doplníme, keď bude URL profilu
+- Výsledky, 2 citáty: Karl (plný) · Jens (komunikácia + čistota, s menom Amanda) — oba Airbnb; citát z Bookingu doplníme, keď bude URL profilu
