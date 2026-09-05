@@ -47,7 +47,7 @@
 3. [x] Fotky bytov, logo aj fotka Tomáša (`tomasko.jpg`) doplnené do návrhu (5. 9.)
 4. [~] Fakty: firma, kontakty, príbeh (napísaný podľa zadania) hotové · **podmienky spolupráce doplní klient po nakódovaní** (musí sa poradiť) · tretí člen tímu neskôr
 5. [x] Fotky bytov vložené do návrhu (domov, Služby, Výsledky) — 5. 9. · [ ] Voliteľné: mobilný náhľad domova na plátne
-6. [ ] Claude: založiť web (Astro + Tailwind), tokeny z DESIGN.md, Domov → Cenník → Služby → Výsledky + O nás → Kontakt (formulár cez Web3Forms/Formspree), responzívne pre mobil
+6. [~] Web založený v `web/` (Astro 7 + Tailwind 4, tokeny, layout, navigácia, pätička, hero) — 5. 9. · ďalej: Domov (zvyšné sekcie) → Cenník → Služby → Výsledky + O nás → Kontakt (formulár) · spustenie: `cd web && npm run dev` → http://localhost:4321
 7. [ ] Angličtina + prepínač jazyka
 8. [ ] Pred spustením: doména, hosting (Cloudflare Pages/Vercel), GDPR + súhlas vo formulári, SEO meta, analytika, test formulára
 

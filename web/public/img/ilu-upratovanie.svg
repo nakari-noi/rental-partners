@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect width="600" height="400" fill="#e9dcc6"/>
+<rect x="60" y="180" width="360" height="130" rx="18" fill="#f6efe4" stroke="#2b2118" stroke-width="4"/>
+<rect x="60" y="140" width="360" height="60" rx="18" fill="#dccbb0" stroke="#2b2118" stroke-width="4"/>
+<rect x="90" y="150" width="120" height="40" rx="14" fill="#f6efe4" stroke="#2b2118" stroke-width="4"/>
+<rect x="230" y="150" width="120" height="40" rx="14" fill="#f6efe4" stroke="#2b2118" stroke-width="4"/>
+<path d="M60 310v40M420 310v40M60 240h360" stroke="#2b2118" stroke-width="4"/>
+<path d="M120 275h240" stroke="#c9694a" stroke-width="6"/>
+<path d="M470 120l6 18 18 6-18 6-6 18-6-18-18-6 18-6z" fill="#6e8b6a"/>
+<path d="M520 190l4 12 12 4-12 4-4 12-4-12-12-4 12-4z" fill="#6e8b6a"/>
+<path d="M440 60l3 9 9 3-9 3-3 9-3-9-9-3 9-3z" fill="#8fb08a"/>
+<rect x="470" y="250" width="80" height="26" rx="8" fill="#c9694a"/>
+<rect x="470" y="282" width="80" height="26" rx="8" fill="#f6efe4" stroke="#2b2118" stroke-width="4"/>
+<rect x="470" y="314" width="80" height="26" rx="8" fill="#6e8b6a"/>
+</svg>

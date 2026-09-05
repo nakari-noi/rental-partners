@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+/* Design tokens — docs/DESIGN.md (smer C · Partnerský) */
+@theme {
+  --color-bg: #f6efe4;
+  --color-surface: #ffffff;
+  --color-sand: #e9dcc6;
+  --color-sand-deep: #dccbb0;
+  --color-ink: #2b2118;
+  --color-ink-soft: #6b5b4e;
+  --color-ink-muted: #8a7a68;
+  --color-cream-muted: #b8a99a;
+  --color-accent: #c9694a;
+  --color-accent-deep: #a8533a;
+  --color-accent-soft: #e0a58c;
+  --color-sage: #6e8b6a;
+  --color-sage-light: #8fb08a;
+  --color-sage-soft: #e3eadf;
+  --font-display: "Outfit", "Trebuchet MS", "Segoe UI", sans-serif;
+  --font-body: "Nunito Sans", "Segoe UI", Arial, sans-serif;
+  --radius-chip: 999px;
+  --radius-card: 20px;
+  --radius-block: 28px;
+  --shadow-float: 0 12px 32px rgba(43, 33, 24, 0.12);
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--color-bg); color: var(--color-ink); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+h1, h2, h3, .display { font-family: var(--font-display); }
+
+/* Shared pieces */
+.container { width: 100%; max-width: 1200px; margin-inline: auto; padding-inline: 20px; }
+@media (min-width: 768px) { .container { padding-inline: 40px; } }
+@media (min-width: 1100px) { .container { padding-inline: 64px; } }
+
+.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent); }
+.btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 17px 30px; background: var(--color-accent); color: #fff; border-radius: var(--radius-chip); font-size: 15px; font-weight: 700; transition: background .2s ease, transform .2s ease; }
+.btn-primary:hover { background: var(--color-accent-deep); transform: translateY(-1px); }
+.btn-dark { display: inline-flex; align-items: center; justify-content: center; padding: 12px 22px; background: var(--color-ink); color: var(--color-bg); border-radius: var(--radius-chip); font-size: 14px; font-weight: 700; }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--color-sand); border-radius: var(--radius-chip); font-size: 13px; font-weight: 700; color: var(--color-ink-soft); }
+
+/* Motion (respects reduced motion) */
+@keyframes rp-fade-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.reveal { animation: rp-fade-up .7s ease-out both; }
+.reveal-1 { animation-delay: .1s; } .reveal-2 { animation-delay: .25s; } .reveal-3 { animation-delay: .4s; }
+@media (prefers-reduced-motion: reduce) { .reveal, .reveal-1, .reveal-2, .reveal-3 { animation: none; } }

@@ -1,0 +1,42 @@
+---
+import Logo from './Logo.astro';
+const links = [
+  { href: '/sluzby', label: 'Služby' },
+  { href: '/cennik', label: 'Cenník' },
+  { href: '/vysledky', label: 'Výsledky' },
+  { href: '/o-nas', label: 'O nás' },
+  { href: '/kontakt', label: 'Kontakt' },
+];
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+<header class="container flex items-center justify-between py-5 md:py-6">
+  <a href="/" aria-label="Rental Partners — domov"><Logo class="h-10 md:h-[46px] w-auto block" /></a>
+  <nav class="hidden lg:flex items-center gap-7 text-[15px] font-semibold text-ink-soft" aria-label="Hlavná navigácia">
+    {links.map((l) => (
+      <a href={l.href} class:list={['hover:text-ink transition-colors pb-1 border-b-2', path === l.href ? 'text-ink border-accent' : 'border-transparent']}>{l.label}</a>
+    ))}
+  </nav>
+  <div class="flex items-center gap-4">
+    <span class="hidden md:block text-[13px] font-bold text-ink-soft" title="Anglická verzia pripravujeme"><span class="text-ink">SK</span> / EN</span>
+    <a href="/kontakt" class="btn-dark hidden sm:inline-flex">Porozprávajme sa</a>
+    <button type="button" class="lg:hidden p-2 -mr-2" aria-label="Otvoriť menu" aria-expanded="false" data-menu-toggle>
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+    </button>
+  </div>
+</header>
+<div class="lg:hidden hidden container pb-6" data-menu>
+  <nav class="flex flex-col gap-1 bg-surface rounded-[var(--radius-card)] p-3" aria-label="Mobilná navigácia">
+    {links.map((l) => (
+      <a href={l.href} class:list={['px-4 py-3 rounded-xl font-semibold', path === l.href ? 'bg-sand text-ink' : 'text-ink-soft']}>{l.label}</a>
+    ))}
+    <a href="/kontakt" class="btn-primary mt-2">Chcem odhad výnosu</a>
+  </nav>
+</div>
+<script>
+  const btn = document.querySelector('[data-menu-toggle]');
+  const menu = document.querySelector('[data-menu]');
+  btn?.addEventListener('click', () => {
+    const open = menu?.classList.toggle('hidden') === false;
+    btn.setAttribute('aria-expanded', String(open));
+  });
+</script>

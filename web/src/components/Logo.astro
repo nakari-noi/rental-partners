@@ -1,0 +1,14 @@
+---
+interface Props { dark?: boolean; class?: string }
+const { dark = false, class: cls = '' } = Astro.props;
+const ink = dark ? '#f6efe4' : '#2b2118';
+const outline = dark ? '#2b2118' : '#f6efe4';
+---
+<svg class={cls} viewBox="0 0 400 120" role="img" aria-label="Rental Partners" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(6 10)">
+    <path fill={ink} fill-rule="evenodd" d="M0 0 H52 A30 30 0 0 1 52 60 H49 L78 100 H53 L33 60 H22 V100 H0 Z M22 19 V41 H52 A11 11 0 0 0 52 19 Z"></path>
+    <path fill="#c9694a" stroke={outline} stroke-width="5" paint-order="stroke" transform="translate(32 0)" fill-rule="evenodd" d="M0 0 H52 A30 30 0 0 1 52 60 H22 V100 H0 Z M22 19 V41 H52 A11 11 0 0 0 52 19 Z"></path>
+  </g>
+  <text x="136" y="60" font-family="Outfit, Trebuchet MS, Segoe UI, sans-serif" font-weight="700" font-size="50" letter-spacing="-1" fill={ink}>Rental</text>
+  <text x="136" y="108" font-family="Outfit, Trebuchet MS, Segoe UI, sans-serif" font-weight="700" font-size="50" letter-spacing="-1" fill="#c9694a">Partners</text>
+</svg>
