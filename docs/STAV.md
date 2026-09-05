@@ -48,8 +48,10 @@
 4. [~] Fakty: firma, kontakty, príbeh (napísaný podľa zadania) hotové · **podmienky spolupráce doplní klient po nakódovaní** (musí sa poradiť) · tretí člen tímu neskôr
 5. [x] Fotky bytov vložené do návrhu (domov, Služby, Výsledky) — 5. 9. · [ ] Voliteľné: mobilný náhľad domova na plátne
 6. [x] Web nakódovaný podľa návrhu (5. 9.) + responzívna oprava po audite v 5 veľkostiach (6. 9.: mobil/tablet/notebook/desktop nálezy zapracované, zoom pre monitory ≥1600 px, mobilné porovnanie v cenníku, statická mapa, tlačidlá ≥44 px; 6. 9. večer: kompaktné rozbaľovacie menu vpravo + prepínač modelov s jednou kartou na mobile/tablete, porovnanie na mobile ako 3-stĺpcová mriežka ikon ✓/✕/VY/MY (schválený návrh), fotka Tomáša v tíme vycentrovaná na tvár): Domov (rotujúce slovo, balíček fotiek, pás recenzií, modely, služby, CTA), Služby, Cenník (karty ako prepínač + tabuľka), Výsledky, O nás, Kontakt (formulár Web3Forms + OSM mapa), Ochrana osobných údajov, 404 · responzívne · `cd web && npm run dev` → http://127.0.0.1:4321
-7. [ ] Angličtina + prepínač jazyka (SK / EN v navigácii je zatiaľ len text)
-8. [ ] Pred spustením: **Web3Forms kľúč** (klient si založí účet na web3forms.com s e-mailom rentalpartners2026@gmail.com → kľúč do `web/src/pages/kontakt.astro`), doména rentalpartners.sk, hosting (Cloudflare Pages / Vercel), právna kontrola stránky Ochrana osobných údajov, SEO náhľady (og:image), analytika, test formulára, fotka Amandy, tretí člen tímu, podmienky spolupráce (klient sa poradí)
+7. [x] Kód pushnutý na GitHub: https://github.com/nakari-noi/rental-partners (súkromný repozitár, účet nakari-noi) — 5. 9.
+8. [x] Nasadené na Vercel z GitHubu: https://rental-partners.vercel.app — 6. 9. (opravené `vercel.json` v koreni repozitára: web je v podpriečinku `web/`, nie v koreni, preto `installCommand`/`buildCommand`/`outputDirectory` smerujú tam — bez toho Vercel hlásil 404 NOT_FOUND)
+9. [ ] Angličtina + prepínač jazyka (SK / EN v navigácii je zatiaľ len text)
+10. [ ] Pred ostrým spustením: **Web3Forms kľúč** (klient si založí účet na web3forms.com s e-mailom rentalpartners2026@gmail.com → kľúč do `web/src/pages/kontakt.astro`), pripojiť doménu rentalpartners.sk k projektu na Verceli (Settings → Domains), právna kontrola stránky Ochrana osobných údajov, SEO náhľady (og:image), analytika, test formulára, fotka Amandy, tretí člen tímu, podmienky spolupráce (klient sa poradí)
 
 ## Ako pokračovať zajtra
 
