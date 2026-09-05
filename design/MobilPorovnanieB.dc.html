@@ -12,6 +12,13 @@
     body { margin: 0; background: #f6efe4; font-family: 'Nunito Sans', 'Segoe UI', Arial, sans-serif; color: #2b2118; }
     a { color: #c9694a; text-decoration: none; } a:hover { color: #a8533a; }
     .display { font-family: 'Outfit', 'Trebuchet MS', 'Segoe UI', sans-serif; }
+    .row { display: grid; grid-template-columns: minmax(0, 1.45fr) repeat(3, minmax(0, 1fr)); align-items: center; border-top: 1px solid #e9dcc6; padding: 12px 8px 12px 14px; font-size: 13px; }
+    .lbl { font-weight: 700; line-height: 1.25; }
+    .sub { font-size: 11px; font-weight: 400; color: #8a7a68; margin-top: 2px; }
+    .c { display: flex; justify-content: center; }
+    .yes, .no, .vy, .my { height: 24px; min-width: 24px; padding: 0 7px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; letter-spacing: 0.02em; box-sizing: border-box; }
+    .yes, .my { background: #e3eadf; color: #6e8b6a; }
+    .no, .vy { background: #e9dcc6; color: #8a7a68; }
   </style>
 </helmet>
 <div style="width: 390px; background: #f6efe4; color: #2b2118; display: flex; flex-direction: column; padding: 24px 20px 32px; box-sizing: border-box; gap: 12px;">
@@ -20,49 +27,56 @@
   <p style="margin: 0 0 8px; font-size: 15px; line-height: 1.5; color: #6b5b4e;">Dlhodobý prenájom vedľa oboch našich modelov.</p>
 
   <div style="background: #ffffff; border-radius: 20px; overflow: hidden;">
-    <div style="display: grid; grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 1fr)); background: #2b2118; font-size: 10px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.25; text-align: center;">
+    <div style="display: grid; grid-template-columns: minmax(0, 1.45fr) repeat(3, minmax(0, 1fr)); background: #2b2118; font-size: 10px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.25; text-align: center;">
       <div style="padding: 12px 8px 12px 14px;"></div>
       <div style="padding: 12px 4px; color: #b8a99a;">Dlhodobý prenájom</div>
       <div style="padding: 12px 4px; color: #e0a58c;">Správa 10 %</div>
       <div style="padding: 12px 4px; color: #8fb08a;">Garant. nájom</div>
     </div>
 
-    <div style="display: grid; grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 1fr)); align-items: center; border-top: 1px solid #e9dcc6; padding: 12px 8px 12px 14px; font-size: 13px;">
-      <div style="font-weight: 700; line-height: 1.25;">Príjem<div style="font-size: 11px; font-weight: 400; color: #8a7a68;">pevný / podľa obsadenosti</div></div>
-      <div style="display: flex; justify-content: center;"><span style="width: 22px; height: 22px; border-radius: 999px; background: #e9dcc6; color: #8a7a68; display: flex; align-items: center; justify-content: center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14"></path></svg></span></div>
-      <div style="display: flex; justify-content: center;"><span style="width: 22px; height: 22px; border-radius: 999px; background: #f4dcd1; color: #c9694a; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800;">90 %</span></div>
-      <div style="display: flex; justify-content: center;"><span style="width: 22px; height: 22px; border-radius: 999px; background: #e3eadf; color: #6e8b6a; display: flex; align-items: center; justify-content: center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span></div>
+    <div class="row">
+      <div class="lbl">Istý príjem každý mesiac<div class="sub">rovnaká suma bez ohľadu na obsadenosť</div></div>
+      <div class="c"><span class="yes"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span></div>
+      <div class="c"><span class="no"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span></div>
+      <div class="c"><span class="yes"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span></div>
     </div>
 
-    <div style="display: grid; grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 1fr)); align-items: center; border-top: 1px solid #e9dcc6; padding: 12px 8px 12px 14px; font-size: 13px;">
-      <div style="font-weight: 700; line-height: 1.25;">Prázdne obdobia<div style="font-size: 11px; font-weight: 400; color: #8a7a68;">kto nesie riziko</div></div>
-      <div style="display: flex; justify-content: center;"><span style="width: 22px; height: 22px; border-radius: 999px; background: #e9dcc6; color: #8a7a68; display: flex; align-items: center; justify-content: center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span></div>
-      <div style="display: flex; justify-content: center;"><span style="width: 22px; height: 22px; border-radius: 999px; background: #e3eadf; color: #6e8b6a; display: flex; align-items: center; justify-content: center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span></div>
-      <div style="display: flex; justify-content: center;"><span style="width: 22px; height: 22px; border-radius: 999px; background: #e3eadf; color: #6e8b6a; display: flex; align-items: center; justify-content: center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span></div>
+    <div class="row">
+      <div class="lbl">Vyšší výnos v sezóne<div class="sub">zarábate podľa obsadenosti</div></div>
+      <div class="c"><span class="no"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span></div>
+      <div class="c"><span class="yes"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span></div>
+      <div class="c"><span class="no"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span></div>
     </div>
 
-    <div style="display: grid; grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 1fr)); align-items: center; border-top: 1px solid #e9dcc6; padding: 12px 8px 12px 14px; font-size: 13px;">
-      <div style="font-weight: 700; line-height: 1.25;">Hostia a nájomcovia<div style="font-size: 11px; font-weight: 400; color: #8a7a68;">kto ich rieši</div></div>
-      <div style="display: flex; justify-content: center;"><span style="width: 22px; height: 22px; border-radius: 999px; background: #e9dcc6; color: #8a7a68; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800;">VY</span></div>
-      <div style="display: flex; justify-content: center;"><span style="width: 22px; height: 22px; border-radius: 999px; background: #e3eadf; color: #6e8b6a; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800;">MY</span></div>
-      <div style="display: flex; justify-content: center;"><span style="width: 22px; height: 22px; border-radius: 999px; background: #e3eadf; color: #6e8b6a; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800;">MY</span></div>
+    <div class="row">
+      <div class="lbl">Prázdne obdobia<div class="sub">kto nesie riziko</div></div>
+      <div class="c"><span class="vy">VY</span></div>
+      <div class="c"><span class="vy">VY</span></div>
+      <div class="c"><span class="my">MY</span></div>
     </div>
 
-    <div style="display: grid; grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 1fr)); align-items: center; border-top: 1px solid #e9dcc6; padding: 12px 8px 12px 14px; font-size: 13px;">
-      <div style="font-weight: 700; line-height: 1.25;">Kontrola bytu<div style="font-size: 11px; font-weight: 400; color: #8a7a68;">raz za rok / po pobyte</div></div>
-      <div style="display: flex; justify-content: center;"><span style="width: 22px; height: 22px; border-radius: 999px; background: #e9dcc6; color: #8a7a68; display: flex; align-items: center; justify-content: center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span></div>
-      <div style="display: flex; justify-content: center;"><span style="width: 22px; height: 22px; border-radius: 999px; background: #e3eadf; color: #6e8b6a; display: flex; align-items: center; justify-content: center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span></div>
-      <div style="display: flex; justify-content: center;"><span style="width: 22px; height: 22px; border-radius: 999px; background: #e3eadf; color: #6e8b6a; display: flex; align-items: center; justify-content: center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span></div>
+    <div class="row">
+      <div class="lbl">Hostia a nájomcovia<div class="sub">kto ich rieši</div></div>
+      <div class="c"><span class="vy">VY</span></div>
+      <div class="c"><span class="my">MY</span></div>
+      <div class="c"><span class="my">MY</span></div>
     </div>
 
-    <div style="display: grid; grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 1fr)); align-items: center; border-top: 1px solid #e9dcc6; padding: 12px 8px 12px 14px; font-size: 13px;">
-      <div style="font-weight: 700; line-height: 1.25;">Byt pre vás<div style="font-size: 11px; font-weight: 400; color: #8a7a68;">blokovanie termínov</div></div>
-      <div style="display: flex; justify-content: center;"><span style="width: 22px; height: 22px; border-radius: 999px; background: #e9dcc6; color: #8a7a68; display: flex; align-items: center; justify-content: center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span></div>
-      <div style="display: flex; justify-content: center;"><span style="width: 22px; height: 22px; border-radius: 999px; background: #e3eadf; color: #6e8b6a; display: flex; align-items: center; justify-content: center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span></div>
-      <div style="display: flex; justify-content: center;"><span style="width: 22px; height: 22px; border-radius: 999px; background: #e3eadf; color: #6e8b6a; display: flex; align-items: center; justify-content: center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span></div>
+    <div class="row">
+      <div class="lbl">Kontrola bytu<div class="sub">raz za rok / po každom pobyte</div></div>
+      <div class="c"><span class="no"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span></div>
+      <div class="c"><span class="yes"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span></div>
+      <div class="c"><span class="yes"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span></div>
     </div>
 
-    <div style="border-top: 1px solid #e9dcc6; padding: 10px 14px 12px; font-size: 11px; line-height: 1.5; color: #8a7a68;">✓ rieši Rental Partners · ✕ riešite vy · 90 % = váš podiel z obratu. Podrobnosti sú v kartách modelov vyššie.</div>
+    <div class="row">
+      <div class="lbl">Byt pre vás<div class="sub">môžete si ho blokovať</div></div>
+      <div class="c"><span class="no"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span></div>
+      <div class="c"><span class="yes"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span></div>
+      <div class="c"><span class="no"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span></div>
+    </div>
+
+    <div style="border-top: 1px solid #e9dcc6; padding: 10px 14px 12px; font-size: 11px; line-height: 1.5; color: #8a7a68;">✓ áno · ✕ nie · VY / MY = kto to rieši alebo nesie riziko. Podrobnosti sú v kartách modelov vyššie.</div>
   </div>
 </div>
 </x-dc>
