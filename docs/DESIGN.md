@@ -73,3 +73,11 @@ Pravidlo: terakota = akcia a dôraz; šalviová = dôkaz a potvrdenie. Nikdy obe
 - obrovský hero text bez obsahu
 - popisovanie funkcií webu vo webe
 - vymyslené čísla — chýbajúce fakty sú vždy `[DOPLNIŤ]`
+
+## Logo (od klienta, 5. 9. 2026)
+
+- Monogram **R + P** (P prekrýva R, s obrysom) + nápis „Rental / Partners" v dvoch riadkoch
+- Originál: `podklady/logo/` — farby #1C1917 + #EA580C, nápis bez určeného písma
+- Webové verzie `design/img/`: `logo-full.svg` (svetlý podklad), `logo-full-dark.svg` (pätička), `logo-znak.svg` (samostatný znak, favicon)
+- Na webe prefarbené do palety: R = ink #2b2118, P = terakota #c9694a s obrysom vo farbe podkladu; nápis Outfit 700
+- V navigácii výška 46 px, v pätičke 40 px; znak samostatne min. 24 px
