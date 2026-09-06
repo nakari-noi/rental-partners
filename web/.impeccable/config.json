@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "kicker-above-heading",
+        "value": "*",
+        "files": [
+          "../design/Main.dc.html"
+        ],
+        "createdAt": "2026-09-06T11:55:57.082Z",
+        "reason": "docs/DESIGN.md hierarchy rule pins an eyebrow above every H2 (client-approved direction C); open question to client whether to keep it"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "../design/*.dc.html"
+        ],
+        "createdAt": "2026-09-06T11:56:21.014Z",
+        "reason": "client chose design direction C with cream #f6efe4 as the brand background (docs/DESIGN.md token --bg, decided 2026-09-04)"
+      }
+    ]
+  }
+}
