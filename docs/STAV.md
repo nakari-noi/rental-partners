@@ -60,6 +60,36 @@
 13. [x] 6. 9. večer: **technické SEO** (všetko okrem blogu): kanonické adresy na www + `trailingSlash` (Astro `never`, Vercel `false`), `robots.txt`, `sitemap-index.xml` (@astrojs/sitemap), Open Graph + Twitter karty s `og.jpg` 1200×630, favicon.ico / apple-touch-icon / icon-512 / `site.webmanifest` / theme-color, štruktúrované dáta JSON-LD (LocalBusiness + Organization s adresou, telefónom, IČO/DIČ, ponukou oboch modelov; WebSite; WebPage; BreadcrumbList; FAQPage na Cenníku), kľúčové slová v titulkoch a popisoch každej stránky, `noindex` na 404, hreflang sk + x-default (pripravené na EN), jednotná adresa „Námestie 1. mája 8062/11" (pätička, kontakt, JSON-LD), `fetchpriority` na hero fotke, skip-link. SEO audit agenta: `web/test-results/` (neukladá sa do gitu). **Blog** = neskôr (témy v rozhovore 5. 9.).
 14. [ ] **Ďalší krok:** klient rozhodne o analytike a Search Console (viď bod 10), dodá Web3Forms kľúč → test formulára → potom blog (3 prvé články) a EN verzia (`/impeccable harden` formulár, `colorize` kontrast, `layout` cenník, `onboard` kontakt, `quieter` hero, `clarify` texty, `polish` hlavička) → znova `site-check` + `critique`
 
+## Čo sa spravilo 6.–7. 9. 2026 (3. session) — zhrnutie
+
+- Test celého živého webu (Playwright) + dizajnová kritika (impeccable, 18/32) → 9 návrhov na plátne → klient schválil 3 (grafy v kartách cenníka, stavy formulára, kontakt na mobile) + hero s pôvodnými animáciami.
+- Schválené zmeny zapracované do návrhu aj do kódu (hlavička „Zavolať Tomášovi", Domov, Cenník, Kontakt).
+- Technické SEO kompletné; SEO audit agenta zapracovaný.
+- Google Business Profile založený a overený; Search Console overená (DNS TXT u Webhouse), sitemap odoslaná; Web3Forms kľúč + otestovaný formulár; Vercel Web Analytics zapnutá; cookie lišta pripravená, ale vypnutá (zapne `PUBLIC_GA_ID`).
+- Logo a titulná fotka pre Google profil v `podklady/logo/google/`.
+
+## Poučenia (aby sa neopakovali)
+
+**Od klienta:**
+- Žiadne veľkoplošné redizajny — z 9 návrhov sa páčili 3. Navrhovať malé, konkrétne zmeny, vždy najprv ukázať náhľad (obrázok v chate), až potom upravovať.
+- Animácie na domove (rotujúce slovo, balíček fotiek, pás recenzií) ostávajú. Karty cenníka ostávajú v pôvodnom dizajne (biela vs tmavá) — len sa k nim pridáva.
+- Nepísať „Tomáš sa vám ozve" a podobné osobné sľuby — neprofesionálne. Neutrálne: „Odpovieme čo najskôr". „Čo bude nasledovať" ostáva v pravom stĺpci.
+- Na Google profile ani na webe neuvádzať počet bytov ani konkrétne hodnotenia v popise — „desiatky bytov", „stovky výborných hodnotení".
+- Farby nemeniť bez opýtania (návrh na kontrast zamietnutý).
+- Otázky klásť v texte s odporúčanou možnosťou, nie cez dialógové okno.
+
+**Technické chyby Clauda:**
+- `canvas.json` sa rozbil na slovenských úvodzovkách písaných ako ASCII `"` v JSON reťazcoch — používať „…“.
+- V `Base.astro` importovaný `site` z `site.config.ts` zatienil existujúci `const site` (adresa webu) → analytika sa nevykreslila. Import premenovaný na `config`.
+- Astro vynechá `<script>` napísaný v podmienke `{ … && <script>}` — značku skladať v hlavičke súboru ako text a vložiť cez `<Fragment set:html>`.
+- Atribút `pattern` beží v JS režime `v` — v hranatých zátvorkách escapovať `( ) / -`.
+- Web3Forms (bezplatný plán) odmieta odoslanie zo servera aj z headless prehliadača; Vercel Analytics ignoruje automatizované návštevy. Formulár testovať Playwrightom s bežným user agentom; analytiku overí až reálna návšteva.
+
 ## Ako pokračovať zajtra
 
 Otvoriť Claude Code v priečinku projektu a napísať napr. „pokračujeme na Rental Partners, pozri docs/STAV.md" — pamäť a tento súbor obsahujú všetko.
+
+**Otvorené na zajtra:**
+1. Klient: potvrdiť, či prišiel skúšobný e-mail z formulára; navštíviť web v bežnom prehliadači (kvôli prvému záznamu v Analytics); zapnúť automatické predĺženie domény u Webhouse; dokončiť Google profil (titulná fotka, popisy služieb, recenzie od majiteľov).
+2. Rozhodnúť o právnej kontrole stránky Ochrana údajov — ak bez právnika, odstrániť vetu „Návrh textu — pred spustením webu odporúčame právnu kontrolu."
+3. Ďalšie väčšie kroky: blog (prvé 3 články, témy z 5. 9.), anglická verzia, fotka Amandy, tretí člen tímu, podmienky spolupráce.
