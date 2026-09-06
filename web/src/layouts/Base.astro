@@ -115,6 +115,7 @@ const ld = { '@context': 'https://schema.org', '@graph': [firma, web, stranka, o
     <main id="obsah" class="flex-1"><slot /></main>
     <Footer />
     <Cookies />
-    {site.vercelAnalytics && <script is:inline defer src="/_vercel/insights/script.js"></script>}
+    {/* Vercel Web Analytics (bez cookies) — <script> v podmienke Astro vynecháva, preto set:html */}
+    {site.vercelAnalytics && <Fragment set:html={'<script defer src="/_vercel/insights/script.js"></script>'} />}
   </body>
 </html>
