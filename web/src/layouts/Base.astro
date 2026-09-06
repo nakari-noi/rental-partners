@@ -3,7 +3,7 @@ import '../styles/global.css';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import Cookies from '../components/Cookies.astro';
-import { site } from '../site.config';
+import { site as config } from '../site.config';
 
 interface Faq { q: string; a: string }
 interface Props {
@@ -71,7 +71,7 @@ const omrvinky = isHome ? null : {
 const faqLd = faq?.length ? { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) } : null;
 const ld = { '@context': 'https://schema.org', '@graph': [firma, web, stranka, omrvinky, faqLd].filter(Boolean) };
 // Vercel Web Analytics (bez cookies). Značka sa vkladá ako hotový HTML text: Astro inak <script> v podmienke vynechá.
-const insightsTag = site.vercelAnalytics ? '<script defer src="/_vercel/insights/script.js"><' + '/script>' : '';
+const insightsTag = config.vercelAnalytics ? '<script defer src="/_vercel/insights/script.js"><' + '/script>' : '';
 ---
 <!doctype html>
 <html lang="sk">
