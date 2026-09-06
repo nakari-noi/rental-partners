@@ -42,37 +42,34 @@
     <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #6b5b4e; max-width: 640px;">Maximálny výnos, alebo istý príjem každý mesiac. Kliknite na model — o byt sa v oboch prípadoch staráme my.</p>
   </div>
 
-  <!-- Model cards = the switch (6. 9.: rovnocenné karty s grafmi — 10 % z obratu vs 12× ročne rovnaká suma) -->
+  <!-- Model cards = the switch (pôvodný dizajn: biela vs tmavá; 6. 9. pribudol iba graf pod číslom / nadpisom) -->
   <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; padding: 16px 64px 0;">
-    <div class="rp-pick" onClick="{{ pickA }}" style="display: flex; flex-direction: column; gap: 14px; padding: 32px 32px 28px; background: #ffffff; border-radius: 28px; box-shadow: {{ ringA }};">
+    <div class="rp-pick" onClick="{{ pickA }}" style="display: flex; flex-direction: column; gap: 16px; padding: 36px; background: #ffffff; border-radius: 28px; opacity: {{ opA }}; box-shadow: {{ ringA }};">
       <div style="display: flex; align-items: center; justify-content: space-between;">
-        <div class="display" style="font-size: 22px; font-weight: 700; color: #2b2118;">Správa bytu</div>
-        <div style="padding: 6px 12px; background: {{ tagA.bg }}; border-radius: 999px; font-size: 12px; font-weight: 700; color: {{ tagA.fg }};">{{ tagA.text }}</div>
+        <div class="display" style="font-size: 24px; font-weight: 700; color: #2b2118;">Správa bytu</div>
+        <div style="padding: 6px 12px; background: {{ tagA.bg }}; border-radius: 999px; font-size: 13px; font-weight: 700; color: {{ tagA.fg }};">{{ tagA.text }}</div>
       </div>
       <div style="display: flex; align-items: baseline; gap: 12px;">
-        <div class="display" style="font-size: 96px; line-height: 1; font-weight: 700; letter-spacing: -0.03em; color: #a8533a;">10 %</div>
-        <div style="font-size: 16px; font-weight: 700; color: #6b5b4e;">z obratu</div>
+        <div class="display" style="font-size: 112px; line-height: 0.92; font-weight: 700; letter-spacing: -0.04em; color: #c9694a;">10 %</div>
+        <div class="display" style="font-size: 22px; font-weight: 600; color: #2b2118;">z obratu</div>
       </div>
       <div style="display: flex; align-items: flex-end; gap: 6px; height: 72px;" aria-hidden="true">
-        <span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 52%; background: #e9dcc6;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 48%; background: #e9dcc6;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 60%; background: #e9dcc6;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 72%; background: #e9dcc6;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 84%; background: #dccbb0;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 94%; background: #dccbb0;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 100%; background: #a8533a;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 100%; background: #a8533a;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 86%; background: #dccbb0;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 68%; background: #e9dcc6;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 54%; background: #e9dcc6;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 70%; background: #e9dcc6;"></span>
+        <span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 52%; background: #e9dcc6;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 48%; background: #e9dcc6;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 60%; background: #e9dcc6;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 72%; background: #e9dcc6;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 84%; background: #dccbb0;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 94%; background: #dccbb0;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 100%; background: #c9694a;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 100%; background: #c9694a;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 86%; background: #dccbb0;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 68%; background: #e9dcc6;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 54%; background: #e9dcc6;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 70%; background: #e9dcc6;"></span>
       </div>
-      <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #6b5b4e;">Byt zostáva váš, my ho prevádzkujeme na Airbnb a Booking. Z príjmov z pobytov si berieme desatinu — v sezóne zarobíte viac, mimo sezóny menej.</p>
-      <div style="font-size: 13px; color: #6b5b4e; padding-top: 12px; border-top: 1px solid #e9dcc6;">Pre majiteľov, ktorí chcú z bytu vyťažiť maximum.</div>
+      <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #6b5b4e;">Byt zostáva váš a my ho prevádzkujeme na Airbnb a Booking. Z príjmov z pobytov si berieme desatinu — keď byt nezarába, nezarábame ani my.</p>
+      <div style="font-size: 14px; color: #8a7a68; padding-top: 12px; border-top: 1px solid #e9dcc6;">Pre majiteľov, ktorí chcú z bytu vyťažiť maximum.</div>
     </div>
-    <div class="rp-pick" onClick="{{ pickB }}" style="display: flex; flex-direction: column; gap: 14px; padding: 32px 32px 28px; background: #ffffff; border-radius: 28px; box-shadow: {{ ringB }};">
+    <div class="rp-pick" onClick="{{ pickB }}" style="display: flex; flex-direction: column; gap: 16px; padding: 36px; background: #2b2118; border-radius: 28px; color: #f6efe4; opacity: {{ opB }}; box-shadow: {{ ringB }};">
       <div style="display: flex; align-items: center; justify-content: space-between;">
-        <div class="display" style="font-size: 22px; font-weight: 700; color: #2b2118;">Garantovaný nájom</div>
-        <div style="padding: 6px 12px; background: {{ tagB.bg }}; border-radius: 999px; font-size: 12px; font-weight: 700; color: {{ tagB.fg }};">{{ tagB.text }}</div>
+        <div class="display" style="font-size: 24px; font-weight: 700; color: #f6efe4;">Garantovaný nájom</div>
+        <div style="padding: 6px 12px; background: {{ tagB.bg }}; border-radius: 999px; font-size: 13px; font-weight: 700; color: {{ tagB.fg }};">{{ tagB.text }}</div>
       </div>
-      <div style="display: flex; align-items: baseline; gap: 12px;">
-        <div class="display" style="font-size: 96px; line-height: 1; font-weight: 700; letter-spacing: -0.03em; color: #2b2118;">12×</div>
-        <div style="font-size: 16px; font-weight: 700; color: #6b5b4e;">ročne rovnaká suma</div>
-      </div>
+      <div class="display" style="font-size: 54px; line-height: 1.02; font-weight: 700; letter-spacing: -0.03em; color: #f6efe4; padding: 10px 0;">Pevná suma<br>každý mesiac</div>
       <div style="display: flex; align-items: flex-end; gap: 6px; height: 72px;" aria-hidden="true">
         <span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 78%; background: #6e8b6a;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 78%; background: #6e8b6a;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 78%; background: #6e8b6a;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 78%; background: #6e8b6a;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 78%; background: #6e8b6a;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 78%; background: #6e8b6a;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 78%; background: #6e8b6a;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 78%; background: #6e8b6a;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 78%; background: #6e8b6a;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 78%; background: #6e8b6a;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 78%; background: #6e8b6a;"></span><span style="flex: 1; border-radius: 4px 4px 2px 2px; height: 78%; background: #6e8b6a;"></span>
       </div>
-      <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #6b5b4e;">Byt nám prenajmete a my vám platíme dohodnutý nájom každý mesiac — v januári rovnako ako v auguste, plný alebo prázdny. Krátkodobý prenájom robíme na vlastné riziko.</p>
-      <div style="font-size: 13px; color: #6b5b4e; padding-top: 12px; border-top: 1px solid #e9dcc6;">Pre majiteľov, ktorí chcú istotu a nulové starosti.</div>
+      <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #d9ccbb;">Byt nám prenajmete a my vám platíme dohodnutý nájom — bez ohľadu na to, či bol byt plný alebo prázdny. Krátkodobý prenájom robíme na vlastné riziko.</p>
+      <div style="font-size: 14px; color: #b8a99a; padding-top: 12px; border-top: 1px solid rgba(246, 239, 228, 0.15);">Pre majiteľov, ktorí chcú istotu a nulové starosti.</div>
     </div>
   </div>
 
@@ -268,10 +265,12 @@ class Component extends DCLogic {
       isB: !isA,
       pickA: () => this.setState({ model: 'a' }),
       pickB: () => this.setState({ model: 'b' }),
-      ringA: isA ? '0 0 0 3px #a8533a inset, 0 18px 40px rgba(43, 33, 24, 0.12)' : 'none',
-      ringB: isA ? 'none' : '0 0 0 3px #6e8b6a inset, 0 18px 40px rgba(43, 33, 24, 0.12)',
-      tagA: isA ? { bg: '#e9dcc6', fg: '#2b2118', text: 'Vybrané' } : { bg: '#f6efe4', fg: '#6b5b4e', text: 'Zobraziť detail' },
-      tagB: isA ? { bg: '#f6efe4', fg: '#6b5b4e', text: 'Zobraziť detail' } : { bg: '#e9dcc6', fg: '#2b2118', text: 'Vybrané' },
+      opA: isA ? 1 : 0.55,
+      opB: isA ? 0.55 : 1,
+      ringA: isA ? '0 0 0 3px #c9694a, 0 18px 40px rgba(43, 33, 24, 0.14)' : 'none',
+      ringB: isA ? 'none' : '0 0 0 3px #6e8b6a, 0 18px 40px rgba(43, 33, 24, 0.14)',
+      tagA: isA ? { bg: '#c9694a', fg: '#ffffff', text: 'Vybrané' } : { bg: '#e9dcc6', fg: '#6b5b4e', text: 'Kliknutím zobrazíte detaily' },
+      tagB: isA ? { bg: 'rgba(246, 239, 228, 0.15)', fg: '#d9ccbb', text: 'Kliknutím zobrazíte detaily' } : { bg: '#6e8b6a', fg: '#ffffff', text: 'Vybrané' },
       colA: isA ? 1 : 0.55,
       colB: isA ? 0.55 : 1,
       headA: isA ? '#e0a58c' : '#b8a99a',
