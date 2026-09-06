@@ -1,6 +1,7 @@
 {
   "pages": [
     { "id": "page-web", "name": "Web · smer C" },
+    { "id": "page-vylepsenia", "name": "Vylepšenia · kritika 6. 9." },
     { "id": "page-zaloha", "name": "Záloha · smer A" }
   ],
   "artboards": [
@@ -11,12 +12,36 @@
     { "file": "ONas.dc.html", "title": "O nás", "x": 1320, "y": 3700, "w": 1200, "h": 2700, "page": "page-web" },
     { "file": "Kontakt.dc.html", "title": "Kontakt", "x": 2640, "y": 3700, "w": 1200, "h": 2200, "page": "page-web" },
     { "file": "MobilPorovnanieB.dc.html", "title": "Mobil · porovnanie (ikony)", "x": 3960, "y": 0, "w": 390, "h": 700, "page": "page-web" },
+
+    { "file": "V-Hero.dc.html", "title": "V1 · Domov, hero (desktop)", "x": 0, "y": 200, "w": 1200, "h": 1087, "page": "page-vylepsenia" },
+    { "file": "V-HeroMobil.dc.html", "title": "V2 · Domov, hero (mobil)", "x": 1320, "y": 200, "w": 390, "h": 1228, "page": "page-vylepsenia" },
+    { "file": "V-Farby.dc.html", "title": "V3 · Kontrast: pred → po", "x": 1830, "y": 200, "w": 1200, "h": 972, "page": "page-vylepsenia" },
+    { "file": "V-Cennik.dc.html", "title": "V4 · Cenník: rovnocenné modely", "x": 0, "y": 1700, "w": 1200, "h": 1552, "page": "page-vylepsenia" },
+    { "file": "V-KontaktMobil.dc.html", "title": "V5 · Kontakt (mobil)", "x": 1320, "y": 1700, "w": 390, "h": 2182, "page": "page-vylepsenia" },
+    { "file": "V-Stavy.dc.html", "title": "V6 · Stavy formulára", "x": 1830, "y": 1700, "w": 1200, "h": 643, "page": "page-vylepsenia" },
+    { "file": "V-Tim.dc.html", "title": "V7 · O nás, tím", "x": 1830, "y": 2560, "w": 1200, "h": 759, "page": "page-vylepsenia" },
+    { "file": "V-Sluzby.dc.html", "title": "V8 · Domov, služby", "x": 0, "y": 4200, "w": 1200, "h": 736, "page": "page-vylepsenia" },
+    { "file": "OgImage.dc.html", "title": "V9 · og:image 1200×630", "x": 1830, "y": 4200, "w": 1200, "h": 630, "page": "page-vylepsenia" },
+
     { "file": "SmerA.dc.html", "title": "Smer A · Prémiový", "x": 0, "y": 0, "w": 1200, "h": 1440, "page": "page-zaloha" }
   ],
   "annotations": [
     { "id": "system", "x": 0, "y": -300, "w": 560, "page": "page-web", "text": "SMER C · Partnerský — všetkých 6 stránok\nFarby: krémová #f6efe4 · biela · piesok #e9dcc6 · terakota #c9694a (akcia) · šalviová #6e8b6a (dôkaz) · text #2b2118\nPísmo: Outfit (nadpisy) + Nunito Sans (text)\nTokeny a pravidlá: docs/DESIGN.md v projekte\n\nVšetko v [hranatých zátvorkách] sú chýbajúce fakty — kontakt, IČO, fotky, citáty z recenzií, podmienky (výplata, upratovanie, výpoveď). Nič z toho som nevymýšľal." },
     { "id": "mobil-porovnanie", "x": 3960, "y": -220, "w": 870, "page": "page-web", "text": "MOBIL · porovnanie so všetkými tromi stĺpcami (v2)\nRiadky: Istý príjem každý mesiac · Vyšší výnos v sezóne · Prázdne obdobia (VY/VY/MY) · Hostia a nájomcovia (VY/MY/MY) · Kontrola bytu · Byt pre vás (✕/✓/✕)\nTmavá hlavička s farbou stĺpca: sivá = dlhodobý prenájom, terakota = správa, šalviová = garantovaný nájom." },
-    { "id": "smer-a", "x": 1280, "y": 0, "w": 420, "page": "page-zaloha", "text": "ZÁLOŽNÝ SMER: A · Prémiový\nOdložené pre prípad, že by sa neskôr hodil prémiovejší tón (napr. pre investorov alebo EN verziu).\nTmavé teplé tóny, mosadzný akcent #c8a45d, serif Cormorant Garamond." }
+    { "id": "smer-a", "x": 1280, "y": 0, "w": 420, "page": "page-zaloha", "text": "ZÁLOŽNÝ SMER: A · Prémiový\nOdložené pre prípad, že by sa neskôr hodil prémiovejší tón (napr. pre investorov alebo EN verziu).\nTmavé teplé tóny, mosadzný akcent #c8a45d, serif Cormorant Garamond." },
+
+    { "id": "v-title", "kind": "title1", "x": 0, "y": -40, "w": 1600, "page": "page-vylepsenia", "text": "Vylepšenia po dizajnovej kritike · 6. 9. 2026 · skóre 18/32 (Prijateľné)" },
+    { "id": "v-uvod", "x": 1830, "y": -60, "w": 1200, "page": "page-vylepsenia", "color": "gray", "text": "Čo tu je: 9 artboardov = návrhy opráv slabých miest z kritiky (impeccable, dve nezávislé hodnotenia + detektor + test celého webu). Nič sa ešte nezmenilo v kóde — toto je návrh na výber. Priority: P0 = blokuje konverziu · P1 = opraviť pred spustením · P2 = ďalší krok · P3 = kozmetika.\nSpoločné pre všetky artboardy: tlačidlá a farebný text v tmavšej terakote #a8533a (kontrast), popisky v #6b5b4e, telefón ako druhý kanál všade." },
+    { "id": "v-hero", "x": 0, "y": 80, "w": 1200, "page": "page-vylepsenia", "color": "orange", "text": "V1 · P2 + P1 · Domov, hero (desktop): titulok ustálený na ponuke (žiadny rotor „riešime fotenie.“), jedna naklonená fotka + karta hodnotenia (zapamätateľná vec), Tomáš a telefón hneď pod tlačidlom, hlavička = „Zavolať Tomášovi“ namiesto duplikátu CTA, SK/EN skryté do spustenia EN. Recenzie ako statický rad so šípkami namiesto nekonečného pásu. Balíček fotiek: prehrať raz po načítaní, potom stáť." },
+    { "id": "v-heromobil", "x": 1320, "y": 80, "w": 480, "page": "page-vylepsenia", "color": "orange", "text": "V2 · P2 · Domov na mobile: fotka a karta hodnotenia hneď pod CTA (žiadne prázdno, dôkaz nad ohybom), telefón v hlavičke (44 px), osoba pod dôkazom, recenzie posúvateľné prstom, pevná spodná lišta Zavolať + Odhad na každej stránke (dosah palca)." },
+    { "id": "v-farby", "x": 1830, "y": 80, "w": 1200, "page": "page-vylepsenia", "color": "red", "text": "V3 · P1 · Kontrast: 6 párov pod AA presne na najdôležitejších prvkoch (tlačidlá 3,75:1, „1 800 €“ 2,79:1). Paleta sa nemení, mení sa použitie. Detektor našiel 10–21 low-contrast nálezov na každej stránke." },
+    { "id": "v-cennik", "x": 0, "y": 1560, "w": 1200, "page": "page-vylepsenia", "color": "red", "text": "V4 · P1 + P2 · Cenník: model B dostane číslo rovnakej váhy („12× ročne rovnaká suma“), obe karty na 100 % a na rovnakom podklade, výber iba krúžkom, chip „Vybrané“ rovnakej farby v oboch; ten istý byt v oboch modeloch vedľa seba (bez vymyslených čísel — [DOPLNIŤ po obhliadke]); jeden box „Toto doladíme na stretnutí“ namiesto šiestich odkladov; nové FAQ: škody, kľúče, upratovanie — mechanizmus doplní Tomáš. Mobil: obe karty nad sebou, prepínač mení len detail; tabuľka min. 13 px, legenda hore." },
+    { "id": "v-kontakt", "x": 1320, "y": 1560, "w": 480, "page": "page-vylepsenia", "color": "red", "text": "V5 · P0 + P1 · Kontakt na mobile: osoba, lehota a telefón PRED formulárom; polia v poradí byt → kontakt; povinné označené *; nápoveda formátu telefónu; checkbox 24 px; kroky „Čo bude nasledovať“ v karte nad tlačidlom; „Radšej priamo?“ so 44 px cieľmi. P0 = Web3Forms kľúč (dnes zlyhá každé odoslanie)." },
+    { "id": "v-stavy", "x": 1830, "y": 1560, "w": 1200, "page": "page-vylepsenia", "color": "red", "text": "V6 · P0 · Stavy formulára: úspech ako potvrdenie s menom, číslom a lehotou + ďalší krok; chyba ako karta s telefónmi (tel:) a e-mailom, údaje zostávajú; chyby pri poli pomenujú problém aj riešenie; tlačidlo „Odosielam…“ so stlmením." },
+    { "id": "v-tim", "x": 1830, "y": 2440, "w": 1200, "page": "page-vylepsenia", "color": "gray", "text": "V7 · P3 · O nás, tím: Tomáš na šírku (iný výrez než v príbehu), rola hovorí, čo pre majiteľa robí, telefón; Amandina dlaždica nesie citáciu hosťa namiesto písmena „A“, kým nie je fotka. Miesto pre tretieho člena zostáva." },
+    { "id": "v-sluzby", "x": 0, "y": 4080, "w": 1200, "page": "page-vylepsenia", "color": "orange", "text": "V8 · P2 · Domov, služby: zoznam s ilustráciami zo stránky Služby namiesto piatich rovnakých kariet (viac než 4 položky v rade + najgenerickejší vzor). Päť riadkov = päť sekcií Služieb, chip „v cene“." },
+    { "id": "v-og", "x": 1830, "y": 4080, "w": 1200, "page": "page-vylepsenia", "color": "blue", "text": "V9 · SEO · og:image 1200×630 chýba na všetkých stránkach (nález testu). Exportovať ako JPG do web/public/og.jpg a pridať og:image + twitter:card do <head> každej stránky." },
+    { "id": "v-bez", "x": 1320, "y": 4080, "w": 480, "page": "page-vylepsenia", "color": "gray", "text": "Ďalšie nálezy bez artboardu:\n· Výsledky: karty bytov začínať štvrťou („Ružinov · 2-izbový · až 5 hostí“), názov inzerátu až pod ním; lead max 65–75 znakov na riadok; bez hover-scale na fotkách.\n· Domov: ✓ pred „Príjem sa mesiac od mesiaca líši“ nahradiť neutrálnou ikonou.\n· Cenník: vypustiť „Kliknite na model“.\n· Menu: Escape vráti focus na tlačidlo; vlastné focus krúžky (terakota) namiesto prehliadačových.\n· Pätička: odkazy min. 44 px, „Otvoriť väčšiu mapu“ 44 px, riadok s IČO v #b8a99a.\n· body{zoom} nad 1600 px nahradiť širším .wrap alebo clamp().\n· OTÁZKA: eyebrow nad H2 — DESIGN.md áno, impeccable/detektor nie. Zostávame?" }
   ],
-  "launch": { "view": "canvas", "page": "page-web" }
+  "launch": { "view": "canvas", "page": "page-vylepsenia" }
 }

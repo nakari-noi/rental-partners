@@ -1,11 +1,14 @@
 # Rental Partners — stav projektu a ďalšie kroky
 
-*Aktualizované: 5. 9. 2026 (2. session)*
+*Aktualizované: 6. 9. 2026 (3. session)*
 
 ## Kde čo je
 
 - **Dizajnové plátno (všetkých 6 stránok, klikateľný cenník):** https://claude.ai/code/artifact/d7635cc8-045d-4fe3-9c1a-cd38c056adbd
-  - stránka „Web · smer C" = aktuálny návrh, stránka „Záloha · smer A" = odložený prémiový smer
+  - stránka „Web · smer C" = aktuálny návrh, stránka „Vylepšenia · kritika 6. 9." = návrhy opráv po dizajnovej kritike (9 artboardov, čaká na výber), stránka „Záloha · smer A" = odložený prémiový smer
+- **Živý web:** https://www.rentalpartners.sk (Vercel, auto-deploy z GitHubu; apex rentalpartners.sk presmeruje na www)
+- **Test webu:** `cd web && node scripts/site-check.mjs https://www.rentalpartners.sk` → `web/test-results/report.md` (Playwright, desktop + mobil)
+- **Dizajnová kritika (impeccable):** `web/.impeccable/critique/2026-09-06T11-16-02Z__src-pages.md` — 18/32, prioritné problémy P0–P3
 - **Zdrojové súbory návrhov:** `design/*.dc.html` + `design/canvas.json`
 - **Brief (firma, cieľovka, rozhodnutia):** `docs/brief.md`
 - **Dizajnový systém (farby, písmo, rozostupy, komponenty, pravidlá hierarchie):** `docs/DESIGN.md`
@@ -51,7 +54,9 @@
 7. [x] Kód pushnutý na GitHub: https://github.com/nakari-noi/rental-partners (súkromný repozitár, účet nakari-noi) — 5. 9.
 8. [x] Nasadené na Vercel z GitHubu: https://rental-partners.vercel.app — 6. 9. (opravené `vercel.json` v koreni repozitára: web je v podpriečinku `web/`, nie v koreni, preto `installCommand`/`buildCommand`/`outputDirectory` smerujú tam — bez toho Vercel hlásil 404 NOT_FOUND)
 9. [ ] Angličtina + prepínač jazyka (SK / EN v navigácii je zatiaľ len text)
-10. [ ] Pred ostrým spustením: **Web3Forms kľúč** (klient si založí účet na web3forms.com s e-mailom rentalpartners2026@gmail.com → kľúč do `web/src/pages/kontakt.astro`), pripojiť doménu rentalpartners.sk k projektu na Verceli (Settings → Domains), právna kontrola stránky Ochrana osobných údajov, SEO náhľady (og:image), analytika, test formulára, fotka Amandy, tretí člen tímu, podmienky spolupráce (klient sa poradí)
+10. [~] Pred ostrým spustením: **Web3Forms kľúč** (klient si založí účet na web3forms.com s e-mailom rentalpartners2026@gmail.com → kľúč do `web/src/pages/kontakt.astro`) — **P0, dnes zlyhá každé odoslanie** · [x] doména rentalpartners.sk pripojená (6. 9. — www.rentalpartners.sk beží z Vercelu) · [ ] právna kontrola stránky Ochrana osobných údajov · [ ] og:image (návrh V9 na plátne) · [ ] analytika · [ ] test formulára po kľúči · [ ] fotka Amandy · [ ] tretí člen tímu · [ ] podmienky spolupráce (klient sa poradí)
+11. [x] 6. 9.: **Test celého webu** (`web/scripts/site-check.mjs`: 7 stránok + 404, desktop + mobil, konzola, odkazy, obrázky, interakcie) — bez chýb; nálezy: chýba og:image, ciele < 44 px v pätičke a pri mape, zástupný Web3Forms kľúč. **Dizajnová kritika** (`/impeccable critique`, dve nezávislé hodnotenia + detektor): 18/32 „Prijateľné". Hlavné slabé miesta: formulár zlyhá (P0), upokojenie a telefón až za formulárom (P1), model B vizuálne vedľajší (P1), kontrast pod AA na tlačidlách a číslach (P1), hero s tromi animáciami a prázdnom na mobile (P2), cenník odkladá odpovede „na stretnutí" (P2), mŕtve SK/EN a malé ciele (P3). **Návrhy opráv sú na plátne** (stránka „Vylepšenia · kritika 6. 9.", zdroje `design/V-*.dc.html` + `design/OgImage.dc.html`).
+12. [ ] **Ďalší krok:** klient vyberie, ktoré vylepšenia z plátna zapracovať → zapracovať do kódu (`/impeccable harden` formulár, `colorize` kontrast, `layout` cenník, `onboard` kontakt, `quieter` hero, `clarify` texty, `polish` hlavička) → znova `site-check` + `critique`
 
 ## Ako pokračovať zajtra
 

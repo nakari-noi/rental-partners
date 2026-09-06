@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Nunito+Sans:wght@400;600;700&display=swap">
+  <style>
+    body { margin: 0; background: #f6efe4; font-family: 'Nunito Sans', 'Segoe UI', Arial, sans-serif; color: #2b2118; }
+    .display { font-family: 'Outfit', 'Trebuchet MS', 'Segoe UI', sans-serif; }
+    .col { display: flex; flex-direction: column; gap: 14px; }
+    .cap { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #6b5b4e; }
+    .btn { display: flex; align-items: center; justify-content: center; gap: 10px; height: 48px; border-radius: 999px; font-size: 15px; font-weight: 700; }
+  </style>
+</helmet>
+<div style="width: 1200px; background: #f6efe4; color: #2b2118; padding: 48px 64px 56px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px;">
+  <div>
+    <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #a8533a;">Zlepšenie · P0 · stavy formulára</div>
+    <h2 class="display" style="margin: 10px 0 0; font-size: 34px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em;">Koniec cesty musí byť najsilnejší moment, nie najslabší</h2>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: start;">
+
+    <div class="col">
+      <div class="cap">Úspech — namiesto jednej vety pod tlačidlom</div>
+      <div style="display: flex; flex-direction: column; gap: 14px; padding: 24px; background: #e3eadf; border-radius: 24px;">
+        <div style="width: 48px; height: 48px; border-radius: 999px; background: #6e8b6a; display: flex; align-items: center; justify-content: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></div>
+        <div class="display" style="font-size: 24px; line-height: 1.2; font-weight: 700;">Ďakujeme, dopyt sme dostali.</div>
+        <div style="font-size: 15px; line-height: 1.6; color: #2b2118;">Tomáš vám zavolá na <b>+421 9xx xxx xxx</b> zvyčajne do <span style="color: #a8533a; font-weight: 700;">[DOPLNIŤ] hodín</span>. Ak to bude skôr sedieť vám, napíšte, kedy vám môže volať.</div>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: #ffffff; border-radius: 16px; font-size: 14px;">
+          <img src="tomas.webp" alt="" style="width: 36px; height: 36px; border-radius: 999px; object-fit: cover; object-position: 50% 22%;">
+          <span>Medzitým: <b style="color: #a8533a;">pozrite si, ako vyzerajú byty, o ktoré sa staráme →</b></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="cap">Chyba — karta s cestou von, nie tlmená veta</div>
+      <div style="display: flex; flex-direction: column; gap: 14px; padding: 24px; background: #e9dcc6; border-radius: 24px;">
+        <div style="width: 48px; height: 48px; border-radius: 999px; background: #a8533a; display: flex; align-items: center; justify-content: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"><path d="M12 8v5"></path><path d="M12 16.5v.5"></path></svg></div>
+        <div class="display" style="font-size: 24px; line-height: 1.2; font-weight: 700;">Odoslanie sa nepodarilo.</div>
+        <div style="font-size: 15px; line-height: 1.6;">Vaše údaje vo formulári zostali vyplnené. Skúste to o chvíľu znova, alebo nám zavolajte priamo:</div>
+        <div class="btn" style="background: #2b2118; color: #f6efe4;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f6efe4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.8.7a2 2 0 0 1 1.8 2z"></path></svg>Tomáš · +421 903 989 040</div>
+        <div class="btn" style="background: #ffffff; color: #2b2118;">Amanda · +421 904 809 476</div>
+        <div style="font-size: 14px; text-align: center;">alebo <b style="color: #a8533a;">rentalpartners2026@gmail.com</b></div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="cap">Chyba pri poli — pomenuje problém aj riešenie</div>
+      <div style="display: flex; flex-direction: column; gap: 18px; padding: 24px; background: #ffffff; border-radius: 24px;">
+        <div>
+          <div style="font-size: 13px; font-weight: 700; margin-bottom: 6px;">Telefón <span style="color: #a8533a;">*</span></div>
+          <div style="height: 48px; border-radius: 14px; background: #f6efe4; border: 2px solid #a8533a; display: flex; align-items: center; padding: 0 14px; font-size: 15px; box-sizing: border-box;">abc</div>
+          <div style="display: flex; align-items: flex-start; gap: 8px; margin-top: 8px; font-size: 13px; line-height: 1.45; color: #2b2118;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a8533a" stroke-width="2.4" stroke-linecap="round" style="flex: none; margin-top: 1px;"><path d="M12 8v5"></path><path d="M12 16.5v.5"></path><circle cx="12" cy="12" r="9"></circle></svg><span><b>Toto nevyzerá ako telefónne číslo.</b> Zadajte ho v tvare +421 903 123 456 — zavoláme naň.</span></div>
+        </div>
+        <div>
+          <div style="font-size: 13px; font-weight: 700; margin-bottom: 6px;">E-mail <span style="color: #a8533a;">*</span></div>
+          <div style="height: 48px; border-radius: 14px; background: #f6efe4; border: 1px solid #e9dcc6; display: flex; align-items: center; padding: 0 14px; font-size: 15px; box-sizing: border-box;">marta.n@</div>
+          <div style="display: flex; align-items: flex-start; gap: 8px; margin-top: 8px; font-size: 13px; line-height: 1.45; color: #2b2118;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a8533a" stroke-width="2.4" stroke-linecap="round" style="flex: none; margin-top: 1px;"><path d="M12 8v5"></path><path d="M12 16.5v.5"></path><circle cx="12" cy="12" r="9"></circle></svg><span><b>E-mailu chýba časť za zavináčom</b>, napr. marta.n@gmail.com.</span></div>
+        </div>
+        <div style="display: block; padding: 12px 14px; background: #f6efe4; border-radius: 14px; font-size: 13px; line-height: 1.5; color: #6b5b4e;">Tlačidlo počas odosielania: <b style="color: #2b2118;">„Odosielam…"</b> so stlmením, nie zmiznutie. Chyby sa ukazujú pri poli, formulár sa nikdy nevymaže.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
