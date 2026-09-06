@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { site } from '../site.config';
 ---
 <Base title="Ochrana osobných údajov" description="Informácie o spracúvaní osobných údajov na webe rentalpartners.sk.">
   <section class="wrap pt-10 pb-16 lg:pt-14">
@@ -17,7 +18,12 @@ import Base from '../layouts/Base.astro';
         <h2>Vaše práva</h2>
         <p>Máte právo na prístup k údajom, ich opravu, vymazanie, obmedzenie spracúvania, prenosnosť a právo namietať. Napíšte nám na rentalpartners2026@gmail.com. Máte tiež právo podať sťažnosť Úradu na ochranu osobných údajov SR.</p>
         <h2>Cookies</h2>
-        <p>Web nepoužíva marketingové ani analytické cookies. Mapa na stránke Kontakt je statický obrázok; po kliknutí naň prejdete na stránku OpenStreetMap, ktorá má vlastné pravidlá ochrany údajov.</p>
+        {site.gaId ? (
+          <p>Web používa nevyhnutné technické cookies a — iba s vaším súhlasom — analytické cookies služby Google Analytics (Google Ireland Ltd.) na meranie návštevnosti s anonymizovanou IP adresou. Súhlas udeľujete v lište pri prvej návšteve a kedykoľvek ho zmeníte cez odkaz „Nastavenia cookies“ v pätičke. Bez súhlasu sa meranie nespustí.</p>
+        ) : (
+          <p>Web nepoužíva marketingové ani analytické cookies.{site.vercelAnalytics && ' Návštevnosť meriame bez cookies (Vercel Web Analytics), bez identifikácie konkrétnych osôb.'} Ak by sme v budúcnosti pridali analytické alebo reklamné cookies, spýtame sa vás na súhlas v lište a toto znenie doplníme.</p>
+        )}
+        <p>Mapa na stránke Kontakt je statický obrázok; po kliknutí naň prejdete na stránku OpenStreetMap, ktorá má vlastné pravidlá ochrany údajov.</p>
         <p class="text-sm text-ink-muted">Návrh textu — pred spustením webu odporúčame právnu kontrolu.</p>
       </div>
     </div>

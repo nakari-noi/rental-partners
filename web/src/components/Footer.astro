@@ -1,5 +1,6 @@
 ---
 import Logo from './Logo.astro';
+import { site } from '../site.config';
 const year = new Date().getFullYear();
 ---
 <footer class="bg-ink text-bg mt-6">
@@ -33,7 +34,15 @@ const year = new Date().getFullYear();
     </div>
     <div class="flex flex-col sm:flex-row justify-between gap-2 pt-5 border-t border-bg/15 text-[13px] text-ink-muted">
       <span class="py-1">© {year} Rental Partners s. r. o. · IČO 57632499 · DIČ 2122860663</span>
-      <a href="/ochrana-osobnych-udajov" class="py-3 hover:text-bg">Ochrana osobných údajov</a>
+      <span class="flex flex-wrap gap-x-5">
+        <a href="/ochrana-osobnych-udajov" class="py-3 hover:text-bg">Ochrana osobných údajov</a>
+        {site.gaId && <button type="button" class="py-3 hover:text-bg" data-cookies-open>Nastavenia cookies</button>}
+      </span>
     </div>
   </div>
 </footer>
+{site.gaId && (
+  <script is:inline>
+    document.querySelector('[data-cookies-open]')?.addEventListener('click', function () { window.dispatchEvent(new Event('rp:cookies')); });
+  </script>
+)}

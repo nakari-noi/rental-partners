@@ -2,6 +2,8 @@
 import '../styles/global.css';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import Cookies from '../components/Cookies.astro';
+import { site } from '../site.config';
 
 interface Faq { q: string; a: string }
 interface Props {
@@ -112,5 +114,7 @@ const ld = { '@context': 'https://schema.org', '@graph': [firma, web, stranka, o
     <Nav />
     <main id="obsah" class="flex-1"><slot /></main>
     <Footer />
+    <Cookies />
+    {site.vercelAnalytics && <script is:inline defer src="/_vercel/insights/script.js"></script>}
   </body>
 </html>

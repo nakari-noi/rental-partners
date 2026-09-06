@@ -1,0 +1,57 @@
+---
+// Cookie lišta + Google Consent Mode v2. Vykreslí sa iba keď je nastavené PUBLIC_GA_ID.
+// Google Analytics sa načíta až po súhlase; bez súhlasu sa neuloží žiadna analytická cookie.
+import { site } from '../site.config';
+const gaId = site.gaId;
+---
+{gaId && (
+  <div id="cookies" class="fixed inset-x-4 bottom-4 z-40 mx-auto max-w-[640px] hidden flex-col gap-4 p-5 sm:p-6 bg-surface rounded-[var(--radius-block)] shadow-[var(--shadow-float)] border border-sand" role="dialog" aria-modal="false" aria-labelledby="cookies-h" aria-describedby="cookies-p" data-cookies>
+    <div>
+      <h2 id="cookies-h" class="text-lg font-semibold">Cookies na meranie návštevnosti</h2>
+      <p id="cookies-p" class="mt-1.5 text-sm leading-relaxed text-ink-soft">Okrem nevyhnutných cookies by sme radi použili Google Analytics, aby sme vedeli, ktoré stránky vám pomáhajú. Meranie zapneme len s vaším súhlasom a kedykoľvek ho zmeníte v pätičke. <a href="/ochrana-osobnych-udajov" class="underline">Viac o cookies</a></p>
+    </div>
+    <div class="flex flex-wrap gap-2.5">
+      <button type="button" class="btn-primary !py-3 !px-5 !text-sm" data-cookies-accept>Súhlasím s meraním</button>
+      <button type="button" class="inline-flex items-center justify-center py-3 px-5 bg-sand text-ink rounded-full text-sm font-bold" data-cookies-reject>Iba nevyhnutné</button>
+    </div>
+  </div>
+)}
+{gaId && (
+  <script is:inline define:vars={{ gaId }}>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+
+    var KEY = 'rp-cookies';
+    var YEAR = 365 * 24 * 60 * 60 * 1000;
+    var box = document.querySelector('[data-cookies]');
+
+    function read() { try { return JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) { return null; } }
+    function loadGa() {
+      if (document.getElementById('ga-script')) return;
+      var s = document.createElement('script');
+      s.id = 'ga-script'; s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(gaId);
+      document.head.appendChild(s);
+      gtag('js', new Date());
+      gtag('config', gaId, { anonymize_ip: true });
+    }
+    function apply(choice) {
+      var granted = !!(choice && choice.analytics);
+      gtag('consent', 'update', { analytics_storage: granted ? 'granted' : 'denied' });
+      if (granted) loadGa();
+    }
+    function show(on) { if (!box) return; box.classList.toggle('hidden', !on); box.classList.toggle('flex', on); }
+    function save(analytics) {
+      try { localStorage.setItem(KEY, JSON.stringify({ analytics: analytics, ts: Date.now() })); } catch (e) {}
+      apply({ analytics: analytics });
+      show(false);
+    }
+
+    var saved = read();
+    if (saved && Date.now() - (saved.ts || 0) < YEAR) apply(saved); else show(true);
+    box && box.querySelector('[data-cookies-accept]').addEventListener('click', function () { save(true); });
+    box && box.querySelector('[data-cookies-reject]').addEventListener('click', function () { save(false); });
+    window.addEventListener('rp:cookies', function () { show(true); });
+  </script>
+)}
