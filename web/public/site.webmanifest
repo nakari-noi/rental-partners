@@ -1,0 +1,15 @@
+{
+  "name": "Rental Partners — správa bytov a garantovaný nájom v Bratislave",
+  "short_name": "Rental Partners",
+  "description": "Správa bytov na Airbnb a Booking za 10 % z obratu, alebo garantovaný nájom s pevnou sumou každý mesiac. Bratislava.",
+  "start_url": "/",
+  "display": "browser",
+  "lang": "sk",
+  "background_color": "#f6efe4",
+  "theme_color": "#f6efe4",
+  "icons": [
+    { "src": "/img/logo-znak.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

@@ -2,8 +2,18 @@
 import Base from '../layouts/Base.astro';
 import Cta from '../components/Cta.astro';
 import Check from '../components/Check.astro';
+// Otázky majiteľov — na stránke aj v štruktúrovaných dátach (FAQPage)
+const faq = [
+  { q: 'Ktorý model je pre mňa?', a: 'Ak chcete maximum a zvládnete kolísavý príjem, správa. Ak chcete každý mesiac rovnakú sumu bez starostí, garantovaný nájom. Na stretnutí vám ukážeme obe čísla pre váš byt.' },
+  { q: 'Kedy dostanem peniaze?', a: 'Termín a spôsob výplaty sú súčasťou zmluvy — pri správe po mesačnom vyúčtovaní, pri garantovanom nájme v dohodnutý deň v mesiaci.' },
+  { q: 'Kto platí upratovanie?', a: 'Upratovanie zabezpečujeme my. Ako sa účtuje, závisí od modelu spolupráce — vysvetlíme na stretnutí.' },
+  { q: 'Čo ak chcem skončiť?', a: 'Výpovednú lehotu a podmienky ukončenia máte v zmluve. Nič nie je na neurčito bez možnosti výpovede.' },
+];
+// Ilustračné stĺpce: sezónny výnos pri správe vs. rovnaká suma pri garantovanom nájme
+const barsA = [52, 48, 60, 72, 84, 94, 100, 100, 86, 68, 54, 70];
+const barColorA = (h: number) => (h >= 100 ? 'var(--color-accent)' : h >= 84 ? 'var(--color-sand-deep)' : 'var(--color-sand)');
 ---
-<Base title="Cenník" description="Správa bytu za 10 % z obratu, alebo garantovaný nájom s pevnou sumou každý mesiac. Vyberte si, ako chcete z bytu zarábať.">
+<Base title="Cenník správy bytu a garantovaného nájmu" breadcrumb="Cenník" description="Správa bytu na krátkodobý prenájom za 10 % z obratu, alebo garantovaný nájom s pevnou sumou každý mesiac. Porovnanie modelov a odpovede na otázky majiteľov." faq={faq}>
   <section class="wrap pt-10 pb-6 lg:pt-14">
     <span class="chip">Cenník</span>
     <h1 class="mt-5 text-[38px] md:text-[52px] leading-[1.08] font-bold tracking-[-0.02em] max-w-[820px] text-pretty">Vyberte si, ako chcete z bytu zarábať</h1>
@@ -25,6 +35,9 @@ import Check from '../components/Check.astro';
         <span class="chip !bg-accent !text-white whitespace-nowrap hidden lg:inline-flex" data-tag="a">Vybrané</span>
       </div>
       <div class="flex items-baseline gap-3"><span class="display text-[84px] lg:text-[112px] leading-[0.92] font-bold tracking-[-0.04em] text-accent whitespace-nowrap">10 %</span><span class="display text-[22px] font-semibold">z obratu</span></div>
+      <div class="flex items-end gap-1.5 h-[72px]" aria-hidden="true" title="Ilustračne: výnos podľa sezóny">
+        {barsA.map((h) => <span class="flex-1 rounded-t" style={`height:${h}%;background:${barColorA(h)}`}></span>)}
+      </div>
       <p class="text-ink-soft leading-relaxed">Byt zostáva váš a my ho prevádzkujeme na Airbnb a Booking. Z príjmov z pobytov si berieme desatinu — keď byt nezarába, nezarábame ani my.</p>
       <p class="text-sm text-ink-muted pt-3 border-t border-sand">Pre majiteľov, ktorí chcú z bytu vyťažiť maximum.</p>
     </button>
@@ -34,6 +47,9 @@ import Check from '../components/Check.astro';
         <span class="chip !bg-bg/15 !text-[#d9ccbb] whitespace-nowrap hidden lg:inline-flex" data-tag="b">Zobraziť detaily</span>
       </div>
       <div class="display text-[40px] lg:text-[54px] leading-[1.02] font-bold tracking-[-0.03em] text-bg py-2.5">Pevná suma<br />každý mesiac</div>
+      <div class="flex items-end gap-1.5 h-[72px]" aria-hidden="true" title="Ilustračne: rovnaká suma každý mesiac">
+        {barsA.map(() => <span class="flex-1 rounded-t bg-sage" style="height:78%"></span>)}
+      </div>
       <p class="text-[#d9ccbb] leading-relaxed">Byt nám prenajmete a my vám platíme dohodnutý nájom — bez ohľadu na to, či bol byt plný alebo prázdny. Krátkodobý prenájom robíme na vlastné riziko.</p>
       <p class="text-sm text-cream-muted pt-3 border-t border-bg/15">Pre majiteľov, ktorí chcú istotu a nulové starosti.</p>
     </button>

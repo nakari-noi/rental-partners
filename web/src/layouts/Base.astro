@@ -2,10 +2,72 @@
 import '../styles/global.css';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-interface Props { title: string; description: string }
-const { title, description } = Astro.props;
-const canonical = new URL(Astro.url.pathname, Astro.site);
+
+interface Faq { q: string; a: string }
+interface Props {
+  title: string;
+  description: string;
+  /** Cesta k náhľadovému obrázku (1200×630) — predvolene spoločný og.jpg */
+  ogImage?: string;
+  /** Stránky, ktoré Google nemá indexovať (404) */
+  noindex?: boolean;
+  /** Otázky a odpovede → FAQPage štruktúrované dáta */
+  faq?: Faq[];
+  /** Názov v omrvinkovej navigácii (predvolene title) */
+  breadcrumb?: string;
+}
+const { title, description, ogImage = '/og.jpg', noindex = false, faq, breadcrumb } = Astro.props;
+
+const site = Astro.site ?? new URL('https://www.rentalpartners.sk');
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isHome = path === '/';
+const canonical = new URL(path, site).href;
 const fullTitle = `${title} · Rental Partners`;
+const ogImageUrl = new URL(ogImage, site).href;
+
+// Štruktúrované dáta (schema.org) — firma, web, stránka, omrvinky, prípadne FAQ
+const firmaId = `${site.href}#firma`;
+const webId = `${site.href}#web`;
+const firma = {
+  '@type': ['LocalBusiness', 'Organization'],
+  '@id': firmaId,
+  name: 'Rental Partners',
+  legalName: 'Rental Partners s. r. o.',
+  url: site.href,
+  logo: new URL('/img/logo-znak.svg', site).href,
+  image: ogImageUrl,
+  description: 'Správa bytov na krátkodobý prenájom (Airbnb a Booking) a garantovaný nájom v Bratislave. Byt spravujeme za 10 % z obratu, alebo si ho prenajmeme a platíme pevný mesačný nájom.',
+  telephone: '+421903989040',
+  email: 'rentalpartners2026@gmail.com',
+  address: { '@type': 'PostalAddress', streetAddress: 'Námestie 1. mája 8062/11', addressLocality: 'Bratislava', postalCode: '811 06', addressCountry: 'SK' },
+  geo: { '@type': 'GeoCoordinates', latitude: 48.1493, longitude: 17.1116 },
+  areaServed: { '@type': 'City', name: 'Bratislava' },
+  identifier: [
+    { '@type': 'PropertyValue', propertyID: 'IČO', value: '57632499' },
+    { '@type': 'PropertyValue', propertyID: 'DIČ', value: '2122860663' },
+  ],
+  sameAs: ['https://sk.airbnb.com/users/show/515063940'],
+  knowsLanguage: ['sk', 'cs', 'en'],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Modely spolupráce',
+    itemListElement: [
+      { '@type': 'Offer', name: 'Správa bytu', description: 'Prevádzka bytu na Airbnb a Booking za 10 % z obratu — fotenie, inzeráty, hostia, upratovanie, údržba a mesačné vyúčtovanie.', url: new URL('/cennik', site).href, priceSpecification: { '@type': 'UnitPriceSpecification', price: '10', priceCurrency: 'EUR', unitText: '% z obratu' } },
+      { '@type': 'Offer', name: 'Garantovaný nájom', description: 'Byt si prenajmeme a majiteľovi platíme dohodnutý pevný nájom každý mesiac bez ohľadu na obsadenosť.', url: new URL('/cennik', site).href },
+    ],
+  },
+};
+const web = { '@type': 'WebSite', '@id': webId, url: site.href, name: 'Rental Partners', inLanguage: 'sk', publisher: { '@id': firmaId } };
+const stranka = { '@type': 'WebPage', '@id': canonical, url: canonical, name: fullTitle, description, inLanguage: 'sk', isPartOf: { '@id': webId }, about: { '@id': firmaId }, primaryImageOfPage: ogImageUrl };
+const omrvinky = isHome ? null : {
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Domov', item: site.href },
+    { '@type': 'ListItem', position: 2, name: breadcrumb ?? title, item: canonical },
+  ],
+};
+const faqLd = faq?.length ? { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) } : null;
+const ld = { '@context': 'https://schema.org', '@graph': [firma, web, stranka, omrvinky, faqLd].filter(Boolean) };
 ---
 <!doctype html>
 <html lang="sk">
@@ -14,18 +76,41 @@ const fullTitle = `${title} · Rental Partners`;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large'} />
     <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="sk" href={canonical} />
+    <link rel="alternate" hreflang="x-default" href={canonical} />
+
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" href="/img/logo-znak.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#f6efe4" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Rental Partners" />
+    <meta property="og:locale" content="sk_SK" />
+    <meta property="og:url" content={canonical} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:locale" content="sk_SK" />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Rental Partners — správa bytov a garantovaný nájom v Bratislave" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <script type="application/ld+json" set:html={JSON.stringify(ld)} />
   </head>
   <body class="min-h-screen flex flex-col">
+    <a href="#obsah" class="skip-link">Preskočiť na obsah</a>
     <Nav />
-    <main class="flex-1"><slot /></main>
+    <main id="obsah" class="flex-1"><slot /></main>
     <Footer />
   </body>
 </html>
