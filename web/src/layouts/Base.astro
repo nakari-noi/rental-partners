@@ -70,6 +70,8 @@ const omrvinky = isHome ? null : {
 };
 const faqLd = faq?.length ? { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) } : null;
 const ld = { '@context': 'https://schema.org', '@graph': [firma, web, stranka, omrvinky, faqLd].filter(Boolean) };
+// Vercel Web Analytics (bez cookies). Značka sa vkladá ako hotový HTML text: Astro inak <script> v podmienke vynechá.
+const insightsTag = site.vercelAnalytics ? '<script defer src="/_vercel/insights/script.js"><' + '/script>' : '';
 ---
 <!doctype html>
 <html lang="sk">
@@ -115,7 +117,6 @@ const ld = { '@context': 'https://schema.org', '@graph': [firma, web, stranka, o
     <main id="obsah" class="flex-1"><slot /></main>
     <Footer />
     <Cookies />
-    {/* Vercel Web Analytics (bez cookies) — <script> v podmienke Astro vynecháva, preto set:html */}
-    {site.vercelAnalytics && <Fragment set:html={'<script defer src="/_vercel/insights/script.js"></script>'} />}
+    <Fragment set:html={insightsTag} />
   </body>
 </html>
