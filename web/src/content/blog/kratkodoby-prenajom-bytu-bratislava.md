@@ -51,13 +51,11 @@ Krátkodobý prenájom je prevádzka, nie pasívny príjem. Toto sú veci, ktor�
 
 Na jeden byt je to pár hodín týždenne. Pri viacerých bytoch je to práca na plný úväzok.
 
-## Kľúče, škody a poistenie
+## Kľúče a škody
 
-[DOPLNIŤ: ako riešite kľúče a check-in. Schránka na kľúče, chytrý zámok, alebo osobné odovzdanie?]
+Kľúče sú v schránke na kľúče alebo v bezpečnostnom boxe. Hosť dostane vopred pokyny k príchodu, takže môže prísť, kedy mu to vyjde, a nikto naňho nemusí čakať. Odpadá tým najväčšia časť behania okolo bytu.
 
-[DOPLNIŤ: čo sa reálne stáva so škodami, ako často a ako sa riešia. Kaucia na platforme, riešenie s hosťom, oprava z výnosu?]
-
-[DOPLNIŤ: poistenie pre krátkodobý prenájom. Máte ho, v ktorej poisťovni, čo kryje? Toto je argument, ktorý konkurencia nemá nikde napísaný.]
+Škody nie sú také časté, ako si ľudia myslia, ale stávajú sa. Väčšinu z nich vyriešime sami, bez toho, aby majiteľ musel čokoľvek riešiť. Pri kontrole po každom pobyte ich zachytíme skôr, než by ich zbadal ďalší hosť.
 
 ## Čo hovorí zákon
 
@@ -82,7 +80,7 @@ Ak sa vám do prevádzky nechce, máte dve možnosti. Obe fungujú tak, že byt 
 Byt prevádzkujeme na Airbnb a Booking a z príjmov z pobytov si berieme desatinu. Keď byt nezarába, nezarábame ani my. Výnos je preto najvyšší možný, ale mesiac od mesiaca sa líši.
 
 - Peniaze dostávate po mesačnom vyúčtovaní, vždy do 10. dňa nasledujúceho mesiaca.
-- Náklady na prevádzku, teda energie, internet, spotrebný materiál a poplatky platforiem, hradí majiteľ. Menšie opravy hradíme my. [DOPLNIŤ: kto hradí väčšie opravy]
+- Náklady na prevádzku, teda energie, internet, spotrebný materiál a poplatky platforiem, hradí majiteľ. Menšie opravy hradíme my. Pri väčších opravách záleží na tom, čím a ako vznikli.
 - Výpovedná lehota je 30 dní.
 - Byt si môžete blokovať aj pre seba. Ako často a s akým predstihom, dohodneme podľa toho, ako byt používate.
 
@@ -110,4 +108,4 @@ Nehodí sa, ak byt väčšinu roka potrebujete na bývanie, alebo ak je v lokali
 2. Stretneme sa priamo v byte a pripravíme odhad výnosu. Je zadarmo a nezáväzný.
 3. Vyberiete si model spolupráce a podpíšeme zmluvu.
 4. Byt nafotíme, napíšeme texty a založíme profily na Airbnb a Booking.
-5. Prichádza prvý hosť. [DOPLNIŤ: koľko dní to zvyčajne trvá od podpisu]
+5. Prichádza prvý hosť. Pri zariadenom byte to od podpisu zvyčajne trvá od dvoch dní do týždňa.
