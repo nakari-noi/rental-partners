@@ -1,0 +1,57 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Cta from '../../components/Cta.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+const { post } = Astro.props;
+const { Content } = await render(post);
+const d = post.data;
+const fmt = (x: Date) => x.toLocaleDateString('sk-SK', { day: 'numeric', month: 'long', year: 'numeric' });
+const iso = (x: Date) => x.toISOString();
+---
+<Base
+  title={d.title}
+  description={d.description}
+  breadcrumb={[{ name: 'Blog', href: '/blog' }, { name: d.title, href: `/blog/${post.id}` }]}
+  article={{ headline: d.title, datePublished: iso(d.date), dateModified: iso(d.updated ?? d.date) }}
+  faq={d.faq}
+>
+  <article>
+    <header class="wrap pt-10 pb-6 lg:pt-14">
+      <a href="/blog" class="chip !py-1.5 hover:bg-sand-deep transition-colors"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg>Blog</a>
+      <h1 class="mt-5 text-[34px] md:text-[48px] leading-[1.08] font-bold tracking-[-0.02em] max-w-[820px] text-pretty">{d.title}</h1>
+      <p class="mt-5 text-lg leading-relaxed text-ink-soft max-w-[680px]">{d.perex ?? d.description}</p>
+      <p class="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-[13px] font-bold text-ink-muted">
+        <span class="inline-flex items-center gap-2"><img src="/img/tomas.webp" alt="" class="w-7 h-7 rounded-full object-cover object-[50%_20%]" width="28" height="28" loading="lazy" />Rental Partners</span>
+        <span aria-hidden="true">·</span>
+        <time datetime={d.date.toISOString().slice(0, 10)}>{fmt(d.date)}</time>
+        {d.updated && <span>· aktualizované {fmt(d.updated)}</span>}
+        {d.readingMinutes && <span>· {d.readingMinutes} min čítania</span>}
+      </p>
+    </header>
+
+    <div class="wrap pb-14 lg:pb-16">
+      <div class="prose-rp max-w-[720px]"><Content /></div>
+    </div>
+
+    {d.faq?.length && (
+      <section class="bg-surface py-14 lg:py-16" aria-labelledby="faq-nadpis">
+        <div class="wrap">
+          <p class="eyebrow">Otázky majiteľov</p>
+          <h2 id="faq-nadpis" class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">Na čo sa pýtajú najčastejšie</h2>
+          <div class="grid md:grid-cols-2 gap-5 mt-7">
+            {d.faq.map((f) => (
+              <div class="p-6 bg-bg rounded-[var(--radius-card)]"><h3 class="text-lg font-semibold">{f.q}</h3><p class="mt-2 text-[15px] leading-relaxed text-ink-soft">{f.a}</p></div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+  </article>
+
+  <Cta text="Chcete vedieť, koľko by váš byt zarobil? Stretneme sa priamo v ňom." />
+</Base>

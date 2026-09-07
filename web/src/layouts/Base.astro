@@ -6,6 +6,7 @@ import Cookies from '../components/Cookies.astro';
 import { site as config } from '../site.config';
 
 interface Faq { q: string; a: string }
+interface Crumb { name: string; href: string }
 interface Props {
   title: string;
   description: string;
@@ -15,10 +16,12 @@ interface Props {
   noindex?: boolean;
   /** Otázky a odpovede → FAQPage štruktúrované dáta */
   faq?: Faq[];
-  /** Názov v omrvinkovej navigácii (predvolene title) */
-  breadcrumb?: string;
+  /** Názov v omrvinkovej navigácii (predvolene title), alebo celá cesta pri hlbších stránkach (blog) */
+  breadcrumb?: string | Crumb[];
+  /** Článok blogu: BlogPosting v štruktúrovaných dátach a og:type article */
+  article?: { headline: string; datePublished: string; dateModified?: string };
 }
-const { title, description, ogImage = '/og.jpg', noindex = false, faq, breadcrumb } = Astro.props;
+const { title, description, ogImage = '/og.jpg', noindex = false, faq, breadcrumb, article } = Astro.props;
 
 const site = Astro.site ?? new URL('https://www.rentalpartners.sk');
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
@@ -61,15 +64,17 @@ const firma = {
 };
 const web = { '@type': 'WebSite', '@id': webId, url: site.href, name: 'Rental Partners', inLanguage: 'sk', publisher: { '@id': firmaId } };
 const stranka = { '@type': 'WebPage', '@id': canonical, url: canonical, name: fullTitle, description, inLanguage: 'sk', isPartOf: { '@id': webId }, about: { '@id': firmaId }, primaryImageOfPage: ogImageUrl };
+const cesta: Crumb[] = Array.isArray(breadcrumb) ? breadcrumb : [{ name: breadcrumb ?? title, href: path }];
 const omrvinky = isHome ? null : {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Domov', item: site.href },
-    { '@type': 'ListItem', position: 2, name: breadcrumb ?? title, item: canonical },
+    ...cesta.map((c, i) => ({ '@type': 'ListItem', position: i + 2, name: c.name, item: new URL(c.href, site).href })),
   ],
 };
 const faqLd = faq?.length ? { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) } : null;
-const ld = { '@context': 'https://schema.org', '@graph': [firma, web, stranka, omrvinky, faqLd].filter(Boolean) };
+const clanok = article ? { '@type': 'BlogPosting', '@id': canonical + '#clanok', headline: article.headline, description, url: canonical, mainEntityOfPage: { '@id': canonical }, datePublished: article.datePublished, dateModified: article.dateModified ?? article.datePublished, inLanguage: 'sk', image: ogImageUrl, author: { '@id': firmaId }, publisher: { '@id': firmaId }, isPartOf: { '@id': webId } } : null;
+const ld = { '@context': 'https://schema.org', '@graph': [firma, web, stranka, omrvinky, faqLd, clanok].filter(Boolean) };
 // Vercel Web Analytics (bez cookies). Značka sa vkladá ako hotový HTML text: Astro inak <script> v podmienke vynechá.
 const insightsTag = config.vercelAnalytics ? '<script defer src="/_vercel/insights/script.js"><' + '/script>' : '';
 ---
@@ -91,7 +96,9 @@ const insightsTag = config.vercelAnalytics ? '<script defer src="/_vercel/insigh
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#f6efe4" />
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={article ? 'article' : 'website'} />
+    {article && <meta property="article:published_time" content={article.datePublished} />}
+    {article && <meta property="article:modified_time" content={article.dateModified ?? article.datePublished} />}
     <meta property="og:site_name" content="Rental Partners" />
     <meta property="og:locale" content="sk_SK" />
     <meta property="og:url" content={canonical} />

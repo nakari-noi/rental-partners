@@ -5,16 +5,19 @@ const links = [
   { href: '/cennik', label: 'Cenník' },
   { href: '/vysledky', label: 'Výsledky' },
   { href: '/o-nas', label: 'O nás' },
+  { href: '/blog', label: 'Blog' },
   { href: '/kontakt', label: 'Kontakt' },
 ];
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+// Podstránky (napr. /blog/clanok) zvýrazňujú svoju sekciu v menu
+const active = (href: string) => path === href || path.startsWith(href + '/');
 const phone = { href: 'tel:+421903989040', label: '0903 989 040', full: '+421 903 989 040' };
 ---
 <header class="wrap relative flex items-center justify-between gap-4 py-5 md:py-6">
   <a href="/" aria-label="Rental Partners, domov" class="shrink-0"><Logo class="h-10 md:h-[46px] w-auto block" /></a>
   <nav class="hidden lg:flex items-center gap-7 text-[15px] font-semibold text-ink-soft" aria-label="Hlavná navigácia">
     {links.map((l) => (
-      <a href={l.href} class:list={['hover:text-ink transition-colors py-2 border-b-2', path === l.href ? 'text-ink border-accent' : 'border-transparent']} aria-current={path === l.href ? 'page' : undefined}>{l.label}</a>
+      <a href={l.href} class:list={['hover:text-ink transition-colors py-2 border-b-2', active(l.href) ? 'text-ink border-accent' : 'border-transparent']} aria-current={active(l.href) ? 'page' : undefined}>{l.label}</a>
     ))}
   </nav>
   <div class="flex items-center gap-2 md:gap-3">
@@ -33,7 +36,7 @@ const phone = { href: 'tel:+421903989040', label: '0903 989 040', full: '+421 90
   <div id="mobilne-menu" class="lg:hidden hidden absolute right-5 md:right-10 top-[calc(100%-8px)] z-30 w-[264px]" data-menu>
     <nav class="flex flex-col gap-0.5 bg-surface rounded-[var(--radius-card)] p-2 border border-sand shadow-[var(--shadow-float)]" aria-label="Mobilná navigácia">
       {links.map((l) => (
-        <a href={l.href} class:list={['px-3.5 py-2.5 rounded-xl text-[15px] font-semibold min-h-11 flex items-center', path === l.href ? 'bg-sand text-ink' : 'text-ink-soft']} aria-current={path === l.href ? 'page' : undefined}>{l.label}</a>
+        <a href={l.href} class:list={['px-3.5 py-2.5 rounded-xl text-[15px] font-semibold min-h-11 flex items-center', active(l.href) ? 'bg-sand text-ink' : 'text-ink-soft']} aria-current={active(l.href) ? 'page' : undefined}>{l.label}</a>
       ))}
       <a href={phone.href} class="px-3.5 py-2.5 rounded-xl text-[15px] font-semibold min-h-11 flex items-center gap-2 text-ink border-t border-sand mt-1 pt-3"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.8.7a2 2 0 0 1 1.8 2z"></path></svg>Zavolať · {phone.full}</a>
       <a href="/kontakt" class="btn-primary !py-3 !px-5 !text-sm mt-1.5">Chcem odhad výnosu</a>

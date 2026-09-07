@@ -84,6 +84,27 @@
   .seg[aria-pressed="true"] { background: var(--color-ink); color: var(--color-bg); }
   .seg:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
 
+  /* Blog: telo článku (výstup z markdownu) */
+  .prose-rp { font-size: 17px; line-height: 1.7; color: var(--color-ink-soft); }
+  .prose-rp > * + * { margin-top: 1.15em; }
+  .prose-rp h2 { margin-top: 2.1em; font-size: 27px; line-height: 1.2; font-weight: 700; letter-spacing: -0.02em; color: var(--color-ink); text-wrap: pretty; }
+  .prose-rp h3 { margin-top: 1.6em; font-size: 21px; line-height: 1.3; font-weight: 600; color: var(--color-ink); }
+  .prose-rp h2 + *, .prose-rp h3 + * { margin-top: 0.7em; }
+  .prose-rp strong { color: var(--color-ink); font-weight: 700; }
+  .prose-rp a { color: var(--color-accent); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
+  .prose-rp a:hover { color: var(--color-accent-deep); }
+  .prose-rp ul, .prose-rp ol { padding-left: 1.35em; }
+  .prose-rp li + li { margin-top: 0.5em; }
+  .prose-rp li::marker { color: var(--color-accent); font-weight: 700; }
+  .prose-rp blockquote { margin-block: 1.6em; padding: 18px 22px; background: var(--color-sage-soft); border-radius: var(--radius-card); color: var(--color-ink); font-size: 16px; }
+  .prose-rp blockquote > * + * { margin-top: 0.6em; }
+  .prose-rp table { display: block; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 15px; }
+  .prose-rp th, .prose-rp td { padding: 10px 12px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--color-sand); }
+  .prose-rp th { color: var(--color-ink); font-weight: 700; }
+  .prose-rp hr { border: 0; border-top: 1px solid var(--color-sand); margin-block: 2.4em; }
+  .prose-rp img { border-radius: var(--radius-card); }
+  @media (min-width: 768px) { .prose-rp { font-size: 18px; } .prose-rp h2 { font-size: 32px; } .prose-rp h3 { font-size: 23px; } }
+
   /* Form fields */
   .field { width: 100%; height: 48px; padding: 0 16px; border: 1px solid var(--color-sand-deep); border-radius: 12px; background: var(--color-bg); font-family: var(--font-body); font-size: 16px; font-weight: 400; line-height: 1.4; color: var(--color-ink); }
   .field::placeholder { color: var(--color-ink-muted); font-weight: 400; }
