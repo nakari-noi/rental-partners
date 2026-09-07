@@ -261,13 +261,38 @@ Potrebujem: **priame linky na týchto 6 inzerátov** (Airbnb aj Booking), ich lo
 
 ## Príloha C — 6 bytov v portfóliu (linky od klienta, načítané 5. 9. 2026)
 
-| Byt | Lokalita · izby · hostia | Hodnotenie | Airbnb link | Fotka |
-|---|---|---|---|---|
-| 2Br byt ocenený za najlepšiu renováciu a dizajn | Ružinov · 2 spálne · 5 | 4,91 · 43 | https://sk.airbnb.com/rooms/36337965 | byt-2br-dizajn |
-| Najlepšia poloha v meste s 2 spálňami | 2 spálne · 8 · garáž | 4,85 · 26 | https://sk.airbnb.com/rooms/1324615524135454109 | byt-najlepsia-poloha |
-| Garsónka v najlepšej centrálnej lokalite | 1 · 4 · samoobslužný check-in | 4,86 · 28 | https://sk.airbnb.com/rooms/1359465590835327627 | byt-garsonka |
-| Nové a útulné v srdci Bratislavy | 1 spálňa · 5 · parkovanie, klimatizácia | 5,0 · 8 | https://sk.airbnb.com/rooms/1321068920425376567 | byt-nove-utulne |
-| Apartmán Metropolis Prime | 1 spálňa · 3 · podzemné parkovanie | 5,0 · 5 | https://sk.airbnb.com/rooms/1527466211344326285 | byt-metropolis |
-| Štúdio pod hradom pri Dunaji | 1 · 2 · výťah, EV nabíjanie | nový inzerát (0) | https://sk.airbnb.com/rooms/1403085716062221620 | **castelhilll residence — odhad, overiť** |
+Na webe vedieme byty pod **originálnymi anglickými názvami z inzerátov** (pokyn klienta, 7. 9. 2026). Odkaz vedie na tú platformu, kde má byt silnejší profil: pri nízkom počte recenzií na Airbnb odkazujeme na Booking.
 
-Booking nemá verejnú stránku hostiteľa — na webe pri Bookingu odkaz nebude, len hodnotenie 9,6 a poznámka, že hodnotenia sú pri každom byte.
+| Byt (originálny názov) | Lokalita · izby · hostia | Hodnotenie | Odkaz na webe | Fotka |
+|---|---|---|---|---|
+| 2BR Apartment awarded for Best Renovation & Design | Ružinov · 2 spálne · 5 | 4,91 · 43 (Airbnb) | Airbnb https://sk.airbnb.com/rooms/36337965 | byt-2br-dizajn |
+| Studio Best Center Location | Centrum · 1 · 4 | 4,86 · 28 (Airbnb) | Airbnb https://sk.airbnb.com/rooms/1359465590835327627 | byt-garsonka |
+| Best City Location 2-Bedroom Apartment | 2 spálne · 8 · garáž | 4,85 · 26 (Airbnb) | Airbnb https://sk.airbnb.com/rooms/1324615524135454109 | byt-najlepsia-poloha |
+| New Cozy Apartment in Heart of Bratislava | Centrum · 1 spálňa · 5 · garážové parkovanie | Airbnb len 5,0 · 8, preto Booking | Booking https://www.booking.com/Share-wlTxxt | byt-nove-utulne |
+| Metropolis Prime Apartment with Free Parking | 1 spálňa · 3 · podzemné parkovanie | Airbnb len 5,0 · 5, preto Booking | Booking https://www.booking.com/Share-hrJbCt | byt-metropolis |
+| Studio Under Castle near Danube | Pod hradom · 1 · 2 | Airbnb 0 recenzií, preto Booking | Booking https://www.booking.com/Share-3BnGOih | byt-castle-hill-residence |
+
+Pri troch bytoch s odkazom na Booking zatiaľ neuvádzame číselné hodnotenie, len štítok „hodnotenia na Booking.com". **[DOPLNIŤ]** hodnotenie a počet recenzií z Bookingu, aby sa dali zobraziť reálne čísla.
+
+Booking nemá verejnú stránku hostiteľa, preto pri profile firmy odkaz nie je, len hodnotenie 9,6 a poznámka, že hodnotenia sú pri každom byte.
+
+**Zoznam 18 Booking inzerátov od klienta (7. 9. 2026)** — zdroj pre budúce rozšírenie portfólia. Použité sú zatiaľ tri (8, 10, 12).
+
+1. Castle Hill 2 Bedroom Apartment Free Parking · https://www.booking.com/Share-c8pLcD
+2. Castle Hill Modern Apartment Free Parking · https://www.booking.com/Share-WUA5Vp
+3. Castle Hill Sunny Apartment · https://www.booking.com/Share-z8gUZe
+4. Castle Hill Terrace Apartment · https://www.booking.com/Share-PkN6Ip
+5. Castle Hill Residence · https://www.booking.com/Share-9ibfS2
+6. Studio Best Center Location · https://www.booking.com/hotel/sk/studio-best-center-location-w-free-parking.html
+7. Best City Location 2-Bedroom Apartment · https://www.booking.com/Share-gVEpfPf
+8. New Cozy Apartment in Heart of Bratislava FREE GARAGE PARKING · https://www.booking.com/Share-wlTxxt
+9. City Center Residence Free Parking · https://www.booking.com/Share-Sg75JPx
+10. Studio Under Castle near Danube · https://www.booking.com/Share-3BnGOih
+11. Klingerka with View and Free Parking · https://www.booking.com/Share-jLmVpV
+12. Metropolis Prime Apartment with Free Parking · https://www.booking.com/Share-hrJbCt
+13. ZWIRN New Apartment Free Parking · https://www.booking.com/Share-aaKV0AR
+14. City Park Apartment Free Garage Parking · https://www.booking.com/Share-f5f3V8
+15. Modern Studio EinPark Residence · https://www.booking.com/hotel/sk/modern-studio-einpark-residence.html
+16. Big 4 Room Apartment near Old Town · https://www.booking.com/Share-7XqIYj
+17. Lake City Harmony AC Free Parking · https://www.booking.com/Share-klOJdkw
+18. 2BR Apartment awarded for Best Renovation & Design · https://www.booking.com/Share-vc3Ttt

@@ -11,7 +11,7 @@ const path = Astro.url.pathname.replace(/\/$/, '') || '/';
 const phone = { href: 'tel:+421903989040', label: '0903 989 040', full: '+421 903 989 040' };
 ---
 <header class="wrap relative flex items-center justify-between gap-4 py-5 md:py-6">
-  <a href="/" aria-label="Rental Partners — domov" class="shrink-0"><Logo class="h-10 md:h-[46px] w-auto block" /></a>
+  <a href="/" aria-label="Rental Partners, domov" class="shrink-0"><Logo class="h-10 md:h-[46px] w-auto block" /></a>
   <nav class="hidden lg:flex items-center gap-7 text-[15px] font-semibold text-ink-soft" aria-label="Hlavná navigácia">
     {links.map((l) => (
       <a href={l.href} class:list={['hover:text-ink transition-colors py-2 border-b-2', path === l.href ? 'text-ink border-accent' : 'border-transparent']} aria-current={path === l.href ? 'page' : undefined}>{l.label}</a>

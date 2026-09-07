@@ -17,7 +17,7 @@ const deck = [
 ];
 const services = [
   { t: 'Fotenie', d: 'Profesionálne fotky bytu pre inzeráty.', i: 'M4 8h3l2-3h6l2 3h3v11H4z M12 16.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z' },
-  { t: 'Inzeráty a ceny', d: 'Airbnb, Booking a ďalšie — texty, ceny, sezóny.', i: 'M3 4h18v16H3z M8.5 11a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z M21 16l-5-5-8 8' },
+  { t: 'Inzeráty a ceny', d: 'Airbnb, Booking a ďalšie. Texty, ceny, sezóny.', i: 'M3 4h18v16H3z M8.5 11a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z M21 16l-5-5-8 8' },
   { t: 'Hostia', d: 'Dopyty, rezervácie, check-in aj nočné otázky.', i: 'M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z' },
   { t: 'Upratovanie', d: 'Po každom hosťovi, čistá bielizeň, doplnené zásoby.', i: 'M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z M19 15l.8 2.2 2.2.8-2.2.8L19 21l-.8-2.2-2.2-.8 2.2-.8z' },
   { t: 'Údržba', d: 'Drobné opravy aj dlhodobá starostlivosť o byt.', i: 'M14.7 6.3a4 4 0 0 0 5 5L13 18l-3-3 6.7-8.7z M3 21l5-5' },
@@ -84,13 +84,14 @@ const services = [
     <div class="grid md:grid-cols-2 gap-6 mt-8">
       <div class="flex flex-col gap-4 p-6 lg:p-9 bg-surface rounded-[var(--radius-block)]">
         <div class="flex flex-wrap items-center justify-between gap-2"><h3 class="display text-2xl font-bold">Správa bytu</h3><span class="chip whitespace-nowrap">10 % z obratu</span></div>
-        <p class="leading-relaxed text-ink-soft">Byt zostáva váš a my ho prevádzkujeme na Airbnb a Booking. Vy dostávate výnos podľa obsadenosti — v silnej sezóne viac — a my z neho desatinu.</p>
+        <p class="leading-relaxed text-ink-soft">Byt zostáva váš a my ho prevádzkujeme na Airbnb a Booking. Vy dostávate výnos podľa obsadenosti, v silnej sezóne viac, a my z neho desatinu.</p>
+        <p class="flex items-start gap-2.5 p-3.5 bg-sage-soft rounded-[14px] text-[15px] leading-snug"><span class="text-sage shrink-0 mt-0.5" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18L11 11l4 4 6-7"></path><path d="M15 8h6v6"></path></svg></span><span><b>Potenciálny výnos o 40 až 60 % vyšší</b> ako pri dlhodobom nájme. Závisí od lokality, veľkosti a sezóny.</span></p>
         <ul class="flex flex-col gap-2.5"><Check>Najvyšší možný výnos z bytu</Check><Check>Mesačné vyúčtovanie, prehľad o každom pobyte</Check><Check>Príjem sa mesiac od mesiaca líši</Check></ul>
         <p class="text-sm text-ink-muted pt-3 border-t border-sand">Pre majiteľov, ktorí chcú z bytu vyťažiť maximum.</p>
       </div>
       <div class="flex flex-col gap-4 p-6 lg:p-9 bg-ink text-bg rounded-[var(--radius-block)]">
         <div class="flex flex-wrap items-center justify-between gap-2"><h3 class="display text-2xl font-bold text-bg">Garantovaný nájom</h3><span class="chip !bg-sage !text-white whitespace-nowrap">pevná suma mesačne</span></div>
-        <p class="leading-relaxed text-[#d9ccbb]">Byt nám prenajmete a my vám platíme dohodnutý nájom každý mesiac — bez ohľadu na to, či bol byt plný alebo prázdny. Krátkodobý prenájom, hostí aj starostlivosť riešime na vlastné riziko.</p>
+        <p class="leading-relaxed text-[#d9ccbb]">Byt nám prenajmete a my vám platíme dohodnutý nájom každý mesiac bez ohľadu na to, či bol byt plný alebo prázdny. Krátkodobý prenájom, hostí aj starostlivosť riešime na vlastné riziko.</p>
         <ul class="flex flex-col gap-2.5"><Check light>Istý príjem, rovnaký každý mesiac</Check><Check light>Prázdne obdobia sú náš problém, nie váš</Check><Check light>O byt sa staráme ako pri správe</Check></ul>
         <p class="text-sm text-cream-muted pt-3 border-t border-bg/15">Pre majiteľov, ktorí chcú istotu a nulové starosti.</p>
       </div>
@@ -103,7 +104,7 @@ const services = [
     <div class="wrap">
       <p class="eyebrow">Služby</p>
       <h2 class="mt-2 text-[30px] md:text-[38px] font-bold tracking-[-0.02em] leading-[1.15]">Čo preberáme za vás</h2>
-      <p class="mt-3 text-[17px] leading-relaxed text-ink-soft max-w-[620px]">Všetko, čo by ste inak riešili vy — každý deň, aj cez víkend. Pri oboch modeloch.</p>
+      <p class="mt-3 text-[17px] leading-relaxed text-ink-soft max-w-[620px]">Všetko, čo by ste inak riešili vy. Každý deň, aj cez víkend. Pri oboch modeloch.</p>
       <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-8">
         {services.map((s) => (
           <div class="flex flex-col gap-3 p-5 bg-bg rounded-[var(--radius-card)]">

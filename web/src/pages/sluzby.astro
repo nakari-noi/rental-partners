@@ -5,24 +5,24 @@ import Check from '../components/Check.astro';
 
 const services = [
   { n: '01', title: 'Fotenie, inzeráty a ceny', img: '/img/ilu-fotenie.svg', alt: 'Ilustrácia: fotoaparát na statíve pred izbou',
-    text: 'Byt profesionálne nafotíme, napíšeme texty v slovenčine aj angličtine a založíme profily na Airbnb a Booking. Ceny sledujeme priebežne — podľa sezóny, dopytu a obsadenosti.',
+    text: 'Byt profesionálne nafotíme, napíšeme texty v slovenčine aj angličtine a založíme profily na Airbnb a Booking. Ceny sledujeme priebežne podľa sezóny, dopytu a obsadenosti.',
     points: ['Profesionálne fotenie bytu a texty SK / EN', 'Profily na Airbnb, Booking a ďalších platformách', 'Priebežná úprava cien podľa sezóny'] },
   { n: '02', title: 'Hostia a komunikácia', img: '/img/ilu-hostia.svg', alt: 'Ilustrácia: telefón so správami a kľúč',
-    text: 'Od prvej správy po odhlásenie. Hostia píšu nám, nie vám — aj v sobotu o desiatej večer.',
+    text: 'Od prvej správy po odhlásenie. Hostia píšu nám, nie vám. Aj v sobotu o desiatej večer.',
     points: ['Odpovede na dopyty a rezervácie', 'Check-in, check-out, inštrukcie k bytu', 'Riešenie problémov počas pobytu a recenzie'] },
   { n: '03', title: 'Upratovanie a bielizeň', img: '/img/ilu-upratovanie.svg', alt: 'Ilustrácia: ustlaná posteľ a uteráky',
     text: 'Po každom odchode hostí byt upraceme, vymeníme posteľnú bielizeň a uteráky a doplníme, čo chýba. Zároveň skontrolujeme, či je všetko v poriadku.',
     points: ['Upratovanie po každom pobyte', 'Čistá bielizeň a uteráky', 'Kontrola stavu bytu po hosťoch'] },
   { n: '04', title: 'Údržba a starostlivosť o byt', img: '/img/ilu-udrzba.svg', alt: 'Ilustrácia: kohútik, kľúč a checklist',
-    text: 'Kvapkajúci kohútik, zaseknutý zámok, vypálená žiarovka — riešime hneď, keď to zbadáme, nie až po vašom telefonáte.',
+    text: 'Kvapkajúci kohútik, zaseknutý zámok, vypálená žiarovka. Riešime ich hneď, keď to zbadáme, nie až po vašom telefonáte.',
     points: ['Drobné opravy', 'Koordinácia remeselníkov pri väčších poruchách', 'Pravidelná kontrola bytu'] },
 ];
 ---
-<Base title="Služby správy bytu na Airbnb a Booking" breadcrumb="Služby" description="Fotenie, inzeráty a ceny, komunikácia s hosťami, upratovanie, údržba a mesačné vyúčtovanie — všetko, čo pri krátkodobom prenájme bytu v Bratislave preberáme za vás.">
+<Base title="Služby správy bytu na Airbnb a Booking" breadcrumb="Služby" description="Fotenie, inzeráty a ceny, komunikácia s hosťami, upratovanie, údržba a mesačné vyúčtovanie. Všetko, čo pri krátkodobom prenájme bytu v Bratislave preberáme za vás.">
   <section class="wrap pt-10 pb-8 lg:pt-14">
     <span class="chip">Služby</span>
     <h1 class="mt-5 text-[38px] md:text-[52px] leading-[1.08] font-bold tracking-[-0.02em] max-w-[820px] text-pretty">Od prvej fotky po posledné upratovanie</h1>
-    <p class="mt-5 text-lg leading-relaxed text-ink-soft max-w-[640px]">Päť vecí, ktoré by ste pri krátkodobom prenájme riešili každý týždeň — od fotenia po vyúčtovanie. Preberáme ich všetky, pri správe bytu aj pri garantovanom nájme.</p>
+    <p class="mt-5 text-lg leading-relaxed text-ink-soft max-w-[640px]">Päť vecí, ktoré by ste pri krátkodobom prenájme riešili každý týždeň, od fotenia po vyúčtovanie. Preberáme ich všetky, pri správe bytu aj pri garantovanom nájme.</p>
   </section>
 
   {services.map((s, i) => (
@@ -60,7 +60,7 @@ const services = [
       <div class="flex justify-between gap-4 py-2.5 border-b border-sand text-[15px]"><span>Príjmy z pobytov</span><b class="whitespace-nowrap">2 000 €</b></div>
       <div class="flex justify-between gap-4 py-2.5 border-b border-sand text-[15px]"><span>Odmena Rental Partners (10 %)</span><b class="whitespace-nowrap">− 200 €</b></div>
       <div class="flex justify-between gap-4 py-3 text-[17px]"><b>Zostáva vám</b><b class="display text-sage whitespace-nowrap">1 800 €</b></div>
-      <p class="text-[12px] leading-relaxed text-ink-muted">Pri garantovanom nájme vyúčtovanie odpadá — dostávate dohodnutú sumu.</p>
+      <p class="text-[12px] leading-relaxed text-ink-muted">Pri garantovanom nájme vyúčtovanie odpadá, dostávate dohodnutú sumu.</p>
     </div>
   </section>
 

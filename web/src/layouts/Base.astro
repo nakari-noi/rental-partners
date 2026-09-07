@@ -54,7 +54,7 @@ const firma = {
     '@type': 'OfferCatalog',
     name: 'Modely spolupráce',
     itemListElement: [
-      { '@type': 'Offer', name: 'Správa bytu', description: 'Prevádzka bytu na Airbnb a Booking za 10 % z obratu — fotenie, inzeráty, hostia, upratovanie, údržba a mesačné vyúčtovanie.', url: new URL('/cennik', site).href, priceSpecification: { '@type': 'UnitPriceSpecification', price: '10', priceCurrency: 'EUR', unitText: '% z obratu' } },
+      { '@type': 'Offer', name: 'Správa bytu', description: 'Prevádzka bytu na Airbnb a Booking za 10 % z obratu: fotenie, inzeráty, hostia, upratovanie, údržba a mesačné vyúčtovanie.', url: new URL('/cennik', site).href, priceSpecification: { '@type': 'UnitPriceSpecification', price: '10', priceCurrency: 'EUR', unitText: '% z obratu' } },
       { '@type': 'Offer', name: 'Garantovaný nájom', description: 'Byt si prenajmeme a majiteľovi platíme dohodnutý pevný nájom každý mesiac bez ohľadu na obsadenosť.', url: new URL('/cennik', site).href },
     ],
   },
@@ -100,7 +100,7 @@ const insightsTag = config.vercelAnalytics ? '<script defer src="/_vercel/insigh
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Rental Partners — správa bytov a garantovaný nájom v Bratislave" />
+    <meta property="og:image:alt" content="Rental Partners, správa bytov a garantovaný nájom v Bratislave" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />

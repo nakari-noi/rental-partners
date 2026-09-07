@@ -1,25 +1,153 @@
 {
   "pages": [
-    { "id": "page-web", "name": "Web · smer C" },
-    { "id": "page-zaloha", "name": "Záloha · smer A" }
+    {
+      "id": "page-web",
+      "name": "Web · smer C"
+    },
+    {
+      "id": "page-zaloha",
+      "name": "Záloha · smer A"
+    }
   ],
   "artboards": [
-    { "file": "Main.dc.html", "title": "Domov", "x": 0, "y": 0, "w": 1200, "h": 2860, "page": "page-web" },
-    { "file": "Sluzby.dc.html", "title": "Služby", "x": 1320, "y": 0, "w": 1200, "h": 3450, "page": "page-web" },
-    { "file": "Cennik.dc.html", "title": "Cenník", "x": 2640, "y": 0, "w": 1200, "h": 3500, "page": "page-web", "is_interactive": true },
-    { "file": "Vysledky.dc.html", "title": "Výsledky", "x": 0, "y": 3700, "w": 1200, "h": 3000, "page": "page-web" },
-    { "file": "ONas.dc.html", "title": "O nás", "x": 1320, "y": 3700, "w": 1200, "h": 2700, "page": "page-web" },
-    { "file": "Kontakt.dc.html", "title": "Kontakt", "x": 2640, "y": 3700, "w": 1200, "h": 2400, "page": "page-web" },
-    { "file": "MobilPorovnanieB.dc.html", "title": "Mobil · porovnanie (ikony)", "x": 3960, "y": 0, "w": 390, "h": 700, "page": "page-web" },
-    { "file": "V-KontaktMobil.dc.html", "title": "Mobil · kontakt", "x": 3960, "y": 3700, "w": 390, "h": 2182, "page": "page-web" },
-    { "file": "V-Stavy.dc.html", "title": "Kontakt · stavy formulára", "x": 2640, "y": 6240, "w": 1200, "h": 643, "page": "page-web" },
-    { "file": "SmerA.dc.html", "title": "Smer A · Prémiový", "x": 0, "y": 0, "w": 1200, "h": 1440, "page": "page-zaloha" }
+    {
+      "file": "Main.dc.html",
+      "title": "Domov",
+      "x": 0,
+      "y": 0,
+      "w": 1200,
+      "h": 2860,
+      "page": "page-web"
+    },
+    {
+      "file": "Sluzby.dc.html",
+      "title": "Služby",
+      "x": 1320,
+      "y": 0,
+      "w": 1200,
+      "h": 3450,
+      "page": "page-web"
+    },
+    {
+      "file": "Cennik.dc.html",
+      "title": "Cenník",
+      "x": 2640,
+      "y": 0,
+      "w": 1200,
+      "h": 3500,
+      "page": "page-web",
+      "is_interactive": true
+    },
+    {
+      "file": "Vysledky.dc.html",
+      "title": "Výsledky",
+      "x": 0,
+      "y": 3700,
+      "w": 1200,
+      "h": 3000,
+      "page": "page-web"
+    },
+    {
+      "file": "ONas.dc.html",
+      "title": "O nás",
+      "x": 1320,
+      "y": 3700,
+      "w": 1200,
+      "h": 2700,
+      "page": "page-web"
+    },
+    {
+      "file": "Kontakt.dc.html",
+      "title": "Kontakt",
+      "x": 2640,
+      "y": 3700,
+      "w": 1200,
+      "h": 2400,
+      "page": "page-web"
+    },
+    {
+      "file": "MobilPorovnanieB.dc.html",
+      "title": "Mobil · porovnanie (ikony)",
+      "x": 3960,
+      "y": 0,
+      "w": 390,
+      "h": 700,
+      "page": "page-web"
+    },
+    {
+      "file": "V-KontaktMobil.dc.html",
+      "title": "Mobil · kontakt",
+      "x": 3960,
+      "y": 3700,
+      "w": 390,
+      "h": 2182,
+      "page": "page-web"
+    },
+    {
+      "file": "V-Stavy.dc.html",
+      "title": "Kontakt · stavy formulára",
+      "x": 2640,
+      "y": 6240,
+      "w": 1200,
+      "h": 643,
+      "page": "page-web"
+    },
+    {
+      "file": "SmerA.dc.html",
+      "title": "Smer A · Prémiový",
+      "x": 0,
+      "y": 0,
+      "w": 1200,
+      "h": 1440,
+      "page": "page-zaloha"
+    }
   ],
   "annotations": [
-    { "id": "system", "x": 0, "y": -300, "w": 560, "page": "page-web", "text": "SMER C · Partnerský — všetkých 6 stránok\nFarby: krémová #f6efe4 · biela · piesok #e9dcc6 · terakota #c9694a (akcia) · šalviová #6e8b6a (dôkaz) · text #2b2118\nPísmo: Outfit (nadpisy) + Nunito Sans (text)\nTokeny a pravidlá: docs/DESIGN.md v projekte\n\nVšetko v [hranatých zátvorkách] sú chýbajúce fakty — kontakt, IČO, fotky, citáty z recenzií, podmienky (výplata, upratovanie, výpoveď). Nič z toho som nevymýšľal." },
-    { "id": "mobil-porovnanie", "x": 3960, "y": -220, "w": 870, "page": "page-web", "text": "MOBIL · porovnanie so všetkými tromi stĺpcami (v2)\nRiadky: Istý príjem každý mesiac · Vyšší výnos v sezóne · Prázdne obdobia (VY/VY/MY) · Hostia a nájomcovia (VY/MY/MY) · Kontrola bytu · Byt pre vás (✕/✓/✕)\nTmavá hlavička s farbou stĺpca: sivá = dlhodobý prenájom, terakota = správa, šalviová = garantovaný nájom." },
-    { "id": "kritika-6-9", "x": 2640, "y": -220, "w": 1200, "page": "page-web", "color": "green", "text": "ZAPRACOVANÉ 6. 9. po dizajnovej kritike (schválené klientom):\n· Cenník — karty modelov s grafmi: 10 % z obratu (sezónne stĺpce) vs 12× ročne rovnaká suma (rovné stĺpce); obe karty rovnocenné, výber krúžkom.\n· Kontakt — Tomáš s telefónom pred formulárom, polia v poradí byt → kontakt, povinné označené *, kroky „Čo bude nasledovať“ nad tlačidlom.\n· Vedľa Kontaktu: mobilná verzia kontaktu a stavy formulára (úspech / chyba / chyba pri poli).\nZamietnuté a odstránené: hero, kontrast, tím, služby na domove, og:image." },
-    { "id": "smer-a", "x": 1280, "y": 0, "w": 420, "page": "page-zaloha", "text": "ZÁLOŽNÝ SMER: A · Prémiový\nOdložené pre prípad, že by sa neskôr hodil prémiovejší tón (napr. pre investorov alebo EN verziu).\nTmavé teplé tóny, mosadzný akcent #c8a45d, serif Cormorant Garamond." }
+    {
+      "id": "system",
+      "x": 0,
+      "y": -300,
+      "w": 560,
+      "page": "page-web",
+      "text": "SMER C · Partnerský — všetkých 6 stránok\nFarby: krémová #f6efe4 · biela · piesok #e9dcc6 · terakota #c9694a (akcia) · šalviová #6e8b6a (dôkaz) · text #2b2118\nPísmo: Outfit (nadpisy) + Nunito Sans (text)\nTokeny a pravidlá: docs/DESIGN.md v projekte\n\nVšetko v [hranatých zátvorkách] sú chýbajúce fakty — kontakt, IČO, fotky, citáty z recenzií, podmienky (výplata, upratovanie, výpoveď). Nič z toho som nevymýšľal."
+    },
+    {
+      "id": "mobil-porovnanie",
+      "x": 3960,
+      "y": -220,
+      "w": 870,
+      "page": "page-web",
+      "text": "MOBIL · porovnanie so všetkými tromi stĺpcami (v3, 7. 9.)\nRiadky: Istý príjem každý mesiac · Vyšší výnos v sezóne · Fotenie, inzeráty a ceny (VY/MY/MY) · Hostia a nájomcovia (VY/MY/MY) · Kontrola bytu · Byt pre vás (✕/✓/✓)\nRiadok „Prázdne obdobia\" klient odstránil, pôsobil zastrašujúco. Nahradil ho riadok o fotení, inzerátoch a cenách.\nTmavá hlavička s farbou stĺpca: sivá = dlhodobý prenájom, terakota = správa, šalviová = garantovaný nájom."
+    },
+    {
+      "id": "kritika-6-9",
+      "x": 2640,
+      "y": -220,
+      "w": 1200,
+      "page": "page-web",
+      "color": "green",
+      "text": "ZAPRACOVANÉ 6. 9. po dizajnovej kritike (schválené klientom):\n· Cenník — karty modelov s grafmi: 10 % z obratu (sezónne stĺpce) vs 12× ročne rovnaká suma (rovné stĺpce); obe karty rovnocenné, výber krúžkom.\n· Kontakt — Tomáš s telefónom pred formulárom, polia v poradí byt → kontakt, povinné označené *, kroky „Čo bude nasledovať“ nad tlačidlom.\n· Vedľa Kontaktu: mobilná verzia kontaktu a stavy formulára (úspech / chyba / chyba pri poli).\nZamietnuté a odstránené: hero, kontrast, tím, služby na domove, og:image."
+    },
+    {
+      "id": "smer-a",
+      "x": 1280,
+      "y": 0,
+      "w": 420,
+      "page": "page-zaloha",
+      "text": "ZÁLOŽNÝ SMER: A · Prémiový\nOdložené pre prípad, že by sa neskôr hodil prémiovejší tón (napr. pre investorov alebo EN verziu).\nTmavé teplé tóny, mosadzný akcent #c8a45d, serif Cormorant Garamond."
+    },
+    {
+      "id": "zmeny-7-9",
+      "x": 0,
+      "y": 6900,
+      "w": 1200,
+      "page": "page-web",
+      "color": "green",
+      "text": "ZAPRACOVANÉ 7. 9. (pokyny klienta):\n· Výsledky — byty vedieme pod originálnymi anglickými názvami z inzerátov. Tri byty s najmenej recenziami na Airbnb (New Cozy, Metropolis Prime, Studio Under Castle) vedú na Booking.com.\n· Cenník a Domov — pri modeli 10 % pribudol výnosový argument: potenciálny výnos o 40 až 60 % vyšší ako pri dlhodobom nájme.\n· Porovnanie — riadok „Prázdne obdobia\" preč, namiesto neho „Fotenie, inzeráty a ceny\". „Byt pre vás\" má fajku aj pri garantovanom nájme.\n· Z textov zmizli pomlčky, kde neboli potrebné."
+    }
   ],
-  "launch": { "view": "canvas", "page": "page-web" }
+  "launch": {
+    "view": "canvas",
+    "page": "page-web"
+  }
 }

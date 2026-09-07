@@ -5,8 +5,8 @@ import Check from '../components/Check.astro';
 // Otázky majiteľov — na stránke aj v štruktúrovaných dátach (FAQPage)
 const faq = [
   { q: 'Ktorý model je pre mňa?', a: 'Ak chcete maximum a zvládnete kolísavý príjem, správa. Ak chcete každý mesiac rovnakú sumu bez starostí, garantovaný nájom. Na stretnutí vám ukážeme obe čísla pre váš byt.' },
-  { q: 'Kedy dostanem peniaze?', a: 'Termín a spôsob výplaty sú súčasťou zmluvy — pri správe po mesačnom vyúčtovaní, pri garantovanom nájme v dohodnutý deň v mesiaci.' },
-  { q: 'Kto platí upratovanie?', a: 'Upratovanie zabezpečujeme my. Ako sa účtuje, závisí od modelu spolupráce — vysvetlíme na stretnutí.' },
+  { q: 'Kedy dostanem peniaze?', a: 'Termín a spôsob výplaty sú súčasťou zmluvy. Pri správe po mesačnom vyúčtovaní, pri garantovanom nájme v dohodnutý deň v mesiaci.' },
+  { q: 'Kto platí upratovanie?', a: 'Upratovanie zabezpečujeme my. Ako sa účtuje, závisí od modelu spolupráce. Vysvetlíme to na stretnutí.' },
   { q: 'Čo ak chcem skončiť?', a: 'Výpovednú lehotu a podmienky ukončenia máte v zmluve. Nič nie je na neurčito bez možnosti výpovede.' },
 ];
 // Ilustračné stĺpce: sezónny výnos pri správe vs. rovnaká suma pri garantovanom nájme
@@ -17,7 +17,7 @@ const barColorA = (h: number) => (h >= 100 ? 'var(--color-accent)' : h >= 84 ? '
   <section class="wrap pt-10 pb-6 lg:pt-14">
     <span class="chip">Cenník</span>
     <h1 class="mt-5 text-[38px] md:text-[52px] leading-[1.08] font-bold tracking-[-0.02em] max-w-[820px] text-pretty">Vyberte si, ako chcete z bytu zarábať</h1>
-    <p class="mt-5 text-lg leading-relaxed text-ink-soft max-w-[640px]">Maximálny výnos, alebo istý príjem každý mesiac. Kliknite na model — o byt sa v oboch prípadoch staráme my.</p>
+    <p class="mt-5 text-lg leading-relaxed text-ink-soft max-w-[640px]">Maximálny výnos, alebo istý príjem každý mesiac. Kliknite na model. O byt sa v oboch prípadoch staráme my.</p>
   </section>
 
   <!-- Mobile / tablet: compact switch, only the chosen model card is shown -->
@@ -38,7 +38,8 @@ const barColorA = (h: number) => (h >= 100 ? 'var(--color-accent)' : h >= 84 ? '
       <div class="flex items-end gap-1.5 h-[72px]" aria-hidden="true" title="Ilustračne: výnos podľa sezóny">
         {barsA.map((h) => <span class="flex-1 rounded-t" style={`height:${h}%;background:${barColorA(h)}`}></span>)}
       </div>
-      <p class="text-ink-soft leading-relaxed">Byt zostáva váš a my ho prevádzkujeme na Airbnb a Booking. Z príjmov z pobytov si berieme desatinu — keď byt nezarába, nezarábame ani my.</p>
+      <p class="text-ink-soft leading-relaxed">Byt zostáva váš a my ho prevádzkujeme na Airbnb a Booking. Z príjmov z pobytov si berieme desatinu. Keď byt nezarába, nezarábame ani my.</p>
+      <p class="flex items-start gap-2.5 p-3.5 bg-sage-soft rounded-[14px] text-[15px] leading-snug"><span class="text-sage shrink-0 mt-0.5" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18L11 11l4 4 6-7"></path><path d="M15 8h6v6"></path></svg></span><span><b>Potenciálny výnos o 40 až 60 % vyšší</b> ako pri dlhodobom nájme. Závisí od lokality, veľkosti a sezóny.</span></p>
       <p class="text-sm text-ink-muted pt-3 border-t border-sand">Pre majiteľov, ktorí chcú z bytu vyťažiť maximum.</p>
     </button>
     <button type="button" class="model-card model-b text-left flex flex-col gap-4 p-7 md:p-9 bg-ink text-bg rounded-[var(--radius-block)]" role="tab" aria-pressed="false" aria-selected="false" aria-controls="detail-b" data-model="b">
@@ -50,7 +51,7 @@ const barColorA = (h: number) => (h >= 100 ? 'var(--color-accent)' : h >= 84 ? '
       <div class="flex items-end gap-1.5 h-[72px]" aria-hidden="true" title="Ilustračne: rovnaká suma každý mesiac">
         {barsA.map(() => <span class="flex-1 rounded-t bg-sage" style="height:78%"></span>)}
       </div>
-      <p class="text-[#d9ccbb] leading-relaxed">Byt nám prenajmete a my vám platíme dohodnutý nájom — bez ohľadu na to, či bol byt plný alebo prázdny. Krátkodobý prenájom robíme na vlastné riziko.</p>
+      <p class="text-[#d9ccbb] leading-relaxed">Byt nám prenajmete a my vám platíme dohodnutý nájom bez ohľadu na to, či bol byt plný alebo prázdny. Krátkodobý prenájom robíme na vlastné riziko.</p>
       <p class="text-sm text-cream-muted pt-3 border-t border-bg/15">Pre majiteľov, ktorí chcú istotu a nulové starosti.</p>
     </button>
   </section>
@@ -59,10 +60,10 @@ const barColorA = (h: number) => (h >= 100 ? 'var(--color-accent)' : h >= 84 ? '
     <div class="flex flex-col gap-4 p-7 md:p-9 bg-surface border border-sand rounded-[var(--radius-block)]">
       <h2 class="text-xl font-semibold">Ako funguje správa bytu</h2>
       <ul class="flex flex-col gap-3">
-        <Check>Výnos podľa obsadenosti — v silnej sezóne viac, mimo sezóny menej</Check>
+        <Check>Výnos podľa obsadenosti, v silnej sezóne viac, mimo sezóny menej</Check>
         <Check>Mesačné vyúčtovanie s prehľadom o každom pobyte</Check>
-        <Check>Byt si môžete blokovať aj pre seba — pravidlá dohodneme v zmluve</Check>
-        <Check>Výplata a dĺžka zmluvy podľa dohody — prejdeme ich na stretnutí</Check>
+        <Check>Byt si môžete blokovať aj pre seba, pravidlá dohodneme v zmluve</Check>
+        <Check>Výplata a dĺžka zmluvy podľa dohody, prejdeme ich na stretnutí</Check>
       </ul>
     </div>
     <div class="flex flex-col p-7 md:p-8 bg-sand rounded-[var(--radius-block)]">
@@ -81,15 +82,15 @@ const barColorA = (h: number) => (h >= 100 ? 'var(--color-accent)' : h >= 84 ? '
     <div class="flex flex-col gap-4 p-7 md:p-9 bg-surface border border-sand rounded-[var(--radius-block)]">
       <h2 class="text-xl font-semibold">Ako funguje garantovaný nájom</h2>
       <ul class="flex flex-col gap-3">
-        <Check>Istý príjem, aj keď je byt prázdny — riziko obsadenosti je naše</Check>
-        <Check>Žiadne vyúčtovania — jedna suma, jeden termín</Check>
+        <Check>Istý príjem, aj keď je byt prázdny. Riziko obsadenosti je naše</Check>
+        <Check>Žiadne vyúčtovania, jedna suma, jeden termín</Check>
         <Check>O byt, hostí aj upratovanie sa staráme rovnako ako pri správe</Check>
         <Check>Dĺžku zmluvy a výpovednú lehotu dohodneme na stretnutí</Check>
       </ul>
     </div>
     <div class="flex flex-col gap-4 p-7 md:p-8 bg-sage-soft rounded-[var(--radius-block)]">
       <h2 class="text-xl font-semibold">Ako určíme výšku nájmu</h2>
-      <p class="text-sm leading-relaxed text-ink-soft">Suma je individuálna — závisí od lokality, veľkosti a stavu bytu.</p>
+      <p class="text-sm leading-relaxed text-ink-soft">Suma je individuálna, závisí od lokality, veľkosti a stavu bytu.</p>
       <ol class="flex flex-col gap-3 text-[15px]">
         <li class="flex gap-3"><b class="display text-sage w-6 shrink-0">01</b>Obhliadka bytu a lokality.</li>
         <li class="flex gap-3"><b class="display text-sage w-6 shrink-0">02</b>Odhad, koľko byt na krátkodobom prenájme zarobí za rok.</li>
@@ -112,14 +113,14 @@ const barColorA = (h: number) => (h >= 100 ? 'var(--color-accent)' : h >= 84 ? '
       </div>
       <div>
         <p class="text-[13px] font-bold tracking-[0.04em] uppercase text-ink-muted">Hradí sa zvlášť</p>
-        <p class="mt-4 text-[15px] leading-relaxed text-ink-soft">Energie, internet, spotrebný materiál, poplatky platforiem a väčšie opravy — kto čo hradí, závisí od zvoleného modelu. Presné rozdelenie si prejdeme na stretnutí a je súčasťou zmluvy.</p>
+        <p class="mt-4 text-[15px] leading-relaxed text-ink-soft">Energie, internet, spotrebný materiál, poplatky platforiem a väčšie opravy. Kto čo hradí, závisí od zvoleného modelu. Presné rozdelenie si prejdeme na stretnutí a je súčasťou zmluvy.</p>
       </div>
     </div>
   </section>
 
   <section class="wrap py-14 lg:py-16">
     <p class="eyebrow">Porovnanie</p>
-    <h2 class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">Čo riešite vy — a čo my</h2>
+    <h2 class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">Čo riešite vy a čo my</h2>
     <p class="mt-2 text-ink-soft">Bežný dlhodobý prenájom vedľa vybraného modelu.</p>
     <div id="compare" class="mt-7">
     <!-- Mobile: icon grid, all three columns (✓ / ✕ / VY / MY) -->
@@ -133,10 +134,10 @@ const barColorA = (h: number) => (h >= 100 ? 'var(--color-accent)' : h >= 84 ? '
       {[
         ['Istý príjem každý mesiac', 'rovnaká suma bez ohľadu na obsadenosť', 'yes', 'no', 'yes'],
         ['Vyšší výnos v sezóne', 'zarábate podľa obsadenosti', 'no', 'yes', 'no'],
-        ['Prázdne obdobia', 'kto nesie riziko', 'VY', 'VY', 'MY'],
         ['Hostia a nájomcovia', 'kto ich rieši', 'VY', 'MY', 'MY'],
+        ['Fotenie, inzeráty a ceny', 'kto ich robí', 'VY', 'MY', 'MY'],
         ['Kontrola bytu', 'raz za rok / po každom pobyte', 'no', 'yes', 'yes'],
-        ['Byt pre vás', 'môžete si ho blokovať', 'no', 'yes', 'no'],
+        ['Byt pre vás', 'môžete si ho blokovať', 'no', 'yes', 'yes'],
       ].map(([label, sub, ...cells]) => (
         <div class="grid grid-cols-[1.45fr_1fr_1fr_1fr] items-center border-t border-sand py-3 pl-3.5 pr-2 text-[13px]">
           <div class="font-bold leading-[1.25]">{label}<div class="text-[11px] font-normal text-ink-muted mt-0.5">{sub}</div></div>
@@ -159,10 +160,10 @@ const barColorA = (h: number) => (h >= 100 ? 'var(--color-accent)' : h >= 84 ? '
         </thead>
         <tbody>
           <tr class="border-b border-sand"><th class="p-4 text-left font-bold">Váš príjem</th><td class="p-4 text-ink-soft">Pevný nájom od nájomcu</td><td class="p-4" data-col="a">90 % obratu, podľa obsadenosti</td><td class="p-4 col-dim" data-col="b">Pevný nájom od nás</td></tr>
-          <tr class="border-b border-sand"><th class="p-4 text-left font-bold">Prázdne obdobia</th><td class="p-4 text-ink-soft">Hľadáte nájomcu, byt stojí</td><td class="p-4" data-col="a">Riziko je vaše — ceny a obsadenosť ladíme my</td><td class="p-4 col-dim" data-col="b">Naše riziko, váš nájom sa nemení</td></tr>
           <tr class="border-b border-sand"><th class="p-4 text-left font-bold">Kto rieši ľudí v byte</th><td class="p-4 text-ink-soft">Vy</td><td class="p-4" data-col="a">My</td><td class="p-4 col-dim" data-col="b">My</td></tr>
+          <tr class="border-b border-sand"><th class="p-4 text-left font-bold">Fotenie, inzeráty a ceny</th><td class="p-4 text-ink-soft">Vy</td><td class="p-4" data-col="a">My, ceny ladíme podľa sezóny</td><td class="p-4 col-dim" data-col="b">My</td></tr>
           <tr class="border-b border-sand"><th class="p-4 text-left font-bold">Stav bytu</th><td class="p-4 text-ink-soft">Vidíte ho raz za rok</td><td class="p-4" data-col="a">Kontrola po každom pobyte</td><td class="p-4 col-dim" data-col="b">Kontrola po každom pobyte</td></tr>
-          <tr><th class="p-4 text-left font-bold">Byt pre vás</th><td class="p-4 text-ink-soft">Nedostupný počas zmluvy</td><td class="p-4" data-col="a">Termíny si viete blokovať podľa dohody</td><td class="p-4 col-dim" data-col="b">Nie — byt je prenajatý nám</td></tr>
+          <tr><th class="p-4 text-left font-bold">Byt pre vás</th><td class="p-4 text-ink-soft">Nedostupný počas zmluvy</td><td class="p-4" data-col="a">Termíny si viete blokovať podľa dohody</td><td class="p-4 col-dim" data-col="b">Áno, termíny dohodneme v zmluve</td></tr>
         </tbody>
       </table>
     </div>
@@ -174,8 +175,8 @@ const barColorA = (h: number) => (h >= 100 ? 'var(--color-accent)' : h >= 84 ? '
     <h2 class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">Na čo sa majitelia pýtajú</h2>
     <div class="grid md:grid-cols-2 gap-5 mt-7">
       <div class="p-6 bg-surface rounded-[var(--radius-card)]"><h3 class="text-lg font-semibold">Ktorý model je pre mňa?</h3><p class="mt-2 text-[15px] leading-relaxed text-ink-soft">Ak chcete maximum a zvládnete kolísavý príjem, správa. Ak chcete každý mesiac rovnakú sumu bez starostí, garantovaný nájom. Na stretnutí vám ukážeme obe čísla pre váš byt.</p></div>
-      <div class="p-6 bg-surface rounded-[var(--radius-card)]"><h3 class="text-lg font-semibold">Kedy dostanem peniaze?</h3><p class="mt-2 text-[15px] leading-relaxed text-ink-soft">Termín a spôsob výplaty sú súčasťou zmluvy — pri správe po mesačnom vyúčtovaní, pri garantovanom nájme v dohodnutý deň v mesiaci.</p></div>
-      <div class="p-6 bg-surface rounded-[var(--radius-card)]"><h3 class="text-lg font-semibold">Kto platí upratovanie?</h3><p class="mt-2 text-[15px] leading-relaxed text-ink-soft">Upratovanie zabezpečujeme my. Ako sa účtuje, závisí od modelu spolupráce — vysvetlíme na stretnutí.</p></div>
+      <div class="p-6 bg-surface rounded-[var(--radius-card)]"><h3 class="text-lg font-semibold">Kedy dostanem peniaze?</h3><p class="mt-2 text-[15px] leading-relaxed text-ink-soft">Termín a spôsob výplaty sú súčasťou zmluvy. Pri správe po mesačnom vyúčtovaní, pri garantovanom nájme v dohodnutý deň v mesiaci.</p></div>
+      <div class="p-6 bg-surface rounded-[var(--radius-card)]"><h3 class="text-lg font-semibold">Kto platí upratovanie?</h3><p class="mt-2 text-[15px] leading-relaxed text-ink-soft">Upratovanie zabezpečujeme my. Ako sa účtuje, závisí od modelu spolupráce. Vysvetlíme to na stretnutí.</p></div>
       <div class="p-6 bg-surface rounded-[var(--radius-card)]"><h3 class="text-lg font-semibold">Čo ak chcem skončiť?</h3><p class="mt-2 text-[15px] leading-relaxed text-ink-soft">Výpovednú lehotu a podmienky ukončenia máte v zmluve. Nič nie je na neurčito bez možnosti výpovede.</p></div>
     </div>
   </section>
