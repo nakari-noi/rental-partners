@@ -88,7 +88,7 @@ Byt prevádzkujeme na Airbnb a Booking a z príjmov z pobytov si berieme desatin
 
 Byt si od vás prenajmeme a platíme vám pevnú sumu každý mesiac bez ohľadu na to, či bol byt plný alebo prázdny. Riziko obsadenosti je naše. Niektorí majitelia tomu hovoria garantovaný prenájom, je to to isté.
 
-- Výška nájmu sa odvíja od trhovej výšky dlhodobého nájmu v danej lokalite a od stavu bytu. Návrh dostanete po obhliadke.
+- Výška nájmu sa odvíja od trhových hodnôt nájmu v danej lokalite a od stavu bytu. Návrh dostanete po obhliadke.
 - Nájom dostávate vopred, vždy k 15. dňu v mesiaci.
 - Prevádzkové náklady hradíme my. Výnimkou sú opravy, ktoré s krátkodobým prenájmom nesúvisia ani ním neboli spôsobené.
 - Dĺžku zmluvy a výpovednú lehotu dohodneme individuálne, podľa podmienok, na ktorých sa vopred zhodneme.

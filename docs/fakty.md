@@ -10,7 +10,7 @@ Odpovede Tomáša z 8. 9. 2026 na otázky k blogu a k zmluvným podmienkam. Sú 
 | Výpovedná lehota | 30 dní | individuálne, podľa podmienok vopred dohodnutých s majiteľom |
 | Kto hradí náklady | takmer všetko majiteľ (energie, internet, spotrebný materiál, poplatky platforiem); menšie opravy hradíme my; pri väčších opravách záleží na tom, čím a ako vznikli | všetko my, okrem opráv, ktoré s krátkodobým prenájmom nesúvisia ani ním neboli spôsobené |
 | Byt pre majiteľa | prípad od prípadu, bez pevných pravidiel | prípad od prípadu, bez pevných pravidiel |
-| Výška garantovaného nájmu | | odvíja sa od trhovej výšky dlhodobého nájmu v lokalite. *Pozn.: klient napísal „z trhových hodnôt dĺžky nájmu", chápem to ako dlhodobého nájmu. Overiť.* |
+| Výška garantovaného nájmu | | podľa trhových hodnôt nájmu v lokalite a stavu bytu. Dĺžka zmluvy (rok vs. tri roky) cenu ovplyvňuje, ale klient to na webe nechce rozpisovať. Na webe len „podľa trhových hodnôt nájmu". |
 
 ## Čísla z praxe
 
