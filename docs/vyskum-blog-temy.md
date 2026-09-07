@@ -11,7 +11,11 @@
 
 **2. O téme sa píše zle.** Advokáti píšu presne, ale pre právnikov. Blogy píšu zrozumiteľne, ale nesprávne — bežne tvrdia, že „od 20. mája 2026 platformy overujú registráciu", čo pre slovenského majiteľa dnes neplatí. Niektoré články si otvorene priznávajú, že ich písala AI, a miešajú zákon o krátkodobom nájme bytu s turistickým ubytovaním.
 
-**3. Najväčšia informačná diera je poistenie.** Krátkodobý prenájom vie na Slovensku poistiť **len 3 poisťovne**; škody spôsobené hosťom kryjú **dve**. Bežné poistenie domácnosti ich nekryje a AirCover podľa vlastných slov Airbnb **nie je poistenie**. O tomto nepíše prakticky nikto.
+**3. Píšeme na zámer, nie na objem.** Podľa Google Trends je „airbnb" desaťnásobne hľadanejšie než „prenájom bytu", kým „krátkodobý prenájom bytu" a „správa bytov" sú tak malé, že sa nedajú odmerať. Sme v úzkej nike. Najsilnejšie frázy majiteľa sú **„chcem prenajať byt"**, „krátkodobý prenájom bytu Bratislava", „dane z prenájmu bytu", „garantovaný prenájom" a „oplatí sa Airbnb v Bratislave". Podrobne v kapitole 2.
+
+**3b. Dve opravy, ktoré treba spraviť hneď.** Fráza „správa bytov Bratislava" patrí správcom bytových domov, nie nám — naša je „správa Airbnb" a „airbnb management Bratislava". A ľudia hľadajú „garantovaný **prenájom**" o čosi častejšie než „garantovaný **nájom**", ktorý máme na webe; mali by tam byť oba.
+
+**3c. Obavy nikto nehľadá.** Vo vzorke 1 545 našepkávaní od Googlu je nula fráz o poistení, škodách, susedoch, pokutách či krádežiach. Materiál k nim máme výborný, ale ako titulky by ľudí od krátkodobého prenájmu skôr odradili. Použijeme ich ako odseky vnútri iných článkov.
 
 **4. Konkurencia obsah nerobí.** Priami konkurenti v Bratislave blog buď nemajú, alebo ho majú opustený od roku 2024.
 
@@ -55,15 +59,65 @@ Termín, ktorý sa nedá odložiť. Vytvára presne našu službu. Register spol
 
 ---
 
-## 2. Čo ľudia hľadajú
+## 2. Čo sa naozaj googli — dáta priamo od Googlu
 
-**Komerčné dopyty — patria na hlavné stránky, nie do blogu:** správa bytov Bratislava · správa Airbnb · garantovaný nájom Bratislava · koľko si berie správca.
+**Metóda:** stiahli sme **1 545 skutočných našepkávaní** z Google autocomplete pre slovenčinu a Slovensko (1 164 dopytov na 38 východiskových fráz) a k tomu relatívny záujem a súvisiace dopyty z **Google Trends** za posledných 12 mesiacov. Číslo pri fráze nižšie je počet našich dopytov, v ktorých Google danú frázu ponúkol — je to ukazovateľ prominentnosti, **nie počet vyhľadávaní za mesiac**. Presné objemy dá len Google Ads Keyword Planner (viď kapitola 11).
 
-**Rozhodovacie dopyty — najhodnotnejšie články:** oplatí sa Airbnb · koľko zarobí byt na Airbnb · Airbnb vs. dlhodobý prenájom · garantovaný nájom alebo percento.
+### Poradie záujmu (Google Trends, Slovensko, 12 mesiacov, 100 = maximum)
 
-**Povinnostné dopyty — privádzajú ľudí v strese:** register krátkodobých prenájmov · živnosť na Airbnb · dane z Airbnb 2026 · DPH pri ubytovaní · daň za ubytovanie Bratislava.
+| Výraz | Priemer | Maximum |
+|---|---|---|
+| **airbnb** | 74,2 | 100 |
+| byty na prenájom | 32,4 | 41 |
+| prenájom bytu | 7,0 | 12 |
+| realitná kancelária | 2,4 | 7 |
+| prenájom bytu bratislava | 0,2 | 6 |
+| **krátkodobý prenájom bytu** | 0,0 | 0 |
+| **správa bytov** | 0,0 | 1 |
 
-**Problémové dopyty — chytia ľudí v ťažkej chvíli:** Airbnb susedia sťažnosti · môže mi spoločenstvo zakázať Airbnb · poistenie bytu pri krátkodobom prenájme · zdedený byt čo s ním.
+**Toto treba prijať:** slovo, ktoré ľudia píšu, je **airbnb**. Naše odborné výrazy („krátkodobý prenájom bytu", „správa bytov") sú objemovo tak malé, že ich Google Trends nedokáže odmerať. Sme v úzkej nike — blog nám nedonesie tisíce návštev, ale vie priviesť tých pár desiatok ľudí mesačne, ktorí naozaj hľadajú našu službu. Preto **nemá zmysel písať na objem, ale na zámer**.
+
+### Najsilnejšie frázy majiteľa bytu (z našepkávania)
+
+| Fráza | Váha | Poznámka |
+|---|---|---|
+| krátkodobý prenájom bytu | 49 | najsilnejší odborný výraz |
+| krátkodobý prenájom bytu bratislava | 29 | lokálne, presne naša služba |
+| ako prenajať byt / ako prenajímať byt | 28 / 25 | návodový zámer |
+| dane z prenájmu bytu / nehnuteľnosti | 26 / 27 | veľký klaster |
+| **chcem prenajať byt / chcem prenajímať byt** | 22 / 21 | **najvyšší nákupný zámer zo všetkých** |
+| garantovaný prenájom | 23 | pozor na tvar, viď nižšie |
+| garantovaný nájom | 22 | |
+| garantovaný prenájom bratislava | 14 | |
+| krátkodobý prenájom bytu a dph | 16 | daňová otázka číslo jeden |
+| investičný byt / investičný byt bratislava | 15 / 11 | susedné publikum |
+| prenájom apartmánu bratislava | 13 | ľudia hovoria aj „apartmán" |
+| zdedil som byt / zdedila som byt | 12 / 13 | reálne publikum, nikto ho neoslovuje |
+| správa airbnb / správa bytu airbnb | 12 / 12 | presne naša služba |
+| airbnb management bratislava | 11 | |
+| airbnb skúsenosti | 11 | ľudia hľadajú cudziu skúsenosť |
+| oplatí sa airbnb / oplatí sa airbnb v bratislave | 9 / 9 | rozhodovací zámer |
+| poplatky airbnb | 8 / 7 | |
+| ako dať byt na airbnb / ako začať s airbnb | 4 / 4 | |
+
+### Tri zistenia, ktoré menia stratégiu
+
+**1. „Správa bytov Bratislava" je pasca.** Drvivá väčšina našepkávaní okolo tejto frázy patrí **správe bytových domov** pre spoločenstvá vlastníkov: „správca bytového domu" (22), „správa bytových domov bratislava" (15), „správa bytov a nebytových priestorov" (8), „správca bytového domu povinnosti" (7). To je úplne iná služba a iný zákazník. Naša fráza je **„správa airbnb"**, **„správa bytu airbnb"** a **„airbnb management bratislava"**.
+
+**2. Píšeme „garantovaný nájom", ale ľudia hľadajú aj „garantovaný prenájom"** — a to o čosi častejšie (23 vs 22), plus „garantovaný prenájom bratislava" (14). Na webe by mali byť oba tvary.
+
+**3. Obavy, o ktorých som pôvodne navrhoval písať, nikto nehľadá.** Skontrolovali sme celú vzorku 1 545 našepkávaní:
+
+| Téma | Počet nájdených fráz |
+|---|---|
+| poistenie | **0** |
+| škody | **0** |
+| susedia / spoločenstvo | **0** |
+| pokuty / kontrola | **0** |
+| krádež / zlodej | **0** |
+| riziko / problém | **0** |
+
+Články o poistení, škodách a susedoch by teda nikto nenašiel — a koho by našli, toho by skôr odradili od krátkodobého prenájmu ako takého. Tieto témy patria najviac ako **odsek v inom článku alebo odpoveď na stretnutí**, nie ako titulok.
 
 ---
 
@@ -210,31 +264,47 @@ Na informačné dopyty odpovedajú účtovnícke a právnické portály. Sú pre
 
 ## 8. Odporúčaný plán blogu
 
-**Vlna 1 — najsilnejší materiál, najmenšia konkurencia**
-1. **Vaše poistenie domácnosti Airbnb nekryje. Overte si tri veci.** — najväčšia diera na trhu, tvrdé čísla.
-2. **AirCover nie je poistka. Čo naozaj nepokrýva.** — citát priamo od Airbnb, 14-dňová lehota.
-3. **Register krátkodobých prenájmov: čo urobiť do 28. februára 2027.** — časovo naviazané, prirodzený lead magnet.
-4. **DPH pasca § 7a: povinnosť, o ktorej deväť z desiatich majiteľov nevie.**
+Zoradené podľa **skutočného dopytu z kapitoly 2**, nie podľa toho, čo je najzaujímavejšie na čítanie. Každý článok má priradenú frázu, na ktorú sa píše.
 
-**Vlna 2 — peniaze a rozhodovanie**
-5. **November až apríl v Bratislave: kedy sa výnos rovná nule.** — konkrétne mesiace, prah +30 – 40 %.
-6. **Koľko naozaj zarobí byt na Airbnb v Bratislave** — poctivé čísla, vysvetlenie rozporov.
-7. **Správa za 10 % alebo garantovaný nájom? Porovnanie** — mapuje na naše dva modely.
-8. **Airbnb alebo dlhodobý prenájom: čo sa oplatí v Bratislave**
+**Vlna 1 — najvyšší zámer, píšeme ako prvé**
 
-**Vlna 3 — obavy a dôvera**
-9. **Čo si overiť v zmluve so správcom (sedem otázok)** — otvorene s našou províziou; trafí nedôveru.
-10. **Ako nebyť ten sused, ktorého celá bytovka nenávidí** — čo spoločenstvo môže a čo nie.
-11. **Kľúčová schránka na fasáde je pozvánka pre zlodejov** — bratislavský príbeh, vedie k smart zámkom.
-12. **Unavení z Airbnb? Ako odovzdať byt do správy** — najbližšie ku konverzii, nulová konkurencia.
+| # | Titulok | Fráza | Prečo |
+|---|---|---|---|
+| 1 | **Chcem prenajať byt v Bratislave: štyri možnosti a čo vynesú** | chcem prenajať byt · ako prenajať byt | Najvyšší nákupný zámer zo všetkých fráz. Rozcestník: sám dlhodobo, cez realitku, sám na Airbnb, cez správcu. Vedie na oba naše modely. |
+| 2 | **Krátkodobý prenájom bytu v Bratislave: ako to funguje** | krátkodobý prenájom bytu bratislava | Najsilnejší odborný výraz. Pilierový článok, na ktorý odkazujú ostatné. |
+| 3 | **Oplatí sa Airbnb v Bratislave? Čísla za rok 2026** | oplatí sa airbnb v bratislave · koľko zarobí byt na airbnb | Rozhodovací zámer. Poctivé čísla vrátane vysvetlenia, prečo je 65 % obsadenosť nafúknutá. |
+| 4 | **Garantovaný prenájom alebo správa za 10 %? Porovnanie** | garantovaný prenájom bratislava · garantovaný nájom | Mapuje presne na naše dva modely. **Používať oba tvary slova.** |
 
-**Vlna 4 — nové publikum**
-13. **Zdedili ste byt v Bratislave? Tri možnosti, čo s ním**
-14. **Ako vyzerá mesiac v správe bytu** — transparentný pohľad za oponu.
+**Vlna 2 — povinnosti, ktoré ľudia naozaj hľadajú**
+
+| # | Titulok | Fráza | Prečo |
+|---|---|---|---|
+| 5 | **Dane z prenájmu bytu 2026: čo platíte pri krátkodobom a čo pri dlhodobom** | dane z prenájmu bytu · krátkodobý prenájom bytu a dph | Veľký klaster (26 – 27) a najčastejšia daňová otázka. |
+| 6 | **Register krátkodobých prenájmov: čo urobiť do 28. februára 2027** | register krátkodobých prenájmov | Termín, ktorý sa nedá odložiť. Prirodzené „vybavíme to za vás". |
+| 7 | **Živnosť na Airbnb: kedy ju naozaj potrebujete** | živnosť na airbnb · ako prenajať byt cez airbnb | Moment, keď si majiteľ povie, že je to zložitejšie, než čakal. |
+
+**Vlna 3 — nové publikum a dôvera**
+
+| # | Titulok | Fráza | Prečo |
+|---|---|---|---|
+| 8 | **Zdedili ste byt v Bratislave? Tri možnosti, čo s ním** | zdedil som byt · zdedila som byt | Reálne hľadané (12 – 13), nikto to nespája s prenájmom. |
+| 9 | **Investičný byt v Bratislave: čo zarobí na krátkodobom prenájme** | investičný byt bratislava | Susedné publikum s peniazmi (15 / 11). |
+| 10 | **Skúsenosti s Airbnb v Bratislave: rok v číslach** | airbnb skúsenosti | Ľudia hľadajú cudziu skúsenosť. Náš najprirodzenejší dôkaz. |
+| 11 | **Koľko si berie správca Airbnb a čo za to dostanete** | poplatky airbnb · správa airbnb | Porovnávací zámer tesne pred rozhodnutím. Otvorene aj s našou províziou. |
+| 12 | **Unavení z Airbnb? Ako odovzdať byt do správy** | správa bytu airbnb · airbnb management bratislava | Najbližšie ku konverzii, nulová konkurencia. |
+
+**Čo z pôvodného návrhu vypadlo a prečo**
+
+Poistenie, škody od hostí, susedia a spoločenstvo, krádeže z kľúčových schránok, pokuty. Materiál k nim máme výborný, ale **nikto ich nehľadá** (kapitola 2) a ako titulok by odrádzali od krátkodobého prenájmu ako takého. Použijeme ich inak:
+
+- **poistenie** → odsek v článku 2 a bod na stretnutí („máme to vyriešené")
+- **susedia** → odsek v článku 2 v tóne „takto predchádzame sťažnostiam"
+- **kľúče a check-in** → odsek v článku 12 o tom, čo preberáme
+- **sezónnosť a slabé mesiace** → odsek v článku 3, kde má prirodzené miesto a vedie ku garantovanému nájmu
 
 **Tempo:** prvé tri články naraz, potom dva mesačne.
 
-**Tón:** verejná mienka je voči Airbnb kritická — väčšina ľudí ho viní zo zhoršenia dostupnosti bývania. Píšeme ako zodpovedný profesionál, ktorý rieši susedov, dane a pravidlá.
+**Tón:** píšeme z pozície niekoho, kto to robí každý deň a vie to. Nie „pozor, čo všetko vás môže postihnúť", ale „takto to funguje a takto to riešime". Verejná mienka je voči Airbnb kritická, preto sa vyhýbame aj opačnému extrému, teda sľubom o rýchlom zbohatnutí.
 
 ---
 
@@ -262,6 +332,23 @@ Aby články neboli všeobecné, potrebujeme fakty z praxe. Stačia odhady, v te
 | Slovenská judikatúra k Airbnb a spoločenstvám | **Neexistuje žiadna verejne dostupná.** Opierame sa o text zákona a české rozhodnutie. |
 
 **Odporúčam:** daňové a právne články pred publikovaním dať prečítať odborníkovi. Dane sa menia každý rok a chybný článok by nám uškodil viac, než by pomohol.
+
+---
+
+## 11. Ako získať presné počty vyhľadávaní
+
+Dáta v kapitole 2 sú skutočné dáta od Googlu (autocomplete a Trends), ale ukazujú **poradie a pomer**, nie počty za mesiac. Presné čísla dá jediný zdroj: **Google Ads Keyword Planner**.
+
+Je zadarmo a netreba v ňom míňať peniaze:
+
+1. Na účte rentalpartners2026@gmail.com si založte účet na **ads.google.com** (pri registrácii zvoľte prepnutie do expertného režimu, aby vás nenútil hneď spustiť kampaň).
+2. V menu **Nástroje → Plánovač kľúčových slov → Zistiť počet vyhľadávaní**.
+3. Nastavte lokalitu Slovensko a jazyk slovenčina.
+4. Dajte mi vedieť a ja tam vložím zoznam fráz z kapitoly 2 a stiahnem počty.
+
+Bez aktívnej kampane Google ukazuje rozpätia (napríklad 10 – 100, 100 – 1 000 za mesiac), čo na naše rozhodovanie úplne stačí. Ak by ste raz spustili aj malú reklamu, čísla sa spresnia.
+
+**Poctivé očakávanie:** podľa Trends ide o veľmi malú niku. Odhadujem, že najsilnejšie frázy budú v pásme desiatok až nižších stoviek vyhľadávaní mesačne. Blog preto nerobíme kvôli návštevnosti, ale preto, aby nás našlo tých pár desiatok ľudí ročne, ktorí naozaj hľadajú niekoho, kto im byt prevezme — a aby si po prečítaní vybrali nás.
 
 ---
 
