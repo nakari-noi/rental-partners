@@ -84,12 +84,33 @@
 - Astro vynechá `<script>` napísaný v podmienke `{ … && <script>}` — značku skladať v hlavičke súboru ako text a vložiť cez `<Fragment set:html>`.
 - Atribút `pattern` beží v JS režime `v` — v hranatých zátvorkách escapovať `( ) / -`.
 - Web3Forms (bezplatný plán) odmieta odoslanie zo servera aj z headless prehliadača; Vercel Analytics ignoruje automatizované návštevy. Formulár testovať Playwrightom s bežným user agentom; analytiku overí až reálna návšteva.
+- Booking.com blokuje `curl` (vráti 202 a ochrannú stránku). Hodnotenia inzerátov ťahať Playwrightom zo schema.org JSON-LD na stránke inzerátu.
+- Skripty s Playwrightom spúšťať z `web/` (import `playwright` sa rieši od súboru), nie zo scratchpadu. `astro preview` sa z podprocesu nespustil, náhľady robí vlastný statický server nad `dist/`.
+- Po `git checkout` majú súbory CRLF konce, v textových náhradách hľadať s `\r?\n`.
+- Celostránkový screenshot mobilu (~0,9 MB, veľmi vysoký) sa klientovi nedá poslať (server vráti 400). Posielať desktop alebo orezané.
+
+**Od klienta (7.–8. 9.):**
+- Blog nie je hlavná sekcia: odkaz len v pätičke v zozname stránok, nie v menu. Slúži na prilákanie ľudí z vyhľadávania.
+- Nikde neuvádzať: podiel z hrubého výnosu, ktorý majiteľovi zostane; rozpätie cien za noc; mesačné náklady; poistenie (byty sa na krátkodobý prenájom nepoisťujú, téma vyhodená).
+- Výška garantovaného nájmu len „podľa trhových hodnôt nájmu", bez „dlhodobého" a bez dĺžky zmluvy.
+- Riadok „Prázdne obdobia" v porovnaní pôsobil zastrašujúco → preč. Texty bez pomlčiek. „Rovnaký príjem každý mesiac" namiesto „istý".
+- Odpovede chodia heslovito a niekedy pod inou otázkou (obsadenosť prišla pod „blokovanie bytu"). Čítať podľa obsahu, nie podľa poradia, a nejasný výklad si dať potvrdiť (stalo sa pri „dĺžky nájmu").
+
+## Čo sa spravilo 7.–8. 9. 2026 (4. session) — zhrnutie
+
+- Výskum tém blogu prepísaný na reálne dáta Googlu (1 545 našepkávaní + Trends): `docs/vyskum-blog-temy.md`, plán 12 článkov v 3 vlnách. Témy o strachu (poistenie, škody, susedia, pokuty) nikto nehľadá → z plánu von.
+- Výsledky: byty pod originálnymi anglickými názvami; tri s najmenej recenziami na Airbnb vedú na Booking s reálnymi hodnoteniami (9,4/153, 9,2/21, 9,6/75), štítky so stupnicou „z 5" / „z 10". Zoznam 18 Booking inzerátov v `docs/texty.md`.
+- Cenník: „Prázdne obdobia" → „Fotenie, inzeráty a ceny" (klient ešte nepotvrdil); „Byt pre vás" ✓ aj pri garantovanom nájme; výnosový argument „o 40 až 60 % vyšší" (cenník + domov); konkrétne výplaty (správa do 10. dňa nasledujúceho mesiaca, garantovaný 15. vopred), výpoveď 30 dní, rozdelenie nákladov. Pomlčky z textov preč (42 miest).
+- Fakty od klienta (zmluvné podmienky, obsadenosť 95 % / 60–70 %, prevádzka) v `docs/fakty.md`.
+- **Blog naživo:** `/blog` + pilierový článok „Krátkodobý prenájom bytu v Bratislave: ako to funguje" (`web/src/content/blog/`), JSON-LD BlogPosting + trojúrovňové omrvinky + FAQ, v sitemape. Odkaz len v pätičke.
+- Google Ads účet založený cez „Vytvoriť iba účet" (bez kampane) kvôli Keyword Planneru; fakturačný profil Rental Partners s. r. o., Námestie 1. mája 8062/11.
+- Plátno zosúladené s kódom (anglické názvy, Booking, výnos, porovnanie, výplaty).
 
 ## Ako pokračovať zajtra
 
 Otvoriť Claude Code v priečinku projektu a napísať napr. „pokračujeme na Rental Partners, pozri docs/STAV.md" — pamäť a tento súbor obsahujú všetko.
 
-**Otvorené na zajtra:**
-1. Klient: potvrdiť, či prišiel skúšobný e-mail z formulára; navštíviť web v bežnom prehliadači (kvôli prvému záznamu v Analytics); zapnúť automatické predĺženie domény u Webhouse; dokončiť Google profil (titulná fotka, popisy služieb, recenzie od majiteľov).
-2. Rozhodnúť o právnej kontrole stránky Ochrana údajov — ak bez právnika, odstrániť vetu „Návrh textu — pred spustením webu odporúčame právnu kontrolu."
-3. Ďalšie väčšie kroky: blog (prvé 3 články, témy z 5. 9.), anglická verzia, fotka Amandy, tretí člen tímu, podmienky spolupráce.
+**Otvorené:**
+1. Klient: Keyword Planner → screenshot výsledkov pre „správa bytov, krátkodobý prenájom, garantovaný nájom, garantovaný prenájom, airbnb bratislava, prenájom bytu bratislava"; potvrdiť riadok „Fotenie, inzeráty a ceny" v porovnaní (alebo vybrať náhradu / vypustiť); hlásenie cudzincov cudzineckej polícii — robí ho RP za majiteľa?
+2. Články vlny 1 (`docs/vyskum-blog-temy.md` §8): č. 1 „Chcem prenajať byt v Bratislave: štyri možnosti", č. 3 „Oplatí sa Airbnb v Bratislave? Čísla za rok 2026" (len z verejných dát, žiadne vlastné ceny ani náklady), č. 4 „Garantovaný prenájom alebo správa za 10 %?" (fakty už sú v `docs/fakty.md`). Daňové a právne články pred zverejnením dať prečítať odborníkovi.
+3. Z minula: skúšobný e-mail z formulára; reálna návšteva kvôli Analytics; automatické predĺženie domény u Webhouse; Google profil (recenzie od majiteľov); právna kontrola Ochrany údajov (ak bez právnika, odstrániť vetu „Návrh textu. Pred spustením webu odporúčame právnu kontrolu."); anglická verzia; fotka Amandy; tretí člen tímu.
