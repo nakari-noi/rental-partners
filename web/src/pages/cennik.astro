@@ -5,7 +5,7 @@ import Check from '../components/Check.astro';
 // Otázky majiteľov — na stránke aj v štruktúrovaných dátach (FAQPage)
 const faq = [
   { q: 'Ktorý model je pre mňa?', a: 'Ak chcete maximum a zvládnete kolísavý príjem, správa. Ak chcete každý mesiac rovnakú sumu bez starostí, garantovaný nájom. Na stretnutí vám ukážeme obe čísla pre váš byt.' },
-  { q: 'Kedy dostanem peniaze?', a: 'Termín a spôsob výplaty sú súčasťou zmluvy. Pri správe po mesačnom vyúčtovaní, pri garantovanom nájme v dohodnutý deň v mesiaci.' },
+  { q: 'Kedy dostanem peniaze?', a: 'Pri správe po mesačnom vyúčtovaní, do 10. dňa nasledujúceho mesiaca. Pri garantovanom nájme vopred, vždy k 15. dňu v mesiaci.' },
   { q: 'Kto platí upratovanie?', a: 'Upratovanie zabezpečujeme my. Ako sa účtuje, závisí od modelu spolupráce. Vysvetlíme to na stretnutí.' },
   { q: 'Čo ak chcem skončiť?', a: 'Výpovednú lehotu a podmienky ukončenia máte v zmluve. Nič nie je na neurčito bez možnosti výpovede.' },
 ];
@@ -63,7 +63,7 @@ const barColorA = (h: number) => (h >= 100 ? 'var(--color-accent)' : h >= 84 ? '
         <Check>Výnos podľa obsadenosti, v silnej sezóne viac, mimo sezóny menej</Check>
         <Check>Mesačné vyúčtovanie s prehľadom o každom pobyte</Check>
         <Check>Byt si môžete blokovať aj pre seba, pravidlá dohodneme v zmluve</Check>
-        <Check>Výplata a dĺžka zmluvy podľa dohody, prejdeme ich na stretnutí</Check>
+        <Check>Výplata do 10. dňa nasledujúceho mesiaca, výpovedná lehota 30 dní</Check>
       </ul>
     </div>
     <div class="flex flex-col p-7 md:p-8 bg-sand rounded-[var(--radius-block)]">
@@ -83,14 +83,14 @@ const barColorA = (h: number) => (h >= 100 ? 'var(--color-accent)' : h >= 84 ? '
       <h2 class="text-xl font-semibold">Ako funguje garantovaný nájom</h2>
       <ul class="flex flex-col gap-3">
         <Check>Istý príjem, aj keď je byt prázdny. Riziko obsadenosti je naše</Check>
-        <Check>Žiadne vyúčtovania, jedna suma, jeden termín</Check>
+        <Check>Žiadne vyúčtovania, jedna suma vopred, vždy k 15. dňu v mesiaci</Check>
         <Check>O byt, hostí aj upratovanie sa staráme rovnako ako pri správe</Check>
         <Check>Dĺžku zmluvy a výpovednú lehotu dohodneme na stretnutí</Check>
       </ul>
     </div>
     <div class="flex flex-col gap-4 p-7 md:p-8 bg-sage-soft rounded-[var(--radius-block)]">
       <h2 class="text-xl font-semibold">Ako určíme výšku nájmu</h2>
-      <p class="text-sm leading-relaxed text-ink-soft">Suma je individuálna, závisí od lokality, veľkosti a stavu bytu.</p>
+      <p class="text-sm leading-relaxed text-ink-soft">Suma je individuálna. Vychádza z trhovej výšky dlhodobého nájmu v lokalite a zo stavu bytu.</p>
       <ol class="flex flex-col gap-3 text-[15px]">
         <li class="flex gap-3"><b class="display text-sage w-6 shrink-0">01</b>Obhliadka bytu a lokality.</li>
         <li class="flex gap-3"><b class="display text-sage w-6 shrink-0">02</b>Odhad, koľko byt na krátkodobom prenájme zarobí za rok.</li>
@@ -113,7 +113,7 @@ const barColorA = (h: number) => (h >= 100 ? 'var(--color-accent)' : h >= 84 ? '
       </div>
       <div>
         <p class="text-[13px] font-bold tracking-[0.04em] uppercase text-ink-muted">Hradí sa zvlášť</p>
-        <p class="mt-4 text-[15px] leading-relaxed text-ink-soft">Energie, internet, spotrebný materiál, poplatky platforiem a väčšie opravy. Kto čo hradí, závisí od zvoleného modelu. Presné rozdelenie si prejdeme na stretnutí a je súčasťou zmluvy.</p>
+        <p class="mt-4 text-[15px] leading-relaxed text-ink-soft">Pri správe hradí energie, internet, spotrebný materiál a poplatky platforiem majiteľ, menšie opravy hradíme my. Pri väčších opravách záleží na tom, čím a ako vznikli. Pri garantovanom nájme hradíme všetko my, okrem opráv, ktoré s krátkodobým prenájmom nesúvisia. Presné rozdelenie je súčasťou zmluvy.</p>
       </div>
     </div>
   </section>
@@ -175,7 +175,7 @@ const barColorA = (h: number) => (h >= 100 ? 'var(--color-accent)' : h >= 84 ? '
     <h2 class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">Na čo sa majitelia pýtajú</h2>
     <div class="grid md:grid-cols-2 gap-5 mt-7">
       <div class="p-6 bg-surface rounded-[var(--radius-card)]"><h3 class="text-lg font-semibold">Ktorý model je pre mňa?</h3><p class="mt-2 text-[15px] leading-relaxed text-ink-soft">Ak chcete maximum a zvládnete kolísavý príjem, správa. Ak chcete každý mesiac rovnakú sumu bez starostí, garantovaný nájom. Na stretnutí vám ukážeme obe čísla pre váš byt.</p></div>
-      <div class="p-6 bg-surface rounded-[var(--radius-card)]"><h3 class="text-lg font-semibold">Kedy dostanem peniaze?</h3><p class="mt-2 text-[15px] leading-relaxed text-ink-soft">Termín a spôsob výplaty sú súčasťou zmluvy. Pri správe po mesačnom vyúčtovaní, pri garantovanom nájme v dohodnutý deň v mesiaci.</p></div>
+      <div class="p-6 bg-surface rounded-[var(--radius-card)]"><h3 class="text-lg font-semibold">Kedy dostanem peniaze?</h3><p class="mt-2 text-[15px] leading-relaxed text-ink-soft">Pri správe po mesačnom vyúčtovaní, do 10. dňa nasledujúceho mesiaca. Pri garantovanom nájme vopred, vždy k 15. dňu v mesiaci.</p></div>
       <div class="p-6 bg-surface rounded-[var(--radius-card)]"><h3 class="text-lg font-semibold">Kto platí upratovanie?</h3><p class="mt-2 text-[15px] leading-relaxed text-ink-soft">Upratovanie zabezpečujeme my. Ako sa účtuje, závisí od modelu spolupráce. Vysvetlíme to na stretnutí.</p></div>
       <div class="p-6 bg-surface rounded-[var(--radius-card)]"><h3 class="text-lg font-semibold">Čo ak chcem skončiť?</h3><p class="mt-2 text-[15px] leading-relaxed text-ink-soft">Výpovednú lehotu a podmienky ukončenia máte v zmluve. Nič nie je na neurčito bez možnosti výpovede.</p></div>
     </div>
