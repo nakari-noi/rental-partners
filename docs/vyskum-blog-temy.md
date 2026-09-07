@@ -350,6 +350,48 @@ Bez aktívnej kampane Google ukazuje rozpätia (napríklad 10 – 100, 100 – 1
 
 **Poctivé očakávanie:** podľa Trends ide o veľmi malú niku. Odhadujem, že najsilnejšie frázy budú v pásme desiatok až nižších stoviek vyhľadávaní mesačne. Blog preto nerobíme kvôli návštevnosti, ale preto, aby nás našlo tých pár desiatok ľudí ročne, ktorí naozaj hľadajú niekoho, kto im byt prevezme — a aby si po prečítaní vybrali nás.
 
+**Hotové 8. 9. 2026.** Účet založený cez „Vytvoriť iba účet" (bez kampane), dáta stiahnuté. Výsledky v kapitole 12.
+
+---
+
+## 12. Výsledky z Keyword Planneru (8. 9. 2026)
+
+Stiahnuté z účtu Google Ads bez útraty, preto Google dáva len rozpätia (v exporte ako stred rozpätia). Obdobie august 2025 až júl 2026, Slovensko, slovenčina. Našich 10 fráz + 250 návrhov od Googlu. Celá tabuľka: [`vyskum/keyword-planner-2026-09.md`](vyskum/keyword-planner-2026-09.md), surové dáta `vyskum/keyword-planner-2026-09.csv`.
+
+**Čo je veľké a čo malé**
+
+| Pásmo (vyhľadaní mesačne) | Frázy |
+|---|---|
+| 1 000 až 10 000 | airbnb bratislava · prenájom bytu bratislava · byty na prenájom bratislava · air b and b bratislava. **Všetko hostia a nájomcovia, nie majitelia.** |
+| 100 až 1 000 | **správa bytov** (+900 % medziročne, nízka konkurencia) · **dane z prenájmu bytu** a jeho tvary (dan z prenajmu bytu, daň z prenájmu bytu dôchodca) · zvyšok sú nájomcovia (byty do 400 eur, bez realitky, mestské časti) |
+| 10 až 100 | krátkodobý prenájom bytu (+900 %) · krátkodobý prenájom bytu bratislava · kratkodoby prenajom bytu zmluva · kratkodoby najom bytu · garantovaný prenájom · správa airbnb · chcem prenajať byt · prenajom apartmanu bratislava · prenajom bytu bratislava na mesiac · prenajom zariadeneho bytu bratislava · cena prenájmu bytu v bratislave · celý daňový chvost (výpočet dane, daňové priznanie z prenájmu, registrácia na daňovom úrade) |
+| pod 10 (bez údajov) | garantovaný nájom · oplatí sa airbnb |
+
+**Päť záverov**
+
+1. **Dane sú najsilnejšia téma majiteľov.** „dane z prenájmu bytu" je v pásme 100 až 1 000 s nízkou konkurenciou a má okolo dvadsať variantov v pásme 10 až 100 (výpočet, daňové priznanie, registrácia na daňovom úrade, dôchodca). Nič iné, čo hľadá majiteľ, sa tomu nepribližuje. **Článok 5 ide z vlny 2 na prvé miesto.**
+2. **„Krátkodobý prenájom bytu" rastie o 900 % medziročne.** Objem je stále malý (10 až 100), ale trend súvisí so zákonom o registri a bude pokračovať. Pilierový článok, ktorý už máme, sedí. Variant „kratkodoby prenajom bytu zmluva" sa oplatí pokryť odsekom.
+3. **„Garantovaný nájom" má pod 10 vyhľadaní, „garantovaný prenájom" 10 až 100.** Titulok a H1 článku 4 musia byť na tvar „garantovaný prenájom". Na webe treba mať oba tvary (v článku 2 už sú).
+4. **„Správa bytov" je potvrdená pasca.** Návrhy Googlu okolo nej sú AMC, Blahobyt, Hermes, Meopta, Qualita, teda správcovia bytových domov. Rast +900 % je ich, nie náš. Titulok domovskej stránky frázu už obsahuje, viac do nej neinvestovať.
+5. **„Oplatí sa airbnb" nemá merateľný objem.** Samostatný článok 3 nepíšeme; jeho obsah (sezónnosť, z čoho sa výnos skladá) ide ako časť článku 1 „Chcem prenajať byt".
+
+Ani jeden z 250 návrhov Googlu nie je o poistení, škodách, susedoch alebo pokutách. Rovnaký výsledok ako z našepkávača v kapitole 2.
+
+**Nová téma z dát:** „prenajom bytu bratislava na mesiac" (10 až 100), teda strednodobý prenájom na 1 až 3 mesiace pre ľudí na pracovných pobytoch. Mimo sezóny by to mohlo dopĺňať krátkodobý prenájom. Kandidát na vlnu 3, najprv sa spýtať klienta, či to robí.
+
+**Upravená vlna 1 (v tomto poradí)**
+
+| # | Titulok | Fráza | Pásmo |
+|---|---|---|---|
+| 1 | Dane z prenájmu bytu 2026: čo platíte pri krátkodobom a čo pri dlhodobom | dane z prenájmu bytu | 100 až 1 000, nízka konkurencia |
+| 2 | Krátkodobý prenájom bytu v Bratislave: ako to funguje **(hotové, naživo)** | krátkodobý prenájom bytu bratislava | 10 až 100, +900 % |
+| 3 | Chcem prenajať byt v Bratislave: štyri možnosti a čo vynesú (vrátane „oplatí sa Airbnb") | chcem prenajať byt | 10 až 100 |
+| 4 | Garantovaný prenájom alebo správa za 10 %? Porovnanie | garantovaný prenájom | 10 až 100 |
+
+Daňový článok pred zverejnením dať prečítať účtovníkovi alebo daňovému poradcovi.
+
+**Reálne očakávanie:** všetky frázy majiteľov dokopy robia rádovo stovky vyhľadaní mesačne na celom Slovensku. Blog nebude veľký zdroj návštev. Pri takomto objeme ale stačí byť prvý na pár frázach, a to je pri nízkej konkurencii dosiahnuteľné.
+
 ---
 
 ## Zdroje
