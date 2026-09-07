@@ -105,12 +105,21 @@
 - **Blog naživo:** `/blog` + pilierový článok „Krátkodobý prenájom bytu v Bratislave: ako to funguje" (`web/src/content/blog/`), JSON-LD BlogPosting + trojúrovňové omrvinky + FAQ, v sitemape. Odkaz len v pätičke.
 - Google Ads účet založený cez „Vytvoriť iba účet" (bez kampane) kvôli Keyword Planneru; fakturačný profil Rental Partners s. r. o., Námestie 1. mája 8062/11.
 - Plátno zosúladené s kódom (anglické názvy, Booking, výnos, porovnanie, výplaty).
+- Článok dopísaný podľa druhého kola odpovedí (kľúče v schránke/boxe, škody riešime interne, väčšie opravy podľa príčiny, prvý hosť 2 dni až týždeň). Poistenie vyhodené na pokyn klienta. Podnadpisy H3 dostali terakotovú linku a väčšie písmo, zoznamy odrážky a čísla (Tailwind ich resetoval).
+- SEO kontrola všetkých 10 stránok (titulky, popisy, kanonické adresy, H1, osnova H2/H3, JSON-LD, odkazy): bez chýb, popisy /o-nas a /sluzby skrátené pod 160 znakov. Titulok článku má 71 znakov, kľúčová fráza vpredu, nechané.
+- **Keyword Planner hotový:** účet Google Ads bez kampane, stiahnutých 260 fráz (`docs/vyskum/keyword-planner-2026-09.md` + `.csv`), závery v `docs/vyskum-blog-temy.md` kapitola 12. Hlavné: dane z prenájmu bytu = najsilnejšia téma majiteľov (100 až 1 000, nízka konkurencia) → prvý článok; „garantovaný prenájom" má objem, „garantovaný nájom" nie; „oplatí sa airbnb" pod 10 → zlúčené do „Chcem prenajať byt"; „správa bytov" pasca potvrdená.
 
 ## Ako pokračovať zajtra
 
 Otvoriť Claude Code v priečinku projektu a napísať napr. „pokračujeme na Rental Partners, pozri docs/STAV.md" — pamäť a tento súbor obsahujú všetko.
 
-**Otvorené:**
-1. Klient: Keyword Planner → screenshot výsledkov pre „správa bytov, krátkodobý prenájom, garantovaný nájom, garantovaný prenájom, airbnb bratislava, prenájom bytu bratislava"; potvrdiť riadok „Fotenie, inzeráty a ceny" v porovnaní (alebo vybrať náhradu / vypustiť); hlásenie cudzincov cudzineckej polícii — robí ho RP za majiteľa?
-2. Články vlny 1 (`docs/vyskum-blog-temy.md` §8): č. 1 „Chcem prenajať byt v Bratislave: štyri možnosti", č. 3 „Oplatí sa Airbnb v Bratislave? Čísla za rok 2026" (len z verejných dát, žiadne vlastné ceny ani náklady), č. 4 „Garantovaný prenájom alebo správa za 10 %?" (fakty už sú v `docs/fakty.md`). Daňové a právne články pred zverejnením dať prečítať odborníkovi.
-3. Z minula: skúšobný e-mail z formulára; reálna návšteva kvôli Analytics; automatické predĺženie domény u Webhouse; Google profil (recenzie od majiteľov); právna kontrola Ochrany údajov (ak bez právnika, odstrániť vetu „Návrh textu. Pred spustením webu odporúčame právnu kontrolu."); anglická verzia; fotka Amandy; tretí člen tímu.
+**Ďalší krok (navrhnutý, klient ešte nepotvrdil):** napísať článok **„Dane z prenájmu bytu 2026: čo platíte pri krátkodobom a čo pri dlhodobom"** z primárnych zdrojov (zákon č. 595/2003 Z. z. o dani z príjmov: §6 ods. 3 prenájom vs §6 ods. 1 živnosť, oslobodenie 500 €, paušálne výdavky len pri živnosti; zákon o DPH: registrácia, ubytovacie služby; Finančná správa) a dať ho klientovi na kontrolu účtovníkom pred zverejnením. Potom č. 3 „Chcem prenajať byt v Bratislave" (vrátane „oplatí sa Airbnb") a č. 4 „Garantovaný **prenájom** alebo správa za 10 %?" (fakty v `docs/fakty.md`). Nové články = nový `.md` v `web/src/content/blog/`, frontmatter podľa `content.config.ts`.
+
+**Otvorené otázky pre klienta:**
+1. Riadok „Fotenie, inzeráty a ceny" v porovnaní: ostáva, alebo náhrada (recenzie / vyúčtovanie / upratovanie) či vypustiť?
+2. Hlásenie cudzincov cudzineckej polícii: robí ho RP za majiteľa? (do článku 2 ako ďalšia prebraná povinnosť)
+3. Strednodobé prenájmy „na mesiac" (1 až 3 mesiace, pracovné pobyty): robíte ich? Ľudia to hľadajú (10 až 100 mesačne), bola by to téma navyše.
+4. Má klient účtovníka / daňového poradcu, ktorý prečíta daňový článok?
+5. Voliteľné SEO: jedna veta s odkazom na článok v cenníku alebo službách (interný odkaz pomôže článku).
+
+**Z minula:** skúšobný e-mail z formulára; reálna návšteva kvôli Analytics; automatické predĺženie domény u Webhouse; Google profil (recenzie od majiteľov); právna kontrola Ochrany údajov (ak bez právnika, odstrániť vetu „Návrh textu. Pred spustením webu odporúčame právnu kontrolu."); anglická verzia; fotka Amandy; tretí člen tímu.
