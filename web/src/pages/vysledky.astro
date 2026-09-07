@@ -4,13 +4,15 @@ import Cta from '../components/Cta.astro';
 
 // Byty vedieme pod originálnymi názvami z inzerátov. Odkaz vedie na platformu,
 // kde má byt silnejší profil: pri nižšom počte recenzií na Airbnb linkujeme Booking.
+// Hodnotenia sú z verejných profilov, načítané 7. 9. 2026. Airbnb je zo stupnice
+// do 5, Booking do 10, preto je stupnica v štítku uvedená.
 const flats = [
-  { img: '/img/byt-2br-dizajn.avif', title: '2BR Apartment awarded for Best Renovation & Design', meta: 'Ružinov · 2 spálne · až 5 hostí', rating: '4,91 · 43 recenzií', platform: 'Airbnb', url: 'https://sk.airbnb.com/rooms/36337965' },
-  { img: '/img/byt-garsonka.avif', title: 'Studio Best Center Location', meta: 'Centrum · 1 spálňa · až 4 hostia', rating: '4,86 · 28 recenzií', platform: 'Airbnb', url: 'https://sk.airbnb.com/rooms/1359465590835327627' },
-  { img: '/img/byt-najlepsia-poloha.avif', title: 'Best City Location 2-Bedroom Apartment', meta: 'Bratislava · 2 spálne · až 8 hostí', rating: '4,85 · 26 recenzií', platform: 'Airbnb', url: 'https://sk.airbnb.com/rooms/1324615524135454109' },
-  { img: '/img/byt-nove-utulne.avif', title: 'New Cozy Apartment in Heart of Bratislava', meta: 'Centrum · 1 spálňa · až 5 hostí · garážové parkovanie', rating: null, platform: 'Booking.com', url: 'https://www.booking.com/Share-wlTxxt' },
-  { img: '/img/byt-metropolis.avif', title: 'Metropolis Prime Apartment with Free Parking', meta: 'Bratislava · 1 spálňa · až 3 hostia · parkovanie', rating: null, platform: 'Booking.com', url: 'https://www.booking.com/Share-hrJbCt' },
-  { img: '/img/byt-castle-hill-residence.avif', title: 'Studio Under Castle near Danube', meta: 'Pod hradom · 1 spálňa · 2 hostia', rating: null, platform: 'Booking.com', url: 'https://www.booking.com/Share-3BnGOih' },
+  { img: '/img/byt-2br-dizajn.avif', title: '2BR Apartment awarded for Best Renovation & Design', meta: 'Ružinov · 2 spálne · až 5 hostí', rating: '4,91 z 5 · 43 recenzií', platform: 'Airbnb', url: 'https://sk.airbnb.com/rooms/36337965' },
+  { img: '/img/byt-garsonka.avif', title: 'Studio Best Center Location', meta: 'Centrum · 1 spálňa · až 4 hostia', rating: '4,86 z 5 · 28 recenzií', platform: 'Airbnb', url: 'https://sk.airbnb.com/rooms/1359465590835327627' },
+  { img: '/img/byt-najlepsia-poloha.avif', title: 'Best City Location 2-Bedroom Apartment', meta: 'Bratislava · 2 spálne · až 8 hostí', rating: '4,85 z 5 · 26 recenzií', platform: 'Airbnb', url: 'https://sk.airbnb.com/rooms/1324615524135454109' },
+  { img: '/img/byt-nove-utulne.avif', title: 'New Cozy Apartment in Heart of Bratislava', meta: 'Centrum · 1 spálňa · až 5 hostí · garážové parkovanie', rating: '9,4 z 10 · 153 hodnotení', platform: 'Booking.com', url: 'https://www.booking.com/Share-wlTxxt' },
+  { img: '/img/byt-metropolis.avif', title: 'Metropolis Prime Apartment with Free Parking', meta: 'Nivy · 1 spálňa · až 3 hostia · parkovanie', rating: '9,2 z 10 · 21 hodnotení', platform: 'Booking.com', url: 'https://www.booking.com/Share-hrJbCt' },
+  { img: '/img/byt-castle-hill-residence.avif', title: 'Studio Under Castle near Danube', meta: 'Pod hradom · 1 spálňa · 2 hostia', rating: '9,6 z 10 · 75 hodnotení', platform: 'Booking.com', url: 'https://www.booking.com/Share-3BnGOih' },
 ];
 const praise = [
   { title: 'Poloha', text: 'Centrum, Staré Mesto a Hradný vrch. Hostia chodia všade pešo.', icon: 'M12 21s7-6.4 7-11a7 7 0 1 0-14 0c0 4.6 7 11 7 11z M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z' },

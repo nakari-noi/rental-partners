@@ -268,11 +268,11 @@ Na webe vedieme byty pod **originálnymi anglickými názvami z inzerátov** (po
 | 2BR Apartment awarded for Best Renovation & Design | Ružinov · 2 spálne · 5 | 4,91 · 43 (Airbnb) | Airbnb https://sk.airbnb.com/rooms/36337965 | byt-2br-dizajn |
 | Studio Best Center Location | Centrum · 1 · 4 | 4,86 · 28 (Airbnb) | Airbnb https://sk.airbnb.com/rooms/1359465590835327627 | byt-garsonka |
 | Best City Location 2-Bedroom Apartment | 2 spálne · 8 · garáž | 4,85 · 26 (Airbnb) | Airbnb https://sk.airbnb.com/rooms/1324615524135454109 | byt-najlepsia-poloha |
-| New Cozy Apartment in Heart of Bratislava | Centrum · 1 spálňa · 5 · garážové parkovanie | Airbnb len 5,0 · 8, preto Booking | Booking https://www.booking.com/Share-wlTxxt | byt-nove-utulne |
-| Metropolis Prime Apartment with Free Parking | 1 spálňa · 3 · podzemné parkovanie | Airbnb len 5,0 · 5, preto Booking | Booking https://www.booking.com/Share-hrJbCt | byt-metropolis |
-| Studio Under Castle near Danube | Pod hradom · 1 · 2 | Airbnb 0 recenzií, preto Booking | Booking https://www.booking.com/Share-3BnGOih | byt-castle-hill-residence |
+| New Cozy Apartment in Heart of Bratislava | Centrum · 1 spálňa · 5 · garážové parkovanie | Booking 9,4 z 10 · 153 hodnotení (Airbnb len 5,0 · 8) | Booking https://www.booking.com/Share-wlTxxt | byt-nove-utulne |
+| Metropolis Prime Apartment with Free Parking | Nivy · 1 spálňa · 3 · podzemné parkovanie | Booking 9,2 z 10 · 21 hodnotení (Airbnb len 5,0 · 5) | Booking https://www.booking.com/Share-hrJbCt | byt-metropolis |
+| Studio Under Castle near Danube | Pod hradom · 1 · 2 | Booking 9,6 z 10 · 75 hodnotení (Airbnb 0 recenzií) | Booking https://www.booking.com/Share-3BnGOih | byt-castle-hill-residence |
 
-Pri troch bytoch s odkazom na Booking zatiaľ neuvádzame číselné hodnotenie, len štítok „hodnotenia na Booking.com". **[DOPLNIŤ]** hodnotenie a počet recenzií z Bookingu, aby sa dali zobraziť reálne čísla.
+Hodnotenia z Bookingu načítané z verejných profilov 7. 9. 2026. Airbnb je na stupnici do 5, Booking do 10, preto je stupnica na webe uvedená v štítku.
 
 Booking nemá verejnú stránku hostiteľa, preto pri profile firmy odkaz nie je, len hodnotenie 9,6 a poznámka, že hodnotenia sú pri každom byte.
 
