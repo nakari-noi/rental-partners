@@ -47,7 +47,7 @@ Zásady, ktoré držím: nespomínať počet bytov · čísla len ako ilustračn
   - ✓ Najvyšší možný výnos z bytu · ✓ Mesačné vyúčtovanie, prehľad o každom pobyte · ✓ Príjem sa mesiac od mesiaca líši
   - Pre majiteľov, ktorí chcú z bytu vyťažiť maximum.
 - Karta **Garantovaný nájom** (štítok *pevná suma mesačne*): Byt nám prenajmete a my vám platíme dohodnutý nájom každý mesiac — bez ohľadu na to, či bol byt plný alebo prázdny. Krátkodobý prenájom, hostí aj starostlivosť riešime na vlastné riziko.
-  - ✓ Istý príjem, rovnaký každý mesiac · ✓ Prázdne obdobia sú náš problém, nie váš · ✓ O byt sa staráme ako pri správe
+  - ✓ Rovnaký príjem každý mesiac · ✓ Prázdne obdobia sú náš problém, nie váš · ✓ O byt sa staráme ako pri správe
   - Pre majiteľov, ktorí chcú istotu a nulové starosti.
 
 **Sekcia: Služby — Čo preberáme za vás**
@@ -100,7 +100,7 @@ Každý mesiac dostanete prehľad: príjmy z pobytov, naša odmena 10 % a suma, 
 ## 3. Cenník
 
 **Nadpis:** Vyberte si, ako chcete z bytu zarábať
-**Podnadpis:** Maximálny výnos, alebo istý príjem každý mesiac. Kliknite na model — o byt sa v oboch prípadoch staráme my.
+**Podnadpis:** Maximálny výnos, alebo rovnaký príjem každý mesiac. Kliknite na model — o byt sa v oboch prípadoch staráme my.
 
 **Karta A · Správa bytu — 10 % z obratu**
 Byt zostáva váš a my ho prevádzkujeme na Airbnb a Booking. Z príjmov z pobytov si berieme desatinu — keď byt nezarába, nezarábame ani my.
