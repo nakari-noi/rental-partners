@@ -17,7 +17,7 @@ Zásady, ktoré držím: nespomínať počet bytov · čísla len ako ilustračn
 **Pätička**
 - Rental Partners — Správa bytov a garantovaný nájom v Bratislave.
 - Stránky: Služby, Cenník, Výsledky, O nás, Kontakt
-- Kontakt: Tomáš +421 903 989 040 · Amanda +421 904 809 476 · rentalpartners2026@gmail.com · Námestie 1. mája 11, 811 06 Bratislava
+- Kontakt: Tomáš +421 903 989 040 · Amanda +421 944 945 045 · rentalpartners2026@gmail.com · Námestie 1. mája 11, 811 06 Bratislava
 - Hodnotenia hostí: Airbnb · 4,89 z 5 · Superhost — Booking · 9,6 z 10 · 695 hodnotení — Naše profily →
 - © 2026 Rental Partners s. r. o. · IČO 57632499 · DIČ 2122860663
 
@@ -205,7 +205,7 @@ Dnes sa staráme o desiatky bytov v centre Bratislavy a stále platí to, s čí
 
 **Formulár:** Meno a priezvisko · Telefón · E-mail · Kde je byt (mestská časť) *napr. Staré Mesto* · Veľkosť bytu (výber) · Byt je momentálne: Prázdny / Prenajatý dlhodobo / Už na Airbnb / Booking · Zaujíma ma: Správa bytu · 10 % / Garantovaný nájom / Neviem, poraďte mi · Čo by ste chceli vedieť (nepovinné) · ☐ Súhlasím so spracovaním údajov na účel odpovede na môj dopyt. [DOPLNIŤ: odkaz na zásady ochrany osobných údajov] · tlačidlo **Chcem odhad výnosu**
 
-**Radšej priamo?** Tomáš +421 903 989 040 · Amanda +421 904 809 476 · rentalpartners2026@gmail.com · Námestie 1. mája 11, 811 06 Bratislava – Staré Mesto
+**Radšej priamo?** Tomáš +421 903 989 040 · Amanda +421 944 945 045 · rentalpartners2026@gmail.com · Námestie 1. mája 11, 811 06 Bratislava – Staré Mesto
 
 **Čo bude nasledovať:** 01 Ozveme sa a dohodneme termín. · 02 Stretneme sa v byte, pozrieme lokalitu a stav. · 03 Dostanete odhad výnosu a návrh zmluvy. Rozhodnutie je na vás.
 

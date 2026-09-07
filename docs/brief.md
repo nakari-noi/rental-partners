@@ -72,7 +72,7 @@ Tri typy návštevníkov webu:
 
 - E-mail: rentalpartners2026@gmail.com
 - Tomáš: +421 903 989 040
-- Amanda: +421 904 809 476 (tím — komunikácia s hosťami; hostia ju spomínajú v recenziách)
+- Amanda: +421 944 945 045 (tím — komunikácia s hosťami; hostia ju spomínajú v recenziách)
 
 ## Doména a platformy
 
