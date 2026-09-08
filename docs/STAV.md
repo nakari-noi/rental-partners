@@ -108,6 +108,9 @@
 - Článok dopísaný podľa druhého kola odpovedí (kľúče v schránke/boxe, škody riešime interne, väčšie opravy podľa príčiny, prvý hosť 2 dni až týždeň). Poistenie vyhodené na pokyn klienta. Podnadpisy H3 dostali terakotovú linku a väčšie písmo, zoznamy odrážky a čísla (Tailwind ich resetoval).
 - SEO kontrola všetkých 10 stránok (titulky, popisy, kanonické adresy, H1, osnova H2/H3, JSON-LD, odkazy): bez chýb, popisy /o-nas a /sluzby skrátené pod 160 znakov. Titulok článku má 71 znakov, kľúčová fráza vpredu, nechané.
 - **Keyword Planner hotový:** účet Google Ads bez kampane, stiahnutých 260 fráz (`docs/vyskum/keyword-planner-2026-09.md` + `.csv`), závery v `docs/vyskum-blog-temy.md` kapitola 12. Hlavné: dane z prenájmu bytu = najsilnejšia téma majiteľov (100 až 1 000, nízka konkurencia) → prvý článok; „garantovaný prenájom" má objem, „garantovaný nájom" nie; „oplatí sa airbnb" pod 10 → zlúčené do „Chcem prenajať byt"; „správa bytov" pasca potvrdená.
+- **Anglická verzia naživo (8. 9. popoludní):** `/en` + šesť podstránok s preloženými adresami (`/en/services`, `/en/pricing`, `/en/results`, `/en/about`, `/en/contact`, `/en/privacy`). Spoločné texty (hlavička, pätička, výzva, cookie lišta, štruktúrované dáta) idú zo slovníka `web/src/i18n.ts`, jazyk sa určuje z adresy. Prepínač EN/SK v hlavičke aj v mobilnom menu vedie na tú istú stránku v druhom jazyku (blog EN nemá → `/en`). `hreflang` sk/en/x-default (x-default = slovenčina), `og:locale`, `og-en.jpg`, JSON-LD v jazyku stránky, EN stránky v sitemape. EN formulár posiela na ten istý Web3Forms účet s predmetom „… (EN)" a slovenskými názvami polí. **Klient má anglické texty prečítať.** Blog je len slovenský.
+- Ochrana osobných údajov: veta „Návrh textu. Pred spustením webu odporúčame právnu kontrolu." zmazaná na pokyn klienta (bez právnika).
+- Cookies: lišta a Consent Mode sú hotové v oboch jazykoch, zapne ich `PUBLIC_GA_ID`. Chýba len GA4 Measurement ID (G-…) od klienta. Bez Google Analytics nie je čo merať; Vercel Analytics beží bez cookies a lištu nepotrebuje.
 
 ## Ako pokračovať zajtra
 
@@ -122,4 +125,4 @@ Otvoriť Claude Code v priečinku projektu a napísať napr. „pokračujeme na 
 4. Má klient účtovníka / daňového poradcu, ktorý prečíta daňový článok?
 5. Voliteľné SEO: jedna veta s odkazom na článok v cenníku alebo službách (interný odkaz pomôže článku).
 
-**Z minula:** skúšobný e-mail z formulára; reálna návšteva kvôli Analytics; automatické predĺženie domény u Webhouse; Google profil (recenzie od majiteľov); právna kontrola Ochrany údajov (ak bez právnika, odstrániť vetu „Návrh textu. Pred spustením webu odporúčame právnu kontrolu."); anglická verzia; fotka Amandy; tretí člen tímu.
+**Z minula:** skúšobný e-mail z formulára; reálna návšteva kvôli Analytics; automatické predĺženie domény u Webhouse; Google profil (recenzie od majiteľov); fotka Amandy; tretí člen tímu; klient prečíta anglické texty; GA4 Measurement ID pre cookie lištu (klient založí účet na analytics.google.com → vlastníctvo GA4 → dátový stream „Web" → ID v tvare G-XXXXXXX; potom sa nastaví ako `PUBLIC_GA_ID` vo Verceli alebo ako predvolená hodnota v `site.config.ts`).
