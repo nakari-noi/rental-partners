@@ -98,7 +98,9 @@ Podrobné porovnanie oboch modelov nájdete v [cenníku](/cennik).
 
 ## Pre koho sa to hodí a pre koho nie
 
-Krátkodobý prenájom sa hodí pre byt v centre alebo v jeho dosahu, zariadený a v dobrom stave. Pre majiteľa, ktorý chce z bytu viac, než dá dlhodobý nájom, alebo naopak chce rovnaký príjem každý mesiac a nulové starosti.
+Krátkodobý prenájom sa hodí pre zariadený byt v dobrom stave, v centre alebo v jeho dosahu. A pre majiteľa, ktorý chce z bytu vyťažiť viac, než dá dlhodobý nájom, a počíta s tým, že príjem bude v sezóne vyšší a mimo nej nižší.
+
+Ak vás láka vyšší výnos, ale kolísavý príjem nie, je tu stredná cesta. Byt prenajmete nám, krátkodobý prenájom na ňom robíme my na vlastné riziko a vy dostávate rovnakú sumu každý mesiac. To je garantovaný nájom, ktorý sme opísali vyššie. Nie je to iný typ prenájmu, len iné rozdelenie rizika medzi vás a nás.
 
 Nehodí sa, ak byt väčšinu roka potrebujete na bývanie, alebo ak je v lokalite, kam hostia nechodia. V takom prípade je dlhodobý prenájom rozumnejšia voľba. Ak sa byt na krátkodobý prenájom nehodí, povieme vám to na prvom stretnutí.
 
