@@ -1,0 +1,121 @@
+---
+import Base from '../../layouts/Base.astro';
+import Cta from '../../components/Cta.astro';
+import Check from '../../components/Check.astro';
+
+const reviews = [
+  { q: 'Nice little attic apartment. It is in the centre and you can quickly walk to the city centre and the sights.', by: 'Carolin · Airbnb · August 2026' },
+  { q: 'The apartment is modern, very clean and in a quiet neighbourhood. The perfect location deserves a special mention.', by: 'Jens · Airbnb · July 2026' },
+  { q: 'I have never had better instructions for finding a place. Check-in was very easy and Tomas was very helpful and always replied immediately.', by: 'Karl · Airbnb · July 2026' },
+  { q: 'I hope I will have the chance to book this apartment again; it was lovely there.', by: 'Susanne · Airbnb · August 2026' },
+  { q: 'We can fully recommend this place and would stay here again any time on our next visit to Bratislava.', by: 'Jens · Airbnb · July 2026' },
+];
+const deck = [
+  { img: '/img/byt-2br-dizajn.avif', label: 'Ružinov · 2-room flat · up to 5 guests', alt: 'Two-room flat in Ružinov ready for guests', cls: 'deck-card-1' },
+  { img: '/img/byt-najlepsia-poloha.avif', label: 'Bratislava · 2 bedrooms · up to 8 guests', alt: 'Two-bedroom flat in Bratislava', cls: 'deck-card-2' },
+  { img: '/img/byt-garsonka.avif', label: 'City centre · studio · up to 4 guests', alt: 'Studio flat in the centre of Bratislava', cls: 'deck-card-3' },
+];
+const services = [
+  { t: 'Photography', d: 'Professional photos of the flat for the listings.', i: 'M4 8h3l2-3h6l2 3h3v11H4z M12 16.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z' },
+  { t: 'Listings and pricing', d: 'Airbnb, Booking and more. Copy, prices, seasons.', i: 'M3 4h18v16H3z M8.5 11a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z M21 16l-5-5-8 8' },
+  { t: 'Guests', d: 'Enquiries, bookings, check-in and late-night questions.', i: 'M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z' },
+  { t: 'Cleaning', d: 'After every guest: fresh linen, restocked supplies.', i: 'M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z M19 15l.8 2.2 2.2.8-2.2.8L19 21l-.8-2.2-2.2-.8 2.2-.8z' },
+  { t: 'Maintenance', d: 'Small repairs and long-term care of the flat.', i: 'M14.7 6.3a4 4 0 0 0 5 5L13 18l-3-3 6.7-8.7z M3 21l5-5' },
+];
+---
+<Base title="Airbnb Management & Guaranteed Rent in Bratislava" description="We manage your flat on Airbnb and Booking for 10 % of turnover, or rent it and pay you a fixed monthly rent. Photos, guests, cleaning and maintenance in Bratislava.">
+  <!-- Hero -->
+  <section class="wrap grid lg:grid-cols-[1.1fr_0.9fr] gap-12 py-10 lg:py-16 items-center overflow-x-clip lg:overflow-visible">
+    <div class="flex flex-col gap-6">
+      <span class="chip self-start reveal">Property management in Bratislava</span>
+      <h1 class="reveal reveal-1 text-[42px] sm:text-[52px] lg:text-[62px] leading-[1.06] font-bold tracking-[-0.02em]">Your flat, our team.<br />We take care of the<br /><span class="rotor text-accent" aria-live="off"><span class="rotor-col"><span>guests.</span><span>photos.</span><span>cleaning.</span><span>pricing.</span><span>guests.</span></span></span></h1>
+      <p class="reveal reveal-2 text-lg leading-relaxed text-ink-soft max-w-[520px]">We manage your short-term rental flat for <b class="text-ink">10 % of turnover</b>, or we rent it from you and pay you a <b class="text-ink">fixed rent every month</b>. Guests, photos, cleaning and pricing on Airbnb and Booking are on us.</p>
+      <div class="reveal reveal-3 flex flex-wrap gap-4 items-center">
+        <a href="/en/contact" class="btn-primary !pr-3 !py-3">Get a free estimate<span class="w-8 h-8 rounded-full bg-white/15 inline-flex items-center justify-center shrink-0" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+        <a href="#models" class="inline-flex items-center gap-2 py-3 sm:px-2 font-bold text-[15px]">How the two models work <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"></path></svg></a>
+      </div>
+      <p class="reveal reveal-4 flex items-center gap-3 mt-1 pt-5 border-t border-sand text-sm leading-relaxed text-ink-soft">
+        <span class="w-9 h-9 rounded-full bg-sage text-white inline-flex items-center justify-center shrink-0" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg></span>
+        <span><b class="text-ink">4.89 out of 5 on Airbnb · Superhost</b> · Booking 9.6 out of 10<br />804 guest reviews, public and verifiable</span>
+      </p>
+    </div>
+    <div class="reveal reveal-2 relative h-[420px] lg:h-[500px] mt-4 lg:mt-0">
+      {deck.map((c, i) => (
+        <div class:list={['deck-card', c.cls]}>
+          <img src={c.img} alt={c.alt} class="absolute inset-0 w-full h-full object-cover" width="1200" height="800" fetchpriority={i === 0 ? 'high' : undefined} decoding="async" />
+          <span class="relative mt-[18px] ml-[18px] px-3.5 py-2 bg-white/90 rounded-full text-[13px] font-bold">{c.label}</span>
+        </div>
+      ))}
+      <a href="/en/about" class="absolute left-0 bottom-0 z-10 flex items-center gap-3.5 pl-4 pr-5 py-4 bg-surface rounded-[var(--radius-card)] shadow-[var(--shadow-float)]">
+        <img src="/img/tomas.webp" alt="Tomáš, founder of Rental Partners" class="w-[52px] h-[52px] rounded-full object-cover object-[50%_22%] shrink-0" width="52" height="52" loading="lazy" />
+        <span>
+          <span class="display block text-lg font-bold">Tomáš, founder</span>
+          <span class="block text-[13px] text-ink-soft">Superhost · knows every flat personally · <span class="text-accent font-bold">+421 903 989 040</span></span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Reviews stream -->
+  <section class="py-6 lg:py-10 overflow-hidden" aria-label="Guest reviews">
+    <div class="wrap flex items-center justify-between gap-4 mb-5">
+      <p class="text-[13px] font-bold tracking-[0.06em] uppercase text-ink-muted">From guest reviews<span class="hidden sm:inline"> · Airbnb and Booking</span></p>
+      <a href="/en/results" class="text-[13px] font-bold text-accent whitespace-nowrap shrink-0 py-3">All reviews →</a>
+    </div>
+    <div class="pl-5 md:pl-10 xl:pl-[max(64px,calc((100%-1200px)/2+64px))]">
+      <div class="reviews">
+        {[...reviews, ...reviews].map((r) => (
+          <article class="flex flex-col gap-3 p-6 bg-surface rounded-[var(--radius-card)]">
+            <div class="flex gap-[3px] text-sage" aria-label="5 out of 5 stars">{[1, 2, 3, 4, 5].map(() => <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg>)}</div>
+            <p class="text-[15px] leading-[1.5]">“{r.q}”</p>
+            <p class="text-[13px] text-ink-muted">{r.by}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Two models -->
+  <section id="models" class="wrap py-14 lg:py-[72px]">
+    <p class="eyebrow">Ways to work together</p>
+    <h2 class="mt-2 text-[30px] md:text-[38px] font-bold tracking-[-0.02em] leading-[1.15]">Two ways to work with us</h2>
+    <p class="mt-3 text-[17px] leading-relaxed text-ink-soft max-w-[700px]">Choose between a higher return and a steady income. We look after the flat the same way in both cases.</p>
+    <div class="grid md:grid-cols-2 gap-6 mt-8">
+      <div class="flex flex-col gap-4 p-6 lg:p-9 bg-surface rounded-[var(--radius-block)]">
+        <div class="flex flex-wrap items-center justify-between gap-2"><h3 class="display text-2xl font-bold">Property management</h3><span class="chip whitespace-nowrap">10 % of turnover</span></div>
+        <p class="leading-relaxed text-ink-soft">The flat stays yours and we run it on Airbnb and Booking. You receive the income based on occupancy, more in high season, and we take one tenth of it.</p>
+        <p class="flex items-start gap-2.5 p-3.5 bg-sage-soft rounded-[14px] text-[15px] leading-snug"><span class="text-sage shrink-0 mt-0.5" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18L11 11l4 4 6-7"></path><path d="M15 8h6v6"></path></svg></span><span><b>Potential return 40 to 60 % higher</b> than long-term letting. Depends on location, size and season.</span></p>
+        <ul class="flex flex-col gap-2.5"><Check>The highest possible return from your flat</Check><Check>Monthly statement with every stay listed</Check><Check>Income varies from month to month</Check></ul>
+        <p class="text-sm text-ink-muted pt-3 border-t border-sand">For owners who want to get the most out of their flat.</p>
+      </div>
+      <div class="flex flex-col gap-4 p-6 lg:p-9 bg-ink text-bg rounded-[var(--radius-block)]">
+        <div class="flex flex-wrap items-center justify-between gap-2"><h3 class="display text-2xl font-bold text-bg">Guaranteed rent</h3><span class="chip !bg-sage !text-white whitespace-nowrap">fixed sum every month</span></div>
+        <p class="leading-relaxed text-[#d9ccbb]">You rent the flat to us and we pay you the agreed rent every month, whether the flat was full or empty. Short-term letting, guests and care are our risk.</p>
+        <ul class="flex flex-col gap-2.5"><Check light>The same income every month</Check><Check light>Empty periods are our problem, not yours</Check><Check light>We look after the flat just like under management</Check></ul>
+        <p class="text-sm text-cream-muted pt-3 border-t border-bg/15">For owners who want certainty and zero hassle.</p>
+      </div>
+    </div>
+    <a href="/en/pricing" class="link-inline mt-4">Compare both models on the pricing page →</a>
+  </section>
+
+  <!-- Services -->
+  <section class="bg-surface py-14 lg:py-16">
+    <div class="wrap">
+      <p class="eyebrow">Services</p>
+      <h2 class="mt-2 text-[30px] md:text-[38px] font-bold tracking-[-0.02em] leading-[1.15]">What we take off your hands</h2>
+      <p class="mt-3 text-[17px] leading-relaxed text-ink-soft max-w-[620px]">Everything you would otherwise deal with yourself. Every day, weekends included. Under both models.</p>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-8">
+        {services.map((s) => (
+          <div class="flex flex-col gap-3 p-5 bg-bg rounded-[var(--radius-card)]">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9694a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d={s.i}></path></svg>
+            <h3 class="text-[17px] font-semibold">{s.t}</h3>
+            <p class="text-sm leading-relaxed text-ink-soft">{s.d}</p>
+          </div>
+        ))}
+      </div>
+      <a href="/en/services" class="link-inline mt-4">All services in detail →</a>
+    </div>
+  </section>
+
+  <Cta text="We look after flats in the centre of Bratislava. Yours could be next." />
+</Base>

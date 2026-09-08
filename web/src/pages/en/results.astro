@@ -1,0 +1,93 @@
+---
+import Base from '../../layouts/Base.astro';
+import Cta from '../../components/Cta.astro';
+
+// Flats keep their original listing names. Each links to the platform where it has the
+// stronger profile: the three with few Airbnb reviews link to Booking. Ratings read 8 Sept 2026.
+const flats = [
+  { img: '/img/byt-2br-dizajn.avif', title: '2BR Apartment awarded for Best Renovation & Design', meta: 'Ružinov · 2 bedrooms · up to 5 guests', rating: '4.91 out of 5 · 43 reviews', platform: 'Airbnb', url: 'https://www.airbnb.com/rooms/36337965' },
+  { img: '/img/byt-garsonka.avif', title: 'Studio Best Center Location', meta: 'City centre · 1 bedroom · up to 4 guests', rating: '4.86 out of 5 · 28 reviews', platform: 'Airbnb', url: 'https://www.airbnb.com/rooms/1359465590835327627' },
+  { img: '/img/byt-najlepsia-poloha.avif', title: 'Best City Location 2-Bedroom Apartment', meta: 'Bratislava · 2 bedrooms · up to 8 guests', rating: '4.85 out of 5 · 26 reviews', platform: 'Airbnb', url: 'https://www.airbnb.com/rooms/1324615524135454109' },
+  { img: '/img/byt-nove-utulne.avif', title: 'New Cozy Apartment in Heart of Bratislava', meta: 'City centre · 1 bedroom · up to 5 guests · garage parking', rating: '9.4 out of 10 · 153 reviews', platform: 'Booking.com', url: 'https://www.booking.com/Share-wlTxxt' },
+  { img: '/img/byt-metropolis.avif', title: 'Metropolis Prime Apartment with Free Parking', meta: 'Nivy · 1 bedroom · up to 3 guests · parking', rating: '9.2 out of 10 · 21 reviews', platform: 'Booking.com', url: 'https://www.booking.com/Share-hrJbCt' },
+  { img: '/img/byt-castle-hill-residence.avif', title: 'Studio Under Castle near Danube', meta: 'Below the castle · 1 bedroom · 2 guests', rating: '9.6 out of 10 · 75 reviews', platform: 'Booking.com', url: 'https://www.booking.com/Share-3BnGOih' },
+];
+const praise = [
+  { title: 'Location', text: 'The centre, the Old Town and the Castle Hill. Guests walk everywhere.', icon: 'M12 21s7-6.4 7-11a7 7 0 1 0-14 0c0 4.6 7 11 7 11z M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z' },
+  { title: 'Amenities', text: 'Modern, renovated flats. Several have air conditioning and parking.', icon: 'M3 10v9h18v-9 M3 10a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2 M5 8V5h14v3' },
+  { title: 'Fast communication', text: 'Exactly the part you, as the owner, no longer have to do.', icon: 'M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z' },
+];
+---
+<Base title="Guest Reviews of Our Bratislava Flats" breadcrumb="Results" description="4.89 out of 5 on Airbnb, 9.6 out of 10 on Booking, 804 guest reviews in total. Public results of the Bratislava flats we look after and a selection of them.">
+  <section class="wrap pt-10 pb-8 lg:pt-14">
+    <span class="chip">Results</span>
+    <h1 class="mt-5 text-[38px] md:text-[52px] leading-[1.08] font-bold tracking-[-0.02em] max-w-[820px] text-pretty">4.89 out of 5 on Airbnb. 9.6 out of 10 on Booking.</h1>
+    <p class="mt-5 text-lg leading-relaxed text-ink-soft max-w-[640px]">Ratings from the platforms where you find our flats: Airbnb, Booking and more. Public, verifiable, not from a brochure.</p>
+  </section>
+
+  <section class="bg-surface py-14">
+    <div class="wrap">
+      <p class="eyebrow">Where to find us</p>
+      <h2 class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">One team, the same flats, public ratings</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-7">
+        <div class="flex flex-col gap-4 p-7 bg-bg rounded-[var(--radius-card)]">
+          <div class="flex flex-wrap items-center justify-between gap-2"><span class="display text-[22px] font-bold">Airbnb</span><span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-sage-soft text-sage rounded-full text-[13px] font-bold"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg>Superhost</span></div>
+          <div class="flex items-baseline gap-2"><span class="display text-[44px] font-bold leading-none">4.89</span><span class="text-sm text-ink-soft">out of 5 · 109 reviews</span></div>
+          <div class="flex items-center gap-2.5"><img src="/img/tomas.webp" alt="Tomáš" class="w-10 h-10 rounded-full object-cover object-[50%_20%]" width="40" height="40" loading="lazy" /><span class="text-sm leading-snug text-ink-soft">Host profile Tomáš,<br />hosting for 2 years.</span></div>
+          <a href="https://www.airbnb.com/users/show/515063940" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 py-3 text-sm font-bold text-accent">Open profile <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></a>
+        </div>
+        <div class="flex flex-col gap-4 p-7 bg-bg rounded-[var(--radius-card)]">
+          <div class="flex flex-wrap items-center justify-between gap-2"><span class="display text-[22px] font-bold">Booking</span><span class="chip !py-1 !px-2.5">Managed by Tomáš</span></div>
+          <div class="flex items-baseline gap-2"><span class="display text-[44px] font-bold leading-none">9.6</span><span class="text-sm text-ink-soft">out of 10 · 695 reviews</span></div>
+          <p class="text-sm leading-relaxed text-ink-soft">We speak English, Slovak and Czech. Ratings are public on every flat’s Booking.com page.</p>
+        </div>
+        <div class="flex flex-col justify-center gap-3 p-7 bg-ink text-bg rounded-[var(--radius-card)] sm:col-span-2 lg:col-span-1">
+          <span class="display text-[44px] font-bold leading-none">804</span>
+          <p class="text-[15px] leading-relaxed text-[#d9ccbb]">guest reviews in total from Airbnb and Booking, over 2 years of hosting in one- to four-room flats in the centre of Bratislava.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-sand py-14 lg:py-16">
+    <div class="wrap">
+      <p class="eyebrow">From the reviews</p>
+      <h2 class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">What guests praise most</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-7">
+        {praise.map((p) => (
+          <div class="flex flex-col gap-3 p-6 bg-surface rounded-[var(--radius-card)] last:sm:col-span-2 last:lg:col-span-1">
+            <span class="w-11 h-11 rounded-full bg-sage-soft text-sage flex items-center justify-center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d={p.icon}></path></svg></span>
+            <h3 class="text-[19px] font-semibold">{p.title}</h3>
+            <p class="text-[15px] leading-relaxed text-ink-soft">{p.text}</p>
+          </div>
+        ))}
+      </div>
+      <div class="grid md:grid-cols-2 gap-5 mt-5">
+        <blockquote class="flex flex-col gap-3.5 p-7 bg-surface rounded-[var(--radius-card)]"><p class="display text-xl leading-[1.4] italic">“It was perfect! Great location, just over 5 minutes’ walk from the centre, yet really quiet. Tomas was very helpful and always replied immediately. Definitely one of the best places to stay in Bratislava.”</p><footer class="text-sm text-ink-soft">— Karl, Brunoy (France) · Airbnb · July 2026</footer></blockquote>
+        <blockquote class="flex flex-col gap-3.5 p-7 bg-surface rounded-[var(--radius-card)]"><p class="display text-xl leading-[1.4] italic">“Communication with Amanda was always friendly and quick. The instructions for the flat and for using the underground car park were perfect and easy to follow. The apartment is modern, very clean and in a quiet neighbourhood.”</p><footer class="text-sm text-ink-soft">— Jens, Aßlar (Germany) · Airbnb · July 2026</footer></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-surface py-14 lg:py-16">
+    <div class="wrap">
+      <p class="eyebrow">Portfolio</p>
+      <h2 class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">A selection of the flats we look after</h2>
+      <p class="mt-2 text-ink-soft max-w-[700px]">From a studio to a four-room flat, most of them in the centre and below the castle. Each one links to its own listing on Airbnb or Booking.com with real photos, prices and reviews.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-7">
+        {flats.map((f) => (
+          <a href={f.url} target="_blank" rel="noopener" class="group flex flex-col gap-3 h-full">
+            <div class="h-[220px] rounded-[var(--radius-card)] overflow-hidden"><img src={f.img} alt={f.title} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" width="600" height="400" /></div>
+            <div class="flex flex-col gap-2">
+              <div><h3 class="text-[17px] font-semibold leading-[1.25]">{f.title}</h3><p class="mt-0.5 text-[13px] text-ink-soft">{f.meta}</p></div>
+              {f.rating ? <span class="self-start inline-flex items-center gap-1 px-2.5 py-1 bg-sage-soft text-sage rounded-full text-[13px] font-bold whitespace-nowrap"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg>{f.rating}</span> : <span class="chip self-start !py-1 !px-2.5 whitespace-nowrap">ratings on {f.platform}</span>}
+            </div>
+            <span class="mt-auto inline-flex items-center gap-1.5 py-1 text-sm font-bold text-accent">View on {f.platform} <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Cta text="Your flat’s profile could look like this too." />
+</Base>

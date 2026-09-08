@@ -1,6 +1,10 @@
 ---
 import Logo from './Logo.astro';
 import { site } from '../site.config';
+import { langOf, t } from '../i18n';
+const lang = langOf(Astro.url.pathname);
+const s = t[lang].footer;
+const privacyHref = t[lang].privacy;
 const year = new Date().getFullYear();
 ---
 <footer class="bg-ink text-bg mt-6">
@@ -8,36 +12,31 @@ const year = new Date().getFullYear();
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
       <div class="flex flex-col gap-4">
         <Logo dark class="h-10 w-auto block self-start" />
-        <p class="text-sm leading-relaxed text-cream-muted">Správa bytov a garantovaný nájom v Bratislave.</p>
+        <p class="text-sm leading-relaxed text-cream-muted">{s.tagline}</p>
       </div>
       <div class="flex flex-col gap-1 text-sm text-cream-muted">
-        <div class="text-[13px] font-bold text-bg mb-1.5">Stránky</div>
-        <a href="/sluzby" class="py-3 hover:text-bg">Služby</a>
-        <a href="/cennik" class="py-3 hover:text-bg">Cenník</a>
-        <a href="/vysledky" class="py-3 hover:text-bg">Výsledky</a>
-        <a href="/o-nas" class="py-3 hover:text-bg">O nás</a>
-        <a href="/blog" class="py-3 hover:text-bg">Blog</a>
-        <a href="/kontakt" class="py-3 hover:text-bg">Kontakt</a>
+        <div class="text-[13px] font-bold text-bg mb-1.5">{s.pages}</div>
+        {s.links.map((l) => <a href={l.href} class="py-3 hover:text-bg">{l.label}</a>)}
       </div>
       <div class="flex flex-col gap-1 text-sm text-cream-muted">
-        <div class="text-[13px] font-bold text-bg mb-1.5">Kontakt</div>
+        <div class="text-[13px] font-bold text-bg mb-1.5">{s.contact}</div>
         <a href="tel:+421903989040" class="py-3 hover:text-bg">Tomáš · +421 903 989 040</a>
         <a href="tel:+421944945045" class="py-3 hover:text-bg">Amanda · +421 944 945 045</a>
         <a href="mailto:rentalpartners2026@gmail.com" class="py-3 hover:text-bg break-all">rentalpartners2026@gmail.com</a>
         <span class="py-1.5">Námestie 1. mája 8062/11, 811 06 Bratislava – Staré Mesto</span>
       </div>
       <div class="flex flex-col gap-1 text-sm text-cream-muted">
-        <div class="text-[13px] font-bold text-bg mb-1.5">Hodnotenia hostí</div>
-        <span class="py-1.5">Airbnb · 4,89 z 5 · Superhost</span>
-        <span class="py-1.5">Booking · 9,6 z 10 · 695 hodnotení</span>
-        <a href="https://sk.airbnb.com/users/show/515063940" target="_blank" rel="noopener" class="py-3 text-accent-soft hover:text-bg">Profil na Airbnb →</a>
+        <div class="text-[13px] font-bold text-bg mb-1.5">{s.ratings}</div>
+        <span class="py-1.5">{s.airbnb}</span>
+        <span class="py-1.5">{s.booking}</span>
+        <a href="https://sk.airbnb.com/users/show/515063940" target="_blank" rel="noopener" class="py-3 text-accent-soft hover:text-bg">{s.airbnbProfile}</a>
       </div>
     </div>
     <div class="flex flex-col sm:flex-row justify-between gap-2 pt-5 border-t border-bg/15 text-[13px] text-ink-muted">
       <span class="py-1">© {year} Rental Partners s. r. o. · IČO 57632499 · DIČ 2122860663</span>
       <span class="flex flex-wrap gap-x-5">
-        <a href="/ochrana-osobnych-udajov" class="py-3 hover:text-bg">Ochrana osobných údajov</a>
-        {site.gaId && <button type="button" class="py-3 hover:text-bg" data-cookies-open>Nastavenia cookies</button>}
+        <a href={privacyHref} class="py-3 hover:text-bg">{s.privacy}</a>
+        {site.gaId && <button type="button" class="py-3 hover:text-bg" data-cookies-open>{s.cookies}</button>}
       </span>
     </div>
   </div>

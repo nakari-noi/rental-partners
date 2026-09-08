@@ -1,0 +1,227 @@
+---
+import Base from '../../layouts/Base.astro';
+import Cta from '../../components/Cta.astro';
+import Check from '../../components/Check.astro';
+// Owners' questions: on the page and in the structured data (FAQPage)
+const faq = [
+  { q: 'Which model is right for me?', a: 'If you want the maximum and can handle a fluctuating income, management. If you want the same sum every month with no hassle, guaranteed rent. At the meeting we show you both figures for your flat.' },
+  { q: 'When do I get paid?', a: 'Under management after the monthly statement, by the 10th of the following month. Under guaranteed rent in advance, always by the 15th of the month.' },
+  { q: 'Who pays for cleaning?', a: 'We arrange the cleaning. How it is charged depends on the model. We explain it at the meeting.' },
+  { q: 'What if I want to end the contract?', a: 'The notice period and termination terms are in your contract. Nothing is open-ended without the option to terminate.' },
+];
+// Illustrative bars: seasonal return under management vs. the same sum under guaranteed rent
+const barsA = [52, 48, 60, 72, 84, 94, 100, 100, 86, 68, 54, 70];
+const barColorA = (h: number) => (h >= 100 ? 'var(--color-accent)' : h >= 84 ? 'var(--color-sand-deep)' : 'var(--color-sand)');
+---
+<Base title="Pricing: 10 % Management or Guaranteed Rent" breadcrumb="Pricing" description="Short-term rental management for 10 % of turnover, or guaranteed rent with a fixed sum every month. Comparison of both models and answers to owners’ questions." faq={faq}>
+  <section class="wrap pt-10 pb-6 lg:pt-14">
+    <span class="chip">Pricing</span>
+    <h1 class="mt-5 text-[38px] md:text-[52px] leading-[1.08] font-bold tracking-[-0.02em] max-w-[820px] text-pretty">Choose how you want your flat to earn</h1>
+    <p class="mt-5 text-lg leading-relaxed text-ink-soft max-w-[640px]">Maximum return, or the same income every month. Click a model. We look after the flat either way.</p>
+  </section>
+
+  <!-- Mobile / tablet: compact switch, only the chosen model card is shown -->
+  <section class="wrap lg:hidden pt-4">
+    <div class="flex p-1 bg-surface rounded-full border border-sand" role="tablist" aria-label="Cooperation model">
+      <button type="button" class="seg flex-1 min-h-11 px-3 rounded-full text-sm font-bold" role="tab" aria-pressed="true" aria-selected="true" data-model="a">Management · 10 %</button>
+      <button type="button" class="seg flex-1 min-h-11 px-3 rounded-full text-sm font-bold" role="tab" aria-pressed="false" aria-selected="false" data-model="b">Guaranteed rent</button>
+    </div>
+  </section>
+
+  <section class="wrap grid lg:grid-cols-2 gap-6 pt-4" role="tablist" aria-label="Cooperation model">
+    <button type="button" class="model-card model-a text-left flex flex-col gap-4 p-7 md:p-9 bg-surface rounded-[var(--radius-block)]" role="tab" aria-pressed="true" aria-selected="true" aria-controls="detail-a" data-model="a">
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <span class="display text-2xl font-bold">Property management</span>
+        <span class="chip !bg-accent !text-white whitespace-nowrap hidden lg:inline-flex" data-tag="a">Selected</span>
+      </div>
+      <div class="flex items-baseline gap-3"><span class="display text-[84px] lg:text-[112px] leading-[0.92] font-bold tracking-[-0.04em] text-accent whitespace-nowrap">10 %</span><span class="display text-[22px] font-semibold">of turnover</span></div>
+      <div class="flex items-end gap-1.5 h-[72px]" aria-hidden="true" title="Illustrative: return by season">
+        {barsA.map((h) => <span class="flex-1 rounded-t" style={`height:${h}%;background:${barColorA(h)}`}></span>)}
+      </div>
+      <p class="text-ink-soft leading-relaxed">The flat stays yours and we run it on Airbnb and Booking. We take one tenth of the income from stays. When the flat does not earn, neither do we.</p>
+      <p class="flex items-start gap-2.5 p-3.5 bg-sage-soft rounded-[14px] text-[15px] leading-snug"><span class="text-sage shrink-0 mt-0.5" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18L11 11l4 4 6-7"></path><path d="M15 8h6v6"></path></svg></span><span><b>Potential return 40 to 60 % higher</b> than long-term letting. Depends on location, size and season.</span></p>
+      <p class="text-sm text-ink-muted pt-3 border-t border-sand">For owners who want to get the most out of their flat.</p>
+    </button>
+    <button type="button" class="model-card model-b text-left flex flex-col gap-4 p-7 md:p-9 bg-ink text-bg rounded-[var(--radius-block)]" role="tab" aria-pressed="false" aria-selected="false" aria-controls="detail-b" data-model="b">
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <span class="display text-2xl font-bold text-bg">Guaranteed rent</span>
+        <span class="chip !bg-bg/15 !text-[#d9ccbb] whitespace-nowrap hidden lg:inline-flex" data-tag="b">Show details</span>
+      </div>
+      <div class="display text-[40px] lg:text-[54px] leading-[1.02] font-bold tracking-[-0.03em] text-bg py-2.5">Fixed sum<br />every month</div>
+      <div class="flex items-end gap-1.5 h-[72px]" aria-hidden="true" title="Illustrative: the same sum every month">
+        {barsA.map(() => <span class="flex-1 rounded-t bg-sage" style="height:78%"></span>)}
+      </div>
+      <p class="text-[#d9ccbb] leading-relaxed">You rent the flat to us and we pay you the agreed rent whether the flat was full or empty. Short-term letting is at our own risk.</p>
+      <p class="text-sm text-cream-muted pt-3 border-t border-bg/15">For owners who want certainty and zero hassle.</p>
+    </button>
+  </section>
+
+  <section id="detail-a" class="wrap grid lg:grid-cols-[1.1fr_0.9fr] gap-6 lg:gap-8 pt-6 pb-16" role="tabpanel">
+    <div class="flex flex-col gap-4 p-7 md:p-9 bg-surface border border-sand rounded-[var(--radius-block)]">
+      <h2 class="text-xl font-semibold">How property management works</h2>
+      <ul class="flex flex-col gap-3">
+        <Check>Return based on occupancy, more in high season, less off-season</Check>
+        <Check>Monthly statement with every stay listed</Check>
+        <Check>You can block the flat for yourself, the rules are agreed in the contract</Check>
+        <Check>Payout by the 10th of the following month, 30-day notice period</Check>
+      </ul>
+    </div>
+    <div class="flex flex-col p-7 md:p-8 bg-sand rounded-[var(--radius-block)]">
+      <div class="flex justify-between items-center gap-3">
+        <h2 class="text-xl font-semibold">What it looks like in numbers</h2>
+        <span class="chip !bg-surface !py-1 !px-2.5 text-[12px] whitespace-nowrap">illustrative example</span>
+      </div>
+      <p class="mt-2 mb-4 text-sm leading-relaxed text-ink-soft">The figures are illustrative. We prepare a real estimate for your flat at the meeting, based on location, size and season.</p>
+      <div class="flex justify-between gap-4 py-3.5 border-b border-sand-deep"><span>Income from stays per month</span><b class="whitespace-nowrap">€2,000</b></div>
+      <div class="flex justify-between gap-4 py-3.5 border-b border-sand-deep"><span>Rental Partners fee · 10 %</span><b class="text-accent whitespace-nowrap">− €200</b></div>
+      <div class="flex justify-between items-center gap-4 pt-4"><b class="display text-xl">Left for you</b><b class="display text-[30px] text-sage whitespace-nowrap">€1,800</b></div>
+    </div>
+  </section>
+
+  <section id="detail-b" class="wrap hidden lg:grid-cols-[1.1fr_0.9fr] gap-6 lg:gap-8 pt-6 pb-16" role="tabpanel">
+    <div class="flex flex-col gap-4 p-7 md:p-9 bg-surface border border-sand rounded-[var(--radius-block)]">
+      <h2 class="text-xl font-semibold">How guaranteed rent works</h2>
+      <ul class="flex flex-col gap-3">
+        <Check>A sure income even when the flat is empty. The occupancy risk is ours</Check>
+        <Check>No statements, one sum in advance, always by the 15th of the month</Check>
+        <Check>We look after the flat, guests and cleaning just like under management</Check>
+        <Check>Contract length and notice period are agreed at the meeting</Check>
+      </ul>
+    </div>
+    <div class="flex flex-col gap-4 p-7 md:p-8 bg-sage-soft rounded-[var(--radius-block)]">
+      <h2 class="text-xl font-semibold">How we set the rent</h2>
+      <p class="text-sm leading-relaxed text-ink-soft">The sum is individual. It is based on market rent levels in the area and the condition of the flat.</p>
+      <ol class="flex flex-col gap-3 text-[15px]">
+        <li class="flex gap-3"><b class="display text-sage w-6 shrink-0">01</b>Viewing of the flat and the area.</li>
+        <li class="flex gap-3"><b class="display text-sage w-6 shrink-0">02</b>Estimate of what the flat earns per year on short-term letting.</li>
+        <li class="flex gap-3"><b class="display text-sage w-6 shrink-0">03</b>Proposal of a fixed monthly rent and a contract. The decision is yours.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="bg-surface py-14 lg:py-16">
+    <div class="wrap grid md:grid-cols-2 gap-10 lg:gap-14">
+      <div>
+        <p class="text-[13px] font-bold tracking-[0.04em] uppercase text-sage">Always included</p>
+        <ul class="flex flex-col gap-3 mt-4">
+          <Check>Photography, listings and copy in EN / SK</Check>
+          <Check>Guest communication, check-in and check-out</Check>
+          <Check>Pricing and occupancy management</Check>
+          <Check>Cleaning and linen after every stay</Check>
+          <Check>Minor maintenance and inspections of the flat</Check>
+        </ul>
+      </div>
+      <div>
+        <p class="text-[13px] font-bold tracking-[0.04em] uppercase text-ink-muted">Paid separately</p>
+        <p class="mt-4 text-[15px] leading-relaxed text-ink-soft">Under management the owner pays for energy, internet, consumables and platform fees, and we pay for minor repairs. For bigger repairs it depends on what caused them and how. Under guaranteed rent we pay for everything, except repairs unrelated to short-term letting. The exact split is part of the contract.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap py-14 lg:py-16">
+    <p class="eyebrow">Comparison</p>
+    <h2 class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">What you handle and what we handle</h2>
+    <p class="mt-2 text-ink-soft">Ordinary long-term letting next to the selected model.</p>
+    <div id="compare" class="mt-7">
+    <!-- Mobile: icon grid, all three columns (✓ / ✕ / YOU / US) -->
+    <div class="md:hidden bg-surface rounded-[var(--radius-card)] overflow-hidden">
+      <div class="grid grid-cols-[1.45fr_1fr_1fr_1fr] bg-ink text-[10px] font-bold uppercase tracking-[0.04em] leading-[1.25] text-center">
+        <div class="py-3 pl-3.5 pr-2"></div>
+        <div class="py-3 px-1 text-cream-muted">Long-term let</div>
+        <div class="py-3 px-1 text-accent-soft">Management 10 %</div>
+        <div class="py-3 px-1 text-sage-light">Guar. rent</div>
+      </div>
+      {[
+        ['The same income every month', 'the same sum regardless of occupancy', 'yes', 'no', 'yes'],
+        ['Higher return in season', 'you earn by occupancy', 'no', 'yes', 'no'],
+        ['Guests and tenants', 'who deals with them', 'YOU', 'US', 'US'],
+        ['Photos, listings and pricing', 'who does them', 'YOU', 'US', 'US'],
+        ['Flat inspections', 'once a year / after every stay', 'no', 'yes', 'yes'],
+        ['The flat for you', 'you can block dates', 'no', 'yes', 'yes'],
+      ].map(([label, sub, ...cells]) => (
+        <div class="grid grid-cols-[1.45fr_1fr_1fr_1fr] items-center border-t border-sand py-3 pl-3.5 pr-2 text-[13px]">
+          <div class="font-bold leading-[1.25]">{label}<div class="text-[11px] font-normal text-ink-muted mt-0.5">{sub}</div></div>
+          {cells.map((c) => (
+            <div class="flex justify-center">
+              {c === 'yes' && <span class="h-6 min-w-6 px-1.5 rounded-full bg-sage-soft text-sage inline-flex items-center justify-center" aria-label="yes"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>}
+              {c === 'no' && <span class="h-6 min-w-6 px-1.5 rounded-full bg-sand text-ink-muted inline-flex items-center justify-center" aria-label="no"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span>}
+              {c === 'YOU' && <span class="h-6 min-w-6 px-2 rounded-full bg-sand text-ink-muted inline-flex items-center justify-center text-[10px] font-extrabold tracking-[0.02em]">YOU</span>}
+              {c === 'US' && <span class="h-6 min-w-6 px-2 rounded-full bg-sage-soft text-sage inline-flex items-center justify-center text-[10px] font-extrabold tracking-[0.02em]">US</span>}
+            </div>
+          ))}
+        </div>
+      ))}
+      <div class="border-t border-sand px-3.5 pt-2.5 pb-3 text-[11px] leading-relaxed text-ink-muted">✓ yes · ✕ no · YOU / US = who handles it or carries the risk. Details are in the model cards above.</div>
+    </div>
+    <div class="hidden md:block overflow-x-auto rounded-[var(--radius-card)]">
+      <table class="w-full min-w-[640px] bg-surface text-[15px]">
+        <thead class="bg-ink text-sm">
+          <tr><th class="p-4"></th><th class="p-4 text-left font-bold text-cream-muted">Long-term let</th><th class="p-4 text-left font-bold text-accent-soft" data-col="a">Management 10 %</th><th class="p-4 text-left font-bold text-cream-muted col-dim" data-col="b">Guaranteed rent</th></tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-sand"><th class="p-4 text-left font-bold">Your income</th><td class="p-4 text-ink-soft">Fixed rent from the tenant</td><td class="p-4" data-col="a">90 % of turnover, by occupancy</td><td class="p-4 col-dim" data-col="b">Fixed rent from us</td></tr>
+          <tr class="border-b border-sand"><th class="p-4 text-left font-bold">Who deals with the people in the flat</th><td class="p-4 text-ink-soft">You</td><td class="p-4" data-col="a">Us</td><td class="p-4 col-dim" data-col="b">Us</td></tr>
+          <tr class="border-b border-sand"><th class="p-4 text-left font-bold">Photos, listings and pricing</th><td class="p-4 text-ink-soft">You</td><td class="p-4" data-col="a">Us, prices tuned to the season</td><td class="p-4 col-dim" data-col="b">Us</td></tr>
+          <tr class="border-b border-sand"><th class="p-4 text-left font-bold">Condition of the flat</th><td class="p-4 text-ink-soft">You see it once a year</td><td class="p-4" data-col="a">Inspection after every stay</td><td class="p-4 col-dim" data-col="b">Inspection after every stay</td></tr>
+          <tr><th class="p-4 text-left font-bold">The flat for you</th><td class="p-4 text-ink-soft">Unavailable during the lease</td><td class="p-4" data-col="a">You can block dates as agreed</td><td class="p-4 col-dim" data-col="b">Yes, dates agreed in the contract</td></tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+  </section>
+
+  <section class="wrap pb-4">
+    <p class="eyebrow">Questions</p>
+    <h2 class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">What owners ask</h2>
+    <div class="grid md:grid-cols-2 gap-5 mt-7">
+      {faq.map((f) => (
+        <div class="p-6 bg-surface rounded-[var(--radius-card)]"><h3 class="text-lg font-semibold">{f.q}</h3><p class="mt-2 text-[15px] leading-relaxed text-ink-soft">{f.a}</p></div>
+      ))}
+    </div>
+  </section>
+
+  <Cta text="We will show you both figures for your flat." />
+
+  <script>
+    const cards = document.querySelectorAll<HTMLButtonElement>('.model-card');
+    const segs = document.querySelectorAll<HTMLButtonElement>('.seg');
+    const panels: Record<string, HTMLElement | null> = { a: document.getElementById('detail-a'), b: document.getElementById('detail-b') };
+    function pick(model: string) {
+      segs.forEach((s) => {
+        const on = s.dataset.model === model;
+        s.setAttribute('aria-pressed', String(on));
+        s.setAttribute('aria-selected', String(on));
+      });
+      cards.forEach((c) => {
+        const on = c.dataset.model === model;
+        c.setAttribute('aria-pressed', String(on));
+        c.setAttribute('aria-selected', String(on));
+        const tag = c.querySelector('[data-tag]');
+        if (!tag) return;
+        tag.textContent = on ? 'Selected' : 'Show details';
+        if (c.dataset.model === 'a') {
+          tag.classList.toggle('!bg-accent', on); tag.classList.toggle('!text-white', on); tag.classList.toggle('!bg-sand', !on);
+        } else {
+          tag.classList.toggle('!bg-sage', on); tag.classList.toggle('!text-white', on); tag.classList.toggle('!bg-bg/15', !on); tag.classList.toggle('!text-[#d9ccbb]', !on);
+        }
+      });
+      for (const k of ['a', 'b']) {
+        const p = panels[k];
+        if (!p) continue;
+        p.classList.toggle('hidden', k !== model);
+        p.classList.toggle('grid', k === model);
+      }
+      document.querySelectorAll<HTMLElement>('#compare [data-col]').forEach((el) => {
+        const on = el.dataset.col === model;
+        el.classList.toggle('col-dim', !on);
+        if (el.tagName === 'TH') {
+          el.classList.toggle('text-accent-soft', on && el.dataset.col === 'a');
+          el.classList.toggle('text-sage-light', on && el.dataset.col === 'b');
+          el.classList.toggle('text-cream-muted', !on);
+        }
+      });
+    }
+    cards.forEach((c) => c.addEventListener('click', () => pick(c.dataset.model || 'a')));
+    segs.forEach((s) => s.addEventListener('click', () => pick(s.dataset.model || 'a')));
+  </script>
+</Base>

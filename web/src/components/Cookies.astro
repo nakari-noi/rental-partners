@@ -2,17 +2,21 @@
 // Cookie lišta + Google Consent Mode v2. Vykreslí sa iba keď je nastavené PUBLIC_GA_ID.
 // Google Analytics sa načíta až po súhlase; bez súhlasu sa neuloží žiadna analytická cookie.
 import { site } from '../site.config';
+import { langOf, t } from '../i18n';
 const gaId = site.gaId;
+const lang = langOf(Astro.url.pathname);
+const s = t[lang].cookies;
+const privacyHref = t[lang].privacy;
 ---
 {gaId && (
   <div id="cookies" class="fixed inset-x-4 bottom-4 z-40 mx-auto max-w-[640px] hidden flex-col gap-4 p-5 sm:p-6 bg-surface rounded-[var(--radius-block)] shadow-[var(--shadow-float)] border border-sand" role="dialog" aria-modal="false" aria-labelledby="cookies-h" aria-describedby="cookies-p" data-cookies>
     <div>
-      <h2 id="cookies-h" class="text-lg font-semibold">Cookies na meranie návštevnosti</h2>
-      <p id="cookies-p" class="mt-1.5 text-sm leading-relaxed text-ink-soft">Okrem nevyhnutných cookies by sme radi použili Google Analytics, aby sme vedeli, ktoré stránky vám pomáhajú. Meranie zapneme len s vaším súhlasom a kedykoľvek ho zmeníte v pätičke. <a href="/ochrana-osobnych-udajov" class="underline">Viac o cookies</a></p>
+      <h2 id="cookies-h" class="text-lg font-semibold">{s.title}</h2>
+      <p id="cookies-p" class="mt-1.5 text-sm leading-relaxed text-ink-soft">{s.text} <a href={privacyHref} class="underline">{s.more}</a></p>
     </div>
     <div class="flex flex-wrap gap-2.5">
-      <button type="button" class="btn-primary !py-3 !px-5 !text-sm" data-cookies-accept>Súhlasím s meraním</button>
-      <button type="button" class="inline-flex items-center justify-center py-3 px-5 bg-sand text-ink rounded-full text-sm font-bold" data-cookies-reject>Iba nevyhnutné</button>
+      <button type="button" class="btn-primary !py-3 !px-5 !text-sm" data-cookies-accept>{s.accept}</button>
+      <button type="button" class="inline-flex items-center justify-center py-3 px-5 bg-sand text-ink rounded-full text-sm font-bold" data-cookies-reject>{s.reject}</button>
     </div>
   </div>
 )}

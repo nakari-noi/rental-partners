@@ -1,0 +1,30 @@
+---
+import Base from '../../layouts/Base.astro';
+import { site } from '../../site.config';
+---
+<Base title="Privacy Policy" breadcrumb="Privacy policy" description="How personal data is processed on rentalpartners.sk.">
+  <section class="wrap pt-10 pb-16 lg:pt-14">
+    <div class="max-w-[760px]">
+      <span class="chip">Privacy policy</span>
+      <h1 class="mt-5 text-[38px] md:text-[52px] leading-[1.08] font-bold tracking-[-0.02em]">How we process your data</h1>
+      <div class="mt-6 flex flex-col gap-5 leading-relaxed text-ink-soft [&_h2]:text-ink [&_h2]:text-xl [&_h2]:font-semibold [&_h2]:mt-3">
+        <p><strong class="text-ink">Controller:</strong> Rental Partners s. r. o., Námestie 1. mája 8062/11, 811 06 Bratislava – Staré Mesto, Slovakia, company ID (IČO) 57632499, e-mail rentalpartners2026@gmail.com.</p>
+        <h2>What data and why</h2>
+        <p>Through the contact form we process your name, phone number, e-mail and the details about your flat that you provide. We use them solely to reply to your enquiry and arrange a meeting. The legal basis is taking steps at your request prior to entering into a contract (Art. 6(1)(b) GDPR).</p>
+        <h2>For how long</h2>
+        <p>We keep enquiry data for as long as needed to handle it, at most 12 months from the last communication if no contract is concluded. Data of contractual partners is kept for the duration of the contract and the statutory retention periods.</p>
+        <h2>Who has access to the data</h2>
+        <p>The form is delivered technically by Web3Forms (processor), e-mails are handled by Google (Gmail). We do not sell data or share it with third parties for marketing.</p>
+        <h2>Your rights</h2>
+        <p>You have the right of access, rectification, erasure, restriction of processing, data portability and the right to object. Write to us at rentalpartners2026@gmail.com. You also have the right to lodge a complaint with the Office for Personal Data Protection of the Slovak Republic.</p>
+        <h2>Cookies</h2>
+        {site.gaId ? (
+          <p>The website uses necessary technical cookies and, only with your consent, analytics cookies of Google Analytics (Google Ireland Ltd.) to measure traffic with IP anonymisation. You give consent in the banner on your first visit and can change it any time via “Cookie settings” in the footer. Without consent, no measurement runs.</p>
+        ) : (
+          <p>The website does not use marketing or analytics cookies.{site.vercelAnalytics && ' We measure traffic without cookies (Vercel Web Analytics), without identifying individuals.'} If we add analytics or advertising cookies in the future, we will ask for your consent in a banner and update this text.</p>
+        )}
+        <p>The map on the Contact page is a static image; clicking it takes you to OpenStreetMap, which has its own privacy rules.</p>
+      </div>
+    </div>
+  </section>
+</Base>

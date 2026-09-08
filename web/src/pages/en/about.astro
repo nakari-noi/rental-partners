@@ -1,0 +1,54 @@
+---
+import Base from '../../layouts/Base.astro';
+import Cta from '../../components/Cta.astro';
+---
+<Base title="About Us: Partners of Flat Owners in Bratislava" breadcrumb="About" description="Tomáš started with one flat; today Rental Partners look after dozens of short-term rental flats in Bratislava. Partners of owners, not an estate agency.">
+  <section class="wrap pt-10 pb-8 lg:pt-14">
+    <span class="chip">About us</span>
+    <h1 class="mt-5 text-[38px] md:text-[52px] leading-[1.08] font-bold tracking-[-0.02em] max-w-[820px] text-pretty">Partners of owners, not an estate agency</h1>
+    <p class="mt-5 text-lg leading-relaxed text-ink-soft max-w-[640px]">We have been hosting guests for two years through Airbnb, Booking and other platforms. Today we look after flats in the centre of Bratislava. We either manage them for their owners, or rent them and pay the owners a guaranteed rent.</p>
+  </section>
+
+  <section class="wrap grid md:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-14 items-center py-8 lg:py-14">
+    <div class="relative h-[360px] md:h-[440px]">
+      <div class="absolute inset-y-0 left-0 w-[92%] rounded-[var(--radius-block)] overflow-hidden -rotate-2 shadow-[var(--shadow-float)]">
+        <img src="/img/tomas.webp" alt="Tomáš, founder of Rental Partners" class="w-full h-full object-cover object-[50%_25%]" width="640" height="800" />
+      </div>
+    </div>
+    <div class="flex flex-col gap-4">
+      <p class="eyebrow">Our story</p>
+      <h2 class="text-[30px] md:text-[34px] font-bold tracking-[-0.02em] leading-[1.15]">How we started</h2>
+      <p class="leading-relaxed text-ink-soft">It started with one flat. Tomáš let it to guests himself. He took the photos, answered the messages, handed over the keys, did the cleaning. When more of his own flats came along, the first owners came asking whether he would look after theirs too. That is how Rental Partners came about.</p>
+      <p class="leading-relaxed text-ink-soft">Today we look after dozens of flats in the centre of Bratislava, and what we started with still holds: we run every flat as if it were our own. We know what guests need, because we answered their messages ourselves for years. And we know what worries owners, because we are owners too.</p>
+    </div>
+  </section>
+
+  <section class="bg-surface py-14 lg:py-16">
+    <div class="wrap">
+      <p class="eyebrow">Principles</p>
+      <h2 class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">Three things we insist on</h2>
+      <div class="grid md:grid-cols-3 gap-5 mt-7">
+        <div class="flex flex-col gap-3 p-5 lg:p-7 bg-bg rounded-[var(--radius-card)]"><span class="display text-[15px] font-semibold text-accent">01</span><h3 class="text-xl font-semibold leading-snug">We tell you the truth about the return</h3><p class="text-[15px] leading-relaxed text-ink-soft">We estimate based on location, the condition of the flat and the season. If a flat is not suited to short-term letting, we say so at the first meeting.</p></div>
+        <div class="flex flex-col gap-3 p-5 lg:p-7 bg-bg rounded-[var(--radius-card)]"><span class="display text-[15px] font-semibold text-accent">02</span><h3 class="text-xl font-semibold leading-snug">We look after the flat as if it were ours</h3><p class="text-[15px] leading-relaxed text-ink-soft">We see it after every stay. We fix a small fault before the next guest, or you, notices it.</p></div>
+        <div class="flex flex-col gap-3 p-5 lg:p-7 bg-bg rounded-[var(--radius-card)]"><span class="display text-[15px] font-semibold text-accent">03</span><h3 class="text-xl font-semibold leading-snug">We answer the phone</h3><p class="text-[15px] leading-relaxed text-ink-soft">Guests and owners get a quick reply, during the day usually within an hour.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap py-14 lg:py-16">
+    <p class="eyebrow">Team</p>
+    <h2 class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">Who looks after your flat</h2>
+    <div class="grid sm:grid-cols-2 gap-6 mt-7 max-w-[760px]">
+      <div class="flex flex-col gap-3.5">
+        <div class="h-[300px] rounded-[var(--radius-card)] overflow-hidden"><img src="/img/tomas.webp" alt="Tomáš" class="w-full h-full object-cover object-[50%_58%]" width="640" height="800" loading="lazy" /></div>
+        <div><h3 class="text-[19px] font-semibold">Tomáš</h3><p class="text-sm text-ink-soft">Founder · Airbnb Superhost</p></div>
+      </div>
+      <div class="flex flex-col gap-3.5">
+        <div class="h-[300px] rounded-[var(--radius-card)] bg-sage-soft flex items-center justify-center" aria-hidden="true"><span class="display text-[96px] font-bold text-sage leading-none">A</span></div>
+        <div><h3 class="text-[19px] font-semibold">Amanda</h3><p class="text-sm text-ink-soft">Guest communication</p></div>
+      </div>
+    </div>
+  </section>
+
+  <Cta text="Let’s meet right at your flat." />
+</Base>
