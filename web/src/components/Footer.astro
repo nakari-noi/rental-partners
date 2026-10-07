@@ -35,8 +35,8 @@ const year = new Date().getFullYear();
     <div class="flex flex-col sm:flex-row justify-between gap-2 pt-5 border-t border-bg/15 text-[13px] text-ink-muted">
       <span class="py-1">© {year} Rental Partners s. r. o. · IČO 57632499 · DIČ 2122860663</span>
       <span class="flex flex-wrap gap-x-5">
-        <a href={privacyHref} class="py-3 hover:text-bg">{s.privacy}</a>
-        {site.gaId && <button type="button" class="py-3 hover:text-bg" data-cookies-open>{s.cookies}</button>}
+        <a href={privacyHref} class="inline-flex items-center min-h-11 hover:text-bg">{s.privacy}</a>
+        {site.gaId && <button type="button" class="inline-flex items-center min-h-11 hover:text-bg" data-cookies-open>{s.cookies}</button>}
       </span>
     </div>
   </div>
