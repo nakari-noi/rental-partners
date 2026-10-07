@@ -1,6 +1,6 @@
 # Rental Partners — stav projektu a ďalšie kroky
 
-*Aktualizované: 6. 9. 2026 (3. session)*
+*Aktualizované: 8. 10. 2026 (5. session)*
 
 ## Kde čo je
 
@@ -112,9 +112,19 @@
 - Ochrana osobných údajov: veta „Návrh textu. Pred spustením webu odporúčame právnu kontrolu." zmazaná na pokyn klienta (bez právnika).
 - Cookies: lišta a Consent Mode sú hotové v oboch jazykoch, zapne ich `PUBLIC_GA_ID`. Chýba len GA4 Measurement ID (G-…) od klienta. Bez Google Analytics nie je čo merať; Vercel Analytics beží bez cookies a lištu nepotrebuje.
 
+## Kontrola webu 8. 10. 2026 (5. session)
+
+- **Funguje všetko:** 16 stránok + 404 na desktope aj mobile bez chýb v konzole, odkazy (aj Airbnb, Booking, mapa) a presmerovania (apex → www, http → https, lomka na konci) v poriadku, interakcie v cenníku, menu a formulári OK. Lighthouse mobil: SEO 100, Best Practices 100, prístupnosť 96 (zvyšok = kontrast, klient nechce meniť farby). LCP 1,9 s na pomalom mobile, CLS 0. SSL do 5. 12. 2026 (Vercel obnovuje sám).
+- **Index Googlu: 5 zo 16** (`/`, `/cennik`, `/kontakt`, `/o-nas`, `/ochrana-osobnych-udajov`). Chýbajú `/sluzby`, `/vysledky`, `/blog`, článok a všetkých 7 EN stránok. `rental-partners.vercel.app` v indexe nie je. Overené cez Startpage (Google automatizovanému prehliadaču ukáže CAPTCHA).
+- **Opravené a nasadené:** odkaz na článok z Cenníka (pod otázkami) a zo Služieb (pod „Čo potrebujeme od vás“), `role="img"` pri hviezdičkách v recenziách, logo v hlavičke bez nesúladného `aria-label` (skrytý text „domov“ / „home“), odkaz v pätičke min. 44 px.
+- Falošné poplachy v `site-check.mjs`: „rozbité obrázky“ na mobile Výsledkov = `loading="lazy"`, nestihnú sa načítať; „malý cieľ“ na Kontakte = odkaz vo vete pri súhlase (inline odkazy sú výnimka).
+- Test formulára zablokoval systém oprávnení (skutočný dopyt do firemnej schránky) → poslať ručne alebo povoliť.
+
 ## Ako pokračovať zajtra
 
 Otvoriť Claude Code v priečinku projektu a napísať napr. „pokračujeme na Rental Partners, pozri docs/STAV.md" — pamäť a tento súbor obsahujú všetko.
+
+**Zajtra (dohodnuté 8. 10.) ako prvé:** otvoriť Search Console v okne Chrome, ktoré ovláda Claude (chrome-devtools MCP, viditeľné okno s vlastným profilom) → používateľ sa prihlási účtom rentalpartners2026@gmail.com → Claude: (1) prehľad Stránky, dôvody neindexovania 11 adries, (2) Kontrola webovej adresy → Požiadať o indexovanie (limit ~10 denne): `/sluzby`, `/vysledky`, `/blog`, `/blog/kratkodoby-prenajom-bytu-bratislava`, `/en`, potom `/en/services`, `/en/pricing`, `/en/results`, `/en/about`, `/en/contact`, (3) znova odoslať sitemap. V tom istom okne dokončiť Google profil firmy (logo + titulná fotka z `podklady/logo/google/`, popisy služieb, dátum vzniku máj 2026, vypnúť SMS chat) a v Webhouse zapnúť automatické predĺženie domény. Ak Google prihlásenie v tomto okne odmietne („prehliadač nemusí byť bezpečný“), dať používateľovi zoznam adries na ručné vloženie. Index znova overiť cez Startpage `site:rentalpartners.sk`.
 
 **Ďalší krok (navrhnutý, klient ešte nepotvrdil):** napísať článok **„Dane z prenájmu bytu 2026: čo platíte pri krátkodobom a čo pri dlhodobom"** z primárnych zdrojov (zákon č. 595/2003 Z. z. o dani z príjmov: §6 ods. 3 prenájom vs §6 ods. 1 živnosť, oslobodenie 500 €, paušálne výdavky len pri živnosti; zákon o DPH: registrácia, ubytovacie služby; Finančná správa) a dať ho klientovi na kontrolu účtovníkom pred zverejnením. Potom č. 3 „Chcem prenajať byt v Bratislave" (vrátane „oplatí sa Airbnb") a č. 4 „Garantovaný **prenájom** alebo správa za 10 %?" (fakty v `docs/fakty.md`). Nové články = nový `.md` v `web/src/content/blog/`, frontmatter podľa `content.config.ts`.
 
