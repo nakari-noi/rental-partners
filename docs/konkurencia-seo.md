@@ -1,5 +1,7 @@
 # Konkurencia vo vyhľadávaní a plán, ako ju predbehnúť
 
+*Kompletná SEO analýza webu a aktuálny plán krokov sú v [`seo-analyza.md`](seo-analyza.md). Tento súbor je podklad o konkurencii.*
+
 *11. 10. 2026. Výsledky Googlu pre 18 fráz majiteľov bytov (cez Startpage, ktorý zobrazuje výsledky Googlu bez prispôsobenia), inventár 10 konkurenčných webov (sitemap, titulky, nadpisy, počet slov, štruktúrované dáta, vek domény), porovnanie vstupných stránok s našimi a zmienky o firmách mimo ich webu.*
 
 ## Zhrnutie
