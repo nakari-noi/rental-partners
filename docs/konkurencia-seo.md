@@ -8,6 +8,7 @@
 - **Hlavný dôvod nie je kvalita webu, ale čas a signály.** Naša doména má mesiac, konkurenti 1,5 až 5 rokov. Google má z nášho webu v indexe len 5 stránok zo 16, služby, výsledky ani blog medzi nimi nie sú.
 - **Druhý dôvod je cielenie.** Konkurenti majú „Správa Airbnb“ v titulku, nadpise aj adrese. My máme v titulku domova „Správa bytov“, čo podľa Keyword Planneru hľadajú spoločenstvá vlastníkov bytových domov, a „garantovaný nájom“, ktorý hľadá menej ako 10 ľudí mesačne.
 - **Tretí dôvod je objem obsahu a prítomnosť mimo webu.** PropCherry má 129 slovenských stránok, my 9. Konkurentov vidno aj na Facebooku, Instagrame, Bazoši, Reddite a v médiách, o nás píše len Finstat.
+- **LIVE-IN International**, ktorý je v Bratislave najznámejší, vedie hlavne na sociálnych sieťach (9 tis. sledujúcich na Instagrame, 5 tis. na Facebooku, videá každý týždeň), nie v Googli. Garantovaný nájom ponúka tiež, ale za správu berie 15 až 17 %. Podrobne v kapitole 2.6.
 - **Čo máme lepšie a nikto to nevyužíva:** najnižšiu cenu (10 % so všetkými platformami, ostatní 15 až 25 %), dva modely vrátane garantovaného prenájmu, verejné hodnotenia 4,89 a 9,6 a technicky najčistejší web (Lighthouse SEO 100, rýchle načítanie).
 - **Reálne očakávanie:** pri „garantovaný prenájom bratislava“ a pri dlhších frázach (články) sa dá dostať do top 5 za 2 až 4 mesiace. Pri „správa airbnb bratislava“ je to skôr 6 až 12 mesiacov, kým doména získa vek, recenzie a odkazy.
 
@@ -22,12 +23,12 @@ Počet výskytov v top 10 pre 18 fráz majiteľov (napr. „správa airbnb brati
 | Fierce Homes | fiercehomes.sk (+ Facebook) | 7× (+ Facebook 3×) | 2. až 6. | neuvádza | 1/2024 |
 | StayWell | staywell.sk | 6× | 2. až 5. | 16 % | 3/2025 |
 | Hrabovsky & Partners | hrabovskypartners.sk | 6× | 3. až 10. | 15 až 18 % | 2/2021 |
-| LIVE-IN International | live-in.international | 5× | 1. pre anglické frázy | 15 % | ? |
+| LIVE-IN International | live-in.international | 5× | 1. pre anglické frázy, inak 8. až 10. | 15 až 17 % | 3/2023 |
 | RS Properties | rsproperties.sk | 3× | 1. pre „správa apartmánov bratislava“ | neuvádza | 8/2024 |
 | Apartment Holdings | apartmentholdings.sk | 1× | 1. pre „správa krátkodobého prenájmu“ | neuvádza | 4/2020 |
 | **Rental Partners** | rentalpartners.sk | **1×** | 10. pre „garantovaný nájom“ | **10 %** | **9/2026** |
 
-Pri **garantovanom prenájme** sú v Googli iné firmy: Riešime bývanie, GarantovanýPrenájom.sk, RentHub, Propertial, YIT. Všetky robia **dlhodobý** garantovaný nájom, nikto z nich nekombinuje garanciu s krátkodobým prenájmom ako my. StayWell na svojej stránke dokonca píše, prečo garancie nedáva.
+Pri **garantovanom prenájme** sú v Googli iné firmy: Riešime bývanie, GarantovanýPrenájom.sk, RentHub, Propertial, YIT. Všetky robia **dlhodobý** garantovaný nájom. Zo správcov Airbnb ponúka garantovaný nájom popri správe len **LIVE-IN** („Garantujeme nájom 12 mesiacov v roku“), ostatní nie. StayWell na svojej stránke dokonca píše, prečo garancie nedáva.
 
 Pri **informačných frázach** („krátkodobý prenájom bytu“, „dane z prenájmu bytu“, „chcem prenajať byt“) vyhrávajú veľké portály: Bazoš, Bezrealitky, Nehnutelnosti.sk, Finančná správa, Flatio. Tie neprekonáme na všeobecných frázach, len na užších (napr. „dane z Airbnb“ namiesto „dane z prenájmu bytu“).
 
@@ -76,10 +77,28 @@ Témy, ktoré majú PropCherry aj StayWell a my nie: ako vybrať správcu Airbnb
 
 Každý z týchto zdrojov je odkaz alebo zmienka, podľa ktorej Google usudzuje, že firma existuje a je dôveryhodná. Facebook a Bazoš sa navyše zobrazujú priamo vo výsledkoch, takže zaberajú miesta v top 10.
 
+### 2.6 LIVE-IN International: prečo sú známi, hoci v Googli nevedú
+
+LIVE-IN je v Bratislave najznámejší, ale nie vďaka Googlu. Ich web je technicky slabý: z 60 slovenských adries je asi 40 zabudnutých stránok zo šablóny („restaurant-in-cannes“, „our-project-9“), hlavná stránka nemá H1, články sú tri a províziu uvádzajú raz 15 %, inokedy 17 %. Známosť stavajú inde:
+
+| Čo robia | Detail |
+|---|---|
+| **Krátke videá každý týždeň** | Instagram @livein_sk: 9 151 sledujúcich, 652 príspevkov. Facebook: 4 955 sledujúcich. Reels z prerábky bytov („V tomto byte v Skyparku bol gauč…“, „Byt je hotový a prvá rezervácia je na svete“), z kancelárie, otázky a odpovede so zakladateľom Júliusom. |
+| **Témy, ktoré majitelia práve riešia** | Video o registri krátkodobých prenájmov už 5. 5. 2026 a „Január 2027: čo sa mení pre každého majiteľa bytu“ 3. 6. 2026. „Airbnb v Bratislave zakážu? Počuli sme to pred 3 rokmi“. „Mnoho ľudí si mýli správu bytu a garantovaný nájom“. |
+| **Lákadlá na kontakt** | Kalkulačka výnosu („Koľko zarobí tvoj byt na Airbnb? Odpoveď za 30 sekúnd“), kurz zdarma, bezplatná analýza. Videá posielajú ľudí na kalkulačku. |
+| **Meno firmy pri každom byte** | Na Bookingu je pri ich bytoch „Spravuje LIVE-IN International“ s priemerným hodnotením firmy 8,9 až 9,2. Vlastná rezervačná stránka cez Guesty. |
+| **Médiá** | SME, 17. 7. 2026: „Ubytovací baróni v Bratislave. Biznis s Airbnb ovládli megahostitelia“. |
+| **Viac služieb** | Krátkodobá správa (15 až 17 %), garantovaný nájom, dlhodobá správa (10 %), predaj investičných bytov, kancelária v Bratislave aj Košiciach. Príbeh „z Londýna od 2018“. |
+| **Firma** | LIVE – IN International s.r.o., Košice. Tržby 2025: 488 710 € (−8 %), zisk 1 935 € (−88 %). |
+
+**Čo si z toho zobrať:** majiteľ bytu ich pozná zo sociálnych sietí, nie z vyhľadávania. Google ich pritom drží v top 10 aj so slabým webom, lebo o firme existuje veľa zmienok. Ich slabiny sú naše príležitosti: drahšia správa (15 až 17 % vs 10 %), žiadna samostatná stránka ani článok o garantovanom nájme a registri, slabý web.
+
+**Pri nás je dnes na Bookingu „Spravuje Tomáš“**, nie „Rental Partners“ (overené na Metropolis Prime a Studio Under Castle 11. 10. 2026). Hosť ani majiteľ, ktorý si byt pozrie, nevidí názov firmy.
+
 ## 3. Naše výhody, ktoré treba ukázať
 
 1. **Cena.** 10 % z obratu so správou na Airbnb aj Booking. Konkurenti: StayWell 16 %, Hrabovsky 15 až 18 %, LIVE-IN 15 %, B&B 17 až 25 %, PropCherry 20 %. Nikde vo výsledkoch Googlu to dnes nevidno, lebo to nemáme v titulku.
-2. **Garantovaný prenájom popri správe.** Nikto zo správcov Airbnb ho neponúka. Firmy s garantovaným prenájmom robia len dlhodobý nájom. Konkurencia na túto frázu je slabá (víťazná stránka Riešime bývanie má 652 slov a žiadnu cenu).
+2. **Garantovaný prenájom popri správe.** Zo správcov Airbnb ho má okrem nás len LIVE-IN, a ten za správu berie 15 až 17 %, my 10 %. Firmy s garantovaným prenájmom robia len dlhodobý nájom. Konkurencia na túto frázu v Googli je slabá (víťazná stránka Riešime bývanie má 652 slov a žiadnu cenu, LIVE-IN nemá samostatnú stránku, len odsek a videá na Facebooku).
 3. **Skutočné hodnotenia.** 4,89 z 5 na Airbnb, 9,6 z 10 na Bookingu, 804 recenzií. PropCherry stavia prípadové štúdie konkrétnych bytov, my máme reálne čísla verejne overiteľné na platformách.
 4. **Technika.** Štruktúrované dáta, rýchlosť, mobil a dvojjazyčnosť máme lepšie ako väčšina konkurentov (B&B, Fierce Homes a Hrabovsky nemajú ani popis stránky alebo H1). Keď Google začne web brať vážne, technika nebude brzdiť.
 
@@ -116,7 +135,9 @@ Toto je najdôležitejšia fáza na vek a dôveru, ktoré nám chýbajú. Claude
 4. **Katalógy firiem** s rovnakým názvom, adresou a telefónom ako na webe: Firmy.sk, Azet katalóg, Zlaté stránky, Bing Places, Apple Business Connect. Každý dá odkaz a potvrdí adresu.
 5. **Partnerské odkazy:** upratovacia firma, realitky, účtovník, developer, s ktorými klient spolupracuje. Stačí riadok „odporúčame“ s odkazom (Hrabovsky & Partners takto robí správu Airbnb pre svojich klientov).
 6. **Médiá:** k registru krátkodobých prenájmov (platí od 1. 1. 2027, termín pre existujúce byty 28. 2. 2027) budú médiá v decembri až februári hľadať zdroje. Ponúknuť Tomáša ako hlas z praxe (Refresher, Trend, Sme, Startitup). Jeden článok v médiu má väčšiu váhu ako desať katalógov. Claude pripraví krátky e-mail a fakty.
-7. **Reddit (voliteľné):** do vlákna „Oplatí sa Airbnb“ na r/Bratislava vecná odpoveď s otvoreným uvedením, kto píše. Bez reklamy, inak to uškodí.
+7. **Meno firmy na Bookingu a Airbnb:** v Booking extranete zmeniť meno hostiteľa alebo spoločnosti z „Tomáš“ na „Rental Partners“, aby bolo pri každom byte „Spravuje Rental Partners“. Na Airbnb doplniť „Rental Partners“ do textu profilu. Zadarmo, 15 minút, robí klient.
+8. **Krátke videá (podľa vzoru LIVE-IN):** jedno video týždenne na Instagram a Facebook, Tomáš ako tvár firmy. Témy: register do 28. 2. 2027, správa vs garantovaný nájom, byt pred a po príprave, čo robíme pri check-ine, prečo 10 %. Každé video odkazuje na web alebo článok. Claude pripraví scenáre na mesiac dopredu, natáča klient. **Rozhodnutie klienta, stojí to čas.**
+9. **Reddit (voliteľné):** do vlákna „Oplatí sa Airbnb“ na r/Bratislava vecná odpoveď s otvoreným uvedením, kto píše. Bez reklamy, inak to uškodí.
 
 ### Fáza 4: Obsah (Claude píše, klient overuje fakty, 2 články mesačne)
 
@@ -124,8 +145,8 @@ Poradie podľa termínu, zámeru a slabosti konkurencie:
 
 | # | Článok | Fráza | Prečo teraz | Konkurencia |
 |---|---|---|---|---|
-| 1 | **Register krátkodobých prenájmov: čo urobiť do 28. februára 2027** | register krátkodobých prenájmov | Termín, hľadanosť porastie v decembri až februári, článok musí byť v indexe skôr | slabá (Podpora správy), PropCherry má len reguláciu všeobecne |
-| 2 | **Garantovaný prenájom alebo správa za 10 %? Porovnanie** | garantovaný prenájom | Podporuje novú stránku z fázy 2, nikto iný toto porovnanie nemá | žiadna |
+| 1 | **Register krátkodobých prenájmov: čo urobiť do 28. februára 2027** | register krátkodobých prenájmov | Termín, hľadanosť porastie v decembri až februári, článok musí byť v indexe skôr | slabá (Podpora správy), PropCherry má len reguláciu všeobecne. LIVE-IN o tom natočil dve videá (5. 5. a 3. 6. 2026), článok nemá |
+| 2 | **Garantovaný prenájom alebo správa za 10 %? Porovnanie** | garantovaný prenájom | Podporuje novú stránku z fázy 2, v Googli toto porovnanie nikto nemá | LIVE-IN len video na Facebooku („Mnoho ľudí si mýli správu bytu a garantovaný nájom“) |
 | 3 | **Ako vybrať správcu Airbnb v Bratislave: 8 otázok pred podpisom** | ako vybrať správcu airbnb | Majiteľ tesne pred rozhodnutím. Otázky z výskumu (kto má kľúče, do akej sumy objedná opravu, ako často príde prehľad) | PropCherry a StayWell, oba všeobecné |
 | 4 | **Dane z Airbnb a krátkodobého prenájmu 2026** | dane z airbnb · krátkodobý prenájom a dph | Najsilnejšia téma majiteľov. Užšia fráza, lebo na „dane z prenájmu bytu“ sú Finančná správa a Nehnutelnosti.sk. **Pred zverejnením účtovník.** | PropCherry (2 články), Právne noviny, Wellbens |
 | 5 | **Krátkodobý alebo dlhodobý prenájom v Bratislave: čo vynesie viac** | krátkodobý vs dlhodobý prenájom | Rozhodovací zámer, máme argument 40 až 60 % vyšší výnos. Bez cien za noc a nákladov. | PropCherry, StayWell, Gaudio, Peniaze.sk |
@@ -154,9 +175,12 @@ Cieľ do konca roka 2026: všetkých 16 stránok v indexe, top 10 pre „garanto
 5. Či môžeme v článkoch menovať budovy (Metropolis, Castle Hill, City Park).
 6. Partneri, ktorí by dali odkaz (upratovanie, realitky, účtovník).
 7. Či Tomáš chce byť zdrojom pre médiá k registru.
+8. Zmeniť na Bookingu „Spravuje Tomáš“ na „Rental Partners“.
+9. Či chce točiť krátke videá na Instagram a Facebook (raz týždenne).
 
 ## Obmedzenia tejto analýzy
 
 - Pozície sú z Googlu cez Startpage, bez polohy a histórie používateľa. Na google.sk v Bratislave sa môžu líšiť o pár miest a nad výsledkami môže byť mapa s firmami, ktorú som nevidel.
 - Spätné odkazy som nemeral presne (Ahrefs a Similarweb nie sú pripojené). Prítomnosť mimo webu je odhad zo zmienok vo vyhľadávaní.
-- Vek domén je podľa registrátora (SK-NIC, Verisign), pri LIVE-IN (.international) sa nedal zistiť.
+- Vek domén je podľa registrátora (SK-NIC, Verisign, RDAP).
+- Počty sledovateľov sú z popisov stránok vo vyhľadávaní k 11. 10. 2026, nie priamo z Instagramu a Facebooku.
