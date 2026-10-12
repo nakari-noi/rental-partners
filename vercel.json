@@ -3,5 +3,18 @@
   "installCommand": "npm install --prefix web",
   "buildCommand": "npm run build --prefix web",
   "outputDirectory": "web/dist",
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "rental-partners.vercel.app"
+        }
+      ],
+      "destination": "https://www.rentalpartners.sk/$1",
+      "permanent": true
+    }
+  ]
 }

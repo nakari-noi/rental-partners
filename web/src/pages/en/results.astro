@@ -12,6 +12,8 @@ const flats = [
   { img: '/img/byt-metropolis.avif', title: 'Metropolis Prime Apartment with Free Parking', meta: 'Nivy · 1 bedroom · up to 3 guests · parking', rating: '9.2 out of 10 · 21 reviews', platform: 'Booking.com', url: 'https://www.booking.com/Share-hrJbCt' },
   { img: '/img/byt-castle-hill-residence.avif', title: 'Studio Under Castle near Danube', meta: 'Below the castle · 1 bedroom · 2 guests', rating: '9.6 out of 10 · 75 reviews', platform: 'Booking.com', url: 'https://www.booking.com/Share-3BnGOih' },
 ];
+// Alt text with the area from the first part of the description
+const altOf = (f: { title: string; meta: string }) => { const loc = f.meta.split(' · ')[0]; return loc === 'Bratislava' ? `${f.title}, Bratislava` : `${f.title}, ${loc}, Bratislava`; };
 const praise = [
   { title: 'Location', text: 'The centre, the Old Town and the Castle Hill. Guests walk everywhere.', icon: 'M12 21s7-6.4 7-11a7 7 0 1 0-14 0c0 4.6 7 11 7 11z M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z' },
   { title: 'Amenities', text: 'Modern, renovated flats. Several have air conditioning and parking.', icon: 'M3 10v9h18v-9 M3 10a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2 M5 8V5h14v3' },
@@ -77,7 +79,7 @@ const praise = [
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-7">
         {flats.map((f) => (
           <a href={f.url} target="_blank" rel="noopener" class="group flex flex-col gap-3 h-full">
-            <div class="h-[220px] rounded-[var(--radius-card)] overflow-hidden"><img src={f.img} alt={f.title} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" width="600" height="400" /></div>
+            <div class="h-[220px] rounded-[var(--radius-card)] overflow-hidden"><img src={f.img} alt={altOf(f)} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" width="600" height="400" /></div>
             <div class="flex flex-col gap-2">
               <div><h3 class="text-[17px] font-semibold leading-[1.25]">{f.title}</h3><p class="mt-0.5 text-[13px] text-ink-soft">{f.meta}</p></div>
               {f.rating ? <span class="self-start inline-flex items-center gap-1 px-2.5 py-1 bg-sage-soft text-sage rounded-full text-[13px] font-bold whitespace-nowrap"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg>{f.rating}</span> : <span class="chip self-start !py-1 !px-2.5 whitespace-nowrap">ratings on {f.platform}</span>}

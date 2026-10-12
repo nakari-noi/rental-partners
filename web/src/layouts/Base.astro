@@ -21,8 +21,10 @@ interface Props {
   breadcrumb?: string | Crumb[];
   /** Článok blogu: BlogPosting v štruktúrovaných dátach a og:type article */
   article?: { headline: string; datePublished: string; dateModified?: string };
+  /** Stránka so službou: Service v štruktúrovaných dátach */
+  service?: { name: string; serviceType: string; description: string };
 }
-const { title, description, ogImage, noindex = false, faq, breadcrumb, article } = Astro.props;
+const { title, description, ogImage, noindex = false, faq, breadcrumb, article, service } = Astro.props;
 
 const site = Astro.site ?? new URL('https://www.rentalpartners.sk');
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
@@ -61,6 +63,7 @@ const firma = {
     { '@type': 'PropertyValue', propertyID: 'DIČ', value: '2122860663' },
   ],
   sameAs: ['https://sk.airbnb.com/users/show/515063940'],
+  priceRange: lang === 'en' ? '10 % of turnover' : '10 % z obratu',
   knowsLanguage: ['sk', 'cs', 'en'],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
@@ -82,8 +85,15 @@ const omrvinky = isHome ? null : {
   ],
 };
 const faqLd = faq?.length ? { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) } : null;
-const clanok = article ? { '@type': 'BlogPosting', '@id': canonical + '#clanok', headline: article.headline, description, url: canonical, mainEntityOfPage: { '@id': canonical }, datePublished: article.datePublished, dateModified: article.dateModified ?? article.datePublished, inLanguage: lang, image: ogImageUrl, author: { '@id': firmaId }, publisher: { '@id': firmaId }, isPartOf: { '@id': webId } } : null;
-const ld = { '@context': 'https://schema.org', '@graph': [firma, web, stranka, omrvinky, faqLd, clanok].filter(Boolean) };
+// Autor článkov je zakladateľ (osoba je pre Google dôveryhodnejšia ako firma), odkaz vedie na O nás
+const autor = { '@type': 'Person', name: 'Tomáš', jobTitle: lang === 'en' ? 'Founder' : 'Zakladateľ', url: new URL(lang === 'en' ? '/en/about' : '/o-nas', site).href, image: new URL('/img/tomas.webp', site).href, worksFor: { '@id': firmaId } };
+const clanok = article ? { '@type': 'BlogPosting', '@id': canonical + '#clanok', headline: article.headline, description, url: canonical, mainEntityOfPage: { '@id': canonical }, datePublished: article.datePublished, dateModified: article.dateModified ?? article.datePublished, inLanguage: lang, image: ogImageUrl, author: autor, publisher: { '@id': firmaId }, isPartOf: { '@id': webId } } : null;
+const sluzba = service ? {
+  '@type': 'Service', '@id': canonical + '#sluzba', name: service.name, serviceType: service.serviceType, description: service.description, url: canonical,
+  provider: { '@id': firmaId }, areaServed: { '@type': 'City', name: 'Bratislava' },
+  offers: { '@type': 'Offer', url: pricingUrl, priceSpecification: { '@type': 'UnitPriceSpecification', price: '10', priceCurrency: 'EUR', unitText: s.ld.unit } },
+} : null;
+const ld = { '@context': 'https://schema.org', '@graph': [firma, web, stranka, omrvinky, faqLd, clanok, sluzba].filter(Boolean) };
 // Vercel Web Analytics (bez cookies). Značka sa vkladá ako hotový HTML text: Astro inak <script> v podmienke vynechá.
 const insightsTag = config.vercelAnalytics ? '<script defer src="/_vercel/insights/script.js"><' + '/script>' : '';
 ---
@@ -95,10 +105,10 @@ const insightsTag = config.vercelAnalytics ? '<script defer src="/_vercel/insigh
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large'} />
-    <link rel="canonical" href={canonical} />
-    {skHref && <link rel="alternate" hreflang="sk" href={skHref} />}
-    {enHref && <link rel="alternate" hreflang="en" href={enHref} />}
-    <link rel="alternate" hreflang="x-default" href={skHref ?? canonical} />
+    {!noindex && <link rel="canonical" href={canonical} />}
+    {!noindex && skHref && <link rel="alternate" hreflang="sk" href={skHref} />}
+    {!noindex && enHref && <link rel="alternate" hreflang="en" href={enHref} />}
+    {!noindex && <link rel="alternate" hreflang="x-default" href={skHref ?? canonical} />}
 
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" href="/img/logo-znak.svg" type="image/svg+xml" />
