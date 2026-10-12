@@ -16,15 +16,15 @@
 | Index | 🔴 zlý | v Googli je 5 zo 16 stránok |
 | Cielenie na slová | 🔴 zlé | titulky a nadpisy mieria na „správa bytov“ (správcovia domov) a „garantovaný nájom“ (pod 10 hľadaní), slovo „Airbnb“ chýba v titulku domova |
 | Obsah | 🟠 slabý | 9 slovenských stránok, 1 článok, Služby 340 slov, O nás 227 slov |
-| Lokálne SEO | 🔴 zlé | **Google profil firmy sa v Mapách nedá nájsť ani podľa názvu a telefónu** |
+| Lokálne SEO | 🟠 slabé | profil je overený a viditeľný (61 zobrazení, z toho 28 v Mapách), ale **0 recenzií a 0 interakcií** |
 | Spätné odkazy a dôvera | 🔴 takmer nulové | doména má mesiac, odkazy len z Finstatu a Validy |
 
-**Kde sme:** pre 18 fráz majiteľov sme v top 10 raz (10. miesto, „garantovaný nájom“). V Mapách nie sme vôbec.
+**Kde sme:** pre 18 fráz majiteľov sme v top 10 raz (10. miesto, „garantovaný nájom“). Search Console za september a október: 8 kliknutí, 151 zobrazení, priemerná pozícia 12,5.
 
 **10 najdôležitejších krokov podľa dopadu:**
 
-1. Dostať do indexu všetkých 16 stránok (Search Console).
-2. Zistiť, prečo Google profil firmy nie je vidieť, a opraviť to.
+1. Dostať do indexu všetkých 16 stránok (Search Console). **13. 10.: vyžiadané indexovanie všetkých 10 chýbajúcich stránok, sitemap znova odoslaná.**
+2. ~~Zistiť, prečo Google profil firmy nie je vidieť~~ Profil je v poriadku (13. 10.), chýbajú len recenzie, pozri bod 6.
 3. Prepísať titulky, popisy a H1 podľa mapy kľúčových slov (kapitola 4). Domov: „Správa Airbnb v Bratislave za 10 %“.
 4. Nová stránka **Garantovaný prenájom bytu v Bratislave** (najslabšia konkurencia zo všetkých fráz).
 5. Rozšíriť Služby, Cenník a O nás na 1 000 až 1 500 slov (postup, otázky, čo je v cene, tím).
@@ -98,6 +98,8 @@ Pravidlo: každá nová stránka dostane aspoň 2 odkazy z existujúcich stráno
 ## 3. Index
 
 V Googli je **5 zo 16** stránok: `/`, `/cennik`, `/kontakt`, `/o-nas`, `/ochrana-osobnych-udajov`. Chýbajú `/sluzby`, `/vysledky`, `/blog`, článok a všetkých 7 anglických (stav 8. a 11. 10. 2026).
+
+**Search Console (údaje k 9. 10. 2026):** 6 indexovaných, 12 neindexovaných. Dôvody: „Objavené, momentálne nie je v indexe“ (9: `/sluzby`, `/blog` a 7 EN stránok, Google ich ešte neprešiel a nepoznal na ne žiadny odkaz okrem sitemapy), „Indexovo prehľadávané, momentálne neindexované“ (1: `/vysledky`, prejdená 7. 9., pravdepodobne pre málo textu), „Stránka s presmerovaním“ (2, v poriadku). **13. 10. vyžiadané indexovanie všetkých 10 adries a znova odoslaná sitemap.** Omrvinky: 4 platné, 0 chýb.
 
 Pri doméne starej mesiac je to bežné, Google nové weby prechádza pomaly. Pomôže:
 
@@ -203,15 +205,17 @@ Témy, ktoré **nepíšeme**: poistenie (pokyn klienta), susedia, škody, pokuty
 
 ### 7.1 Náš profil
 
-**Google profil firmy Rental Partners sa v Mapách nedá nájsť** (11. 10. 2026): ani na „Rental Partners Bratislava“, ani na „Rental Partners“ s telefónom 0903 989 040. Podľa STAV.md bol 6. 9. založený a overený ako firma bez prevádzky pre zákazníkov (oblasť Bratislava, Staré Mesto, Ružinov, Nové Mesto).
+**Overené 13. 10. 2026 priamo v správe profilu:** profil Rental Partners je overený a zverejnený. Kategória „Spoločnosť zaoberajúca sa správou budov“ (Property management company), telefón, otváracie hodiny, oblasť „Bratislava a oblasti v okolí“, web, logo a fotka sú vyplnené, sila profilu „Úplné informácie“.
 
-Možné príčiny, ktoré treba overiť v správe profilu po prihlásení:
+| Za máj až október 2026 | |
+|---|---|
+| Zobrazenia profilu | 61 (Vyhľadávanie mobil 20, Mapy mobil 16, Vyhľadávanie počítač 13, Mapy počítač 12) |
+| Interakcie (telefonáty, prekliky na web) | 0 |
+| Recenzie | 0 |
 
-1. Profil je pozastavený alebo čaká na opätovné overenie (častá vec pri nových profiloch, Google o tom pošle e-mail).
-2. Profil nie je zverejnený, alebo bol zmenený názov a čaká na kontrolu.
-3. Pri firme so skrytou adresou Google niekedy ukazuje profil až po čase alebo až s recenziami.
+*Oprava z 11. 10.:* neprihlásený testovací prehliadač profil v Mapách nenašiel, preto som písal, že ho verejne nevidno. To neplatí, Mapy ho ukazujú (28 zobrazení). Firma bez adresy pre zákazníkov sa v Mapách zobrazuje podľa oblasti a vzdialenosti, nie vždy na presný dopyt.
 
-Kým profil nie je vidieť, nemáme šancu v mapovom bloku, ktorý sa pri dopytoch s „Bratislava“ zobrazuje nad bežnými výsledkami.
+**Hlavný problém je 0 recenzií.** Konkurenti v mapovom bloku majú 12 až 89 recenzií, bez nich sa do prvej trojky nedostaneme.
 
 ### 7.2 Kto je v Mapách
 
@@ -224,7 +228,7 @@ B&B Management, PropCherry, LIVE-IN ani Fierce Homes v mapovom bloku nie sú. **
 
 ### 7.3 Čo urobiť
 
-1. Zistiť a opraviť, prečo profil nie je vidieť (prvé po prihlásení).
+1. ~~Zistiť, prečo profil nie je vidieť~~ Profil je v poriadku (13. 10.).
 2. Hlavná kategória „Property management company“ (Správa nehnuteľností), ďalšie: „Short term apartment rental agency“ alebo podobné, ak existuje.
 3. Adresa: zobraziť Námestie 1. mája **len ak tam klienti môžu reálne prísť** v otváracích hodinách. Inak ostať firmou s oblasťou pôsobenia (Google inak profil pozastaví).
 4. Doplniť logo, titulnú fotku, 10 a viac fotiek bytov, popis s „správa Airbnb a Booking v Bratislave, garantovaný prenájom“, služby s popismi, dátum vzniku, odkaz na web.
@@ -267,10 +271,10 @@ B&B Management je prvý napriek najslabšiemu webu, čo ukazuje, že v tejto nik
 
 | Kedy | Krok | Kto | Súhlas klienta |
 |---|---|---|---|
-| **Týždeň 1** | Search Console: indexovanie, dôvody, sitemap (kap. 3) | Claude po tvojom prihlásení | nie |
-| | Google profil: zistiť a opraviť viditeľnosť (kap. 7.1) | Claude po tvojom prihlásení | nie |
+| **Týždeň 1** | ~~Search Console: indexovanie, dôvody, sitemap~~ hotové 13. 10. | Claude | nie |
+| | ~~Google profil: zistiť viditeľnosť~~ hotové 13. 10., profil je v poriadku, chýbajú recenzie | Claude | nie |
 | | Bing Webmaster Tools, presmerovanie vercel.app (T8, T10) | Claude | nie |
-| | Technické opravy T2 až T7 (sitemap, článok, štruktúrované dáta, alt texty, 404) | Claude | nie |
+| | ~~Technické opravy T2 až T8~~ hotové 13. 10. | Claude | nie |
 | | Titulky, popisy a H1 podľa mapy (kap. 4.3, T1) | Claude | **áno** |
 | **Týždne 2 až 3** | Stránka Garantovaný prenájom SK + EN | Claude píše, klient overí | **áno** |
 | | Článok o registri | Claude píše, klient overí | **áno** |
@@ -287,14 +291,16 @@ B&B Management je prvý napriek najslabšiemu webu, čo ukazuje, že v tejto nik
 
 **Search Console → Výkon**, raz mesačne, pre tieto frázy: správa airbnb bratislava · správa bytu airbnb · airbnb management bratislava · správca airbnb · správa krátkodobého prenájmu · garantovaný prenájom bratislava · garantovaný prenájom bytu · register krátkodobých prenájmov · krátkodobý prenájom bytu bratislava · short term rental management bratislava.
 
-**Google profil → Výkon:** zobrazenia v Mapách, telefonáty, kliknutia na web.
+**Východisko (13. 10. 2026):** 8 kliknutí, 151 zobrazení, priemerná pozícia 12,5. Dopyty: rental partners (3 kliknutia, pozícia 3,9), rent partner (1), krátkodobý prenájom bytu bratislava (1 kliknutie, pozícia 10), krátkodobý prenájom (22 zobrazení, pozícia 23,5), krátkodobý prenájom bratislava (16 zobrazení, pozícia 19,1). Článok sa teda už zobrazuje na svoju frázu.
+
+**Google profil → Výkon:** zobrazenia v Mapách, telefonáty, kliknutia na web. Východisko: 61 zobrazení, 0 interakcií, 0 recenzií.
 
 **Vercel Analytics:** návštevy z vyhľadávania a ktoré stránky vedú na Kontakt.
 
 | Cieľ | Do |
 |---|---|
 | Všetkých 16 stránok (a nové) v indexe | koniec októbra 2026 |
-| Google profil viditeľný, 10 recenzií | koniec novembra 2026 |
+| 10 recenzií na Google profile | koniec novembra 2026 |
 | Top 10 pre „garantovaný prenájom bratislava“ a článok o registri | december 2026 |
 | Top 3 v Mapách pre „správa airbnb bratislava“ | február 2027 |
 | Top 5 pre „správa airbnb bratislava“ vo výsledkoch | jún 2027 |
@@ -303,7 +309,7 @@ B&B Management je prvý napriek najslabšiemu webu, čo ukazuje, že v tejto nik
 
 ## 11. Čo potrebujeme
 
-**Od teba:** prihlásenie do Search Console a Google profilu (rentalpartners2026@gmail.com), voliteľne Bing Webmaster Tools a autorizácia Ahrefs pre presné spätné odkazy.
+**Od teba:** ~~prihlásenie do Search Console a Google profilu~~ hotové 13. 10. cez tvoj Chrome. Voliteľne Bing Webmaster Tools a autorizácia Ahrefs pre presné spätné odkazy.
 
 **Od klienta:**
 
@@ -322,6 +328,6 @@ B&B Management je prvý napriek najslabšiemu webu, čo ukazuje, že v tejto nik
 ## Obmedzenia
 
 - Pozície sú z Googlu cez Startpage bez polohy a histórie, na google.sk v Bratislave sa môžu líšiť o pár miest. Mapy sú priamo z Google Máp.
-- Search Console ešte nemáme otvorenú, dôvody neindexovania a skutočné zobrazenia doplním po prihlásení.
+- Search Console a Google profil sú doplnené podľa skutočných údajov z 13. 10. 2026.
 - Spätné odkazy sú odhad zo zmienok vo vyhľadávaní, kým nebude autorizovaný Ahrefs.
 - Objemy hľadaní sú rozpätia z Keyword Planneru bez aktívnej kampane.
