@@ -122,7 +122,7 @@
 
 ## ▶ KDE SME SKONČILI 13. 10. 2026 VEČER (pokračovať presne tu)
 
-**Pracuje sa vo vetve `navrh-seo-2026-10`: len lokálne, NEPUSHNUTÁ, nič nenasadené.** `master` = živý web. Používateľ chce všetko najprv ako návrh. Nasadiť až na jeho „nasaď“ (vtedy merge do `master` a push, Vercel nasadí sám).
+**Vetva `navrh-seo-2026-10` je nasadená (master = vetva).** Ďalšie návrhy opäť najprv vo vetve, lokálne. `master` = živý web. Používateľ chce všetko najprv ako návrh. Nasadiť až na jeho „nasaď“ (vtedy merge do `master` a push, Vercel nasadí sám).
 
 **Náhľad návrhu:** `cd web && npm run build && node scripts/serve-dist.mjs` → http://127.0.0.1:4399 (spustiť na pozadí, na konci vypnúť).
 
@@ -139,13 +139,13 @@
 
 **14. 10. hotové:** používateľ vybral **verziu B** (bez grafu sezóny), je na `/garantovany-prenajom`, `/navrh` zmazané. Cenník „Vždy v cene“: „Upratovanie a bielizeň po každom pobyte zabezpečíme“ (EN „…, arranged by us“). **EN verzie oboch stránok v novom vzhľade** (`/en/guaranteed-rent`, `/en/services`). Kontrola: build OK, `impeccable detect` bez nálezov, 6 stránok × počítač a mobil bez pretekania, chýb a nefunkčných odkazov (`web/test-results/_qa.mjs`).
 
-**Čaká sa už len na „nasaď“ od používateľa** → `git checkout master && git merge --ff-only navrh-seo-2026-10 && git push origin master`, overiť naživo, potom v Search Console požiadať o indexovanie `/garantovany-prenajom`, `/en/guaranteed-rent` a `/blog/register-kratkodobych-prenajmov`.
+**✅ NASADENÉ (na „nasaď“, commit 83c237b na `master`):** všetko z vetvy vrátane nového Domova (SK aj EN). Overené naživo: 19 stránok 200, `index, follow`, kanonické adresy, sitemapa 19 adries (bez 404), `/navrh/*` = 404. SEO doladenie: značka „· Rental Partners“ v titulku len ak sa zmestí do 60 znakov (dlhé články), dlhšie popisy ochrany údajov. **IndexNow** (Bing, Seznam, Yandex): kľúč `web/public/24c1856b3892f1814d7e112491ec1f74.txt`, odoslaných 19 adries (202). **Google:** v Search Console znova odoslať sitemapu a požiadať o indexovanie `/`, `/en`, `/garantovany-prenajom`, `/en/guaranteed-rent`, `/sluzby`, `/en/services`, `/blog/register-kratkodobych-prenajmov`, `/cennik` (cez `chrome-moj`, treba zapnúť vzdialené ladenie v Chrome).
 
 **Ďalšie otvorené (od klienta):** fakty pre O nás · otváracie hodiny do katalógov · súhlas s vetou „na trhu bežne 15 až 20 %“ · recenzie od majiteľov na Google profile (0 recenzií) · Booking „Spravuje Tomáš“ → „Rental Partners“ (potom zmeniť aj štítok na Výsledkoch).
 
 **Search Console:** 13. 10. vyžiadané indexovanie 10 stránok a znova odoslaná sitemap. **Okolo 20. 10. skontrolovať index** (Startpage `site:rentalpartners.sk` alebo Search Console cez MCP `chrome-moj`; vo vlastnom Chrome treba zapnúť `chrome://inspect/#remote-debugging`, po práci vypnúť).
 
-**14. 10. popoludní (návrh):** karty modelov na Domove (SK aj EN) sú celé klikateľné (vo vetve, ide s nasadením). **Návrh nového Domova** na `/navrh/domov` (noindex, mimo sitemapy, s nasadením by išiel len ako skrytá stránka): poradie schválené: úvod (bez zmeny) → pás recenzií (ostáva hore) → Dva spôsoby → „Ktorý spôsob je pre vás?“ (3 klikateľné situácie) → „Tri kroky a rozhodnutie je na vás“ → služby → CTA. Medzery zjednotené (pásy `py-16 lg:py-24`, nadpis → obsah `mt-10`), na mobile kompaktné služby. **Upútavka na článok o registri z Domova odstránená:** majiteľ ešte rozhodne; článok ostáva v blogu a ide s nasadením. **Čaká na finálne schválenie** → potom preniesť do `src/pages/index.astro` (+ EN) a `/navrh/domov` zmazať.
+**14. 10. popoludní (návrh):** karty modelov na Domove (SK aj EN) sú celé klikateľné (vo vetve, ide s nasadením). **Návrh nového Domova** na `/navrh/domov` (noindex, mimo sitemapy, s nasadením by išiel len ako skrytá stránka): poradie schválené: úvod (bez zmeny) → pás recenzií (ostáva hore) → Dva spôsoby → „Ktorý spôsob je pre vás?“ (3 klikateľné situácie) → „Tri kroky a rozhodnutie je na vás“ → služby → CTA. Medzery zjednotené (pásy `py-16 lg:py-24`, nadpis → obsah `mt-10`), na mobile kompaktné služby. **Upútavka na článok o registri z Domova odstránená:** majiteľ ešte rozhodne; článok ostáva v blogu a ide s nasadením. **Schválené a nasadené** na `/` aj `/en`, `/navrh/domov` zmazaný.
 
 ## Ako pokračovať zajtra
 
