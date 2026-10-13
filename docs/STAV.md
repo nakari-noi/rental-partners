@@ -137,10 +137,9 @@
 - Upratovanie v otázkach (odpoveď klienta): garantovaný nájom = platíme my; správa = „Upratovanie po každom pobyte zabezpečujeme my. Hosť pri rezervácii platí poplatok za upratovanie a v mesačnom vyúčtovaní uvidíte, ako sa zúčtovalo.“ (aj v Cenníku). Nezariadený byt pri garantovanom nájme: áno, po dohode.
 - `docs/texty-katalogy.md`: texty do katalógov firiem a inzerát na Bazoš.
 
-**Čaká na odpoveď používateľa (opýtať sa hneď na začiatku):**
-1. Garantovaný prenájom: **verzia A alebo B** (alebo B + graf sezóny z A)? Odporúčanie: B (sedí na dlhodobých prenajímateľov). Vybranú dať na `/garantovany-prenajom`, druhú zmazať.
-2. Cenník, časť „Vždy v cene“: pri správe je tam upratovanie, čo nie je presné → zmeniť na „Upratovanie a bielizeň po každom pobyte zabezpečíme“?
-3. Potom: EN verzie oboch stránok v novom vzhľade → kontrola (build, detektor `impeccable detect`, mobil) → „nasaď“.
+**14. 10. hotové:** používateľ vybral **verziu B** (bez grafu sezóny), je na `/garantovany-prenajom`, `/navrh` zmazané. Cenník „Vždy v cene“: „Upratovanie a bielizeň po každom pobyte zabezpečíme“ (EN „…, arranged by us“). **EN verzie oboch stránok v novom vzhľade** (`/en/guaranteed-rent`, `/en/services`). Kontrola: build OK, `impeccable detect` bez nálezov, 6 stránok × počítač a mobil bez pretekania, chýb a nefunkčných odkazov (`web/test-results/_qa.mjs`).
+
+**Čaká sa už len na „nasaď“ od používateľa** → `git checkout master && git merge --ff-only navrh-seo-2026-10 && git push origin master`, overiť naživo, potom v Search Console požiadať o indexovanie `/garantovany-prenajom`, `/en/guaranteed-rent` a `/blog/register-kratkodobych-prenajmov`.
 
 **Ďalšie otvorené (od klienta):** fakty pre O nás · otváracie hodiny do katalógov · súhlas s vetou „na trhu bežne 15 až 20 %“ · recenzie od majiteľov na Google profile (0 recenzií) · Booking „Spravuje Tomáš“ → „Rental Partners“ (potom zmeniť aj štítok na Výsledkoch).
 
