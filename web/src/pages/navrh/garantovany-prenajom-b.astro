@@ -1,0 +1,245 @@
+---
+import Base from '../../layouts/Base.astro';
+import Cta from '../../components/Cta.astro';
+import Check from '../../components/Check.astro';
+
+// NÁVRH B stránky Garantovaný prenájom (13. 10. 2026): postavený na myšlienke klienta
+// „je to ako dlhodobý nájom, len s firmou na dohodnutú dobu, nehrozí, že nájomca po troch mesiacoch odíde“.
+// Iba na porovnanie s verziou A (/garantovany-prenajom): noindex a mimo sitemapy. Fakty rovnaké ako vo verzii A.
+
+// Ilustračné dva roky: bežný nájom so striedaním nájomcov a prázdnymi mesiacmi oproti jednej zmluve
+const usual = [
+  { m: 7, kind: 'tenant', label: 'nájomca 1' },
+  { m: 2, kind: 'empty', label: 'prázdny' },
+  { m: 6, kind: 'tenant', label: 'nájomca 2' },
+  { m: 2, kind: 'empty', label: 'prázdny' },
+  { m: 7, kind: 'tenant', label: 'nájomca 3' },
+];
+const compare = [
+  { label: 'Kto si byt prenajíma', usual: 'Človek, ktorého poznáte z jednej obhliadky', us: 'Firma Rental Partners s. r. o., ktorú si overíte v obchodnom registri' },
+  { label: 'Na ako dlho', usual: 'Kým mu to vyhovuje, často len pár mesiacov', us: 'Na dohodnutú dobu podľa zmluvy' },
+  { label: 'Nájom', usual: 'Kedy ho pošle', us: 'Vopred, vždy k 15. dňu v mesiaci' },
+  { label: 'Mesiace medzi nájomcami', usual: 'Byt stojí prázdny a nezarába', us: 'Nie sú, nájom chodí každý mesiac' },
+  { label: 'Hľadanie, obhliadky, nové zmluvy', usual: 'Zakaždým znova na vás', us: 'Raz, pri podpise s nami' },
+  { label: 'Stav bytu', usual: 'Uvidíte ho, keď sa nájomca odsťahuje', us: 'Kontrolujeme ho po každom pobyte' },
+  { label: 'Byt pre vás', usual: 'Počas nájmu nie', us: 'Termíny dohodneme v zmluve' },
+];
+const promises = [
+  { n: '15.', t: 'Nájom vopred, vždy k 15. dňu v mesiaci', d: 'Žiadne vyúčtovania. Jedna dohodnutá suma, s ktorou viete počítať.' },
+  { n: '12×', t: 'Platíme každý mesiac v roku', d: 'Aj v mesiacoch, keď je byt prázdny. Riziko obsadenosti je naše.' },
+  { n: '0', t: 'Nulové riziko pre vás', d: 'Byt si prenajímame na dohodnutú dobu. Nehrozí, že po troch mesiacoch odstúpime od zmluvy a vy budete znova hľadať nájomcu.' },
+];
+const steps = [
+  { t: 'Obhliadka bytu', d: 'Prídeme sa pozrieť na byt a lokalitu.' },
+  { t: 'Odhad', d: 'Odhadneme, koľko byt na krátkodobom prenájme zarobí za rok.' },
+  { t: 'Návrh nájmu a zmluvy', d: 'Navrhneme pevný mesačný nájom a zmluvu. Rozhodnutie je na vás.' },
+  { t: 'Nájom každý mesiac', d: 'Po podpise vám platíme dohodnutú sumu vopred, vždy k 15. dňu v mesiaci.' },
+];
+const faq = [
+  { q: 'Čím sa to líši od bežného dlhodobého nájmu?', a: 'Nájomcom nie je neznámy človek, ale firma, ktorá si byt prenajme na dohodnutú dobu a platí vopred, vždy k 15. dňu v mesiaci. Byt potom prenajíma hosťom krátkodobo na vlastné riziko a po každom pobyte ho kontroluje.' },
+  { q: 'Čo ak je byt prázdny?', a: 'Nájom vám platíme rovnako. Riziko obsadenosti je naše.' },
+  { q: 'Ako určíte výšku nájmu?', a: 'Suma je individuálna. Vychádza z trhových hodnôt nájmu v lokalite a zo stavu bytu.' },
+  { q: 'Na ako dlho sa podpisuje zmluva?', a: 'Dĺžku zmluvy a výpovednú lehotu dohodneme na stretnutí. Sú individuálne, podľa podmienok, na ktorých sa vopred dohodneme.' },
+  { q: 'Musí byť byt zariadený?', a: 'Nie nevyhnutne. Aj nezariadený byt vieme vziať, podmienky dohodneme individuálne.' },
+  { q: 'Kto platí upratovanie, energie a opravy?', a: 'Pri garantovanom nájme hradíme upratovanie, energie aj prevádzku my. Opravy, ktoré s krátkodobým prenájmom nesúvisia ani ním neboli spôsobené, ostávajú na majiteľovi.' },
+  { q: 'Môžem byt používať aj ja?', a: 'Áno. Termíny, kedy bude byt pre vás, dohodneme v zmluve.' },
+];
+const star = 'M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z';
+const total = usual.reduce((a, s) => a + s.m, 0);
+---
+<Base title="Garantovaný prenájom bytu v Bratislave (návrh B)" breadcrumb="Garantovaný nájom" description="Návrh B stránky Garantovaný prenájom." noindex>
+  <!-- Hero: spoľahlivý nájomca, ukážka zmluvy s firmou ako dôkaz -->
+  <section class="wrap grid lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-14 pt-10 pb-14 lg:pt-14 lg:pb-20 items-center">
+    <div class="flex flex-col gap-6">
+      <h1 class="chip self-start">Garantovaný prenájom bytu v Bratislave</h1>
+      <p class="display text-[40px] sm:text-[50px] lg:text-[58px] leading-[1.05] font-bold tracking-[-0.025em] text-pretty">Nájomca, na ktorého <span class="text-accent">sa dá spoľahnúť.</span></p>
+      <p class="text-lg leading-relaxed text-ink-soft max-w-[560px]">Garantovaný prenájom je ako dlhodobý nájom, len s firmou namiesto neznámeho človeka. Byt si od vás prenajmeme na dohodnutú dobu a nájom vám platíme vopred, vždy k 15. dňu v mesiaci. Nehrozí, že po troch mesiacoch odídeme a vy budete znova hľadať.</p>
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
+        <a href="/kontakt" class="btn-primary">Chcem návrh nájmu</a>
+        <span class="text-sm text-ink-soft">Zadarmo a nezáväzne.<br class="hidden sm:block" /> Prídeme sa na byt pozrieť.</span>
+      </div>
+      <p class="flex items-center gap-3 pt-5 border-t border-sand text-sm leading-relaxed text-ink-soft">
+        <span class="w-9 h-9 rounded-full bg-sage text-white inline-flex items-center justify-center shrink-0" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d={star}></path></svg></span>
+        <span><b class="text-ink">4,89 z 5 na Airbnb · Superhost</b> · Booking 9,6 z 10<br />804 hodnotení hostí, verejné a overiteľné</span>
+      </p>
+    </div>
+    <div class="relative h-[440px] sm:h-[500px] lg:h-[540px]">
+      <div class="absolute top-0 right-0 w-[82%] h-[84%] rounded-[var(--radius-block)] overflow-hidden rotate-2 shadow-[var(--shadow-float)]">
+        <img src="/img/byt-castle-hill-terrace.avif" alt="Byt pod hradom v Bratislave" class="w-full h-full object-cover" width="1440" height="960" fetchpriority="high" decoding="async" />
+      </div>
+      <div class="absolute left-0 bottom-0 w-[min(340px,90%)] flex flex-col gap-3 p-6 bg-surface rounded-[var(--radius-card)] shadow-[var(--shadow-float)] -rotate-1">
+        <div class="flex items-center justify-between gap-3"><span class="display text-lg font-bold">Nájomná zmluva</span><span class="chip !py-1 !px-2.5 text-[12px]">ukážka</span></div>
+        <dl class="flex flex-col text-[14px]">
+          <div class="flex justify-between gap-4 py-2 border-b border-sand"><dt class="text-ink-muted">Nájomca</dt><dd class="font-bold text-right">Rental Partners s. r. o.</dd></div>
+          <div class="flex justify-between gap-4 py-2 border-b border-sand"><dt class="text-ink-muted">Doba</dt><dd class="font-bold text-right">dohodnutá vopred</dd></div>
+          <div class="flex justify-between gap-4 py-2"><dt class="text-ink-muted">Nájom</dt><dd class="font-bold text-right">vopred, k 15. dňu</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kolotoč nájomcov oproti jednej zmluve: jediný pohyb na stránke -->
+  <section class="bg-surface py-16 lg:py-24">
+    <div class="wrap">
+      <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-6 lg:gap-16 items-end">
+        <div class="flex flex-col gap-4">
+          <p class="eyebrow">Rozdiel</p>
+          <h2 class="text-[32px] md:text-[42px] font-bold tracking-[-0.02em] leading-[1.1] text-pretty">Jedna zmluva namiesto kolotoča nájomcov</h2>
+        </div>
+        <p class="text-[17px] leading-relaxed text-ink-soft">Pri bežnom nájme sa nájomcovia striedajú. Medzi nimi byt stojí prázdny a vy hľadáte, robíte obhliadky a podpisujete novú zmluvu. Pri garantovanom nájme podpíšete jednu zmluvu na dohodnutú dobu a nájom chodí každý mesiac.</p>
+      </div>
+      <figure class="mt-10 flex flex-col gap-6 p-6 md:p-10 bg-bg rounded-[var(--radius-block)]" data-chart>
+        <div class="flex items-center justify-between gap-3">
+          <span class="display text-lg font-bold">Dva roky prenájmu</span>
+          <span class="chip !bg-surface !py-1 !px-2.5 text-[12px]">ilustračný príklad</span>
+        </div>
+        <div class="grid md:grid-cols-[170px_1fr] gap-x-6 gap-y-2 items-center">
+          <span class="text-[15px] font-bold">Bežný nájom</span>
+          <div class="flex gap-1.5 h-14" aria-hidden="true">
+            {usual.map((s, i) => (
+              <span class:list={['seg flex items-center justify-center rounded-[10px] text-[12px] font-bold whitespace-nowrap overflow-hidden', s.kind === 'tenant' ? 'bg-sand-deep text-ink-soft' : 'border-2 border-dashed border-accent/60 text-accent']} style={`flex:${s.m};--i:${i}`}><span class:list={[s.kind === 'empty' && 'hidden sm:inline']}>{s.label}</span></span>
+            ))}
+          </div>
+          <span class="text-[15px] font-bold mt-4 md:mt-0">Garantovaný nájom</span>
+          <div class="flex h-14" aria-hidden="true">
+            <span class="seg flex-1 flex items-center justify-center rounded-[10px] bg-sage text-white text-[13px] font-bold" style="--i:6">jedna zmluva · nájom vopred každý mesiac</span>
+          </div>
+          <span class="hidden md:block"></span>
+          <div class="flex justify-between text-[11px] font-bold text-ink-muted" aria-hidden="true"><span>začiatok</span><span>12 mesiacov</span><span>{total} mesiacov</span></div>
+        </div>
+        <figcaption class="text-[13px] leading-relaxed text-ink-soft">Horný riadok ukazuje bežný dlhodobý nájom, keď sa nájomcovia striedajú a medzi nimi je byt prázdny. Spodný riadok je garantovaný nájom s jednou zmluvou. Ilustračný príklad, nie skutočné čísla.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Porovnanie: bežný nájomca oproti nám ako nájomcovi -->
+  <section class="wrap py-16 lg:py-24">
+    <p class="eyebrow">Porovnanie</p>
+    <h2 class="mt-2 text-[32px] md:text-[42px] font-bold tracking-[-0.02em] leading-[1.1] max-w-[760px] text-pretty">Bežný nájomca alebo my ako nájomca</h2>
+    <div class="mt-10 grid md:grid-cols-[1fr_1.25fr_1.25fr] text-[15px]">
+      <div class="hidden md:block"></div>
+      <div class="hidden md:flex items-center px-6 pt-6 pb-4 display text-lg font-bold text-ink-soft">Bežný nájomca</div>
+      <div class="hidden md:flex items-center px-6 pt-6 pb-4 bg-sage-soft rounded-t-[var(--radius-card)] display text-lg font-bold">Rental Partners</div>
+      {compare.map((c, i) => (
+        <>
+          <div class="pt-5 md:py-4 md:pr-6 font-bold md:border-t md:border-sand">{c.label}</div>
+          <div class="flex flex-col md:block gap-0.5 mt-2 md:mt-0 px-5 md:px-6 py-3 md:py-4 bg-surface md:bg-transparent rounded-t-[14px] md:rounded-none md:border-t md:border-sand text-ink-soft"><span class="md:hidden text-[12px] font-bold text-ink-muted">Bežný nájomca</span>{c.usual}</div>
+          <div class:list={['flex flex-col md:block gap-0.5 px-5 md:px-6 py-3 md:py-4 bg-sage-soft rounded-b-[14px] md:rounded-none font-semibold', i === compare.length - 1 && 'md:rounded-b-[var(--radius-card)] md:pb-6']}><span class="md:hidden text-[12px] font-bold text-sage">Rental Partners</span>{c.us}</div>
+        </>
+      ))}
+    </div>
+  </section>
+
+  <!-- Dôvera: firma, výsledky, človek -->
+  <section class="bg-sand py-16 lg:py-24">
+    <div class="wrap grid md:grid-cols-[0.85fr_1.15fr] gap-12 lg:gap-16 items-center">
+      <div class="relative h-[380px] md:h-[440px]">
+        <div class="absolute inset-y-0 left-0 w-[86%] rounded-[var(--radius-block)] overflow-hidden -rotate-2 shadow-[var(--shadow-float)]">
+          <img src="/img/tomas.webp" alt="Tomáš, zakladateľ Rental Partners" class="w-full h-full object-cover object-[50%_25%]" width="640" height="800" loading="lazy" />
+        </div>
+        <div class="absolute right-0 bottom-8 flex items-center gap-3 pl-4 pr-5 py-4 bg-surface rounded-[var(--radius-card)] shadow-[var(--shadow-float)]">
+          <span class="w-10 h-10 rounded-full bg-sage text-white inline-flex items-center justify-center shrink-0" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d={star}></path></svg></span>
+          <span><span class="display block text-lg font-bold leading-tight">Tomáš, zakladateľ</span><span class="block text-[13px] text-ink-soft">+421 903 989 040</span></span>
+        </div>
+      </div>
+      <div class="flex flex-col gap-6">
+        <p class="eyebrow">Dôvera</p>
+        <h2 class="text-[32px] md:text-[42px] font-bold tracking-[-0.02em] leading-[1.1] text-pretty">Viete, s kým podpisujete</h2>
+        <ul class="flex flex-col gap-5">
+          <li class="flex flex-col gap-1.5 pb-5 border-b border-bg/60"><span class="text-lg font-semibold">Firma, nie neznámy človek</span><span class="text-[15px] leading-relaxed text-ink-soft">Rental Partners s. r. o., IČO 57632499, sídlo Námestie 1. mája 8062/11, Bratislava. Údaje si overíte v obchodnom registri.</span></li>
+          <li class="flex flex-col gap-1.5 pb-5 border-b border-bg/60"><span class="text-lg font-semibold">Byty udržiavame vo výbornom stave</span><span class="text-[15px] leading-relaxed text-ink-soft">Hostia nás hodnotia 4,89 z 5 na Airbnb a 9,6 z 10 na Bookingu. Po každom pobyte byt skontrolujeme. <a href="/vysledky" class="font-bold text-accent-deep underline">Pozrieť hodnotenia</a></span></li>
+          <li class="flex flex-col gap-1.5"><span class="text-lg font-semibold">Hovoríte s konkrétnym človekom</span><span class="text-[15px] leading-relaxed text-ink-soft">Nie s call centrom. Tomáš byty pozná osobne a je na telefóne.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Čo dostanete -->
+  <section class="bg-surface py-16 lg:py-24">
+    <div class="wrap">
+      <p class="eyebrow">Čo dostanete</p>
+      <h2 class="mt-2 text-[32px] md:text-[42px] font-bold tracking-[-0.02em] leading-[1.1] max-w-[760px] text-pretty">Tri veci, s ktorými môžete počítať</h2>
+      <div class="mt-10 border-t border-sand">
+        {promises.map((p) => (
+          <div class="grid grid-cols-[88px_1fr] md:grid-cols-[180px_1fr_1fr] gap-x-6 md:gap-x-10 gap-y-2 py-7 md:py-9 border-b border-sand items-baseline">
+            <span class="display row-span-2 md:row-span-1 text-[44px] md:text-[72px] leading-none font-bold tracking-[-0.03em] text-accent">{p.n}</span>
+            <h3 class="text-xl md:text-[24px] font-semibold leading-snug">{p.t}</h3>
+            <p class="text-[15px] md:text-base leading-relaxed text-ink-soft">{p.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Postup -->
+  <section class="wrap py-16 lg:py-24">
+    <p class="eyebrow">Postup</p>
+    <h2 class="mt-2 text-[32px] md:text-[42px] font-bold tracking-[-0.02em] leading-[1.1]">Ako určíme výšku nájmu</h2>
+    <p class="mt-4 text-[17px] leading-relaxed text-ink-soft max-w-[620px]">Suma je individuálna. Vychádza z trhových hodnôt nájmu v lokalite a zo stavu bytu.</p>
+    <div class="relative mt-12">
+      <span class="hidden lg:block absolute top-[22px] left-[22px] right-[12%] h-[2px] bg-sand" aria-hidden="true"></span>
+      <ol class="relative grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+        {steps.map((s, i) => (
+          <li class="flex flex-col gap-3">
+            <span class:list={['display w-11 h-11 rounded-full text-[15px] font-semibold flex items-center justify-center', i === steps.length - 1 ? 'bg-accent text-white' : 'bg-ink text-bg']} aria-hidden="true">{i + 1}</span>
+            <h3 class="text-lg font-semibold leading-snug">{s.t}</h3>
+            <p class="text-[15px] leading-relaxed text-ink-soft max-w-[260px]">{s.d}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+    <p class="flex items-start gap-3 mt-12 p-5 bg-sage-soft rounded-[var(--radius-card)] max-w-[640px] text-[15px] leading-relaxed">
+      <svg class="shrink-0 mt-0.5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6e8b6a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+      <span><b>Nezariadený byt?</b> Aj ten vieme vziať. Podmienky dohodneme individuálne.</span>
+    </p>
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mt-6 px-7 py-6 bg-surface rounded-[var(--radius-card)]">
+      <p class="text-[15px] leading-relaxed"><b>Chcete z bytu vyťažiť maximum</b> a zvládnete, že sa príjem mesiac od mesiaca líši? Lepšia bude správa bytu za 10 %.</p>
+      <a href="/sluzby" class="link-inline whitespace-nowrap shrink-0">Pozrieť správu bytu →</a>
+    </div>
+  </section>
+
+  <!-- Otázky -->
+  <section class="bg-surface py-16 lg:py-24">
+    <div class="wrap grid lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-16">
+      <div class="flex flex-col gap-4 lg:sticky lg:top-8 self-start">
+        <p class="eyebrow">Otázky</p>
+        <h2 class="text-[32px] md:text-[42px] font-bold tracking-[-0.02em] leading-[1.1] text-pretty">Na čo sa majitelia pýtajú</h2>
+        <p class="text-[15px] leading-relaxed text-ink-soft">Odpoveď ste nenašli? Zavolajte Tomášovi na <a href="tel:+421903989040" class="font-bold text-ink whitespace-nowrap">+421 903 989 040</a>.</p>
+      </div>
+      <div class="border-t border-sand">
+        {faq.map((f, i) => (
+          <details class="faq group border-b border-sand" open={i === 0}>
+            <summary class="flex items-center justify-between gap-6 py-5 cursor-pointer list-none text-lg font-semibold">
+              {f.q}
+              <span class="w-9 h-9 rounded-full bg-sand inline-flex items-center justify-center shrink-0 transition-transform group-open:rotate-45" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span>
+            </summary>
+            <p class="pb-6 pr-14 text-[15px] md:text-base leading-relaxed text-ink-soft">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Cta text="Pripravíme vám návrh nájmu pre váš byt." />
+</Base>
+
+<style>
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; border-radius: 8px; }
+  .seg { transform-origin: left center; }
+  [data-chart][data-armed] .seg { transform: scaleX(0); opacity: 0; }
+  [data-chart].is-in .seg { transform: scaleX(1); opacity: 1; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease-out; transition-delay: calc(var(--i) * 160ms); }
+</style>
+
+<script>
+  // Graf je viditeľný aj bez skriptu. Animácia sa zapne len pri podpore IntersectionObserver a bez preferencie obmedzeného pohybu.
+  const charts = document.querySelectorAll<HTMLElement>('[data-chart]');
+  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('is-in');
+      io.unobserve(e.target);
+    }), { threshold: 0.35 });
+    charts.forEach((c) => { c.setAttribute('data-armed', ''); io.observe(c); });
+  }
+</script>
