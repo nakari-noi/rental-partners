@@ -15,7 +15,7 @@ faq:
   - q: "Môžem byt používať aj ja?"
     a: "Áno. Pri správe aj pri garantovanom nájme si byt môžete blokovať pre seba. Ako často a s akým predstihom, dohodneme prípad od prípadu."
   - q: "Čo je register krátkodobých prenájmov?"
-    a: "Nový register podľa zákona č. 133/2026 Z. z., ktorý platí od 1. januára 2027. Každý byt na krátkodobý prenájom v ňom musí byť zapísaný a inzerát musí mať registračné číslo. Kto už prenajíma, má čas do 28. februára 2027."
+    a: "Nový register podľa zákona č. 133/2026 Z. z., ktorý platí od 1. januára 2027. Každý byt na krátkodobý prenájom v ňom musí byť zapísaný a bez registračného čísla sa nesmie ponúkať. Kto už prenajíma, má čas do 28. februára 2027."
 ---
 
 Krátkodobý prenájom bytu znamená, že byt neprenajímate jednému nájomcovi na rok, ale hosťom na niekoľko nocí cez Airbnb a Booking. V Bratislave to dáva zmysel najmä v centre a v jeho okolí, kam prichádzajú turisti, ľudia na služobných cestách aj návštevy za rodinou.
@@ -61,7 +61,7 @@ Kľúče sú v schránke na kľúče alebo v bezpečnostnom boxe. Hosť dostane 
 
 Krátkodobý prenájom má na Slovensku niekoľko povinností, ktoré sa oplatí poznať vopred.
 
-**Register krátkodobých prenájmov.** Od 1. januára 2027 platí zákon č. 133/2026 Z. z. o krátkodobom prenájme nehnuteľností. Každý byt, ktorý sa prenajíma na krátky čas, bude musieť byť zapísaný v registri a inzerát bude musieť mať registračné číslo. Kto už prenajíma, má na registráciu čas do 28. februára 2027. Od 1. marca 2027 hrozia za prevádzku bez registrácie pokuty. Podrobnosti pripravujeme v samostatnom článku.
+**Register krátkodobých prenájmov.** Od 1. januára 2027 platí zákon č. 133/2026 Z. z. Každý byt, ktorý sa cez platformu prenajíma na menej ako rok, bude musieť byť zapísaný v registri a bez registračného čísla sa nebude smieť ponúkať. Kto už prenajíma, má na registráciu čas do 28. februára 2027. Od 1. marca 2027 hrozia za prevádzku bez registrácie pokuty. Podrobne to rozoberáme v článku [Register krátkodobých prenájmov: čo urobiť do 28. februára 2027](/blog/register-kratkodobych-prenajmov).
 
 **Dane.** Príjem z krátkodobého prenájmu sa zdaňuje. Či potrebujete živnosť a ako je to s DPH, závisí od toho, aké služby hosťom poskytujete. Je to najčastejšia otázka majiteľov a téma na samostatný článok.
 

@@ -17,11 +17,30 @@ const services = [
     text: 'Kvapkajúci kohútik, zaseknutý zámok, vypálená žiarovka. Riešime ich hneď, keď to zbadáme, nie až po vašom telefonáte.',
     points: ['Drobné opravy', 'Koordinácia remeselníkov pri väčších poruchách', 'Pravidelná kontrola bytu'] },
 ];
+// Postup od prvého stretnutia po vyúčtovanie. Fakty z docs/fakty.md a docs/texty.md, nič navyše.
+const steps = [
+  { t: 'Stretnutie v byte', d: 'Prídeme sa na byt pozrieť a pripravíme odhad výnosu. Zadarmo a nezáväzne.' },
+  { t: 'Zmluva', d: 'Podpíšeme zmluvu o správe bytu. Podmienky prejdeme spolu, výpovedná lehota je 30 dní.' },
+  { t: 'Fotky, inzeráty a ceny', d: 'Byt nafotíme, napíšeme texty v slovenčine aj angličtine, založíme profily na Airbnb a Booking a nastavíme ceny podľa sezóny.' },
+  { t: 'Prvý hosť', d: 'Zvyčajne 2 dni až týždeň od podpisu zmluvy.' },
+  { t: 'Každý pobyt', d: 'Odpovedáme na správy a posielame pokyny k príchodu. Kľúče sú v schránke na kľúče alebo v boxe. Počas pobytu riešime všetko, čo hosť potrebuje.' },
+  { t: 'Po odchode hosťa', d: 'Byt upraceme, vymeníme posteľnú bielizeň a uteráky, doplníme, čo chýba, a skontrolujeme jeho stav. Postaráme sa aj o recenzie.' },
+  { t: 'Koniec mesiaca', d: 'Dostanete prehľad príjmov, rezervácií a obsadenosti. Peniaze prídu do 10. dňa nasledujúceho mesiaca.' },
+];
+// Otázky majiteľov k správe bytu: na stránke aj v štruktúrovaných dátach (FAQPage)
+const faq = [
+  { q: 'Kto platí opravy?', a: 'Menšie opravy hradíme my. Pri väčších opravách záleží na tom, čím a ako vznikli.' },
+  { q: 'Čo ak hosť niečo poškodí?', a: 'Škody nie sú také časté, ako si ľudia myslia, ale stávajú sa. Väčšinou ich vyriešime sami tak, že to vy riešiť nemusíte.' },
+  { q: 'Kto platí energie a internet?', a: 'Pri správe bytu energie, internet, spotrebný materiál a poplatky platforiem hradí majiteľ. Menšie opravy hradíme my.' },
+  { q: 'Ako rýchlo príde prvý hosť?', a: 'Zvyčajne 2 dni až týždeň od podpisu zmluvy.' },
+  { q: 'Môžem byt používať aj ja?', a: 'Áno. Ako často a s akým predstihom si ho zablokujete, dohodneme prípad od prípadu.' },
+  { q: 'Na ktorých platformách byt inzerujete?', a: 'Na Airbnb a Booking, podľa bytu aj na ďalších platformách.' },
+];
 ---
-<Base title="Služby správy bytu na Airbnb a Booking" breadcrumb="Služby" service={{ name: 'Správa bytu na Airbnb a Booking', serviceType: 'Správa krátkodobého prenájmu', description: 'Fotenie, inzeráty a ceny, komunikácia s hosťami, upratovanie, údržba a mesačné vyúčtovanie bytu na krátkodobý prenájom v Bratislave za 10 % z obratu.' }} description="Fotenie, inzeráty a ceny, komunikácia s hosťami, upratovanie, údržba a vyúčtovanie. Všetko, čo pri krátkodobom prenájme bytu v Bratislave preberáme za vás.">
+<Base title="Služby správcu Airbnb v Bratislave" breadcrumb="Služby" faq={faq} service={{ name: 'Správa bytu na Airbnb a Booking', serviceType: 'Správa krátkodobého prenájmu', description: 'Fotenie, inzeráty a ceny, komunikácia s hosťami, upratovanie, údržba a mesačné vyúčtovanie bytu na krátkodobý prenájom v Bratislave za 10 % z obratu.' }} description="Čo robí správca Airbnb: fotenie, inzeráty a ceny, komunikácia s hosťami, upratovanie, údržba a mesačné vyúčtovanie. Správa bytu v Bratislave za 10 %.">
   <section class="wrap pt-10 pb-8 lg:pt-14">
-    <span class="chip">Služby</span>
-    <h1 class="mt-5 text-[38px] md:text-[52px] leading-[1.08] font-bold tracking-[-0.02em] max-w-[820px] text-pretty">Od prvej fotky po posledné upratovanie</h1>
+    <h1 class="chip">Služby správcu Airbnb a Booking v Bratislave</h1>
+    <p class="display mt-5 text-[38px] md:text-[52px] leading-[1.08] font-bold tracking-[-0.02em] max-w-[820px] text-pretty">Od prvej fotky po posledné upratovanie</p>
     <p class="mt-5 text-lg leading-relaxed text-ink-soft max-w-[640px]">Päť vecí, ktoré by ste pri krátkodobom prenájme riešili každý týždeň, od fotenia po vyúčtovanie. Preberáme ich všetky, pri správe bytu aj pri garantovanom nájme.</p>
   </section>
 
@@ -61,6 +80,34 @@ const services = [
       <div class="flex justify-between gap-4 py-2.5 border-b border-sand text-[15px]"><span>Odmena Rental Partners (10 %)</span><b class="whitespace-nowrap">− 200 €</b></div>
       <div class="flex justify-between gap-4 py-3 text-[17px]"><b>Zostáva vám</b><b class="display text-sage whitespace-nowrap">1 800 €</b></div>
       <p class="text-[12px] leading-relaxed text-ink-muted">Pri garantovanom nájme vyúčtovanie odpadá, dostávate dohodnutú sumu.</p>
+    </div>
+  </section>
+
+  <section class="bg-surface py-14 lg:py-16">
+    <div class="wrap">
+      <p class="eyebrow">Postup</p>
+      <h2 class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">Ako správa bytu funguje v praxi</h2>
+      <p class="mt-3 text-[17px] leading-relaxed text-ink-soft max-w-[680px]">Od prvého stretnutia po mesačné vyúčtovanie. Takto to prebieha pri každom byte, ktorý spravujeme na Airbnb a Booking.</p>
+      <ol class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+        {steps.map((s, i) => (
+          <li class="flex flex-col gap-2.5 p-5 bg-bg rounded-[var(--radius-card)]">
+            <span class="display w-9 h-9 rounded-full bg-ink text-bg text-[14px] font-semibold flex items-center justify-center" aria-hidden="true">{i + 1}</span>
+            <h3 class="text-lg font-semibold leading-snug">{s.t}</h3>
+            <p class="text-[15px] leading-relaxed text-ink-soft">{s.d}</p>
+          </li>
+        ))}
+      </ol>
+      <p class="mt-7 text-[15px] leading-relaxed text-ink-soft max-w-[720px]">Koľko správa stojí a ako sa líši od garantovaného nájmu, nájdete v <a href="/cennik" class="font-bold text-accent-deep underline">cenníku</a>. Ako sa našim bytom darí, ukazujú <a href="/vysledky" class="font-bold text-accent-deep underline">hodnotenia hostí</a>.</p>
+    </div>
+  </section>
+
+  <section class="wrap py-14 lg:py-16">
+    <p class="eyebrow">Otázky</p>
+    <h2 class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">Na čo sa majitelia pýtajú pri správe bytu</h2>
+    <div class="grid md:grid-cols-2 gap-5 mt-7">
+      {faq.map((f) => (
+        <div class="p-6 bg-surface rounded-[var(--radius-card)]"><h3 class="text-lg font-semibold">{f.q}</h3><p class="mt-2 text-[15px] leading-relaxed text-ink-soft">{f.a}</p></div>
+      ))}
     </div>
   </section>
 
