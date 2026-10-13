@@ -145,7 +145,7 @@
 
 **Search Console:** 13. 10. vyžiadané indexovanie 10 stránok a znova odoslaná sitemap. **Okolo 20. 10. skontrolovať index** (Startpage `site:rentalpartners.sk` alebo Search Console cez MCP `chrome-moj`; vo vlastnom Chrome treba zapnúť `chrome://inspect/#remote-debugging`, po práci vypnúť).
 
-**14. 10. popoludní (návrh):** karty modelov na Domove (SK aj EN) sú celé klikateľné (vo vetve, ide s nasadením). **Návrh nového Domova** na `/navrh/domov` (noindex, mimo sitemapy, s nasadením by išiel len ako skrytá stránka): úvod a animácie bez zmeny, nové sekcie „Ktorá situácia je vaša?“ (3 klikateľné situácie → odporúčaný model), modely, recenzie presunuté za voľbu, „Tri kroky a rozhodnutie je na vás“, služby, upozornenie na register 28. 2. 2027. **Čaká na schválenie** → ak áno, preniesť do `src/pages/index.astro` (+ EN) a `/navrh/domov` zmazať.
+**14. 10. popoludní (návrh):** karty modelov na Domove (SK aj EN) sú celé klikateľné (vo vetve, ide s nasadením). **Návrh nového Domova** na `/navrh/domov` (noindex, mimo sitemapy, s nasadením by išiel len ako skrytá stránka): poradie schválené: úvod (bez zmeny) → pás recenzií (ostáva hore) → Dva spôsoby → „Ktorý spôsob je pre vás?“ (3 klikateľné situácie) → „Tri kroky a rozhodnutie je na vás“ → služby → CTA. Medzery zjednotené (pásy `py-16 lg:py-24`, nadpis → obsah `mt-10`), na mobile kompaktné služby. **Upútavka na článok o registri z Domova odstránená:** majiteľ ešte rozhodne; článok ostáva v blogu a ide s nasadením. **Čaká na finálne schválenie** → potom preniesť do `src/pages/index.astro` (+ EN) a `/navrh/domov` zmazať.
 
 ## Ako pokračovať zajtra
 
