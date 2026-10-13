@@ -18,11 +18,15 @@
 | `--sand-deep` | `#dccbb0` | placeholder fotiek, oddeľovače |
 | `--ink` | `#2b2118` | text, tmavé tlačidlá, pätička |
 | `--ink-soft` | `#6b5b4e` | sekundárny text |
-| `--ink-muted` | `#8a7a68` | popisky, pomocný text |
-| `--accent` | `#c9694a` | terakota — primárne tlačidlo, zvýraznené slovo, ikony |
-| `--accent-deep` | `#a8533a` | hover terakoty |
+| `--ink-muted` | `#756553` | popisky, pomocný text na svetlom pozadí (na tmavom `--cream-muted`) |
+| `--accent` | `#c9694a` | terakota: veľké zvýraznené slovo a čísla (od 24 px), plochy, ikony, grafy |
+| `--accent-deep` | `#9a4a33` | terakota na text a tlačidlá: primárne tlačidlo, odkazy, štítky nad nadpismi, malý text (WCAG AA aj na pieskovej) |
+| `--accent-deeper` | `#82402c` | hover tlačidla a odkazov |
 | `--sage` | `#6e8b6a` | šalviová — hodnotenia, potvrdenia, „hotovo" |
 | `--sage-soft` | `#e3eadf` | pozadie šalviových štítkov |
+| `--sage-deep` | `#4b6749` | šalviový malý text a štítky s bielym textom (WCAG AA) |
+
+**Kontrast (13. 10. 2026):** text pod 24 px (pod 18,66 px tučne) musí mať aspoň 4,5 : 1. Svetlá terakota `--accent` a `--sage` na malý text nestačia, preto `-deep` varianty. Kontrola: `node web/test-results/_axe.mjs` pri bežiacom náhľade (0 problémov na 19 stránkach).
 
 Pravidlo: terakota = akcia a dôraz; šalviová = dôkaz a potvrdenie. Nikdy obe na jednom prvku.
 

@@ -32,7 +32,7 @@ const barColorA = (h: number) => (h >= 100 ? 'var(--color-accent)' : h >= 84 ? '
     <button type="button" class="model-card model-a text-left flex flex-col gap-4 p-7 md:p-9 bg-surface rounded-[var(--radius-block)]" role="tab" aria-pressed="true" aria-selected="true" aria-controls="detail-a" data-model="a">
       <div class="flex flex-wrap items-center justify-between gap-2">
         <span class="display text-2xl font-bold">Správa bytu</span>
-        <span class="chip !bg-accent !text-white whitespace-nowrap hidden lg:inline-flex" data-tag="a">Vybrané</span>
+        <span class="chip !bg-accent-deep !text-white whitespace-nowrap hidden lg:inline-flex" data-tag="a">Vybrané</span>
       </div>
       <div class="flex items-baseline gap-3"><span class="display text-[84px] lg:text-[112px] leading-[0.92] font-bold tracking-[-0.04em] text-accent whitespace-nowrap">10 %</span><span class="display text-[22px] font-semibold">z obratu</span></div>
       <div class="flex items-end gap-1.5 h-[72px]" aria-hidden="true" title="Ilustračne: výnos podľa sezóny">
@@ -45,7 +45,7 @@ const barColorA = (h: number) => (h >= 100 ? 'var(--color-accent)' : h >= 84 ? '
     <button type="button" class="model-card model-b text-left flex flex-col gap-4 p-7 md:p-9 bg-ink text-bg rounded-[var(--radius-block)]" role="tab" aria-pressed="false" aria-selected="false" aria-controls="detail-b" data-model="b">
       <div class="flex flex-wrap items-center justify-between gap-2">
         <span class="display text-2xl font-bold text-bg">Garantovaný nájom</span>
-        <span class="chip !bg-bg/15 !text-[#d9ccbb] whitespace-nowrap hidden lg:inline-flex" data-tag="b">Zobraziť detaily</span>
+        <span class="chip !bg-bg/15 !text-[#ebe2d4] whitespace-nowrap hidden lg:inline-flex" data-tag="b">Zobraziť detaily</span>
       </div>
       <div class="display text-[40px] lg:text-[54px] leading-[1.02] font-bold tracking-[-0.03em] text-bg py-2.5">Pevná suma<br />každý mesiac</div>
       <div class="flex items-end gap-1.5 h-[72px]" aria-hidden="true" title="Ilustračne: rovnaká suma každý mesiac">
@@ -73,8 +73,8 @@ const barColorA = (h: number) => (h >= 100 ? 'var(--color-accent)' : h >= 84 ? '
       </div>
       <p class="mt-2 mb-4 text-sm leading-relaxed text-ink-soft">Čísla sú ilustračné. Reálny odhad pre váš byt urobíme na stretnutí podľa lokality, veľkosti a sezóny.</p>
       <div class="flex justify-between gap-4 py-3.5 border-b border-sand-deep"><span>Príjmy z pobytov za mesiac</span><b class="whitespace-nowrap">2 000 €</b></div>
-      <div class="flex justify-between gap-4 py-3.5 border-b border-sand-deep"><span>Odmena Rental Partners · 10 %</span><b class="text-accent whitespace-nowrap">− 200 €</b></div>
-      <div class="flex justify-between items-center gap-4 pt-4"><b class="display text-xl">Zostáva vám</b><b class="display text-[30px] text-sage whitespace-nowrap">1 800 €</b></div>
+      <div class="flex justify-between gap-4 py-3.5 border-b border-sand-deep"><span>Odmena Rental Partners · 10 %</span><b class="text-accent-deep whitespace-nowrap">− 200 €</b></div>
+      <div class="flex justify-between items-center gap-4 pt-4"><b class="display text-xl">Zostáva vám</b><b class="display text-[30px] text-sage-deep whitespace-nowrap">1 800 €</b></div>
     </div>
   </section>
 
@@ -103,7 +103,7 @@ const barColorA = (h: number) => (h >= 100 ? 'var(--color-accent)' : h >= 84 ? '
   <section class="bg-surface py-14 lg:py-16">
     <div class="wrap grid md:grid-cols-2 gap-10 lg:gap-14">
       <div>
-        <p class="text-[13px] font-bold tracking-[0.04em] uppercase text-sage">Vždy v cene</p>
+        <p class="text-[13px] font-bold tracking-[0.04em] uppercase text-sage-deep">Vždy v cene</p>
         <ul class="flex flex-col gap-3 mt-4">
           <Check>Fotenie bytu, inzeráty a texty SK / EN</Check>
           <Check>Komunikácia s hosťami, check-in a check-out</Check>
@@ -145,9 +145,9 @@ const barColorA = (h: number) => (h >= 100 ? 'var(--color-accent)' : h >= 84 ? '
           {cells.map((c) => (
             <div class="flex justify-center">
               {c === 'yes' && <span class="h-6 min-w-6 px-1.5 rounded-full bg-sage-soft text-sage inline-flex items-center justify-center" aria-label="áno"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>}
-              {c === 'no' && <span class="h-6 min-w-6 px-1.5 rounded-full bg-sand text-ink-muted inline-flex items-center justify-center" aria-label="nie"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span>}
-              {c === 'VY' && <span class="h-6 min-w-6 px-2 rounded-full bg-sand text-ink-muted inline-flex items-center justify-center text-[10px] font-extrabold tracking-[0.02em]">VY</span>}
-              {c === 'MY' && <span class="h-6 min-w-6 px-2 rounded-full bg-sage-soft text-sage inline-flex items-center justify-center text-[10px] font-extrabold tracking-[0.02em]">MY</span>}
+              {c === 'no' && <span class="h-6 min-w-6 px-1.5 rounded-full bg-sand text-ink-soft inline-flex items-center justify-center" aria-label="nie"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span>}
+              {c === 'VY' && <span class="h-6 min-w-6 px-2 rounded-full bg-sand text-ink-soft inline-flex items-center justify-center text-[10px] font-extrabold tracking-[0.02em]">VY</span>}
+              {c === 'MY' && <span class="h-6 min-w-6 px-2 rounded-full bg-sage-soft text-sage-deep inline-flex items-center justify-center text-[10px] font-extrabold tracking-[0.02em]">MY</span>}
             </div>
           ))}
         </div>

@@ -56,7 +56,7 @@ const total = usual.reduce((a, s) => a + s.m, 0);
         <span class="text-sm text-ink-soft">Free and without obligation.<br class="hidden sm:block" /> We come to see the flat.</span>
       </div>
       <p class="flex items-center gap-3 pt-5 border-t border-sand text-sm leading-relaxed text-ink-soft">
-        <span class="w-9 h-9 rounded-full bg-sage text-white inline-flex items-center justify-center shrink-0" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d={star}></path></svg></span>
+        <span class="w-9 h-9 rounded-full bg-sage-deep text-white inline-flex items-center justify-center shrink-0" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d={star}></path></svg></span>
         <span><b class="text-ink">4.89 out of 5 on Airbnb · Superhost</b> · Booking 9.6 out of 10<br />804 guest reviews, public and verifiable</span>
       </p>
     </div>
@@ -93,12 +93,12 @@ const total = usual.reduce((a, s) => a + s.m, 0);
           <span class="text-[15px] font-bold">Ordinary let</span>
           <div class="flex gap-1.5 h-14" aria-hidden="true">
             {usual.map((s, i) => (
-              <span class:list={['seg flex items-center justify-center rounded-[10px] text-[12px] font-bold whitespace-nowrap overflow-hidden', s.kind === 'tenant' ? 'bg-sand-deep text-ink-soft' : 'border-2 border-dashed border-accent/60 text-accent']} style={`flex:${s.m};--i:${i}`}><span class:list={[s.kind === 'empty' && 'hidden sm:inline']}>{s.label}</span></span>
+              <span class:list={['seg flex items-center justify-center rounded-[10px] text-[12px] font-bold whitespace-nowrap overflow-hidden', s.kind === 'tenant' ? 'bg-sand-deep text-ink' : 'border-2 border-dashed border-accent/60 text-accent-deep']} style={`flex:${s.m};--i:${i}`}><span class:list={[s.kind === 'empty' && 'hidden sm:inline']}>{s.label}</span></span>
             ))}
           </div>
           <span class="text-[15px] font-bold mt-4 md:mt-0">Guaranteed rent</span>
           <div class="flex h-14" aria-hidden="true">
-            <span class="seg flex-1 flex items-center justify-center rounded-[10px] bg-sage text-white text-[13px] font-bold" style="--i:6">one contract · rent in advance every month</span>
+            <span class="seg flex-1 flex items-center justify-center rounded-[10px] bg-sage-deep text-white text-[13px] font-bold" style="--i:6">one contract · rent in advance every month</span>
           </div>
           <span class="hidden md:block"></span>
           <div class="flex justify-between text-[11px] font-bold text-ink-muted" aria-hidden="true"><span>start</span><span>12 months</span><span>{total} months</span></div>
@@ -119,7 +119,7 @@ const total = usual.reduce((a, s) => a + s.m, 0);
         <>
           <div class="pt-5 md:py-4 md:pr-6 font-bold md:border-t md:border-sand">{c.label}</div>
           <div class="flex flex-col md:block gap-0.5 mt-2 md:mt-0 px-5 md:px-6 py-3 md:py-4 bg-surface md:bg-transparent rounded-t-[14px] md:rounded-none md:border-t md:border-sand text-ink-soft"><span class="md:hidden text-[12px] font-bold text-ink-muted">Ordinary tenant</span>{c.usual}</div>
-          <div class:list={['flex flex-col md:block gap-0.5 px-5 md:px-6 py-3 md:py-4 bg-sage-soft rounded-b-[14px] md:rounded-none font-semibold', i === compare.length - 1 && 'md:rounded-b-[var(--radius-card)] md:pb-6']}><span class="md:hidden text-[12px] font-bold text-sage">Rental Partners</span>{c.us}</div>
+          <div class:list={['flex flex-col md:block gap-0.5 px-5 md:px-6 py-3 md:py-4 bg-sage-soft rounded-b-[14px] md:rounded-none font-semibold', i === compare.length - 1 && 'md:rounded-b-[var(--radius-card)] md:pb-6']}><span class="md:hidden text-[12px] font-bold text-sage-deep">Rental Partners</span>{c.us}</div>
         </>
       ))}
     </div>
@@ -132,7 +132,7 @@ const total = usual.reduce((a, s) => a + s.m, 0);
           <img src="/img/tomas.webp" alt="Tomáš, founder of Rental Partners" class="w-full h-full object-cover object-[50%_25%]" width="640" height="800" loading="lazy" />
         </div>
         <div class="absolute right-0 bottom-8 flex items-center gap-3 pl-4 pr-5 py-4 bg-surface rounded-[var(--radius-card)] shadow-[var(--shadow-float)]">
-          <span class="w-10 h-10 rounded-full bg-sage text-white inline-flex items-center justify-center shrink-0" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d={star}></path></svg></span>
+          <span class="w-10 h-10 rounded-full bg-sage-deep text-white inline-flex items-center justify-center shrink-0" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d={star}></path></svg></span>
           <span><span class="display block text-lg font-bold leading-tight">Tomáš, founder</span><span class="block text-[13px] text-ink-soft">+421 903 989 040</span></span>
         </div>
       </div>

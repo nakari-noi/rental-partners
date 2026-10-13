@@ -18,6 +18,8 @@ export default defineConfig({
   // Doména je pripojená ako www (apex presmeruje 308 → www), preto kanonické adresy používajú www
   site: 'https://www.rentalpartners.sk',
   trailingSlash: 'never',
+  // CSS priamo v stránke: bez samostatnej požiadavky, ktorá blokuje vykreslenie (LCP na mobile)
+  build: { inlineStylesheets: 'always' },
   integrations: [
     sitemap({
       // 404 nepatrí do sitemapy

@@ -122,7 +122,7 @@
 
 ## ▶ KDE SME SKONČILI 13. 10. 2026 VEČER (pokračovať presne tu)
 
-**SEO audit claude-seo (13. 10.): skóre 84/100, správa [`docs/rentalpartners.sk-audit/FULL-AUDIT-REPORT.md`](rentalpartners.sk-audit/FULL-AUDIT-REPORT.md), plán [`ACTION-PLAN.md`](rentalpartners.sk-audit/ACTION-PLAN.md).** Na webe: bezpečnostné hlavičky, štruktúrované dáta (hodiny, sameAs, url ponúk), kontrast farieb (návrh), LCP animácia, llms.txt. Mimo webu: recenzie Google, index, odkazy.
+**SEO audit claude-seo (13. 10.): skóre 84/100, správa [`docs/rentalpartners.sk-audit/FULL-AUDIT-REPORT.md`](rentalpartners.sk-audit/FULL-AUDIT-REPORT.md), plán [`ACTION-PLAN.md`](rentalpartners.sk-audit/ACTION-PLAN.md).** **Opravené vo vetve 13. 10. (čaká na „nasaď“):** bezpečnostné hlavičky a presmerovanie /index.html (vercel.json), ponuky v štruktúrovaných dátach na /sluzby a /garantovany-prenajom, písma Outfit a Nunito Sans u nás namiesto Google Fonts (len latin a latin-ext), CSS priamo v stránke, text úvodu bez animácie priehľadnosti (LCP na náhľade, mobil so spomalením: 2,49 s → 1,12 s), kontrast WCAG AA (accent-deep #9a4a33, nový sage-deep #4b6749, ink-muted #756553, pätička cream-muted; axe 0 problémov na 19 stránkach), /llms.txt. **Otváracie hodiny do štruktúrovaných dát nedávať (pokyn klienta).** Chýba odkaz na Google profil pre sameAs (od klienta). Mimo webu: recenzie Google, index, odkazy.
 
 **Blog: plán v [`docs/plan-blogu.md`](plan-blogu.md).** Klient vybral články 1, 2, 6, 7, 10, 11 (každý druhý utorok od 27. 10. 2026), článok 8 len v pozitívnej podobe po súhlase, 3, 4, 5 (dane) a 9 (Airbnb alebo Booking) vyradené. Ďalší krok: napísať článok 1 (Garantovaný prenájom alebo správa) ako koncept vo vetve.
 

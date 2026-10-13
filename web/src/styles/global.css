@@ -8,14 +8,18 @@
   --color-sand-deep: #dccbb0;
   --color-ink: #2b2118;
   --color-ink-soft: #6b5b4e;
-  --color-ink-muted: #8a7a68;
+  --color-ink-muted: #756553;
   --color-cream-muted: #b8a99a;
   --color-accent: #c9694a;
-  --color-accent-deep: #a8533a;
+  /* accent-deep: text, odkazy a tlačidlá (WCAG AA aj na pieskovej), accent ostáva na veľké nadpisy a plochy */
+  --color-accent-deep: #9a4a33;
+  --color-accent-deeper: #82402c;
   --color-accent-soft: #e0a58c;
   --color-sage: #6e8b6a;
   --color-sage-light: #8fb08a;
   --color-sage-soft: #e3eadf;
+  /* sage-deep: malý text a štítky s bielym textom (WCAG AA), sage ostáva na ikony a plochy */
+  --color-sage-deep: #4b6749;
   --font-display: "Outfit", "Trebuchet MS", "Segoe UI", sans-serif;
   --font-body: "Nunito Sans", "Segoe UI", Arial, sans-serif;
   --radius-chip: 999px;
@@ -41,17 +45,19 @@
   @media (min-width: 768px) { .wrap { padding-inline: 40px; } }
   @media (min-width: 1100px) { .wrap { padding-inline: 64px; } }
 
-  .eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent); }
-  .btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 17px 30px; background: var(--color-accent); color: #fff; border-radius: var(--radius-chip); font-size: 15px; font-weight: 700; transition: background .2s ease, transform .2s ease; }
-  .btn-primary:hover { background: var(--color-accent-deep); transform: translateY(-1px); }
+  .eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-deep); }
+  .btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 17px 30px; background: var(--color-accent-deep); color: #fff; border-radius: var(--radius-chip); font-size: 15px; font-weight: 700; transition: background .2s ease, transform .2s ease; }
+  .btn-primary:hover { background: var(--color-accent-deeper); transform: translateY(-1px); }
   .btn-dark { display: inline-flex; align-items: center; justify-content: center; padding: 12px 22px; background: var(--color-ink); color: var(--color-bg); border-radius: var(--radius-chip); font-size: 14px; font-weight: 700; }
   .chip { font-family: var(--font-body); display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--color-sand); border-radius: var(--radius-chip); font-size: 13px; font-weight: 700; color: var(--color-ink-soft); }
-  .link-inline { display: inline-flex; align-items: center; gap: 6px; padding-block: 8px; font-weight: 700; color: var(--color-accent); }
+  .link-inline { display: inline-flex; align-items: center; gap: 6px; padding-block: 8px; font-weight: 700; color: var(--color-accent-deep); }
   .skip-link { position: absolute; left: 16px; top: -100px; z-index: 50; padding: 10px 16px; background: var(--color-ink); color: var(--color-bg); border-radius: 999px; font-weight: 700; }
   .skip-link:focus { top: 16px; }
 
   /* Motion (respects reduced motion) */
   .reveal { animation: rp-fade-up .7s ease-out both; }
+  /* Text úvodu len vystúpi, bez priehľadnosti: je viditeľný hneď a Google ho počíta ako vykreslený (LCP) */
+  .reveal.no-fade { animation-name: rp-rise; }
   .reveal-1 { animation-delay: .1s; } .reveal-2 { animation-delay: .25s; } .reveal-3 { animation-delay: .4s; } .reveal-4 { animation-delay: .55s; }
 
   /* Rotating word in the home headline — window is one line high plus room for descenders */
@@ -79,7 +85,7 @@
   .model-card[aria-pressed="true"].model-a { box-shadow: 0 0 0 3px var(--color-accent), 0 18px 40px rgba(43, 33, 24, 0.14); }
   .model-card[aria-pressed="true"].model-b { box-shadow: 0 0 0 3px var(--color-sage), 0 18px 40px rgba(43, 33, 24, 0.14); }
   .model-card:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 4px; }
-  .col-dim { opacity: .7; transition: opacity .3s ease; }
+  .col-dim { opacity: .8; transition: opacity .3s ease; }
   .seg { color: var(--color-ink-soft); transition: background .2s ease, color .2s ease; }
   .seg[aria-pressed="true"] { background: var(--color-ink); color: var(--color-bg); }
   .seg:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
@@ -92,13 +98,13 @@
   .prose-rp h3::before { content: ""; position: absolute; top: 0; left: 0; width: 36px; height: 3px; border-radius: 2px; background: var(--color-accent); }
   .prose-rp h2 + *, .prose-rp h3 + * { margin-top: 0.7em; }
   .prose-rp strong { color: var(--color-ink); font-weight: 700; }
-  .prose-rp a { color: var(--color-accent); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
-  .prose-rp a:hover { color: var(--color-accent-deep); }
+  .prose-rp a { color: var(--color-accent-deep); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
+  .prose-rp a:hover { color: var(--color-accent-deeper); }
   .prose-rp ul { list-style: disc; padding-left: 1.35em; }
   .prose-rp ol { list-style: decimal; padding-left: 1.5em; }
   .prose-rp li { padding-left: 0.2em; }
   .prose-rp li + li { margin-top: 0.5em; }
-  .prose-rp li::marker { color: var(--color-accent); font-weight: 700; }
+  .prose-rp li::marker { color: var(--color-accent-deep); font-weight: 700; }
   .prose-rp blockquote { margin-block: 1.6em; padding: 18px 22px; background: var(--color-sage-soft); border-radius: var(--radius-card); color: var(--color-ink); font-size: 16px; }
   .prose-rp blockquote > * + * { margin-top: 0.6em; }
   .prose-rp table { display: block; overflow-x: auto; width: 100%; border-collapse: collapse; font-size: 15px; }
@@ -139,6 +145,7 @@
   .model-card:hover { transform: none; }
 }
 
+@keyframes rp-rise { from { transform: translateY(18px); } to { transform: none; } }
 @keyframes rp-fade-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
 @keyframes rp-words { 0%, 17% { transform: translateY(0); } 22%, 39% { transform: translateY(-20%); } 44%, 61% { transform: translateY(-40%); } 66%, 83% { transform: translateY(-60%); } 88%, 100% { transform: translateY(-80%); } }
 @keyframes rp-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }

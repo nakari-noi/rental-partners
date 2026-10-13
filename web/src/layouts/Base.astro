@@ -1,4 +1,17 @@
 ---
+// Písma hostované u nás (rýchlejšie, bez prenosu IP adries návštevníkov do Google)
+import '@fontsource/outfit/latin-500.css';
+import '@fontsource/outfit/latin-ext-500.css';
+import '@fontsource/outfit/latin-600.css';
+import '@fontsource/outfit/latin-ext-600.css';
+import '@fontsource/outfit/latin-700.css';
+import '@fontsource/outfit/latin-ext-700.css';
+import '@fontsource/nunito-sans/latin-400.css';
+import '@fontsource/nunito-sans/latin-ext-400.css';
+import '@fontsource/nunito-sans/latin-600.css';
+import '@fontsource/nunito-sans/latin-ext-600.css';
+import '@fontsource/nunito-sans/latin-700.css';
+import '@fontsource/nunito-sans/latin-ext-700.css';
 import '../styles/global.css';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
@@ -45,6 +58,8 @@ const enHref = lang === 'en' ? canonical : other ? new URL(other, site).href : n
 const firmaId = `${site.href}#firma`;
 const webId = `${site.href}#web`;
 const pricingUrl = new URL(lang === 'en' ? '/en/pricing' : '/cennik', site).href;
+const managementUrl = new URL(lang === 'en' ? '/en/services' : '/sluzby', site).href;
+const guaranteedUrl = new URL(lang === 'en' ? '/en/guaranteed-rent' : '/garantovany-prenajom', site).href;
 const firma = {
   '@type': ['LocalBusiness', 'Organization'],
   '@id': firmaId,
@@ -70,8 +85,8 @@ const firma = {
     '@type': 'OfferCatalog',
     name: s.ld.catalog,
     itemListElement: [
-      { '@type': 'Offer', name: s.ld.offerA, description: s.ld.offerADesc, url: pricingUrl, priceSpecification: { '@type': 'UnitPriceSpecification', price: '10', priceCurrency: 'EUR', unitText: s.ld.unit } },
-      { '@type': 'Offer', name: s.ld.offerB, description: s.ld.offerBDesc, url: pricingUrl },
+      { '@type': 'Offer', name: s.ld.offerA, description: s.ld.offerADesc, url: managementUrl, priceSpecification: { '@type': 'UnitPriceSpecification', price: '10', priceCurrency: 'EUR', unitText: s.ld.unit } },
+      { '@type': 'Offer', name: s.ld.offerB, description: s.ld.offerBDesc, url: guaranteedUrl },
     ],
   },
 };
@@ -135,9 +150,6 @@ const insightsTag = config.vercelAnalytics ? '<script defer src="/_vercel/insigh
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
     <script type="application/ld+json" set:html={JSON.stringify(ld)} />
   </head>
   <body class="min-h-screen flex flex-col">
