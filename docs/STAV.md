@@ -122,7 +122,7 @@
 
 ## ▶ KDE SME SKONČILI 13. 10. 2026 VEČER (pokračovať presne tu)
 
-**Blog: plán 11 článkov s termínmi (každý druhý utorok od 27. 10. 2026) v [`docs/plan-blogu.md`](plan-blogu.md).** Daňové články 3 až 5 potrebujú účtovníka (poslať do 10. 11.). Ďalší krok: napísať článok 1 (Garantovaný prenájom alebo správa) ako koncept vo vetve.
+**Blog: plán v [`docs/plan-blogu.md`](plan-blogu.md).** Klient vybral články 1, 2, 6, 7, 10, 11 (každý druhý utorok od 27. 10. 2026), článok 8 len v pozitívnej podobe po súhlase, 3, 4, 5 (dane) a 9 (Airbnb alebo Booking) vyradené. Ďalší krok: napísať článok 1 (Garantovaný prenájom alebo správa) ako koncept vo vetve.
 
 **Vetva `navrh-seo-2026-10` je nasadená (master = vetva).** Ďalšie návrhy opäť najprv vo vetve, lokálne. `master` = živý web. Používateľ chce všetko najprv ako návrh. Nasadiť až na jeho „nasaď“ (vtedy merge do `master` a push, Vercel nasadí sám).
 
