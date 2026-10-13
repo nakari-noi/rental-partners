@@ -1,5 +1,7 @@
 # Akčný plán SEO · www.rentalpartners.sk
 
+> **Hotové a nasadené 13. 10. 2026:** bezpečnostné hlavičky, presmerovanie /index.html, ponuky a odkaz na Google profil v štruktúrovaných dátach, kontrast WCAG AA (0 problémov na 19 stránkach), rýchlejší úvod (LCP na mobile so spomalením 1,98 s → 1,03 s), písma z vlastného webu, /llms.txt. **Otváracie hodiny do štruktúrovaných dát nedávame (rozhodnutie klienta).** Ostáva: index, recenzie, odkazy, O nás, autor, obrázky článkov.
+
 *2026-10-13 · skóre 84/100*
 
 ## Fáza 1: Najdôležitejšie opravy (Týždeň 1)
