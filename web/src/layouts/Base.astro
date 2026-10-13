@@ -78,7 +78,9 @@ const firma = {
     { '@type': 'PropertyValue', propertyID: 'IČO', value: '57632499' },
     { '@type': 'PropertyValue', propertyID: 'DIČ', value: '2122860663' },
   ],
-  sameAs: ['https://sk.airbnb.com/users/show/515063940'],
+  // Profil v Mapách Google (CID z profilu firmy) spája firmu na webe s profilom v Googli
+  sameAs: ['https://maps.google.com/?cid=8904279959821188917', 'https://sk.airbnb.com/users/show/515063940'],
+  hasMap: 'https://maps.google.com/?cid=8904279959821188917',
   priceRange: lang === 'en' ? '10 % of turnover' : '10 % z obratu',
   knowsLanguage: ['sk', 'cs', 'en'],
   hasOfferCatalog: {
