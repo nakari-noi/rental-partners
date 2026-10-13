@@ -32,7 +32,8 @@ const lang = langOf(path);
 const s = t[lang];
 const isHome = path === s.home;
 const canonical = new URL(path, site).href;
-const fullTitle = `${title} · Rental Partners`;
+// Značka len ak sa titulok zmestí do ~60 znakov (dlhšie Google odreže, vtedy radšej celý názov článku)
+const fullTitle = `${title} · Rental Partners`.length <= 60 ? `${title} · Rental Partners` : title;
 const ogImageUrl = new URL(ogImage ?? (lang === 'en' ? '/og-en.jpg' : '/og.jpg'), site).href;
 
 // Jazykové verzie: slovenčina je predvolená (x-default). Kde druhá verzia nie je (blog), uvádza sa len vlastný jazyk.

@@ -22,6 +22,17 @@ const services = [
   { t: 'Upratovanie', d: 'Po každom hosťovi, čistá bielizeň, doplnené zásoby.', i: 'M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z M19 15l.8 2.2 2.2.8-2.2.8L19 21l-.8-2.2-2.2-.8 2.2-.8z' },
   { t: 'Údržba', d: 'Drobné opravy aj dlhodobá starostlivosť o byt.', i: 'M14.7 6.3a4 4 0 0 0 5 5L13 18l-3-3 6.7-8.7z M3 21l5-5' },
 ];
+// Situácie, v ktorých sa majiteľ spozná: každá vedie na model, ktorý jej sedí
+const situations = [
+  { t: 'Byt mám prázdny alebo zdedený', d: 'Chcete, aby zarábal, ale nechcete sa oň starať.', cta: 'Garantovaný nájom', href: '/garantovany-prenajom', i: 'M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z' },
+  { t: 'Prenajímam dlhodobo a nájomcovia sa striedajú', d: 'Pevná suma ako od nájomcu, ale s firmou na dohodnutú dobu.', cta: 'Garantovaný nájom', href: '/garantovany-prenajom', i: 'M4 6h16v14H4z M4 10h16 M8 3v4 M16 3v4' },
+  { t: 'Prenajímam na Airbnb sám a už ma to unavuje', d: 'Hostí, upratovanie aj ceny prevezmeme. Výnos ide vám, my si berieme 10 %.', cta: 'Správa bytu', href: '/sluzby', i: 'M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z' },
+];
+const startSteps = [
+  { t: 'Napíšete alebo zavoláte', d: 'Stačí pár údajov o byte. Odpovieme čo najskôr.' },
+  { t: 'Stretneme sa v byte', d: 'Pozrieme sa na byt a pripravíme odhad výnosu zadarmo a nezáväzne.' },
+  { t: 'Vyberiete si', d: 'Ukážeme vám čísla pre správu aj pre garantovaný nájom. Rozhodnutie je na vás.' },
+];
 ---
 <Base title="Správa Airbnb v Bratislave za 10 %" description="Správa bytu na Airbnb a Booking v Bratislave za 10 % z obratu, alebo garantovaný prenájom s pevnou sumou každý mesiac. Fotenie, hostia, upratovanie.">
   <!-- Hero -->
@@ -39,7 +50,7 @@ const services = [
         <span><b class="text-ink">4,89 z 5 na Airbnb · Superhost</b> · Booking 9,6 z 10<br />804 hodnotení hostí, verejné a overiteľné</span>
       </p>
     </div>
-    <div class="reveal reveal-2 relative h-[420px] lg:h-[500px] mt-4 lg:mt-0">
+    <div class="reveal reveal-2 relative h-[420px] lg:h-[500px] -mt-4 lg:mt-0">
       {deck.map((c, i) => (
         <div class:list={['deck-card', c.cls]}>
           <img src={c.img} alt={c.alt} class="absolute inset-0 w-full h-full object-cover" width="1200" height="800" fetchpriority={i === 0 ? 'high' : undefined} decoding="async" />
@@ -58,15 +69,15 @@ const services = [
   </section>
 
   <!-- Reviews stream -->
-  <section class="py-6 lg:py-10 overflow-hidden" aria-label="Recenzie hostí">
+  <section class="pt-6 pb-8 lg:pt-8 lg:pb-12 overflow-hidden" aria-label="Recenzie hostí">
     <div class="wrap flex items-center justify-between gap-4 mb-5">
       <p class="text-[13px] font-bold tracking-[0.06em] uppercase text-ink-muted">Z recenzií hostí<span class="hidden sm:inline"> · Airbnb a Booking</span></p>
       <a href="/vysledky" class="text-[13px] font-bold text-accent whitespace-nowrap shrink-0 py-3">Všetky recenzie →</a>
     </div>
     <div class="pl-5 md:pl-10 xl:pl-[max(64px,calc((100%-1200px)/2+64px))]">
       <div class="reviews">
-        {[...reviews, ...reviews].map((r) => (
-          <article class="flex flex-col gap-3 p-6 bg-surface rounded-[var(--radius-card)]">
+        {[...reviews, ...reviews].map((r, i) => (
+          <article class:list={['flex flex-col gap-3 p-6 bg-surface rounded-[var(--radius-card)]', i >= reviews.length && 'reviews-dup']} aria-hidden={i >= reviews.length ? 'true' : undefined}>
             <div class="flex gap-[3px] text-sage" role="img" aria-label="5 z 5 hviezdičiek">{[1, 2, 3, 4, 5].map(() => <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg>)}</div>
             <p class="text-[15px] leading-[1.5]">„{r.q}“</p>
             <p class="text-[13px] text-ink-muted">{r.by}</p>
@@ -77,11 +88,11 @@ const services = [
   </section>
 
   <!-- Two models -->
-  <section id="modely" class="wrap py-14 lg:py-[72px]">
+  <section id="modely" class="wrap pt-10 lg:pt-14 pb-16 lg:pb-24">
     <p class="eyebrow">Modely spolupráce</p>
     <h2 class="mt-2 text-[30px] md:text-[38px] font-bold tracking-[-0.02em] leading-[1.15]">Dva spôsoby, ako s nami spolupracovať</h2>
     <p class="mt-3 text-[17px] leading-relaxed text-ink-soft max-w-[700px]">Vyberiete si podľa toho, či chcete vyšší výnos, alebo istý príjem. O byt sa v oboch prípadoch staráme rovnako.</p>
-    <div class="grid md:grid-cols-2 gap-6 mt-8">
+    <div class="grid md:grid-cols-2 gap-6 mt-10">
       <a href="/sluzby" class="group flex flex-col gap-4 p-6 lg:p-9 bg-surface rounded-[var(--radius-block)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-float)] focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-4">
         <div class="flex flex-wrap items-center justify-between gap-2"><h3 class="display text-2xl font-bold">Správa bytu</h3><span class="chip whitespace-nowrap">10 % z obratu</span></div>
         <p class="leading-relaxed text-ink-soft">Byt zostáva váš a my ho prevádzkujeme na Airbnb a Booking. Vy dostávate výnos podľa obsadenosti, v silnej sezóne viac, a my z neho desatinu.</p>
@@ -98,25 +109,70 @@ const services = [
         <span class="link-inline self-start -mt-2 !text-accent-soft transition-[gap] group-hover:gap-3">Viac o garantovanom prenájme →</span>
       </a>
     </div>
-    <a href="/cennik" class="link-inline mt-4">Porovnať oba modely v cenníku →</a>
+    <a href="/cennik" class="link-inline mt-6">Porovnať oba modely v cenníku →</a>
+  </section>
+
+  <!-- Which option fits: self-identification, each situation leads to its model -->
+  <section class="bg-surface py-16 lg:py-24">
+    <div class="wrap">
+      <p class="eyebrow">Pre koho</p>
+      <h2 class="mt-2 text-[30px] md:text-[38px] font-bold tracking-[-0.02em] leading-[1.15] max-w-[760px] text-pretty">Ktorý spôsob je pre vás?</h2>
+      <p class="mt-3 text-[17px] leading-relaxed text-ink-soft max-w-[640px]">Podľa toho, v akej situácii je váš byt.</p>
+      <div class="grid md:grid-cols-3 gap-5 mt-10">
+        {situations.map((s) => (
+          <a href={s.href} class="group flex flex-col gap-4 p-7 bg-bg rounded-[var(--radius-card)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-float)]">
+            <span class="w-12 h-12 rounded-full bg-sage-soft text-sage inline-flex items-center justify-center" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d={s.i}></path></svg></span>
+            <h3 class="text-xl font-semibold leading-snug">{s.t}</h3>
+            <p class="text-[15px] leading-relaxed text-ink-soft">{s.d}</p>
+            <span class="mt-auto pt-4 border-t border-sand inline-flex items-center gap-1.5 text-[14px] font-bold text-accent-deep transition-[gap] group-hover:gap-3">{s.cta} →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Three steps: low barrier, the choice stays with the owner -->
+  <section class="bg-sand py-16 lg:py-24">
+    <div class="wrap">
+      <p class="eyebrow">Ako začneme</p>
+      <h2 class="mt-2 text-[30px] md:text-[38px] font-bold tracking-[-0.02em] leading-[1.15] max-w-[760px] text-pretty">Tri kroky a rozhodnutie je na vás</h2>
+      <div class="relative mt-10">
+        <span class="hidden md:block absolute top-[22px] left-[22px] right-[30%] h-[2px] bg-bg" aria-hidden="true"></span>
+        <ol class="relative grid md:grid-cols-3 gap-8">
+          {startSteps.map((s, i) => (
+            <li class="flex flex-col gap-3">
+              <span class:list={['display w-11 h-11 rounded-full text-[15px] font-semibold flex items-center justify-center', i === startSteps.length - 1 ? 'bg-accent text-white' : 'bg-ink text-bg']} aria-hidden="true">{i + 1}</span>
+              <h3 class="text-lg font-semibold leading-snug">{s.t}</h3>
+              <p class="text-[15px] leading-relaxed text-ink-soft max-w-[320px]">{s.d}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-3 mt-10">
+        <a href="/kontakt" class="btn-primary">Chcem odhad výnosu</a>
+        <span class="text-sm text-ink-soft">Zadarmo a nezáväzne. Prídeme sa na byt pozrieť.</span>
+      </div>
+    </div>
   </section>
 
   <!-- Services -->
-  <section class="bg-surface py-14 lg:py-16">
+  <section class="bg-surface py-16 lg:py-24">
     <div class="wrap">
       <p class="eyebrow">Služby</p>
       <h2 class="mt-2 text-[30px] md:text-[38px] font-bold tracking-[-0.02em] leading-[1.15]">Čo preberáme za vás</h2>
       <p class="mt-3 text-[17px] leading-relaxed text-ink-soft max-w-[620px]">Všetko, čo by ste inak riešili vy. Každý deň, aj cez víkend. Pri oboch modeloch.</p>
-      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-8">
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-10">
         {services.map((s) => (
-          <div class="flex flex-col gap-3 p-5 bg-bg rounded-[var(--radius-card)]">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9694a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d={s.i}></path></svg>
-            <h3 class="text-[17px] font-semibold">{s.t}</h3>
-            <p class="text-sm leading-relaxed text-ink-soft">{s.d}</p>
+          <div class="flex gap-4 p-5 bg-bg rounded-[var(--radius-card)] sm:flex-col sm:gap-3">
+            <svg class="shrink-0" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9694a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d={s.i}></path></svg>
+            <div class="flex flex-col gap-1 sm:gap-3">
+              <h3 class="text-[17px] font-semibold">{s.t}</h3>
+              <p class="text-sm leading-relaxed text-ink-soft">{s.d}</p>
+            </div>
           </div>
         ))}
       </div>
-      <a href="/sluzby" class="link-inline mt-4">Všetky služby podrobne →</a>
+      <a href="/sluzby" class="link-inline mt-6">Všetky služby podrobne →</a>
     </div>
   </section>
 
