@@ -68,24 +68,6 @@ const startSteps = [
     </div>
   </section>
 
-  <!-- NOVÉ: sebaidentifikácia, každá situácia vedie na model, ktorý jej sedí -->
-  <section class="bg-surface py-14 lg:py-[72px]">
-    <div class="wrap">
-      <p class="eyebrow">Pre koho</p>
-      <h2 class="mt-2 text-[30px] md:text-[38px] font-bold tracking-[-0.02em] leading-[1.15] max-w-[760px] text-pretty">Ktorá situácia je vaša?</h2>
-      <div class="grid md:grid-cols-3 gap-5 mt-8">
-        {situations.map((s) => (
-          <a href={s.href} class="group flex flex-col gap-4 p-7 bg-bg rounded-[var(--radius-card)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-float)]">
-            <span class="w-12 h-12 rounded-full bg-sage-soft text-sage inline-flex items-center justify-center" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d={s.i}></path></svg></span>
-            <h3 class="text-xl font-semibold leading-snug">{s.t}</h3>
-            <p class="text-[15px] leading-relaxed text-ink-soft">{s.d}</p>
-            <span class="mt-auto pt-4 border-t border-sand inline-flex items-center gap-1.5 text-[14px] font-bold text-accent-deep transition-[gap] group-hover:gap-3">{s.cta} →</span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
   <section id="modely" class="wrap py-14 lg:py-[72px]">
     <p class="eyebrow">Modely spolupráce</p>
     <h2 class="mt-2 text-[30px] md:text-[38px] font-bold tracking-[-0.02em] leading-[1.15]">Dva spôsoby, ako s nami spolupracovať</h2>
@@ -111,6 +93,25 @@ const startSteps = [
   </section>
 
   <!-- Services -->
+  <!-- NOVÉ: sebaidentifikácia, každá situácia vedie na model, ktorý jej sedí -->
+  <section class="bg-surface py-14 lg:py-[72px]">
+    <div class="wrap">
+      <p class="eyebrow">Pre koho</p>
+      <h2 class="mt-2 text-[30px] md:text-[38px] font-bold tracking-[-0.02em] leading-[1.15] max-w-[760px] text-pretty">Ktorý spôsob je pre vás?</h2>
+      <p class="mt-3 text-[17px] leading-relaxed text-ink-soft max-w-[640px]">Podľa toho, v akej situácii je váš byt.</p>
+      <div class="grid md:grid-cols-3 gap-5 mt-8">
+        {situations.map((s) => (
+          <a href={s.href} class="group flex flex-col gap-4 p-7 bg-bg rounded-[var(--radius-card)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-float)]">
+            <span class="w-12 h-12 rounded-full bg-sage-soft text-sage inline-flex items-center justify-center" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d={s.i}></path></svg></span>
+            <h3 class="text-xl font-semibold leading-snug">{s.t}</h3>
+            <p class="text-[15px] leading-relaxed text-ink-soft">{s.d}</p>
+            <span class="mt-auto pt-4 border-t border-sand inline-flex items-center gap-1.5 text-[14px] font-bold text-accent-deep transition-[gap] group-hover:gap-3">{s.cta} →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- Reviews stream -->
   <section class="py-6 lg:py-10 overflow-hidden" aria-label="Recenzie hostí">
     <div class="wrap flex items-center justify-between gap-4 mb-5">
