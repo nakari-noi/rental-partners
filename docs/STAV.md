@@ -122,6 +122,8 @@
 
 ## ▶ KDE SME SKONČILI 13. 10. 2026 VEČER (pokračovať presne tu)
 
+**Blog: plán 11 článkov s termínmi (každý druhý utorok od 27. 10. 2026) v [`docs/plan-blogu.md`](plan-blogu.md).** Daňové články 3 až 5 potrebujú účtovníka (poslať do 10. 11.). Ďalší krok: napísať článok 1 (Garantovaný prenájom alebo správa) ako koncept vo vetve.
+
 **Vetva `navrh-seo-2026-10` je nasadená (master = vetva).** Ďalšie návrhy opäť najprv vo vetve, lokálne. `master` = živý web. Používateľ chce všetko najprv ako návrh. Nasadiť až na jeho „nasaď“ (vtedy merge do `master` a push, Vercel nasadí sám).
 
 **Náhľad návrhu:** `cd web && npm run build && node scripts/serve-dist.mjs` → http://127.0.0.1:4399 (spustiť na pozadí, na konci vypnúť).

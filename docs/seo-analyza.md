@@ -180,6 +180,8 @@ Pravidlá textov ostávajú: bez pomlčiek, bez osobných sľubov („Tomáš sa
 
 ## 6. Plán obsahu
 
+> **Aktuálny plán článkov s termínmi a osnovami: [`docs/plan-blogu.md`](plan-blogu.md)** (13. 10. 2026). Tabuľka nižšie je pôvodný návrh.
+
 Nové stránky a články v poradí. Pri každom: fráza, prečo, kto je dnes vo výsledkoch.
 
 | # | Stránka alebo článok | Fráza | Kedy | Konkurencia v Googli |
