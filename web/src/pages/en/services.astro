@@ -3,78 +3,259 @@ import Base from '../../layouts/Base.astro';
 import Cta from '../../components/Cta.astro';
 import Check from '../../components/Check.astro';
 
-const services = [
-  { n: '01', title: 'Photography, listings and pricing', img: '/img/ilu-fotenie.svg', alt: 'Illustration: camera on a tripod in front of a room',
-    text: 'We photograph the flat professionally, write the listing copy in English and Slovak and set up the profiles on Airbnb and Booking. Prices are adjusted continuously to season, demand and occupancy.',
-    points: ['Professional photos and listing copy in EN / SK', 'Profiles on Airbnb, Booking and other platforms', 'Ongoing price adjustments by season'] },
-  { n: '02', title: 'Guests and communication', img: '/img/ilu-hostia.svg', alt: 'Illustration: phone with messages and a key',
-    text: 'From the first message to check-out. Guests write to us, not to you. Even at ten on a Saturday night.',
-    points: ['Replies to enquiries and bookings', 'Check-in, check-out, instructions for the flat', 'Solving issues during the stay, reviews'] },
-  { n: '03', title: 'Cleaning and linen', img: '/img/ilu-upratovanie.svg', alt: 'Illustration: made bed and towels',
-    text: 'After every departure we clean the flat, change the bed linen and towels and restock what is missing. We also check that everything is in order.',
-    points: ['Cleaning after every stay', 'Fresh linen and towels', 'Condition check after guests'] },
-  { n: '04', title: 'Maintenance and care of the flat', img: '/img/ilu-udrzba.svg', alt: 'Illustration: tap, wrench and checklist',
-    text: 'A dripping tap, a jammed lock, a blown bulb. We fix them as soon as we spot them, not after your phone call.',
-    points: ['Small repairs', 'Coordinating tradesmen for bigger faults', 'Regular inspection of the flat'] },
+// Property management for 10 % (model A), English version of the approved Slovak page /sluzby. Same facts, nothing added.
+// Cleaning under management (client, 13 Oct 2026): we arrange it, the guest pays a cleaning fee when booking, it is settled in the statement.
+
+// Illustrative year: short-term rental income by month (as on the pricing page) and long-term rent as a line.
+// The average of the bars is about half higher than the line, matching the approved "40 to 60 % higher".
+const months = ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'];
+const season = [52, 48, 60, 72, 84, 94, 100, 100, 86, 68, 54, 70];
+const barColor = (h: number) => (h >= 100 ? 'var(--color-accent)' : h >= 84 ? 'var(--color-sand-deep)' : 'var(--color-sand)');
+const longTerm = 50;
+
+const steps = [
+  { t: 'Meeting at the flat', d: 'We come to see the flat and prepare an income estimate. Free and without obligation.' },
+  { t: 'Contract', d: 'We sign a management agreement. We go through the terms together, the notice period is 30 days.' },
+  { t: 'Photos, listings and pricing', d: 'We photograph the flat, write the copy in English and Slovak, set up the profiles on Airbnb and Booking and set prices by season.' },
+  { t: 'First guest', d: 'Usually 2 days to a week after signing.' },
+  { t: 'Every stay', d: 'We answer messages and send arrival instructions. Keys are in a key safe or a lockbox. During the stay we handle whatever the guest needs.' },
+  { t: 'After the guest leaves', d: 'We clean the flat, change the bed linen and towels, restock what is missing and check its condition. We take care of reviews too.' },
+  { t: 'End of the month', d: 'You get an overview of income, bookings and occupancy. The money arrives by the 10th of the following month.' },
 ];
+const phases = [
+  { label: 'Getting started', note: 'the first week', items: steps.slice(0, 4), from: 1 },
+  { label: 'Then', note: 'every stay and every month', items: steps.slice(4), from: 5 },
+];
+const faq = [
+  { q: 'Who pays for cleaning?', a: 'We arrange cleaning after every stay. The guest pays a cleaning fee when booking, and your monthly statement shows how it was settled.' },
+  { q: 'Who pays for repairs?', a: 'We cover small repairs. For bigger repairs it depends on what caused them and how.' },
+  { q: 'What if a guest damages something?', a: 'Damage is not as common as people think, but it happens. We usually sort it out ourselves so you do not have to deal with it.' },
+  { q: 'Who pays for energy and internet?', a: 'Under management the owner pays for energy, internet, consumables and platform fees. We cover small repairs.' },
+  { q: 'How soon does the first guest arrive?', a: 'Usually 2 days to a week after the contract is signed.' },
+  { q: 'Can I use the flat myself?', a: 'Yes. How often and how far in advance you block it is agreed case by case.' },
+  { q: 'Which platforms do you list the flat on?', a: 'On Airbnb and Booking, and depending on the flat on other platforms too.' },
+];
+const star = 'M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z';
 ---
-<Base title="Airbnb Management Services in Bratislava" breadcrumb="Property management" service={{ name: 'Airbnb and Booking management', serviceType: 'Short-term rental management', description: 'Photography, listings and pricing, guest communication, cleaning, maintenance and a monthly statement for your short-term rental flat in Bratislava, for 10 % of turnover.' }} description="Photography, listings and pricing, guest communication, cleaning, maintenance and monthly statements. Everything we take off your hands in Bratislava.">
-  <section class="wrap pt-10 pb-8 lg:pt-14">
-    <h1 class="chip">Airbnb and Booking management services in Bratislava</h1>
-    <p class="display mt-5 text-[38px] md:text-[52px] leading-[1.08] font-bold tracking-[-0.02em] max-w-[820px] text-pretty">From the first photo to the last clean</p>
-    <p class="mt-5 text-lg leading-relaxed text-ink-soft max-w-[640px]">Five things you would deal with every week when letting short-term, from photography to accounting. We take care of all of them, under management and under guaranteed rent.</p>
-  </section>
-
-  {services.map((s, i) => (
-    <section class:list={['py-10 lg:py-14', i % 2 === 1 && 'bg-surface']}>
-      <div class="wrap grid md:grid-cols-2 gap-8 lg:gap-14 items-center">
-        <div class:list={['flex flex-col gap-4', i % 2 === 1 && 'md:order-2']}>
-          <div class="display w-10 h-10 rounded-full bg-ink text-bg text-[15px] font-semibold flex items-center justify-center">{s.n}</div>
-          <h2 class="text-[28px] md:text-[32px] font-bold tracking-[-0.02em] leading-[1.15]">{s.title}</h2>
-          <p class="text-ink-soft leading-relaxed">{s.text}</p>
-          <ul class="flex flex-col gap-2.5 mt-1">{s.points.map((p) => <Check>{p}</Check>)}</ul>
-        </div>
-        <div class:list={['aspect-[3/2] rounded-[var(--radius-block)] overflow-hidden', i % 2 === 1 && 'md:order-1']}>
-          <img src={s.img} alt={s.alt} class="w-full h-full object-cover" width="600" height="400" loading="lazy" />
-        </div>
+<Base title="Airbnb Management Services in Bratislava" breadcrumb="Property management" faq={faq} service={{ name: 'Airbnb and Booking management', serviceType: 'Short-term rental management', description: 'Photography, listings and pricing, guest communication, cleaning, maintenance and a monthly statement for your short-term rental flat in Bratislava, for 10 % of turnover.' }} description="Photography, listings and pricing, guest communication, cleaning, maintenance and monthly statements. Everything we take off your hands in Bratislava.">
+  <section class="wrap grid lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-14 pt-10 pb-14 lg:pt-14 lg:pb-20 items-center">
+    <div class="flex flex-col gap-6">
+      <h1 class="chip self-start">Airbnb and Booking management in Bratislava</h1>
+      <p class="display text-[40px] sm:text-[50px] lg:text-[58px] leading-[1.05] font-bold tracking-[-0.025em] text-pretty">From the first photo <span class="text-accent">to the last clean.</span></p>
+      <p class="text-lg leading-relaxed text-ink-soft max-w-[560px]">Five things you would deal with every week when letting short-term, from photography to accounting. We take care of all of them, under management and under <a href="/en/guaranteed-rent" class="font-bold text-accent-deep underline">guaranteed rent</a>.</p>
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
+        <a href="/en/contact" class="btn-primary">Get a free estimate</a>
+        <span class="text-sm text-ink-soft">Free and without obligation.<br class="hidden sm:block" /> We come to see the flat.</span>
       </div>
-    </section>
-  ))}
-
-  <section class="wrap grid md:grid-cols-2 gap-8 lg:gap-14 items-center py-10 lg:py-14">
-    <div class="flex flex-col gap-4">
-      <div class="display w-10 h-10 rounded-full bg-ink text-bg text-[15px] font-semibold flex items-center justify-center">05</div>
-      <h2 class="text-[28px] md:text-[32px] font-bold tracking-[-0.02em] leading-[1.15]">Monthly statement</h2>
-      <p class="text-ink-soft leading-relaxed">Every month you get an overview: income from stays, our 10 % fee and the amount that goes to you.</p>
-      <ul class="flex flex-col gap-2.5 mt-1">
-        <Check>Overview of income and bookings for the month</Check>
-        <Check>Payout as agreed in the contract</Check>
-        <Check>Occupancy overview for the flat</Check>
-      </ul>
+      <p class="flex items-center gap-3 pt-5 border-t border-sand text-sm leading-relaxed text-ink-soft">
+        <span class="w-9 h-9 rounded-full bg-sage text-white inline-flex items-center justify-center shrink-0" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d={star}></path></svg></span>
+        <span><b class="text-ink">4.89 out of 5 on Airbnb · Superhost</b> · Booking 9.6 out of 10<br />804 guest reviews, public and verifiable</span>
+      </p>
     </div>
-    <div class="flex flex-col gap-3 p-7 bg-surface rounded-[var(--radius-block)]">
-      <div class="flex justify-between items-center gap-3">
-        <span class="text-[13px] font-bold text-ink-muted">Sample statement · property management</span>
-        <span class="chip !py-1 !px-2.5 text-[12px] whitespace-nowrap">illustrative example</span>
+    <div class="relative h-[420px] sm:h-[480px] lg:h-[520px]">
+      <div class="absolute top-0 right-0 w-[88%] h-[82%] rounded-[var(--radius-block)] overflow-hidden rotate-2 shadow-[var(--shadow-float)]">
+        <img src="/img/byt-metropolis.avif" alt="Metropolis flat in Nivy that we manage on Airbnb and Booking" class="w-full h-full object-cover" width="1440" height="1080" fetchpriority="high" decoding="async" />
       </div>
-      <div class="flex justify-between gap-4 py-2.5 border-b border-sand text-[15px]"><span>Income from stays</span><b class="whitespace-nowrap">€2,000</b></div>
-      <div class="flex justify-between gap-4 py-2.5 border-b border-sand text-[15px]"><span>Rental Partners fee (10 %)</span><b class="whitespace-nowrap">− €200</b></div>
-      <div class="flex justify-between gap-4 py-3 text-[17px]"><b>Left for you</b><b class="display text-sage whitespace-nowrap">€1,800</b></div>
-      <p class="text-[12px] leading-relaxed text-ink-muted">Under guaranteed rent there is no statement, you receive the agreed sum.</p>
+      <span class="absolute top-6 right-4 sm:right-6 px-3.5 py-2 bg-white/95 rounded-full text-[13px] font-bold text-ink shadow-[var(--shadow-float)]">Airbnb and Booking</span>
+      <div class="absolute left-0 bottom-0 w-[min(330px,88%)] flex flex-col gap-2 p-6 bg-surface rounded-[var(--radius-card)] shadow-[var(--shadow-float)]">
+        <div class="flex items-baseline gap-2"><span class="display text-[64px] leading-[0.9] font-bold tracking-[-0.04em] text-accent">10 %</span><span class="display text-lg font-semibold">of turnover</span></div>
+        <span class="text-[14px] leading-snug text-ink-soft">We take a tenth of the income from stays. When the flat does not earn, neither do we.</span>
+      </div>
     </div>
   </section>
 
-  <section class="bg-surface py-14 lg:py-16">
+  <section class="bg-surface py-16 lg:py-24">
+    <div class="wrap grid lg:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-16 items-center">
+      <div class="flex flex-col gap-5">
+        <p class="eyebrow">Income</p>
+        <h2 class="text-[32px] md:text-[42px] font-bold tracking-[-0.02em] leading-[1.1] text-pretty">Potential return 40 to 60 % higher than long-term letting</h2>
+        <p class="text-[17px] leading-relaxed text-ink-soft">Depends on location, size and season. In season a flat is typically booked for around 95 % of nights, outside it 60 to 70 %.</p>
+        <ul class="flex flex-col gap-2.5 text-[15px]">
+          <li class="flex items-center gap-3"><span class="w-6 h-3 rounded-[3px] bg-sand-deep shrink-0" aria-hidden="true"></span>Short-term rental income by month</li>
+          <li class="flex items-center gap-3"><span class="w-6 border-t-[3px] border-dashed border-ink-muted shrink-0" aria-hidden="true"></span>The same flat let long term</li>
+        </ul>
+        <p class="text-[15px] leading-relaxed text-ink-soft">Prefer the same sum every month? See <a href="/en/guaranteed-rent" class="font-bold text-accent-deep underline">guaranteed rent</a>.</p>
+      </div>
+      <figure class="flex flex-col gap-5 p-6 md:p-9 bg-bg rounded-[var(--radius-block)]" data-chart>
+        <div class="flex items-center justify-between gap-3">
+          <span class="display text-lg font-bold">One year of letting</span>
+          <span class="chip !bg-surface !py-1 !px-2.5 text-[12px]">illustrative example</span>
+        </div>
+        <div class="relative h-[220px] md:h-[260px]">
+          <div class="absolute inset-0 flex items-end gap-1.5 md:gap-2" aria-hidden="true">
+            {season.map((h, i) => <span class="bar flex-1 rounded-t-[6px]" style={`height:${h}%;background:${barColor(h)};--i:${i}`}></span>)}
+          </div>
+          <div class="rent-line absolute inset-x-0 flex items-center" style={`bottom:${longTerm}%`} aria-hidden="true">
+            <span class="flex-1 border-t-[3px] border-dashed border-ink-muted"></span>
+            <span class="absolute right-0 bottom-[calc(100%+6px)] px-2.5 py-1 rounded-full bg-surface text-ink-soft text-[12px] font-bold whitespace-nowrap">long-term rent</span>
+          </div>
+        </div>
+        <div class="flex gap-1.5 md:gap-2 -mt-2 text-[11px] font-bold text-ink-muted text-center" aria-hidden="true">{months.map((m) => <span class="flex-1">{m}</span>)}</div>
+        <figcaption class="text-[13px] leading-relaxed text-ink-soft">The bars show how short-term rental income changes over the year. The dashed line is the same flat let long term. Illustrative example, not real figures.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="wrap py-16 lg:py-24">
+    <p class="eyebrow">Services</p>
+    <h2 class="mt-2 text-[32px] md:text-[42px] font-bold tracking-[-0.02em] leading-[1.1] max-w-[760px] text-pretty">Everything we do for you</h2>
+    <div class="grid lg:grid-cols-3 lg:grid-rows-[auto_auto] gap-5 mt-10">
+      <article class="lg:row-span-2 flex flex-col gap-5 p-7 md:p-9 bg-surface rounded-[var(--radius-block)]">
+        <img src="/img/ilu-hostia.svg" alt="Illustration: phone with messages and a key" class="w-full aspect-[3/2] object-cover rounded-[var(--radius-card)] bg-sand" width="600" height="400" loading="lazy" />
+        <h3 class="text-[26px] font-bold leading-tight">Guests and communication</h3>
+        <p class="display text-[24px] md:text-[28px] leading-[1.25] font-semibold">From the first message to check-out. Guests write to us, not to you. <span class="text-accent">Even at ten on a Saturday night.</span></p>
+        <ul class="flex flex-col gap-2.5 mt-auto"><Check>Replies to enquiries and bookings</Check><Check>Check-in, check-out, instructions for the flat</Check><Check>Solving issues during the stay, reviews</Check></ul>
+      </article>
+      <article class="flex flex-col gap-4 p-7 bg-surface rounded-[var(--radius-block)]">
+        <h3 class="text-xl font-bold leading-snug">Photography, listings and pricing</h3>
+        <p class="text-[15px] leading-relaxed text-ink-soft">We photograph the flat professionally, write the listing copy in English and Slovak and set up the profiles on Airbnb and Booking. Prices are adjusted continuously to season, demand and occupancy.</p>
+        <ul class="flex flex-col gap-2 mt-auto"><Check>Professional photos and copy in EN / SK</Check><Check>Profiles on Airbnb, Booking and other platforms</Check></ul>
+      </article>
+      <article class="flex flex-col gap-4 p-7 bg-sage-soft rounded-[var(--radius-block)]">
+        <h3 class="text-xl font-bold leading-snug">Cleaning and linen</h3>
+        <p class="text-[15px] leading-relaxed text-ink-soft">After every departure we clean the flat, change the bed linen and towels and restock what is missing. We also check that everything is in order.</p>
+        <ul class="flex flex-col gap-2 mt-auto"><Check>Cleaning after every stay</Check><Check>Condition check after guests</Check></ul>
+      </article>
+      <article class="lg:col-span-2 grid sm:grid-cols-[1fr_0.8fr] gap-6 items-center p-7 bg-surface rounded-[var(--radius-block)]">
+        <div class="flex flex-col gap-4">
+          <h3 class="text-xl font-bold leading-snug">Maintenance and care of the flat</h3>
+          <p class="text-[15px] leading-relaxed text-ink-soft">A dripping tap, a jammed lock, a blown bulb. We fix them as soon as we spot them, not after your phone call.</p>
+          <ul class="flex flex-col gap-2"><Check>Small repairs</Check><Check>Coordinating tradesmen for bigger faults</Check><Check>Regular inspection of the flat</Check></ul>
+        </div>
+        <img src="/img/ilu-udrzba.svg" alt="Illustration: tap, wrench and checklist" class="w-full aspect-[3/2] object-cover rounded-[var(--radius-card)] bg-sand" width="600" height="400" loading="lazy" />
+      </article>
+    </div>
+  </section>
+
+  <section class="bg-sand py-16 lg:py-24">
+    <div class="wrap grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div class="flex flex-col gap-5">
+        <p class="eyebrow">Statement</p>
+        <h2 class="text-[32px] md:text-[42px] font-bold tracking-[-0.02em] leading-[1.1] text-pretty">Every month in black and white</h2>
+        <p class="text-[17px] leading-relaxed text-ink-soft">Every month you get an overview: income from stays, our 10 % fee and the amount that goes to you.</p>
+        <ul class="flex flex-col gap-2.5"><Check>Overview of income and bookings for the month</Check><Check>Occupancy overview for the flat</Check><Check>Money by the 10th of the following month</Check></ul>
+      </div>
+      <div class="relative py-6">
+        <div class="flex flex-col gap-3 p-7 md:p-8 bg-surface rounded-[var(--radius-block)] -rotate-2 shadow-[var(--shadow-float)] max-w-[440px] md:ml-auto">
+          <div class="flex justify-between items-center gap-3">
+            <span class="text-[13px] font-bold text-ink-muted">Sample statement · property management</span>
+            <span class="chip !py-1 !px-2.5 text-[12px] whitespace-nowrap">illustrative example</span>
+          </div>
+          <div class="flex justify-between gap-4 py-2.5 border-b border-sand text-[15px]"><span>Income from stays</span><b class="whitespace-nowrap">€2,000</b></div>
+          <div class="flex justify-between gap-4 py-2.5 border-b border-sand text-[15px]"><span>Rental Partners fee (10 %)</span><b class="whitespace-nowrap">− €200</b></div>
+          <div class="flex justify-between gap-4 py-3 text-[17px]"><b>Left for you</b><b class="display text-[28px] leading-none text-sage whitespace-nowrap">€1,800</b></div>
+          <p class="text-[12px] leading-relaxed text-ink-muted">Under guaranteed rent there is no statement, you receive the agreed sum.</p>
+        </div>
+        <span class="absolute -bottom-1 left-4 md:left-auto md:right-[300px] inline-flex items-center gap-2 px-3.5 py-2 bg-sage text-white rounded-full text-[13px] font-bold shadow-[var(--shadow-float)]">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+          paid by the 10th
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-surface py-16 lg:py-24">
     <div class="wrap">
-      <p class="eyebrow">Getting started</p>
-      <h2 class="mt-2 text-[30px] md:text-[34px] font-bold tracking-[-0.02em] leading-[1.15]">What we need from you</h2>
-      <div class="grid md:grid-cols-3 gap-5 mt-7">
-        <div class="p-6 bg-bg rounded-[var(--radius-card)]"><h3 class="text-lg font-semibold">The flat</h3><p class="mt-2 text-sm leading-relaxed text-ink-soft">Furnished and ready for guests. If it is not, we tell you at the first meeting what to add.</p></div>
-        <div class="p-6 bg-bg rounded-[var(--radius-card)]"><h3 class="text-lg font-semibold">Keys and access</h3><p class="mt-2 text-sm leading-relaxed text-ink-soft">Keys to the flat and the building. How guests receive them is agreed per flat.</p></div>
-        <div class="p-6 bg-bg rounded-[var(--radius-card)]"><h3 class="text-lg font-semibold">Contract</h3><p class="mt-2 text-sm leading-relaxed text-ink-soft">A management agreement, or a lease agreement under guaranteed rent. We go through the terms together at the meeting.</p></div>
+      <p class="eyebrow">Process</p>
+      <h2 class="mt-2 text-[32px] md:text-[42px] font-bold tracking-[-0.02em] leading-[1.1]">How property management works in practice</h2>
+      <div class="flex flex-col gap-14 mt-12">
+        {phases.map((p) => (
+          <div>
+            <p class="flex items-baseline gap-3 mb-7"><span class="display text-2xl font-bold">{p.label}</span><span class="text-[15px] text-ink-muted">{p.note}</span></p>
+            <div class="relative">
+              <span class="hidden lg:block absolute top-[22px] left-[22px] right-[12%] h-[2px] bg-sand" aria-hidden="true"></span>
+              <ol class:list={['relative grid sm:grid-cols-2 gap-8 lg:gap-6', p.items.length === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3']} start={p.from}>
+                {p.items.map((s, i) => (
+                  <li class="flex flex-col gap-3">
+                    <span class:list={['display w-11 h-11 rounded-full text-[15px] font-semibold flex items-center justify-center', p.from + i === steps.length ? 'bg-accent text-white' : 'bg-ink text-bg']} aria-hidden="true">{p.from + i}</span>
+                    <h3 class="text-lg font-semibold leading-snug">{s.t}</h3>
+                    <p class="text-[15px] leading-relaxed text-ink-soft max-w-[300px]">{s.d}</p>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p class="mt-12 text-[15px] leading-relaxed text-ink-soft max-w-[720px]">What management costs and how it differs from guaranteed rent is on the <a href="/en/pricing" class="font-bold text-accent-deep underline">pricing page</a>.</p>
+    </div>
+  </section>
+
+  <section class="wrap py-16 lg:py-24">
+    <p class="eyebrow">Results</p>
+    <h2 class="mt-2 text-[32px] md:text-[42px] font-bold tracking-[-0.02em] leading-[1.1] max-w-[760px] text-pretty">What guests write about the flats we manage</h2>
+    <div class="grid lg:grid-cols-[1fr_1fr_0.75fr] gap-5 mt-10">
+      <blockquote class="flex flex-col gap-4 p-7 md:p-8 bg-surface rounded-[var(--radius-block)]">
+        <div class="flex gap-[3px] text-sage" role="img" aria-label="5 out of 5 stars">{[1, 2, 3, 4, 5].map(() => <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d={star}></path></svg>)}</div>
+        <p class="display text-xl leading-[1.4] italic">“It was perfect! Great location, just over 5 minutes’ walk from the centre, yet really quiet. Tomas was very helpful and always replied immediately.”</p>
+        <footer class="mt-auto text-sm text-ink-soft">Karl, Brunoy (France) · Airbnb · July 2026</footer>
+      </blockquote>
+      <blockquote class="flex flex-col gap-4 p-7 md:p-8 bg-surface rounded-[var(--radius-block)]">
+        <div class="flex gap-[3px] text-sage" role="img" aria-label="5 out of 5 stars">{[1, 2, 3, 4, 5].map(() => <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d={star}></path></svg>)}</div>
+        <p class="display text-xl leading-[1.4] italic">“Communication with Amanda was always friendly and quick. The instructions for the flat and for using the underground car park were perfect and easy to follow.”</p>
+        <footer class="mt-auto text-sm text-ink-soft">Jens, Aßlar (Germany) · Airbnb · July 2026</footer>
+      </blockquote>
+      <div class="flex flex-col justify-between gap-6 p-7 md:p-8 bg-sage-soft rounded-[var(--radius-block)]">
+        <div class="flex flex-col gap-1"><span class="display text-[44px] leading-none font-bold">4.89</span><span class="text-sm text-ink-soft">out of 5 on Airbnb · Superhost · 109 reviews</span></div>
+        <div class="flex flex-col gap-1"><span class="display text-[44px] leading-none font-bold">9.6</span><span class="text-sm text-ink-soft">out of 10 on Booking · 695 reviews</span></div>
+        <a href="/en/results" class="link-inline self-start">All ratings →</a>
       </div>
     </div>
   </section>
 
-  <Cta text="Want to know how much your flat could earn?" />
+  <section class="bg-surface py-16 lg:py-24">
+    <div class="wrap grid lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-16">
+      <div class="flex flex-col gap-4 lg:sticky lg:top-8 self-start">
+        <p class="eyebrow">Questions</p>
+        <h2 class="text-[32px] md:text-[42px] font-bold tracking-[-0.02em] leading-[1.1] text-pretty">What owners ask about property management</h2>
+        <p class="text-[15px] leading-relaxed text-ink-soft">Didn't find your answer? Call Tomáš on <a href="tel:+421903989040" class="font-bold text-ink whitespace-nowrap">+421 903 989 040</a>.</p>
+      </div>
+      <div class="border-t border-sand">
+        {faq.map((f, i) => (
+          <details class="faq group border-b border-sand" open={i === 0}>
+            <summary class="flex items-center justify-between gap-6 py-5 cursor-pointer list-none text-lg font-semibold">
+              {f.q}
+              <span class="w-9 h-9 rounded-full bg-sand inline-flex items-center justify-center shrink-0 transition-transform group-open:rotate-45" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span>
+            </summary>
+            <p class="pb-6 pr-14 text-[15px] md:text-base leading-relaxed text-ink-soft">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap py-16 lg:py-24">
+    <p class="eyebrow">Getting started</p>
+    <h2 class="mt-2 text-[32px] md:text-[42px] font-bold tracking-[-0.02em] leading-[1.1] max-w-[760px] text-pretty">All we need from you is three things</h2>
+    <div class="grid md:grid-cols-3 gap-8 md:gap-10 mt-10">
+      <div class="flex flex-col gap-3 pt-6 border-t-2 border-ink"><h3 class="text-xl font-semibold">The flat</h3><p class="text-[15px] leading-relaxed text-ink-soft">Furnished and ready for guests. If it is not, we tell you at the first meeting what to add.</p></div>
+      <div class="flex flex-col gap-3 pt-6 border-t-2 border-ink"><h3 class="text-xl font-semibold">Keys and access</h3><p class="text-[15px] leading-relaxed text-ink-soft">Keys to the flat and the building. How guests receive them is agreed per flat.</p></div>
+      <div class="flex flex-col gap-3 pt-6 border-t-2 border-ink"><h3 class="text-xl font-semibold">Contract</h3><p class="text-[15px] leading-relaxed text-ink-soft">A management agreement, or a lease agreement under guaranteed rent. We go through the terms together at the meeting.</p></div>
+    </div>
+  </section>
+
+  <Cta text="Want to know what your flat could earn?" />
 </Base>
+
+<style>
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; border-radius: 8px; }
+  .bar { transform-origin: bottom; }
+  [data-chart][data-armed] .bar { transform: scaleY(0); }
+  [data-chart][data-armed] .rent-line { clip-path: inset(0 100% 0 0); }
+  [data-chart].is-in .bar { transform: scaleY(1); transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1); transition-delay: calc(var(--i) * 45ms); }
+  [data-chart].is-in .rent-line { clip-path: inset(0 0 0 0); transition: clip-path 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.55s; }
+</style>
+
+<script>
+  // The chart is visible without the script. The animation only runs with IntersectionObserver and without a reduced-motion preference.
+  const charts = document.querySelectorAll<HTMLElement>('[data-chart]');
+  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('is-in');
+      io.unobserve(e.target);
+    }), { threshold: 0.35 });
+    charts.forEach((c) => { c.setAttribute('data-armed', ''); io.observe(c); });
+  }
+</script>

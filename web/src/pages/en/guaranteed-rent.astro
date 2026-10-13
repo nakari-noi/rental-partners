@@ -1,126 +1,211 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Cta from '../../components/Cta.astro';
-import Check from '../../components/Check.astro';
 
-// Guaranteed rent (model B). Same facts as the Slovak page /garantovany-prenajom, nothing added.
+// Guaranteed rent (model B), English version of the approved Slovak page /garantovany-prenajom (variant B, 14 Oct 2026).
+// Same facts, nothing added: like a long-term let, but with a company for an agreed term, rent paid in advance by the 15th.
+
+// Illustrative two years: an ordinary let with changing tenants and empty months versus one contract
+const usual = [
+  { m: 7, kind: 'tenant', label: 'tenant 1' },
+  { m: 2, kind: 'empty', label: 'empty' },
+  { m: 6, kind: 'tenant', label: 'tenant 2' },
+  { m: 2, kind: 'empty', label: 'empty' },
+  { m: 7, kind: 'tenant', label: 'tenant 3' },
+];
+const compare = [
+  { label: 'Who rents the flat', usual: 'Someone you know from a single viewing', us: 'Rental Partners s. r. o., a company you can check in the commercial register' },
+  { label: 'For how long', usual: 'As long as it suits them, often just a few months', us: 'For the agreed term in the contract' },
+  { label: 'Rent', usual: 'Whenever they send it', us: 'In advance, always by the 15th of the month' },
+  { label: 'Months between tenants', usual: 'The flat stands empty and earns nothing', us: 'There are none, the rent comes every month' },
+  { label: 'Searching, viewings, new contracts', usual: 'Back on you every time', us: 'Once, when you sign with us' },
+  { label: 'Condition of the flat', usual: 'You see it when the tenant moves out', us: 'We check it after every stay' },
+  { label: 'The flat for you', usual: 'Not during the tenancy', us: 'Dates agreed in the contract' },
+];
+const promises = [
+  { n: '15th', t: 'Rent in advance, always by the 15th of the month', d: 'No statements. One agreed sum you can plan with.' },
+  { n: '12×', t: 'We pay every month of the year', d: 'Even in months when the flat is empty. The occupancy risk is ours.' },
+  { n: '0', t: 'Zero risk for you', d: 'We rent the flat for an agreed term. There is no risk that we walk away from the contract after three months and you are looking for a tenant again.' },
+];
 const steps = [
   { t: 'Viewing of the flat', d: 'We come to see the flat and the area.' },
   { t: 'Estimate', d: 'We estimate what the flat will earn on short-term rental over a year.' },
   { t: 'Rent and contract proposal', d: 'We propose a fixed monthly rent and a contract. The decision is yours.' },
   { t: 'Rent every month', d: 'After signing, we pay you the agreed sum in advance, always by the 15th of the month.' },
 ];
-const fit = [
-  'You want the same sum every month and do not want to deal with seasons or occupancy.',
-  'Your flat is empty and you do not want to look after guests or tenants.',
-  'You rent long term and are tired of finding and changing tenants.',
-  'You run your flat on Airbnb yourself and it has become too much.',
-];
-const compare = [
-  { label: 'Your income', b: 'A fixed sum every month', a: 'Income based on occupancy, we take 10 % of turnover' },
-  { label: 'When we pay', b: 'In advance, always by the 15th of the month', a: 'After the statement, by the 10th of the following month' },
-  { label: 'Running costs', b: 'Paid by us, except repairs unrelated to the rental', a: 'Energy, internet, consumables and platform fees are paid by the owner' },
-  { label: 'Guests, cleaning, maintenance', b: 'Handled by us', a: 'Handled by us' },
-  { label: 'The flat for you', b: 'Dates agreed in the contract', a: 'You can block dates as agreed' },
-];
 const faq = [
-  { q: 'When do I get the rent?', a: 'In advance, always by the 15th of the month. No statements, one agreed sum.' },
+  { q: 'How is it different from an ordinary long-term let?', a: 'The tenant is not a stranger but a company that rents the flat for an agreed term and pays in advance, always by the 15th of the month. It then lets the flat to guests for short stays at its own risk and checks it after every stay.' },
   { q: 'What if the flat is empty?', a: 'We pay you the rent all the same. The occupancy risk is ours.' },
   { q: 'How do you set the rent?', a: 'The sum is individual. It is based on market rent levels in the area and the condition of the flat.' },
-  { q: 'Who pays for energy and repairs?', a: 'Under guaranteed rent we pay for everything, except repairs that are not related to or caused by the short-term rental.' },
-  { q: 'Can I use the flat myself?', a: 'Yes. The dates when the flat is yours are agreed in the contract.' },
   { q: 'How long is the contract?', a: 'Contract length and notice period are agreed at the meeting. They are individual, based on terms agreed in advance.' },
-  { q: 'Who looks after the flat and the guests?', a: 'We do. We look after the flat, the guests and the cleaning just like under property management, and we check the flat after every stay.' },
-  { q: 'How is it different from management for 10 %?', a: 'Under management you get income based on occupancy and we take 10 % of turnover, so you earn more in season and less outside it. Under guaranteed rent you get the same sum every month regardless of occupancy.' },
+  { q: 'Does the flat have to be furnished?', a: 'Not necessarily. We can take an unfurnished flat too, the terms are agreed individually.' },
+  { q: 'Who pays for cleaning, energy and repairs?', a: 'Under guaranteed rent we pay for cleaning, energy and running costs. Repairs that are not related to or caused by the short-term rental stay with the owner.' },
+  { q: 'Can I use the flat myself?', a: 'Yes. The dates when the flat is yours are agreed in the contract.' },
 ];
+const star = 'M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z';
+const total = usual.reduce((a, s) => a + s.m, 0);
 ---
-<Base title="Guaranteed Rent in Bratislava" breadcrumb="Guaranteed rent" description="We rent your flat in Bratislava and pay you a fixed rent in advance every month, regardless of occupancy. Guaranteed rent from Rental Partners." faq={faq} service={{ name: 'Guaranteed rent for your flat', serviceType: 'Guaranteed rent', description: 'We rent the flat from the owner, pay a fixed monthly rent in advance regardless of occupancy and run the flat as a short-term rental at our own risk.' }}>
-  <section class="wrap pt-10 pb-8 lg:pt-14">
-    <h1 class="chip">Guaranteed rent for your flat in Bratislava</h1>
-    <p class="display mt-5 text-[38px] md:text-[52px] leading-[1.08] font-bold tracking-[-0.02em] max-w-[820px] text-pretty">A fixed sum every month, even when the flat is empty</p>
-    <p class="mt-5 text-lg leading-relaxed text-ink-soft max-w-[660px]">We rent your flat and pay you the agreed rent in advance, always by the 15th of the month. We run it as a short-term rental on Airbnb and Booking at our own risk. Guests, cleaning and care of the flat are on us.</p>
-    <div class="mt-7 flex flex-wrap gap-4 items-center">
-      <a href="/en/contact" class="btn-primary">Get a rent proposal</a>
-      <a href="#how-we-set-the-rent" class="link-inline">How we set the rent ↓</a>
+<Base title="Guaranteed Rent in Bratislava" breadcrumb="Guaranteed rent" description="Like a long-term let, but with a company: we rent your flat for an agreed term and pay the rent in advance, always by the 15th. Guaranteed rent in Bratislava." faq={faq} service={{ name: 'Guaranteed rent for your flat', serviceType: 'Guaranteed rent', description: 'We rent the flat from the owner for an agreed term, pay a fixed monthly rent in advance regardless of occupancy and run the flat as a short-term rental at our own risk.' }}>
+  <section class="wrap grid lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-14 pt-10 pb-14 lg:pt-14 lg:pb-20 items-center">
+    <div class="flex flex-col gap-6">
+      <h1 class="chip self-start">Guaranteed rent for your flat in Bratislava</h1>
+      <p class="display text-[40px] sm:text-[50px] lg:text-[58px] leading-[1.05] font-bold tracking-[-0.025em] text-pretty">A tenant <span class="text-accent">you can rely on.</span></p>
+      <p class="text-lg leading-relaxed text-ink-soft max-w-[560px]">Guaranteed rent is like a long-term let, only with a company instead of a stranger. We rent your flat for an agreed term and pay you the rent in advance, always by the 15th of the month. There is no risk that we leave after three months and you are searching again.</p>
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
+        <a href="/en/contact" class="btn-primary">Get a rent proposal</a>
+        <span class="text-sm text-ink-soft">Free and without obligation.<br class="hidden sm:block" /> We come to see the flat.</span>
+      </div>
+      <p class="flex items-center gap-3 pt-5 border-t border-sand text-sm leading-relaxed text-ink-soft">
+        <span class="w-9 h-9 rounded-full bg-sage text-white inline-flex items-center justify-center shrink-0" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d={star}></path></svg></span>
+        <span><b class="text-ink">4.89 out of 5 on Airbnb · Superhost</b> · Booking 9.6 out of 10<br />804 guest reviews, public and verifiable</span>
+      </p>
     </div>
-  </section>
-
-  <section class="bg-surface py-14 lg:py-16">
-    <div class="wrap grid md:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-14 items-start">
-      <div class="flex flex-col gap-4">
-        <p class="eyebrow">How it works</p>
-        <h2 class="text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">What guaranteed rent is</h2>
-        <p class="leading-relaxed text-ink-soft">Guaranteed rent is a simple agreement. You rent the flat to us and we pay you a fixed sum every month. We then rent the flat to guests for short stays on Airbnb and Booking. Whether it is full or empty in a given month is our concern, not yours.</p>
-        <p class="leading-relaxed text-ink-soft">We look after the flat just like under <a href="/en/services" class="font-bold text-accent-deep underline">property management</a>: photos and listings, guest communication, cleaning and linen after every stay, minor maintenance and checks.</p>
+    <div class="relative h-[440px] sm:h-[500px] lg:h-[540px]">
+      <div class="absolute top-0 right-0 w-[82%] h-[84%] rounded-[var(--radius-block)] overflow-hidden rotate-2 shadow-[var(--shadow-float)]">
+        <img src="/img/byt-castle-hill-terrace.avif" alt="Flat below Bratislava Castle" class="w-full h-full object-cover" width="1440" height="960" fetchpriority="high" decoding="async" />
       </div>
-      <div class="flex flex-col gap-4 p-7 md:p-9 bg-ink text-bg rounded-[var(--radius-block)]">
-        <span class="display text-2xl font-bold">Guaranteed rent</span>
-        <ul class="flex flex-col gap-3">
-          <Check light>The same income every month, even when the flat is empty</Check>
-          <Check light>No statements, one sum in advance, always by the 15th of the month</Check>
-          <Check light>We look after the flat, guests and cleaning just like under management</Check>
-          <Check light>Contract length and notice period are agreed at the meeting</Check>
-        </ul>
-        <p class="text-sm text-cream-muted pt-3 border-t border-bg/15">For owners who want certainty and zero hassle.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="wrap py-14 lg:py-16">
-    <p class="eyebrow">Who it is for</p>
-    <h2 class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">When guaranteed rent makes sense</h2>
-    <div class="grid md:grid-cols-2 gap-5 mt-7">
-      <div class="flex flex-col gap-4 p-7 bg-sage-soft rounded-[var(--radius-card)]">
-        <h3 class="text-lg font-semibold">It suits you if</h3>
-        <ul class="flex flex-col gap-2.5">{fit.map((f) => <Check>{f}</Check>)}</ul>
-      </div>
-      <div class="flex flex-col gap-4 p-7 bg-surface rounded-[var(--radius-card)]">
-        <h3 class="text-lg font-semibold">Management is better if</h3>
-        <p class="text-[15px] leading-relaxed text-ink-soft">You want to get the most out of your flat and can handle income that changes from month to month. You then earn more in season. See <a href="/en/services" class="font-bold text-accent-deep underline">property management for 10 %</a>.</p>
+      <div class="absolute left-0 bottom-0 w-[min(340px,90%)] flex flex-col gap-3 p-6 bg-surface rounded-[var(--radius-card)] shadow-[var(--shadow-float)] -rotate-1">
+        <div class="flex items-center justify-between gap-3"><span class="display text-lg font-bold">Lease agreement</span><span class="chip !py-1 !px-2.5 text-[12px]">example</span></div>
+        <dl class="flex flex-col text-[14px]">
+          <div class="flex justify-between gap-4 py-2 border-b border-sand"><dt class="text-ink-muted">Tenant</dt><dd class="font-bold text-right">Rental Partners s. r. o.</dd></div>
+          <div class="flex justify-between gap-4 py-2 border-b border-sand"><dt class="text-ink-muted">Term</dt><dd class="font-bold text-right">agreed in advance</dd></div>
+          <div class="flex justify-between gap-4 py-2"><dt class="text-ink-muted">Rent</dt><dd class="font-bold text-right">in advance, by the 15th</dd></div>
+        </dl>
       </div>
     </div>
   </section>
 
-  <section id="how-we-set-the-rent" class="bg-surface py-14 lg:py-16 scroll-mt-6">
+  <section class="bg-surface py-16 lg:py-24">
     <div class="wrap">
-      <p class="eyebrow">Process</p>
-      <h2 class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">How we set the rent</h2>
-      <p class="mt-3 text-[17px] leading-relaxed text-ink-soft max-w-[680px]">The sum is individual. It is based on market rent levels in the area and the condition of the flat.</p>
-      <ol class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+      <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-6 lg:gap-16 items-end">
+        <div class="flex flex-col gap-4">
+          <p class="eyebrow">The difference</p>
+          <h2 class="text-[32px] md:text-[42px] font-bold tracking-[-0.02em] leading-[1.1] text-pretty">One contract instead of a carousel of tenants</h2>
+        </div>
+        <p class="text-[17px] leading-relaxed text-ink-soft">With an ordinary let, tenants come and go. In between, the flat stands empty while you search, hold viewings and sign a new contract. With guaranteed rent you sign one contract for an agreed term and the rent comes every month.</p>
+      </div>
+      <figure class="mt-10 flex flex-col gap-6 p-6 md:p-10 bg-bg rounded-[var(--radius-block)]" data-chart>
+        <div class="flex items-center justify-between gap-3">
+          <span class="display text-lg font-bold">Two years of letting</span>
+          <span class="chip !bg-surface !py-1 !px-2.5 text-[12px]">illustrative example</span>
+        </div>
+        <div class="grid md:grid-cols-[170px_1fr] gap-x-6 gap-y-2 items-center">
+          <span class="text-[15px] font-bold">Ordinary let</span>
+          <div class="flex gap-1.5 h-14" aria-hidden="true">
+            {usual.map((s, i) => (
+              <span class:list={['seg flex items-center justify-center rounded-[10px] text-[12px] font-bold whitespace-nowrap overflow-hidden', s.kind === 'tenant' ? 'bg-sand-deep text-ink-soft' : 'border-2 border-dashed border-accent/60 text-accent']} style={`flex:${s.m};--i:${i}`}><span class:list={[s.kind === 'empty' && 'hidden sm:inline']}>{s.label}</span></span>
+            ))}
+          </div>
+          <span class="text-[15px] font-bold mt-4 md:mt-0">Guaranteed rent</span>
+          <div class="flex h-14" aria-hidden="true">
+            <span class="seg flex-1 flex items-center justify-center rounded-[10px] bg-sage text-white text-[13px] font-bold" style="--i:6">one contract · rent in advance every month</span>
+          </div>
+          <span class="hidden md:block"></span>
+          <div class="flex justify-between text-[11px] font-bold text-ink-muted" aria-hidden="true"><span>start</span><span>12 months</span><span>{total} months</span></div>
+        </div>
+        <figcaption class="text-[13px] leading-relaxed text-ink-soft">The top row shows an ordinary long-term let, with tenants changing and the flat empty in between. The bottom row is guaranteed rent with one contract. Illustrative example, not real figures.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="wrap py-16 lg:py-24">
+    <p class="eyebrow">Comparison</p>
+    <h2 class="mt-2 text-[32px] md:text-[42px] font-bold tracking-[-0.02em] leading-[1.1] max-w-[760px] text-pretty">An ordinary tenant or us as your tenant</h2>
+    <div class="mt-10 grid md:grid-cols-[1fr_1.25fr_1.25fr] text-[15px]">
+      <div class="hidden md:block"></div>
+      <div class="hidden md:flex items-center px-6 pt-6 pb-4 display text-lg font-bold text-ink-soft">Ordinary tenant</div>
+      <div class="hidden md:flex items-center px-6 pt-6 pb-4 bg-sage-soft rounded-t-[var(--radius-card)] display text-lg font-bold">Rental Partners</div>
+      {compare.map((c, i) => (
+        <>
+          <div class="pt-5 md:py-4 md:pr-6 font-bold md:border-t md:border-sand">{c.label}</div>
+          <div class="flex flex-col md:block gap-0.5 mt-2 md:mt-0 px-5 md:px-6 py-3 md:py-4 bg-surface md:bg-transparent rounded-t-[14px] md:rounded-none md:border-t md:border-sand text-ink-soft"><span class="md:hidden text-[12px] font-bold text-ink-muted">Ordinary tenant</span>{c.usual}</div>
+          <div class:list={['flex flex-col md:block gap-0.5 px-5 md:px-6 py-3 md:py-4 bg-sage-soft rounded-b-[14px] md:rounded-none font-semibold', i === compare.length - 1 && 'md:rounded-b-[var(--radius-card)] md:pb-6']}><span class="md:hidden text-[12px] font-bold text-sage">Rental Partners</span>{c.us}</div>
+        </>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-sand py-16 lg:py-24">
+    <div class="wrap grid md:grid-cols-[0.85fr_1.15fr] gap-12 lg:gap-16 items-center">
+      <div class="relative h-[380px] md:h-[440px]">
+        <div class="absolute inset-y-0 left-0 w-[86%] rounded-[var(--radius-block)] overflow-hidden -rotate-2 shadow-[var(--shadow-float)]">
+          <img src="/img/tomas.webp" alt="Tomáš, founder of Rental Partners" class="w-full h-full object-cover object-[50%_25%]" width="640" height="800" loading="lazy" />
+        </div>
+        <div class="absolute right-0 bottom-8 flex items-center gap-3 pl-4 pr-5 py-4 bg-surface rounded-[var(--radius-card)] shadow-[var(--shadow-float)]">
+          <span class="w-10 h-10 rounded-full bg-sage text-white inline-flex items-center justify-center shrink-0" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d={star}></path></svg></span>
+          <span><span class="display block text-lg font-bold leading-tight">Tomáš, founder</span><span class="block text-[13px] text-ink-soft">+421 903 989 040</span></span>
+        </div>
+      </div>
+      <div class="flex flex-col gap-6">
+        <p class="eyebrow">Trust</p>
+        <h2 class="text-[32px] md:text-[42px] font-bold tracking-[-0.02em] leading-[1.1] text-pretty">You know who you are signing with</h2>
+        <ul class="flex flex-col gap-5">
+          <li class="flex flex-col gap-1.5 pb-5 border-b border-bg/60"><span class="text-lg font-semibold">A company, not a stranger</span><span class="text-[15px] leading-relaxed text-ink-soft">Rental Partners s. r. o., company ID 57632499, registered office Námestie 1. mája 8062/11, Bratislava. You can check the details in the commercial register.</span></li>
+          <li class="flex flex-col gap-1.5 pb-5 border-b border-bg/60"><span class="text-lg font-semibold">We keep flats in excellent condition</span><span class="text-[15px] leading-relaxed text-ink-soft">Guests rate us 4.89 out of 5 on Airbnb and 9.6 out of 10 on Booking. We check the flat after every stay. <a href="/en/results" class="font-bold text-accent-deep underline">See the ratings</a></span></li>
+          <li class="flex flex-col gap-1.5"><span class="text-lg font-semibold">You talk to a real person</span><span class="text-[15px] leading-relaxed text-ink-soft">Not a call centre. Tomáš knows every flat personally and answers the phone.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-surface py-16 lg:py-24">
+    <div class="wrap">
+      <p class="eyebrow">What you get</p>
+      <h2 class="mt-2 text-[32px] md:text-[42px] font-bold tracking-[-0.02em] leading-[1.1] max-w-[760px] text-pretty">Three things you can count on</h2>
+      <div class="mt-10 border-t border-sand">
+        {promises.map((p) => (
+          <div class="grid grid-cols-[88px_1fr] md:grid-cols-[180px_1fr_1fr] gap-x-6 md:gap-x-10 gap-y-2 py-7 md:py-9 border-b border-sand items-baseline">
+            <span class="display row-span-2 md:row-span-1 text-[44px] md:text-[72px] leading-none font-bold tracking-[-0.03em] text-accent">{p.n}</span>
+            <h3 class="text-xl md:text-[24px] font-semibold leading-snug">{p.t}</h3>
+            <p class="text-[15px] md:text-base leading-relaxed text-ink-soft">{p.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap py-16 lg:py-24">
+    <p class="eyebrow">Process</p>
+    <h2 class="mt-2 text-[32px] md:text-[42px] font-bold tracking-[-0.02em] leading-[1.1]">How we set the rent</h2>
+    <p class="mt-4 text-[17px] leading-relaxed text-ink-soft max-w-[620px]">The sum is individual. It is based on market rent levels in the area and the condition of the flat.</p>
+    <div class="relative mt-12">
+      <span class="hidden lg:block absolute top-[22px] left-[22px] right-[12%] h-[2px] bg-sand" aria-hidden="true"></span>
+      <ol class="relative grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
         {steps.map((s, i) => (
-          <li class="flex flex-col gap-2.5 p-5 bg-bg rounded-[var(--radius-card)]">
-            <span class="display w-9 h-9 rounded-full bg-ink text-bg text-[14px] font-semibold flex items-center justify-center" aria-hidden="true">{i + 1}</span>
+          <li class="flex flex-col gap-3">
+            <span class:list={['display w-11 h-11 rounded-full text-[15px] font-semibold flex items-center justify-center', i === steps.length - 1 ? 'bg-accent text-white' : 'bg-ink text-bg']} aria-hidden="true">{i + 1}</span>
             <h3 class="text-lg font-semibold leading-snug">{s.t}</h3>
-            <p class="text-[15px] leading-relaxed text-ink-soft">{s.d}</p>
+            <p class="text-[15px] leading-relaxed text-ink-soft max-w-[260px]">{s.d}</p>
           </li>
         ))}
       </ol>
     </div>
-  </section>
-
-  <section class="wrap py-14 lg:py-16">
-    <p class="eyebrow">Comparison</p>
-    <h2 class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">Guaranteed rent or management for 10 %</h2>
-    <div class="grid md:grid-cols-2 gap-5 mt-7">
-      <div class="flex flex-col p-7 bg-ink text-bg rounded-[var(--radius-card)]">
-        <span class="display text-xl font-bold">Guaranteed rent</span>
-        <dl class="mt-3">{compare.map((c) => <div class="py-3 border-b border-bg/15 last:border-0"><dt class="text-[13px] font-bold text-cream-muted">{c.label}</dt><dd class="mt-0.5 text-[15px] leading-snug">{c.b}</dd></div>)}</dl>
-      </div>
-      <div class="flex flex-col p-7 bg-surface rounded-[var(--radius-card)]">
-        <span class="display text-xl font-bold">Management for 10 %</span>
-        <dl class="mt-3">{compare.map((c) => <div class="py-3 border-b border-sand last:border-0"><dt class="text-[13px] font-bold text-ink-muted">{c.label}</dt><dd class="mt-0.5 text-[15px] leading-snug text-ink-soft">{c.a}</dd></div>)}</dl>
-      </div>
+    <p class="flex items-start gap-3 mt-12 p-5 bg-sage-soft rounded-[var(--radius-card)] max-w-[640px] text-[15px] leading-relaxed">
+      <svg class="shrink-0 mt-0.5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6e8b6a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+      <span><b>Unfurnished flat?</b> We can take it too. The terms are agreed individually.</span>
+    </p>
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mt-6 px-7 py-6 bg-surface rounded-[var(--radius-card)]">
+      <p class="text-[15px] leading-relaxed"><b>Want to get the most out of your flat</b> and can handle income that changes from month to month? Management for 10 % suits you better.</p>
+      <a href="/en/services" class="link-inline whitespace-nowrap shrink-0">See property management →</a>
     </div>
-    <p class="mt-6 text-[15px] leading-relaxed text-ink-soft max-w-[720px]">The full comparison of both models with ordinary long-term letting is on the <a href="/en/pricing" class="font-bold text-accent-deep underline">pricing page</a>. How our flats are doing is shown by <a href="/en/results" class="font-bold text-accent-deep underline">guest ratings</a>.</p>
   </section>
 
-  <section class="bg-surface py-14 lg:py-16">
-    <div class="wrap">
-      <p class="eyebrow">Questions</p>
-      <h2 class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">What owners ask about guaranteed rent</h2>
-      <div class="grid md:grid-cols-2 gap-5 mt-7">
-        {faq.map((f) => (
-          <div class="p-6 bg-bg rounded-[var(--radius-card)]"><h3 class="text-lg font-semibold">{f.q}</h3><p class="mt-2 text-[15px] leading-relaxed text-ink-soft">{f.a}</p></div>
+  <section class="bg-surface py-16 lg:py-24">
+    <div class="wrap grid lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-16">
+      <div class="flex flex-col gap-4 lg:sticky lg:top-8 self-start">
+        <p class="eyebrow">Questions</p>
+        <h2 class="text-[32px] md:text-[42px] font-bold tracking-[-0.02em] leading-[1.1] text-pretty">What owners ask</h2>
+        <p class="text-[15px] leading-relaxed text-ink-soft">Didn't find your answer? Call Tomáš on <a href="tel:+421903989040" class="font-bold text-ink whitespace-nowrap">+421 903 989 040</a>.</p>
+      </div>
+      <div class="border-t border-sand">
+        {faq.map((f, i) => (
+          <details class="faq group border-b border-sand" open={i === 0}>
+            <summary class="flex items-center justify-between gap-6 py-5 cursor-pointer list-none text-lg font-semibold">
+              {f.q}
+              <span class="w-9 h-9 rounded-full bg-sand inline-flex items-center justify-center shrink-0 transition-transform group-open:rotate-45" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span>
+            </summary>
+            <p class="pb-6 pr-14 text-[15px] md:text-base leading-relaxed text-ink-soft">{f.a}</p>
+          </details>
         ))}
       </div>
     </div>
@@ -128,3 +213,24 @@ const faq = [
 
   <Cta text="We will prepare a rent proposal for your flat." />
 </Base>
+
+<style>
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; border-radius: 8px; }
+  .seg { transform-origin: left center; }
+  [data-chart][data-armed] .seg { transform: scaleX(0); opacity: 0; }
+  [data-chart].is-in .seg { transform: scaleX(1); opacity: 1; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease-out; transition-delay: calc(var(--i) * 160ms); }
+</style>
+
+<script>
+  // The chart is visible without the script. The animation only runs with IntersectionObserver and without a reduced-motion preference.
+  const charts = document.querySelectorAll<HTMLElement>('[data-chart]');
+  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('is-in');
+      io.unobserve(e.target);
+    }), { threshold: 0.35 });
+    charts.forEach((c) => { c.setAttribute('data-armed', ''); io.observe(c); });
+  }
+</script>
