@@ -126,7 +126,8 @@
     .rotor-col { animation: none; }
     .deck-card { animation: none; }
     .deck-card-2, .deck-card-3 { display: none; }
-    .reviews { animation: none; flex-wrap: wrap; width: auto; }
+    .reviews { animation: none; flex-wrap: wrap; width: auto; row-gap: 20px; }
+    .reviews-dup { display: none; }
     .model-card, .model-card:hover { transition: none; transform: none; }
   }
 }

@@ -50,7 +50,7 @@ const startSteps = [
         <span><b class="text-ink">4,89 z 5 na Airbnb · Superhost</b> · Booking 9,6 z 10<br />804 hodnotení hostí, verejné a overiteľné</span>
       </p>
     </div>
-    <div class="reveal reveal-2 relative h-[420px] lg:h-[500px] mt-4 lg:mt-0">
+    <div class="reveal reveal-2 relative h-[420px] lg:h-[500px] -mt-4 lg:mt-0">
       {deck.map((c, i) => (
         <div class:list={['deck-card', c.cls]}>
           <img src={c.img} alt={c.alt} class="absolute inset-0 w-full h-full object-cover" width="1200" height="800" fetchpriority={i === 0 ? 'high' : undefined} decoding="async" />
@@ -69,15 +69,15 @@ const startSteps = [
   </section>
 
   <!-- Reviews stream -->
-  <section class="py-6 lg:py-10 overflow-hidden" aria-label="Recenzie hostí">
+  <section class="pt-6 pb-8 lg:pt-8 lg:pb-12 overflow-hidden" aria-label="Recenzie hostí">
     <div class="wrap flex items-center justify-between gap-4 mb-5">
       <p class="text-[13px] font-bold tracking-[0.06em] uppercase text-ink-muted">Z recenzií hostí<span class="hidden sm:inline"> · Airbnb a Booking</span></p>
       <a href="/vysledky" class="text-[13px] font-bold text-accent whitespace-nowrap shrink-0 py-3">Všetky recenzie →</a>
     </div>
     <div class="pl-5 md:pl-10 xl:pl-[max(64px,calc((100%-1200px)/2+64px))]">
       <div class="reviews">
-        {[...reviews, ...reviews].map((r) => (
-          <article class="flex flex-col gap-3 p-6 bg-surface rounded-[var(--radius-card)]">
+        {[...reviews, ...reviews].map((r, i) => (
+          <article class:list={['flex flex-col gap-3 p-6 bg-surface rounded-[var(--radius-card)]', i >= reviews.length && 'reviews-dup']} aria-hidden={i >= reviews.length ? 'true' : undefined}>
             <div class="flex gap-[3px] text-sage" role="img" aria-label="5 z 5 hviezdičiek">{[1, 2, 3, 4, 5].map(() => <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg>)}</div>
             <p class="text-[15px] leading-[1.5]">„{r.q}“</p>
             <p class="text-[13px] text-ink-muted">{r.by}</p>
@@ -88,11 +88,11 @@ const startSteps = [
   </section>
 
   <!-- Two models -->
-  <section id="modely" class="wrap py-14 lg:py-[72px]">
+  <section id="modely" class="wrap pt-10 lg:pt-14 pb-16 lg:pb-24">
     <p class="eyebrow">Modely spolupráce</p>
     <h2 class="mt-2 text-[30px] md:text-[38px] font-bold tracking-[-0.02em] leading-[1.15]">Dva spôsoby, ako s nami spolupracovať</h2>
     <p class="mt-3 text-[17px] leading-relaxed text-ink-soft max-w-[700px]">Vyberiete si podľa toho, či chcete vyšší výnos, alebo istý príjem. O byt sa v oboch prípadoch staráme rovnako.</p>
-    <div class="grid md:grid-cols-2 gap-6 mt-8">
+    <div class="grid md:grid-cols-2 gap-6 mt-10">
       <a href="/sluzby" class="group flex flex-col gap-4 p-6 lg:p-9 bg-surface rounded-[var(--radius-block)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-float)] focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-4">
         <div class="flex flex-wrap items-center justify-between gap-2"><h3 class="display text-2xl font-bold">Správa bytu</h3><span class="chip whitespace-nowrap">10 % z obratu</span></div>
         <p class="leading-relaxed text-ink-soft">Byt zostáva váš a my ho prevádzkujeme na Airbnb a Booking. Vy dostávate výnos podľa obsadenosti, v silnej sezóne viac, a my z neho desatinu.</p>
@@ -109,17 +109,17 @@ const startSteps = [
         <span class="link-inline self-start -mt-2 !text-accent-soft transition-[gap] group-hover:gap-3">Viac o garantovanom prenájme →</span>
       </a>
     </div>
-    <a href="/cennik" class="link-inline mt-4">Porovnať oba modely v cenníku →</a>
+    <a href="/cennik" class="link-inline mt-6">Porovnať oba modely v cenníku →</a>
   </section>
 
   <!-- Services -->
   <!-- NOVÉ: sebaidentifikácia, každá situácia vedie na model, ktorý jej sedí -->
-  <section class="bg-surface py-14 lg:py-[72px]">
+  <section class="bg-surface py-16 lg:py-24">
     <div class="wrap">
       <p class="eyebrow">Pre koho</p>
       <h2 class="mt-2 text-[30px] md:text-[38px] font-bold tracking-[-0.02em] leading-[1.15] max-w-[760px] text-pretty">Ktorý spôsob je pre vás?</h2>
       <p class="mt-3 text-[17px] leading-relaxed text-ink-soft max-w-[640px]">Podľa toho, v akej situácii je váš byt.</p>
-      <div class="grid md:grid-cols-3 gap-5 mt-8">
+      <div class="grid md:grid-cols-3 gap-5 mt-10">
         {situations.map((s) => (
           <a href={s.href} class="group flex flex-col gap-4 p-7 bg-bg rounded-[var(--radius-card)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-float)]">
             <span class="w-12 h-12 rounded-full bg-sage-soft text-sage inline-flex items-center justify-center" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d={s.i}></path></svg></span>
@@ -133,7 +133,7 @@ const startSteps = [
   </section>
 
   <!-- NOVÉ: nízka bariéra, tri kroky a voľba ostáva na majiteľovi -->
-  <section class="bg-sand py-14 lg:py-[72px]">
+  <section class="bg-sand py-16 lg:py-24">
     <div class="wrap">
       <p class="eyebrow">Ako začneme</p>
       <h2 class="mt-2 text-[30px] md:text-[38px] font-bold tracking-[-0.02em] leading-[1.15] max-w-[760px] text-pretty">Tri kroky a rozhodnutie je na vás</h2>
@@ -156,31 +156,24 @@ const startSteps = [
     </div>
   </section>
 
-  <section class="bg-surface py-14 lg:py-16">
+  <section class="bg-surface py-16 lg:py-24">
     <div class="wrap">
       <p class="eyebrow">Služby</p>
       <h2 class="mt-2 text-[30px] md:text-[38px] font-bold tracking-[-0.02em] leading-[1.15]">Čo preberáme za vás</h2>
       <p class="mt-3 text-[17px] leading-relaxed text-ink-soft max-w-[620px]">Všetko, čo by ste inak riešili vy. Každý deň, aj cez víkend. Pri oboch modeloch.</p>
-      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-8">
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-10">
         {services.map((s) => (
-          <div class="flex flex-col gap-3 p-5 bg-bg rounded-[var(--radius-card)]">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9694a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d={s.i}></path></svg>
-            <h3 class="text-[17px] font-semibold">{s.t}</h3>
-            <p class="text-sm leading-relaxed text-ink-soft">{s.d}</p>
+          <div class="flex gap-4 p-5 bg-bg rounded-[var(--radius-card)] sm:flex-col sm:gap-3">
+            <svg class="shrink-0" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9694a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d={s.i}></path></svg>
+            <div class="flex flex-col gap-1 sm:gap-3">
+              <h3 class="text-[17px] font-semibold">{s.t}</h3>
+              <p class="text-sm leading-relaxed text-ink-soft">{s.d}</p>
+            </div>
           </div>
         ))}
       </div>
-      <a href="/sluzby" class="link-inline mt-4">Všetky služby podrobne →</a>
+      <a href="/sluzby" class="link-inline mt-6">Všetky služby podrobne →</a>
     </div>
-  </section>
-
-  <!-- NOVÉ: skutočný termín zo zákona ako dôvod konať teraz -->
-  <section class="wrap pt-14 lg:pt-[72px]">
-    <a href="/blog/register-kratkodobych-prenajmov" class="group grid md:grid-cols-[auto_1fr_auto] gap-5 md:gap-8 items-center p-7 md:p-9 bg-surface rounded-[var(--radius-block)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-float)]">
-      <span class="display text-[40px] md:text-[52px] leading-none font-bold tracking-[-0.03em] text-accent whitespace-nowrap">28. 2. 2027</span>
-      <span class="flex flex-col gap-1.5"><span class="text-lg font-semibold">Register krátkodobých prenájmov</span><span class="text-[15px] leading-relaxed text-ink-soft">Do tohto dátumu musí byť každý byt, ktorý dnes prenajímate cez Airbnb alebo Booking, zapísaný v štátnom registri. Čo treba urobiť a čo si pripraviť.</span></span>
-      <span class="link-inline whitespace-nowrap transition-[gap] group-hover:gap-3">Prečítať článok →</span>
-    </a>
   </section>
 
   <Cta text="Staráme sa o byty v centre Bratislavy. Ten váš môže byť ďalší." />
