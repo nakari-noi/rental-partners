@@ -1,6 +1,6 @@
 # Rental Partners — stav projektu a ďalšie kroky
 
-*Aktualizované: 8. 10. 2026 (5. session)*
+*Aktualizované: 13. 10. 2026 (6. session). Kde sme skončili: sekcia ▶ nižšie.*
 
 ## Kde čo je
 
@@ -119,6 +119,32 @@
 - **Opravené a nasadené:** odkaz na článok z Cenníka (pod otázkami) a zo Služieb (pod „Čo potrebujeme od vás“), `role="img"` pri hviezdičkách v recenziách, logo v hlavičke bez nesúladného `aria-label` (skrytý text „domov“ / „home“), odkaz v pätičke min. 44 px.
 - Falošné poplachy v `site-check.mjs`: „rozbité obrázky“ na mobile Výsledkov = `loading="lazy"`, nestihnú sa načítať; „malý cieľ“ na Kontakte = odkaz vo vete pri súhlase (inline odkazy sú výnimka).
 - Test formulára zablokoval systém oprávnení (skutočný dopyt do firemnej schránky) → poslať ručne alebo povoliť.
+
+## ▶ KDE SME SKONČILI 13. 10. 2026 VEČER (pokračovať presne tu)
+
+**Pracuje sa vo vetve `navrh-seo-2026-10`: len lokálne, NEPUSHNUTÁ, nič nenasadené.** `master` = živý web. Používateľ chce všetko najprv ako návrh. Nasadiť až na jeho „nasaď“ (vtedy merge do `master` a push, Vercel nasadí sám).
+
+**Náhľad návrhu:** `cd web && npm run build && node scripts/serve-dist.mjs` → http://127.0.0.1:4399 (spustiť na pozadí, na konci vypnúť).
+
+**Čo je vo vetve:**
+- Titulky a H1 na frázy „správa Airbnb“ (SK + EN Domov, Služby, Cenník). H1 = štítok nad veľkým nadpisom, slogan je `<p class="display">`, vzhľad rovnaký.
+- Menu „Služby“ s podmenu **Správa bytu (10 %)** → `/sluzby` a **Garantovaný nájom** → `/garantovany-prenajom` (počítač: prejdenie myšou, mobil: ťuknutie). Pätička: Správa bytu, Garantovaný nájom.
+- `/sluzby` = **Správa bytu**, nový vzhľad (behaviorálna psychológia): úvod s naklonenou fotkou a kartou „10 % z obratu“, graf výnosu oproti dlhodobému nájmu (stĺpce narastú pri rolovaní), mriežka služieb s dominantnou dlaždicou „Hostia píšu nám, nie vám“, vyúčtovanie ako naklonený doklad, postup v 2 fázach, skutočné recenzie, otázky ako rozbaľovací zoznam, „Od vás potrebujeme len tri veci“.
+- `/garantovany-prenajom` = **verzia A** (graf sezóny verzus pevný nájom, prísľuby 15. / 12× / 0 nulové riziko, situácie majiteľov, postup, Tomáš a recenzia, porovnanie so správou, otázky).
+- `/navrh/garantovany-prenajom-b` = **verzia B** (myšlienka klienta: „ako dlhodobý nájom, len s firmou na dohodnutú dobu, nehrozí, že nájomca po troch mesiacoch odíde“): úvod „Nájomca, na ktorého sa dá spoľahnúť“ s ukážkou zmluvy, graf „kolotoč nájomcov verzus jedna zmluva“, porovnanie „bežný nájomca alebo my“, „Viete, s kým podpisujete“ (s. r. o., IČO). `noindex`, mimo sitemapy.
+- `/en/guaranteed-rent` (zatiaľ starý vzhľad), `/en/services` bez nového vzhľadu.
+- Článok `/blog/register-kratkodobych-prenajmov` (overené v zákone 133/2026 Z. z.; odsek, kto zápis robí, vynechaný na pokyn).
+- Upratovanie v otázkach (odpoveď klienta): garantovaný nájom = platíme my; správa = „Upratovanie po každom pobyte zabezpečujeme my. Hosť pri rezervácii platí poplatok za upratovanie a v mesačnom vyúčtovaní uvidíte, ako sa zúčtovalo.“ (aj v Cenníku). Nezariadený byt pri garantovanom nájme: áno, po dohode.
+- `docs/texty-katalogy.md`: texty do katalógov firiem a inzerát na Bazoš.
+
+**Čaká na odpoveď používateľa (opýtať sa hneď na začiatku):**
+1. Garantovaný prenájom: **verzia A alebo B** (alebo B + graf sezóny z A)? Odporúčanie: B (sedí na dlhodobých prenajímateľov). Vybranú dať na `/garantovany-prenajom`, druhú zmazať.
+2. Cenník, časť „Vždy v cene“: pri správe je tam upratovanie, čo nie je presné → zmeniť na „Upratovanie a bielizeň po každom pobyte zabezpečíme“?
+3. Potom: EN verzie oboch stránok v novom vzhľade → kontrola (build, detektor `impeccable detect`, mobil) → „nasaď“.
+
+**Ďalšie otvorené (od klienta):** fakty pre O nás · otváracie hodiny do katalógov · súhlas s vetou „na trhu bežne 15 až 20 %“ · recenzie od majiteľov na Google profile (0 recenzií) · Booking „Spravuje Tomáš“ → „Rental Partners“ (potom zmeniť aj štítok na Výsledkoch).
+
+**Search Console:** 13. 10. vyžiadané indexovanie 10 stránok a znova odoslaná sitemap. **Okolo 20. 10. skontrolovať index** (Startpage `site:rentalpartners.sk` alebo Search Console cez MCP `chrome-moj`; vo vlastnom Chrome treba zapnúť `chrome://inspect/#remote-debugging`, po práci vypnúť).
 
 ## Ako pokračovať zajtra
 
