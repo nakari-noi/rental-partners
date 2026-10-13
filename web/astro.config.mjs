@@ -21,7 +21,7 @@ export default defineConfig({
   integrations: [
     sitemap({
       // 404 nepatrí do sitemapy
-      filter: (page) => !page.endsWith('/404'),
+      filter: (page) => !page.endsWith('/404') && !page.includes('/navrh/'),
       serialize(item) {
         const slug = item.url.match(/\/blog\/([^/]+)$/)?.[1];
         if (slug && articleDates[slug]) item.lastmod = new Date(articleDates[slug]).toISOString();
