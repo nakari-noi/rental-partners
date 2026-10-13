@@ -37,11 +37,11 @@ const faq = [
   { q: 'Na ktorých platformách byt inzerujete?', a: 'Na Airbnb a Booking, podľa bytu aj na ďalších platformách.' },
 ];
 ---
-<Base title="Služby správcu Airbnb v Bratislave" breadcrumb="Služby" faq={faq} service={{ name: 'Správa bytu na Airbnb a Booking', serviceType: 'Správa krátkodobého prenájmu', description: 'Fotenie, inzeráty a ceny, komunikácia s hosťami, upratovanie, údržba a mesačné vyúčtovanie bytu na krátkodobý prenájom v Bratislave za 10 % z obratu.' }} description="Čo robí správca Airbnb: fotenie, inzeráty a ceny, komunikácia s hosťami, upratovanie, údržba a mesačné vyúčtovanie. Správa bytu v Bratislave za 10 %.">
+<Base title="Správa bytu na Airbnb a Booking za 10 %" breadcrumb="Správa bytu" faq={faq} service={{ name: 'Správa bytu na Airbnb a Booking', serviceType: 'Správa krátkodobého prenájmu', description: 'Fotenie, inzeráty a ceny, komunikácia s hosťami, upratovanie, údržba a mesačné vyúčtovanie bytu na krátkodobý prenájom v Bratislave za 10 % z obratu.' }} description="Čo robí správca Airbnb: fotenie, inzeráty a ceny, komunikácia s hosťami, upratovanie, údržba a mesačné vyúčtovanie. Správa bytu v Bratislave za 10 %.">
   <section class="wrap pt-10 pb-8 lg:pt-14">
-    <h1 class="chip">Služby správcu Airbnb a Booking v Bratislave</h1>
+    <h1 class="chip">Správa bytu na Airbnb a Booking v Bratislave</h1>
     <p class="display mt-5 text-[38px] md:text-[52px] leading-[1.08] font-bold tracking-[-0.02em] max-w-[820px] text-pretty">Od prvej fotky po posledné upratovanie</p>
-    <p class="mt-5 text-lg leading-relaxed text-ink-soft max-w-[640px]">Päť vecí, ktoré by ste pri krátkodobom prenájme riešili každý týždeň, od fotenia po vyúčtovanie. Preberáme ich všetky, pri správe bytu aj pri garantovanom nájme.</p>
+    <p class="mt-5 text-lg leading-relaxed text-ink-soft max-w-[640px]">Päť vecí, ktoré by ste pri krátkodobom prenájme riešili každý týždeň, od fotenia po vyúčtovanie. Preberáme ich všetky, pri správe bytu aj pri <a href="/garantovany-prenajom" class="font-bold text-accent-deep underline">garantovanom nájme</a>.</p>
   </section>
 
   {services.map((s, i) => (
@@ -97,7 +97,7 @@ const faq = [
           </li>
         ))}
       </ol>
-      <p class="mt-7 text-[15px] leading-relaxed text-ink-soft max-w-[720px]">Koľko správa stojí a ako sa líši od garantovaného nájmu, nájdete v <a href="/cennik" class="font-bold text-accent-deep underline">cenníku</a>. Ako sa našim bytom darí, ukazujú <a href="/vysledky" class="font-bold text-accent-deep underline">hodnotenia hostí</a>.</p>
+      <p class="mt-7 text-[15px] leading-relaxed text-ink-soft max-w-[720px]">Koľko správa stojí a ako sa líši od garantovaného nájmu, nájdete v <a href="/cennik" class="font-bold text-accent-deep underline">cenníku</a>. Ak chcete radšej rovnakú sumu každý mesiac, pozrite si <a href="/garantovany-prenajom" class="font-bold text-accent-deep underline">garantovaný prenájom</a>. Ako sa našim bytom darí, ukazujú <a href="/vysledky" class="font-bold text-accent-deep underline">hodnotenia hostí</a>.</p>
     </div>
   </section>
 

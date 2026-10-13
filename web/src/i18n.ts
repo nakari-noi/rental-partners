@@ -8,6 +8,7 @@ export const langOf = (pathname: string): Lang => (pathname === '/en' || pathnam
 export const pairs: Record<string, string> = {
   '/': '/en',
   '/sluzby': '/en/services',
+  '/garantovany-prenajom': '/en/guaranteed-rent',
   '/cennik': '/en/pricing',
   '/vysledky': '/en/results',
   '/o-nas': '/en/about',
@@ -26,7 +27,7 @@ const sk = {
   contact: '/kontakt',
   privacy: '/ochrana-osobnych-udajov',
   nav: [
-    { href: '/sluzby', label: 'Služby' },
+    { href: '/sluzby', label: 'Služby', children: [{ href: '/sluzby', label: 'Správa bytu (10 %)' }, { href: '/garantovany-prenajom', label: 'Garantovaný nájom' }] },
     { href: '/cennik', label: 'Cenník' },
     { href: '/vysledky', label: 'Výsledky' },
     { href: '/o-nas', label: 'O nás' },
@@ -60,7 +61,8 @@ const sk = {
     privacy: 'Ochrana osobných údajov',
     cookies: 'Nastavenia cookies',
     links: [
-      { href: '/sluzby', label: 'Služby' },
+      { href: '/sluzby', label: 'Správa bytu' },
+      { href: '/garantovany-prenajom', label: 'Garantovaný nájom' },
       { href: '/cennik', label: 'Cenník' },
       { href: '/vysledky', label: 'Výsledky' },
       { href: '/o-nas', label: 'O nás' },
@@ -91,7 +93,7 @@ const en: typeof sk = {
   contact: '/en/contact',
   privacy: '/en/privacy',
   nav: [
-    { href: '/en/services', label: 'Services' },
+    { href: '/en/services', label: 'Services', children: [{ href: '/en/services', label: 'Property management (10 %)' }, { href: '/en/guaranteed-rent', label: 'Guaranteed rent' }] },
     { href: '/en/pricing', label: 'Pricing' },
     { href: '/en/results', label: 'Results' },
     { href: '/en/about', label: 'About' },
@@ -125,7 +127,8 @@ const en: typeof sk = {
     privacy: 'Privacy policy',
     cookies: 'Cookie settings',
     links: [
-      { href: '/en/services', label: 'Services' },
+      { href: '/en/services', label: 'Property management' },
+      { href: '/en/guaranteed-rent', label: 'Guaranteed rent' },
       { href: '/en/pricing', label: 'Pricing' },
       { href: '/en/results', label: 'Results' },
       { href: '/en/about', label: 'About' },

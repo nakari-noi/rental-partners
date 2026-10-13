@@ -14,8 +14,23 @@ const phoneIcon = 'M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 
 ---
 <header class="wrap relative flex items-center justify-between gap-4 py-5 md:py-6">
   <a href={s.home} class="shrink-0"><Logo class="h-10 md:h-[46px] w-auto block" /><span class="sr-only">{s.homeAria}</span></a>
+  <!-- Položka s podmenu (Služby): na počítači sa otvorí prejdením myšou alebo klávesnicou (focus), kliknutím aj na dotykovom notebooku. V mobilnom menu sa otvorí ťuknutím, na stránke zo skupiny je otvorená hneď. -->
   <nav class="hidden lg:flex items-center gap-7 text-[15px] font-semibold text-ink-soft" aria-label={s.mainNav}>
-    {s.nav.map((l) => (
+    {s.nav.map((l) => l.children ? (
+      <div class="relative group" data-dropdown>
+        <button type="button" class:list={['inline-flex items-center gap-1.5 hover:text-ink transition-colors py-2 border-b-2', l.children.some((c) => active(c.href)) ? 'text-ink border-accent' : 'border-transparent']} aria-expanded="false" aria-haspopup="true" data-dropdown-toggle>
+          {l.label}
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="transition-transform group-hover:rotate-180 group-focus-within:rotate-180"><path d="M6 9l6 6 6-6"></path></svg>
+        </button>
+        <div class="absolute left-1/2 -translate-x-1/2 top-full pt-2 z-30 hidden group-hover:block group-focus-within:block group-data-[open=true]:block">
+          <div class="flex flex-col gap-0.5 min-w-[236px] bg-surface rounded-[var(--radius-card)] p-2 border border-sand shadow-[var(--shadow-float)]">
+            {l.children.map((c) => (
+              <a href={c.href} class:list={['px-3.5 py-2.5 rounded-xl text-[15px] font-semibold min-h-11 flex items-center whitespace-nowrap hover:bg-sand hover:text-ink transition-colors', active(c.href) ? 'bg-sand text-ink' : 'text-ink-soft']} aria-current={active(c.href) ? 'page' : undefined}>{c.label}</a>
+            ))}
+          </div>
+        </div>
+      </div>
+    ) : (
       <a href={l.href} class:list={['hover:text-ink transition-colors py-2 border-b-2', active(l.href) ? 'text-ink border-accent' : 'border-transparent']} aria-current={active(l.href) ? 'page' : undefined}>{l.label}</a>
     ))}
   </nav>
@@ -36,7 +51,19 @@ const phoneIcon = 'M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 
   </div>
   <div id="mobilne-menu" class="lg:hidden hidden absolute right-5 md:right-10 top-[calc(100%-8px)] z-30 w-[264px]" data-menu>
     <nav class="flex flex-col gap-0.5 bg-surface rounded-[var(--radius-card)] p-2 border border-sand shadow-[var(--shadow-float)]" aria-label={s.mobileNav}>
-      {s.nav.map((l) => (
+      {s.nav.map((l) => l.children ? (
+        <div>
+          <button type="button" class:list={['w-full px-3.5 py-2.5 rounded-xl text-[15px] font-semibold min-h-11 flex items-center justify-between', l.children.some((c) => active(c.href)) ? 'text-ink' : 'text-ink-soft']} aria-expanded={l.children.some((c) => active(c.href)) ? 'true' : 'false'} data-sub-toggle>
+            {l.label}
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="transition-transform" data-sub-icon><path d="M6 9l6 6 6-6"></path></svg>
+          </button>
+          <div class:list={['flex flex-col gap-0.5 pl-3', !l.children.some((c) => active(c.href)) && 'hidden']} data-sub>
+            {l.children.map((c) => (
+              <a href={c.href} class:list={['px-3.5 py-2.5 rounded-xl text-[15px] font-semibold min-h-11 flex items-center', active(c.href) ? 'bg-sand text-ink' : 'text-ink-soft']} aria-current={active(c.href) ? 'page' : undefined}>{c.label}</a>
+            ))}
+          </div>
+        </div>
+      ) : (
         <a href={l.href} class:list={['px-3.5 py-2.5 rounded-xl text-[15px] font-semibold min-h-11 flex items-center', active(l.href) ? 'bg-sand text-ink' : 'text-ink-soft']} aria-current={active(l.href) ? 'page' : undefined}>{l.label}</a>
       ))}
       <a href={switchHref} hreflang={otherLang} lang={otherLang} class="px-3.5 py-2.5 rounded-xl text-[15px] font-semibold min-h-11 flex items-center gap-2 text-ink-soft" aria-label={s.switchAria}><span class="text-[11px] font-extrabold tracking-[0.08em] px-1.5 py-0.5 rounded bg-sand text-ink">{s.switchLabel}</span>{s.switchMenu}</a>
@@ -68,5 +95,30 @@ const phoneIcon = 'M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 
     if (!menu || menu.classList.contains('hidden')) return;
     const t = e.target as Node;
     if (!menu.contains(t) && !btn?.contains(t)) setMenu(false);
+  });
+
+  // Podmenu v hlavičke: prejdenie myšou rieši CSS, kliknutie (dotykový notebook) ho prepne, Escape a klik mimo zatvoria
+  document.querySelectorAll<HTMLElement>('[data-dropdown]').forEach((dd) => {
+    const toggle = dd.querySelector<HTMLButtonElement>('[data-dropdown-toggle]');
+    const set = (open: boolean) => { dd.dataset.open = String(open); toggle?.setAttribute('aria-expanded', String(open)); };
+    toggle?.addEventListener('click', () => set(dd.dataset.open !== 'true'));
+    dd.addEventListener('mouseenter', () => toggle?.setAttribute('aria-expanded', 'true'));
+    dd.addEventListener('mouseleave', () => { if (dd.dataset.open !== 'true') toggle?.setAttribute('aria-expanded', 'false'); });
+    document.addEventListener('click', (e) => { if (!dd.contains(e.target as Node)) set(false); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && dd.dataset.open === 'true') { set(false); toggle?.focus(); } });
+  });
+
+  // Podmenu v mobilnom menu: otvorí sa ťuknutím
+  document.querySelectorAll<HTMLButtonElement>('[data-sub-toggle]').forEach((t) => {
+    const sub = t.nextElementSibling as HTMLElement | null;
+    const icon = t.querySelector('[data-sub-icon]');
+    const sync = () => icon?.classList.toggle('rotate-180', t.getAttribute('aria-expanded') === 'true');
+    sync();
+    t.addEventListener('click', () => {
+      const open = t.getAttribute('aria-expanded') !== 'true';
+      t.setAttribute('aria-expanded', String(open));
+      sub?.classList.toggle('hidden', !open);
+      sync();
+    });
   });
 </script>

@@ -1,0 +1,132 @@
+---
+import Base from '../layouts/Base.astro';
+import Cta from '../components/Cta.astro';
+import Check from '../components/Check.astro';
+
+// Garantovaný prenájom (model B). Fakty z docs/fakty.md a zo schválených textov v cenníku, nič navyše.
+// V titulku a nadpise tvar „garantovaný prenájom“ (ten ľudia hľadajú), v texte aj „garantovaný nájom“ (tak ho volá klient).
+const steps = [
+  { t: 'Obhliadka bytu', d: 'Prídeme sa pozrieť na byt a lokalitu.' },
+  { t: 'Odhad', d: 'Odhadneme, koľko byt na krátkodobom prenájme zarobí za rok.' },
+  { t: 'Návrh nájmu a zmluvy', d: 'Navrhneme pevný mesačný nájom a zmluvu. Rozhodnutie je na vás.' },
+  { t: 'Nájom každý mesiac', d: 'Po podpise vám platíme dohodnutú sumu vopred, vždy k 15. dňu v mesiaci.' },
+];
+const fit = [
+  'Chcete každý mesiac rovnakú sumu a nechcete riešiť sezónu ani obsadenosť.',
+  'Byt máte prázdny a nechcete sa starať o hostí ani o nájomcov.',
+  'Prenajímate dlhodobo a nebaví vás hľadať a meniť nájomcov.',
+  'Prenajímate na Airbnb sami a už vás to unavuje.',
+];
+const compare = [
+  { label: 'Váš príjem', b: 'Pevná suma každý mesiac', a: 'Výnos podľa obsadenosti, my si berieme 10 % z obratu' },
+  { label: 'Kedy platíme', b: 'Vopred, vždy k 15. dňu v mesiaci', a: 'Po vyúčtovaní, do 10. dňa nasledujúceho mesiaca' },
+  { label: 'Náklady na prevádzku', b: 'Hradíme my, okrem opráv, ktoré s prenájmom nesúvisia', a: 'Energie, internet, spotrebný materiál a poplatky platforiem hradí majiteľ' },
+  { label: 'Hostia, upratovanie, údržba', b: 'Riešime my', a: 'Riešime my' },
+  { label: 'Byt pre vás', b: 'Termíny dohodneme v zmluve', a: 'Termíny si viete blokovať podľa dohody' },
+];
+// Otázky majiteľov: na stránke aj v štruktúrovaných dátach (FAQPage)
+const faq = [
+  { q: 'Kedy dostanem nájom?', a: 'Vopred, vždy k 15. dňu v mesiaci. Žiadne vyúčtovania, jedna dohodnutá suma.' },
+  { q: 'Čo ak je byt prázdny?', a: 'Nájom vám platíme rovnako. Riziko obsadenosti je naše.' },
+  { q: 'Ako určíte výšku nájmu?', a: 'Suma je individuálna. Vychádza z trhových hodnôt nájmu v lokalite a zo stavu bytu.' },
+  { q: 'Kto platí energie a opravy?', a: 'Pri garantovanom nájme hradíme všetko my, okrem opráv, ktoré s krátkodobým prenájmom nesúvisia ani ním neboli spôsobené.' },
+  { q: 'Môžem byt používať aj ja?', a: 'Áno. Termíny, kedy bude byt pre vás, dohodneme v zmluve.' },
+  { q: 'Na ako dlho sa podpisuje zmluva?', a: 'Dĺžku zmluvy a výpovednú lehotu dohodneme na stretnutí. Sú individuálne, podľa podmienok, na ktorých sa vopred dohodneme.' },
+  { q: 'Kto sa stará o byt a hostí?', a: 'My. O byt, hostí aj upratovanie sa staráme rovnako ako pri správe bytu a po každom pobyte byt skontrolujeme.' },
+  { q: 'Aký je rozdiel oproti správe za 10 %?', a: 'Pri správe dostávate výnos podľa obsadenosti a my si berieme 10 % z obratu, v sezóne zarobíte viac, mimo nej menej. Pri garantovanom nájme dostávate každý mesiac rovnakú sumu bez ohľadu na obsadenosť.' },
+];
+---
+<Base title="Garantovaný prenájom bytu v Bratislave" breadcrumb="Garantovaný nájom" description="Byt si od vás prenajmeme a platíme pevný nájom vopred každý mesiac, bez ohľadu na obsadenosť. Garantovaný prenájom bytu v Bratislave od Rental Partners." faq={faq} service={{ name: 'Garantovaný prenájom bytu', serviceType: 'Garantovaný nájom bytu', description: 'Byt si od majiteľa prenajmeme, platíme mu pevný mesačný nájom vopred bez ohľadu na obsadenosť a byt prevádzkujeme na krátkodobý prenájom na vlastné riziko.' }}>
+  <section class="wrap pt-10 pb-8 lg:pt-14">
+    <h1 class="chip">Garantovaný prenájom bytu v Bratislave</h1>
+    <p class="display mt-5 text-[38px] md:text-[52px] leading-[1.08] font-bold tracking-[-0.02em] max-w-[820px] text-pretty">Pevná suma každý mesiac, aj keď je byt prázdny</p>
+    <p class="mt-5 text-lg leading-relaxed text-ink-soft max-w-[660px]">Byt si od vás prenajmeme a platíme vám dohodnutý nájom vopred, vždy k 15. dňu v mesiaci. Krátkodobý prenájom na Airbnb a Booking robíme na vlastné riziko. Hostí, upratovanie aj starostlivosť o byt riešime my.</p>
+    <div class="mt-7 flex flex-wrap gap-4 items-center">
+      <a href="/kontakt" class="btn-primary">Chcem návrh nájmu</a>
+      <a href="#vyska-najmu" class="link-inline">Ako určíme výšku nájmu ↓</a>
+    </div>
+  </section>
+
+  <section class="bg-surface py-14 lg:py-16">
+    <div class="wrap grid md:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-14 items-start">
+      <div class="flex flex-col gap-4">
+        <p class="eyebrow">Ako to funguje</p>
+        <h2 class="text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">Čo je garantovaný prenájom</h2>
+        <p class="leading-relaxed text-ink-soft">Garantovaný prenájom, nazývaný aj garantovaný nájom, je jednoduchá dohoda. Byt nám prenajmete a my vám každý mesiac platíme pevnú sumu. Byt potom prenajímame hosťom krátkodobo cez Airbnb a Booking. Či bude v danom mesiaci plný alebo prázdny, je naša starosť, nie vaša.</p>
+        <p class="leading-relaxed text-ink-soft">O byt sa staráme rovnako ako pri <a href="/sluzby" class="font-bold text-accent-deep underline">správe bytu</a>: fotky a inzeráty, komunikácia s hosťami, upratovanie a bielizeň po každom pobyte, drobná údržba a kontrola bytu.</p>
+      </div>
+      <div class="flex flex-col gap-4 p-7 md:p-9 bg-ink text-bg rounded-[var(--radius-block)]">
+        <span class="display text-2xl font-bold">Garantovaný nájom</span>
+        <ul class="flex flex-col gap-3">
+          <Check light>Rovnaký príjem každý mesiac, aj keď je byt prázdny</Check>
+          <Check light>Žiadne vyúčtovania, jedna suma vopred, vždy k 15. dňu v mesiaci</Check>
+          <Check light>O byt, hostí aj upratovanie sa staráme ako pri správe</Check>
+          <Check light>Dĺžku zmluvy a výpovednú lehotu dohodneme na stretnutí</Check>
+        </ul>
+        <p class="text-sm text-cream-muted pt-3 border-t border-bg/15">Pre majiteľov, ktorí chcú istotu a nulové starosti.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap py-14 lg:py-16">
+    <p class="eyebrow">Pre koho</p>
+    <h2 class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">Kedy sa garantovaný nájom hodí</h2>
+    <div class="grid md:grid-cols-2 gap-5 mt-7">
+      <div class="flex flex-col gap-4 p-7 bg-sage-soft rounded-[var(--radius-card)]">
+        <h3 class="text-lg font-semibold">Hodí sa, ak</h3>
+        <ul class="flex flex-col gap-2.5">{fit.map((f) => <Check>{f}</Check>)}</ul>
+      </div>
+      <div class="flex flex-col gap-4 p-7 bg-surface rounded-[var(--radius-card)]">
+        <h3 class="text-lg font-semibold">Lepšia bude správa bytu, ak</h3>
+        <p class="text-[15px] leading-relaxed text-ink-soft">Chcete z bytu vyťažiť maximum a zvládnete, že sa príjem mesiac od mesiaca líši. V sezóne vtedy zarobíte viac. Pozrite si <a href="/sluzby" class="font-bold text-accent-deep underline">správu bytu za 10 %</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="vyska-najmu" class="bg-surface py-14 lg:py-16 scroll-mt-6">
+    <div class="wrap">
+      <p class="eyebrow">Postup</p>
+      <h2 class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">Ako určíme výšku nájmu</h2>
+      <p class="mt-3 text-[17px] leading-relaxed text-ink-soft max-w-[680px]">Suma je individuálna. Vychádza z trhových hodnôt nájmu v lokalite a zo stavu bytu.</p>
+      <ol class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+        {steps.map((s, i) => (
+          <li class="flex flex-col gap-2.5 p-5 bg-bg rounded-[var(--radius-card)]">
+            <span class="display w-9 h-9 rounded-full bg-ink text-bg text-[14px] font-semibold flex items-center justify-center" aria-hidden="true">{i + 1}</span>
+            <h3 class="text-lg font-semibold leading-snug">{s.t}</h3>
+            <p class="text-[15px] leading-relaxed text-ink-soft">{s.d}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="wrap py-14 lg:py-16">
+    <p class="eyebrow">Porovnanie</p>
+    <h2 class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">Garantovaný nájom alebo správa za 10 %</h2>
+    <div class="grid md:grid-cols-2 gap-5 mt-7">
+      <div class="flex flex-col p-7 bg-ink text-bg rounded-[var(--radius-card)]">
+        <span class="display text-xl font-bold">Garantovaný nájom</span>
+        <dl class="mt-3">{compare.map((c) => <div class="py-3 border-b border-bg/15 last:border-0"><dt class="text-[13px] font-bold text-cream-muted">{c.label}</dt><dd class="mt-0.5 text-[15px] leading-snug">{c.b}</dd></div>)}</dl>
+      </div>
+      <div class="flex flex-col p-7 bg-surface rounded-[var(--radius-card)]">
+        <span class="display text-xl font-bold">Správa bytu za 10 %</span>
+        <dl class="mt-3">{compare.map((c) => <div class="py-3 border-b border-sand last:border-0"><dt class="text-[13px] font-bold text-ink-muted">{c.label}</dt><dd class="mt-0.5 text-[15px] leading-snug text-ink-soft">{c.a}</dd></div>)}</dl>
+      </div>
+    </div>
+    <p class="mt-6 text-[15px] leading-relaxed text-ink-soft max-w-[720px]">Celé porovnanie oboch modelov aj s bežným dlhodobým prenájmom nájdete v <a href="/cennik" class="font-bold text-accent-deep underline">cenníku</a>. Ako sa našim bytom darí, ukazujú <a href="/vysledky" class="font-bold text-accent-deep underline">hodnotenia hostí</a>.</p>
+  </section>
+
+  <section class="bg-surface py-14 lg:py-16">
+    <div class="wrap">
+      <p class="eyebrow">Otázky</p>
+      <h2 class="mt-2 text-[30px] md:text-[36px] font-bold tracking-[-0.02em] leading-[1.15]">Na čo sa majitelia pýtajú pri garantovanom nájme</h2>
+      <div class="grid md:grid-cols-2 gap-5 mt-7">
+        {faq.map((f) => (
+          <div class="p-6 bg-bg rounded-[var(--radius-card)]"><h3 class="text-lg font-semibold">{f.q}</h3><p class="mt-2 text-[15px] leading-relaxed text-ink-soft">{f.a}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Cta text="Pripravíme vám návrh nájmu pre váš byt." />
+</Base>
