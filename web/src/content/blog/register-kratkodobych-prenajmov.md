@@ -101,10 +101,8 @@ Zákon o registri **nevyžaduje súhlas spoločenstva vlastníkov ani susedov**.
 
 Ostatné povinnosti pri krátkodobom prenájme platia ďalej a register ich nenahrádza: dane, miestna daň za ubytovanie v Bratislave a hlásenie hostí zo zahraničia. Prehľad nájdete v článku [Krátkodobý prenájom bytu v Bratislave: ako to funguje](/blog/kratkodoby-prenajom-bytu-bratislava).
 
-## Ak byt spravujeme my
+## Ak sa o byt nechcete starať sami
 
-[DOPLNIŤ: kto robí zápis do registra pri správe bytu za 10 % a kto pri garantovanom nájme, a či zápis za majiteľa vybavíte. Napríklad: „Pri bytoch, ktoré spravujeme, zápis pripravíme za vás. Od vás potrebujeme len list vlastníctva a podpis.“]
-
-Ak sa chcete o byt prestať starať sami, pozrite si, [čo pri správe bytu robíme](/sluzby), alebo nám [napíšte](/kontakt). Prídeme sa na byt pozrieť a pripravíme odhad výnosu.
+Pozrite si, [čo pri správe bytu robíme](/sluzby), alebo [garantovaný prenájom](/garantovany-prenajom), pri ktorom vám platíme pevnú sumu každý mesiac. Ak nám [napíšete](/kontakt), prídeme sa na byt pozrieť a pripravíme odhad výnosu.
 
 *Článok vychádza zo znenia zákona č. 133/2026 Z. z. účinného od 1. januára 2027, ako je zverejnené na Slov-lex k 13. októbru 2026. Nie je to právne poradenstvo.*
